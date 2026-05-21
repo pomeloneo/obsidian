@@ -123,5 +123,3 @@
 [![](https://static001.geekbang.org/resource/image/d8/1a/d8832a8df94276cd2ac95d98465e9a1a.jpg?wh=1142x801)](https://static001.geekbang.org/resource/image/d8/1a/d8832a8df94276cd2ac95d98465e9a1a.jpg?wh=1142x801)
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
