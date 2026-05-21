@@ -515,6 +515,8 @@ validate_template: bool = True
     ```python
 
 ```python
+
+```python
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate
 from langchain.prompts.chat import (
@@ -523,6 +525,7 @@ SystemMessagePromptTemplate,
 AIMessagePromptTemplate,
 HumanMessagePromptTemplate
 )
+```
 ```
 ---
 ```
