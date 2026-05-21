@@ -174,31 +174,25 @@ SpacyTextSplitter 和 NLTKTextSplitter 需要额外安装 Python 依赖库，其
 
 source rag_env/bin/activate
 
+```bash
 pip install spacy nltk -i https://pypi.tuna.tsinghua.edu.cn/simple
-
 python -m spacy download zh_core_web_sm
-
 python -m spacy download en_core_web_sm
+```
 
 导入 langchain.text_splitter 中各种文档分块类代码：
 
+```python
 from langchain.text_splitter import (
-
 CharacterTextSplitter,
-
 RecursiveCharacterTextSplitter,
-
 MarkdownTextSplitter,
-
 PythonCodeTextSplitter,
-
 LatexTextSplitter,
-
 SpacyTextSplitter,
-
 NLTKTextSplitter
-
 )
+```
 
 CharacterTextSplitter、RecursiveCharacterTextSplitter、MarkdownTextSplitter、PythonCodeTextSplitter、LatexTextSplitter、NLTKTextSplitter 替换原有 text_splitter 参数的赋值类即可。需要额外处理的是 SpacyTextSplitter，需要参数 pipeline 指定具体的语言模型才可以运行。
 
@@ -284,13 +278,12 @@ embedding_model = SentenceTransformer(os.path.abspath(‘rag_app/bge-small-zh-v1
 
 indexing_process 方法中将文本转化为嵌入向量代码：
 
+```text
 embeddings = []
-
 for chunk in all_chunks:
-
 embedding = embedding_model.encode(chunk, normalize_embeddings=True)
-
 embeddings.append(embedding)
+```
 
 ## 总结
 
@@ -315,5 +308,3 @@ embeddings.append(embedding)
 欢迎你把你的经验和思考分享到留言区，和我一起讨论，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
