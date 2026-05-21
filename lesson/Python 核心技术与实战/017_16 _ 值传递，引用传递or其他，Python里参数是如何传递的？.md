@@ -40,37 +40,24 @@ x = y;
 
 y = temp;
 
+```text
 return;
-
 }
-
 int main () {
-
 int a = 1;
-
 int b = 2;
-
-cout << “Before swap, value of a :” << a << endl;
-
-cout << “Before swap, value of b :” << b << endl;
-
+cout << "Before swap, value of a :" << a << endl;
+cout << "Before swap, value of b :" << b << endl;
 swap(a, b);
-
-cout << “After swap, value of a :” << a << endl;
-
-cout << “After swap, value of b :” << b << endl;
-
+cout << "After swap, value of a :" << a << endl;
+cout << "After swap, value of b :" << b << endl;
 return 0;
-
 }
-
 Before swap, value of a :1
-
 Before swap, value of b :2
-
 After swap, value of a :1
-
 After swap, value of b :2
+```
 
 这里的 swap() 函数，把 a 和 b 的值拷贝给了 x 和 y，然后再交换 x 和 y 的值。这样一来，x 和 y 的值发生了改变，但是 a 和 b 不受其影响，所以值不变。这种方式，就是我们所说的值传递。
 
@@ -88,9 +75,10 @@ x = y;
 
 y = temp;
 
+```text
 return;
-
 }
+```
 
 那么输出的便是另一个结果：
 
@@ -112,11 +100,11 @@ After swap, value of b :1
 
 我们首先来看，下面的 Python 代码示例：
 
+```text
 a = 1
-
 b = a
-
 a = a + 1
+```
 
 这里首先将 1 赋值于 a，即 a 指向了 1 这个对象，如下面的流程图所示：
 
@@ -162,9 +150,10 @@ l2
 
 另外，需要注意的是，Python 里的变量可以被删除，但是对象无法被删除。比如下面的代码：
 
+```text
 l = [1, 2, 3]
-
 del l
+```
 
 del l 删除了 l 这个变量，从此以后你无法访问 l，但是对象[1, 2, 3]仍然存在。Python 程序运行时，其自带的垃圾回收系统会跟踪每个对象的引用。如果[1, 2, 3]除了 l 外，还在其他地方被引用，那就不会被回收，反之则会被回收。
 
@@ -190,17 +179,14 @@ del l 删除了 l 这个变量，从此以后你无法访问 l，但是对象[1,
 
 比如，我们来看下面这个例子：
 
+```python
 def my_func1(b):
-
 b = 2
-
 a = 1
-
 my_func1(a)
-
 a
-
 1
+```
 
 这里的参数传递，使变量 a 和 b 同时指向了 1 这个对象。但当我们执行到 b = 2 时，系统会重新创建一个值为 2 的新对象，并让 b 指向它；而 a 仍然指向 1 这个对象。所以，a 的值不变，仍然为 1。
 
@@ -208,67 +194,53 @@ a
 
 答案当然是否定的，我们只需稍作改变，让函数返回新变量，赋给 a。这样，a 就指向了一个新的值为 2 的对象，a 的值也因此变为 2。
 
+```python
 def my_func2(b):
-
 b = 2
-
 return b
-
 a = 1
-
 a = my_func2(a)
-
 a
-
 2
+```
 
 不过，当可变对象当作参数传入函数里的时候，改变可变对象的值，就会影响所有指向它的变量。比如下面的例子：
 
+```python
 def my_func3(l2):
-
 l2.append(4)
-
 l1 = [1, 2, 3]
-
 my_func3(l1)
-
 l1
-
 [1, 2, 3, 4]
+```
 
 这里 l1 和 l2 先是同时指向值为[1, 2, 3]的列表。不过，由于列表可变，执行 append() 函数，对其末尾加入新元素 4 时，变量 l1 和 l2 的值也都随之改变了。
 
 但是，下面这个例子，看似都是给列表增加了一个新元素，却得到了明显不同的结果。
 
+```python
 def my_func4(l2):
-
 l2 = l2 + [4]
-
 l1 = [1, 2, 3]
-
 my_func4(l1)
-
 l1
-
 [1, 2, 3]
+```
 
 为什么 l1 仍然是[1, 2, 3]，而不是[1, 2, 3, 4]呢？
 
 要注意，这里 l2 = l2 + [4]，表示创建了一个“末尾加入元素 4“的新列表，并让 l2 指向这个新的对象。这个过程与 l1 无关，因此 l1 的值不变。当然，同样的，如果要改变 l1 的值，我们就得让上述函数返回一个新列表，再赋予 l1 即可：
 
+```python
 def my_func5(l2):
-
 l2 = l2 + [4]
-
 return l2
-
 l1 = [1, 2, 3]
-
 l1 = my_func5(l1)
-
 l1
-
 [1, 2, 3, 4]
+```
 
 这里你尤其要记住的是，改变变量和重新赋值的区别：
 
@@ -304,20 +276,15 @@ l3 = l2
 
 第二个问题，下面的代码中，打印 d 最后的输出是什么呢？
 
+```python
 def func(d):
-
-d[‘a’] = 10
-
-d[‘b’] = 20
-
-d = {‘a’: 1, ‘b’: 2}
-
+d['a'] = 10
+d['b'] = 20
+d = {'a': 1, 'b': 2}
 func(d)
-
 print(d)
+```
 
 欢迎留言和我分享，也欢迎你把这篇文章分享给你的同事、朋友，一起在交流中进步。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
