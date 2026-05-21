@@ -13,7 +13,7 @@
 ```
 您是一位专业的鲜花店文案撰写员。
 对于售价为 50 元的 玫瑰 ，您能提供一个吸引人的简短描述吗？
-The output should be a markdown code snippet formatted in the following schema, 
+The output should be a markdown code snippet formatted in the following schema,
 including the leading and trailing "```json" and "```":
 
 {
@@ -23,7 +23,7 @@ including the leading and trailing "```json" and "```":
 ```
 
 > [!important]
-> 
+>
 > **核心原理**：LangChain 的输出解析器在提示中自动添加了 `{format_instructions}` 的内容，清楚地指示模型需要根据 schema 来格式化输出文本。
 
 这就是在告诉模型：你就 follow 这个 schema（对数据结构的描述）的格式就行！
@@ -124,7 +124,7 @@ from langchain.prompts import (
 ```
 
 > [!important]
-> 
+>
 > 有时候不指定 `.prompts`，直接从 LangChain 包也能导入模板：`from langchain import PromptTemplate`
 
 ---
@@ -160,7 +160,7 @@ print(prompt.format(product="鲜花"))
 - 通过 `prompt.format` 方法将模板中的 `{product}` 替换为具体值
 
 > [!important]
-> 
+>
 > **便捷之处**：`from_template` 方法可以从传入的字符串中自动提取变量名称（如 `product`），而无需刻意指定。
 
 也可以通过提示模板类的构造函数，在创建模板时手工指定 `input_variables`：
@@ -204,7 +204,7 @@ openai.ChatCompletion.create(
 ### OpenAI 消息格式说明
 
 > [!important]
-> 
+>
 > 消息必须是消息对象的数组，其中每个对象都有一个角色和内容。对话可以短至一条消息，也可以来回多次。
 
 LangChain 的 `ChatPromptTemplate` 这一系列的模板，就是跟着这一系列角色而设计的。
@@ -275,7 +275,7 @@ example=False
 **Zero-Shot Learning** 的代表性参考文献是 Palatucci, M. 在 2009 年提出的《基于语义输出编码的零样本学习》，学习系统可以根据类的语义描述来识别之前未见过的类。
 
 > [!important]
-> 
+>
 > **重要论文**：OpenAI 在介绍 GPT-3 模型的论文《Language models are Few-Shot learners》中指出：GPT-3 通过提升模型规模，实现了出色的 Few-Shot 学习性能。
 
 [![](https://static001.geekbang.org/resource/image/48/bc/481yy45346cc28ec48269c752c3647bc.png?wh=659x786)](https://static001.geekbang.org/resource/image/48/bc/481yy45346cc28ec48269c752c3647bc.png?wh=659x786)
@@ -406,7 +406,7 @@ print(result)
 ```
 
 > [!important]
-> 
+>
 > 模型成功地模仿了我们的示例，写出了新文案，从结构到语气都蛮相似的！
 
 ---
@@ -418,7 +418,7 @@ print(result)
 LangChain 提供了**示例选择器**，来选择最合适的样本。
 
 > [!important]
-> 
+>
 > 因为示例选择器使用向量相似度比较的功能，需要安装向量数据库（这里使用开源的 Chroma，也可以选择 Qdrant）。
 
 ### 示例代码
@@ -461,7 +461,7 @@ print(prompt.format(flower_type="红玫瑰", occasion="爱情"))
 `SemanticSimilarityExampleSelector` 对象可以根据**语义相似性**（余弦相似度）选择最相关的示例。因为我们的提示中需要创建的是"红玫瑰"的文案，选择器自动找到了最相似的示例"玫瑰"，并用这个示例构建了 FewShot 模板。
 
 > [!important]
-> 
+>
 > 这样就避免了把过多的无关模板传递给大模型，以节省 Token 的用量。
 
 ---
@@ -479,7 +479,7 @@ print(prompt.format(flower_type="红玫瑰", occasion="爱情"))
 [![](https://static001.geekbang.org/resource/image/f4/0d/f46817a7ed56c6fef64a6aeee4c1yy0d.png?wh=955x970)](https://static001.geekbang.org/resource/image/f4/0d/f46817a7ed56c6fef64a6aeee4c1yy0d.png?wh=955x970)
 
 > [!important]
-> 
+>
 > **关键点**：提供示例对于解决某些任务至关重要，通常情况下，FewShot 的方式能够显著提高模型回答的质量。不过，当少样本提示的效果不佳时，可能表示模型在任务上的学习不足，建议对模型进行微调或尝试更高级的提示技术。
 
 下一节课，我们将在探讨输出解析的同时，讲解另一种备受关注的提示技术——**思维链提示**（Chain of Thought，简称 CoT）。
@@ -489,42 +489,41 @@ print(prompt.format(flower_type="红玫瑰", occasion="爱情"))
 ## 思考题
 
 1. **探索 PromptTemplate 参数**
-    
+
     如果你观察 LangChain 中 `[prompt.py](http://prompt.py)` 的 `PromptTemplate` 实现代码，你会发现除了 `input_variables`、`template` 等参数之外，还有 `template_format`、`validate_template` 等参数。
-    
+
     ```python
     template_format: str = "f-string"
     """The format of the prompt template. Options are: 'f-string', 'jinja2'."""
-    
+
     validate_template: bool = True
     """Whether or not to try validating the template."""
     ```
-    
+
     请查看 LangChain 文档，并尝试使用这些参数（如 jinja2 格式模板）。
-    
 
 1. **尝试 PipelinePromptTemplate**
-    
+
     请尝试使用 `PipelinePromptTemplate` 和自定义 Template。
-    
 
 1. **构建客户服务对话的少样本学习任务**
-    
-    构想一个关于鲜花店运营场景中客户服务对话的少样本学习任务。模型需要根据提供的示例，学习如何解答客户的各种问题，包括询问花的价格、推荐鲜花、了解鲜花的保养方法等。最好用 ChatModel 完成：
-    
-    ```python
-    from langchain.chat_models import ChatOpenAI
-    from langchain import PromptTemplate
-    from langchain.prompts.chat import (
-        ChatPromptTemplate,
-        SystemMessagePromptTemplate,
-        AIMessagePromptTemplate,
-        HumanMessagePromptTemplate
-    )
-    ```
-    
 
+    构想一个关于鲜花店运营场景中客户服务对话的少样本学习任务。模型需要根据提供的示例，学习如何解答客户的各种问题，包括询问花的价格、推荐鲜花、了解鲜花的保养方法等。最好用 ChatModel 完成：
+
+    ```python
+
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain import PromptTemplate
+from langchain.prompts.chat import (
+ChatPromptTemplate,
+SystemMessagePromptTemplate,
+AIMessagePromptTemplate,
+HumanMessagePromptTemplate
+)
+```
 ---
+```
 
 ## 延伸阅读
 
