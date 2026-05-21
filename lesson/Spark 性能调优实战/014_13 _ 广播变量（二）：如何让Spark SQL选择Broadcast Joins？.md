@@ -126,9 +126,10 @@ table1.join(table2.hint(“broadcast”), Seq(“key”), “inner”)
 
 如果你不想等到运行时才发现问题，想让编译器帮你检查类似的拼写错误，那么你可以使用强制广播的第二种方式：broadcast 函数。这个函数是类库 org.apache.spark.sql.functions 中的 broadcast 函数。调用方式非常简单，比 Join Hints 还要方便，只需要用 broadcast 函数封装需要广播的数据表即可，如下所示。
 
+```python
 import org.apache.spark.sql.functions.broadcast
-
-table1.join(broadcast(table2), Seq(“key”), “inner”)
+table1.join(broadcast(table2), Seq("key"), "inner")
+```
 
 你可能会问：“既然开发者可以通过 Join Hints 和 broadcast 函数强制 Spark SQL 选择 Broadcast Joins，那我是不是就可以不用理会广播阈值的配置项了？”其实还真不是。我认为，以广播阈值配置为主，以强制广播为辅，往往是不错的选择。
 
@@ -144,11 +145,11 @@ table1.join(broadcast(table2), Seq(“key”), “inner”)
 
 其次，从功能上来讲，并不是所有的 Joins 类型都可以转换为 Broadcast Joins。一来，Broadcast Joins 不支持全连接（Full Outer Joins）；二来，在所有的数据关联中，我们不能广播基表。或者说，即便开发者强制广播基表，也无济于事。比如说，在左连接（Left Outer Join）中，我们只能广播右表；在右连接（Right Outer Join）中，我们只能广播左表。在下面的代码中，即便我们强制用 broadcast 函数进行广播，Spark SQL 在运行时还是会选择 Shuffle Joins。
 
+```python
 import org.apache.spark.sql.functions.broadcast
-
-broadcast (table1).join(table2, Seq(“key”), “left”)
-
-table1.join(broadcast(table2), Seq(“key”), “right”)
+broadcast (table1).join(table2, Seq("key"), "left")
+table1.join(broadcast(table2), Seq("key"), "right")
+```
 
 ## 小结
 
@@ -175,5 +176,3 @@ DataFrame 可以用 sparkContext.broadcast 函数来广播吗？它和 org.apach
 期待在留言区看到你的思考和答案，我们下一讲见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
