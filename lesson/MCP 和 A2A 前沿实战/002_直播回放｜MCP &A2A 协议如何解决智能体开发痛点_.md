@@ -61,5 +61,3 @@ Q&A 环节
 课件获取链接：https://pan.baidu.com/s/1vB3yTfDI3sKTiy_DrnS7Eg 提取码: q42m
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
