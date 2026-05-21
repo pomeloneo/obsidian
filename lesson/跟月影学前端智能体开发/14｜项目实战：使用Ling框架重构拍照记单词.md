@@ -34,159 +34,97 @@
 
 首先安装依赖项。
 
+```bash
 pnpm i jiti dotenv express body-parser @bearbobo/ling jsonuri
-
 pnpm i -D @types/express @types/body-parser
+```
 
 随后创建配置文件 .env.local。
 
+```dotenv
 VITE_KIMI_API_KEY=sk-qi2oJB**********xbp4
-
 VITE_KIMI_END_POINT=https:
-
 VITE_KIMI_MODEL_NAME=moonshot-v1-8k-vision-preview
-
 VITE_AUDIO_APP_ID=5934290469
-
 VITE_AUDIO_ACCESS_TOKEN=c-LRys**********Ln4N
-
 VITE_AUDIO_CLUSTER_ID=volcano_tts
-
 VITE_AUDIO_VOICE_NAME=en_female_anna_mars_bigtts
+```
 
 接着创建 server.ts，内容如下。
 
-import * as dotenv from ‘dotenv’
-
-import express from ‘express’;
-
-import { pipeline } from ‘node:stream/promises’;
-
-import { generateAudio } from ‘./lib/audio.ts’;
-
-import { type ChatConfig, Ling } from ‘@bearbobo/ling’;
-
-import userPrompt from ‘./lib/prompt.tpl.ts’;
-
-import bodyParser from ‘body-parser’;
-
+```jsx
+import * as dotenv from 'dotenv'
+import express from 'express';
+import { pipeline } from 'node:stream/promises';
+import { generateAudio } from './lib/audio.ts';
+import { type ChatConfig, Ling } from '@bearbobo/ling';
+import userPrompt from './lib/prompt.tpl.ts';
+import bodyParser from 'body-parser';
 dotenv.config({
-
-path: [‘.env.local’, ‘.env’]
-
+path: ['.env.local', '.env']
 })
-
 const apiKey = process.env.VITE_KIMI_API_KEY as string;
-
 const endpoint = process.env.VITE_KIMI_END_POINT as string;
-
 const modelName = process.env.VITE_KIMI_MODEL_NAME as string;
-
 const app = express();
-
 const port = 3000;
-
-app.use(express.json({ limit: ‘50mb’ }));
-
+app.use(express.json({ limit: '50mb' }));
 app.use(bodyParser.json());
-
 // SSE 端点
-
-app.post(‘/vision’, async (req, res) => {
-
+app.post('/vision', async (req, res) => {
 // 设置响应头部
-
-res.setHeader(‘Content-Type’, ‘text/event-stream’);
-
-res.setHeader(‘Cache-Control’, ‘no-cache’);
-
-res.setHeader(‘Connection’, ‘keep-alive’);
-
+res.setHeader('Content-Type', 'text/event-stream');
+res.setHeader('Cache-Control', 'no-cache');
+res.setHeader('Connection', 'keep-alive');
 res.flushHeaders(); // 发送初始响应头
-
 const imageData = req.body.imageData as string;
-
 const config: ChatConfig = {
-
 model_name: modelName,
-
 api_key: apiKey,
-
 endpoint,
-
 };
-
 // ——- The work flow start ——–
-
 const ling = new Ling(config);
-
 const bot = ling.createBot();
-
 bot.addPrompt(userPrompt);
-
 bot.chat([{
-
-type: “image_url”,
-
+type: "image_url",
 image_url: {
-
-“url”: imageData,
-
+"url": imageData,
 },
-
 }, {
-
-type: “text”,
-
+type: "text",
 text: userPrompt,
-
 }]);
-
-bot.on(‘string-response’, ({ uri, delta }) => {
-
-console.log(‘bot string-response’, uri, delta);
-
+bot.on('string-response', ({ uri, delta }) => {
+console.log('bot string-response', uri, delta);
 });
-
 ling.close();
-
 pipeline((ling.stream as any), res);
-
 });
-
 // 启动服务器
-
 app.listen(port, () => {
-
 console.log(`Server running on http://localhost:${port}`);
-
 });
+```
 
 我们用 express 服务器，引入 ling 框架，实现一个 /vision 接口，从前端接收 imageData 参数，然后用它来与 Bot 对话。
 
+```jsx
 const ling = new Ling(config);
-
 const bot = ling.createBot();
-
 bot.addPrompt(userPrompt);
-
 bot.chat([{
-
-type: “image_url”,
-
+type: "image_url",
 image_url: {
-
-“url”: imageData,
-
+"url": imageData,
 },
-
 }, {
-
-type: “text”,
-
+type: "text",
 text: userPrompt,
-
 }]);
+```
 
 Ling 框架的 stream 属性是一个 Stream 对象（这个属性返回 Ling 创建的 Tube 对象中的 Stream 对象），所以我们可以通过 pineline 将 express 的 response 对象与它连接在一起，从而实现流式输出。
 
@@ -374,105 +312,58 @@ cursor: pointer;
 
 export const generateAudio = async (text: string) => {
 
+```jsx
 const token = process.env.VITE_AUDIO_ACCESS_TOKEN;
-
 const appId = process.env.VITE_AUDIO_APP_ID;
-
 const clusterId = process.env.VITE_AUDIO_CLUSTER_ID;
-
 const voiceName = process.env.VITE_AUDIO_VOICE_NAME;
-
-const endpoint = ‘https://openspeech.bytedance.com/api/v1/tts’;
-
+const endpoint = 'https://openspeech.bytedance.com/api/v1/tts';
 const headers = {
-
-‘Content-Type’: ‘application/json’,
-
+'Content-Type': 'application/json',
 Authorization: `Bearer;${token}`,
-
 };
-
 const payload = {
-
 app: {
-
 appid: appId,
-
 token,
-
 cluster: clusterId,
-
 },
-
 user: {
-
-uid: ‘bearbobo’,
-
+uid: 'bearbobo',
 },
-
 audio: {
-
 voice_type: voiceName,
-
-encoding: ‘ogg_opus’,
-
+encoding: 'ogg_opus',
 compression_rate: 1,
-
 rate: 24000,
-
 speed_ratio: 1.0,
-
 volume_ratio: 1.0,
-
 pitch_ratio: 1.0,
-
-emotion: ‘happy’,
-
+emotion: 'happy',
 },
-
 request: {
-
 reqid: Math.random().toString(36).substring(7),
-
 text,
-
-text_type: ‘plain’,
-
-operation: ‘query’,
-
-silence_duration: ‘125’,
-
-with_frontend: ‘1’,
-
-frontend_type: ‘unitTson’,
-
-pure_english_opt: ‘1’,
-
+text_type: 'plain',
+operation: 'query',
+silence_duration: '125',
+with_frontend: '1',
+frontend_type: 'unitTson',
+pure_english_opt: '1',
 },
-
 };
-
 const res = await fetch(endpoint, {
-
-method: ‘POST’,
-
+method: 'POST',
 headers,
-
 body: JSON.stringify(payload),
-
 });
-
 const data = await res.json();
-
 if (!data.data) {
-
 throw new Error(JSON.stringify(data));
-
 }
-
 return data.data;
-
 }
+```
 
 这个模块的内容，我们在第 6 节已经讲过了，这里就不再重复了。
 
@@ -480,51 +371,31 @@ return data.data;
 
 …
 
+```jsx
 const audioBuffers: Record<string, Buffer> = {};
-
-…
-
-bot.on(‘string-response’, ({ uri, delta }) => {
-
-if (uri.endsWith(‘example_sentence’)) {
-
+...
+bot.on('string-response', ({ uri, delta }) => {
+if (uri.endsWith('example_sentence')) {
 ling.handleTask(async () => {
-
 const audioData = await generateAudio(delta);
-
 const tmpId = Math.random().toString(36).substring(7);
-
-audioBuffers[tmpId] = Buffer.from(audioData, ‘base64’);
-
-ling.sendEvent({ uri: ‘example_sentence_audio’, delta: `/api/audio?id=${tmpId}` });
-
+audioBuffers[tmpId] = Buffer.from(audioData, 'base64');
+ling.sendEvent({ uri: 'example_sentence_audio', delta: `/api/audio?id=${tmpId}` });
 });
-
 }
-
 });
-
-…
-
-app.get(‘/audio’, (req, res) => {
-
+...
+app.get('/audio', (req, res) => {
 const id = req.query.id as string;
-
 const audioData = audioBuffers[id];
-
 if (!audioData) {
-
-res.status(404).send(‘Audio not found’);
-
+res.status(404).send('Audio not found');
 return;
-
 }
-
-res.setHeader(‘Content-Type’, ‘audio/ogg’);
-
+res.setHeader('Content-Type', 'audio/ogg');
 res.send(audioData);
-
 });
+```
 
 当 Bot 对象的 string-response 事件被触发后，我们判断数据的 uri 是 example_sentence 时，delta 的内容就是我们要生成音频的文本。因此我们使用 ling.handleTask 方法，创建一个异步处理过程，通过 await generateAudio(delta) 处理音频，并拿到音频的 base64 数据。
 
@@ -536,35 +407,23 @@ res.send(audioData);
 
 接着我们修改 App.vue 的代码，增加一个处理分支：
 
+```jsx
 if (!done) {
-
 const content = decoder.decode(value);
-
-const lines = content.trim().split(‘\n’);
-
+const lines = content.trim().split('\n');
 for (const line of lines) {
-
 const input = JSON.parse(line);
-
 if (input.uri) {
-
 const content = get(data, input.uri);
-
-set(data, input.uri, (content || ’’) + input.delta);
-
-…
-
-} else if (input.uri.endsWith(‘example_sentence_audio’)) {
-
+set(data, input.uri, (content || '') + input.delta);
+...
+} else if (input.uri.endsWith('example_sentence_audio')) {
 audio.value = data.example_sentence_audio;
-
 }
-
 }
-
 }
-
 }
+```
 
 因为 server 通过ling.sendEvent(…) 发送 { uri: ‘example_sentence_audio’, delta: /api/audio?id=${tmpId} } 给前端，所以前端就可以通过这个属性拿到音频 url。
 
@@ -585,5 +444,3 @@ audio.value = data.example_sentence_audio;
 在第 6 节课，我就提出让大家尝试给 Talk About 的内容也配上音频，现在有了 Ling，应该更容易做到了。你可以试试看，修改一下代码，增加新的音频功能，把你实现过程中的思考和得到的收获以及最后的结果分享到评论区吧。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
