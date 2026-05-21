@@ -140,10 +140,8 @@ Download 15 sites in 0.062144195078872144 seconds
 这里的 Async 和 await 关键字是 Asyncio 的最新写法，表示这个语句 / 函数是 non-block 的，正好对应前面所讲的 event loop 的概念。如果任务执行的过程需要等待，则将其放入等待状态的列表中，然后继续执行预备状态列表里的任务。
 
 主函数里的 asyncio.run(coro) 是 Asyncio 的 root call，表示拿到 event loop，运行输入的 coro，直到它结束，最后关闭这个 event loop。事实上，asyncio.run() 是 Python3.7+ 才引入的，相当于老版本的以下语句：
-
-loop = asyncio.get_event_loop()
-
 ```text
+loop = asyncio.get_event_loop()
 try:
 loop.run_until_complete(coro)
 finally:
