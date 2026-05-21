@@ -56,53 +56,36 @@
 
 很简单，我们只需要简单编写以下提示语。
 
+```python
 def 构造文本摘要messages(输入字符串):
-
 messages=[
-
-{“role”: “user”, “content”: f”“”
-
+{"role": "user", "content": f"""
 请对以下文本进行摘要：
-
 {输入字符串}
-
-“““},
-
+"""},
 ]
-
 return messages
+```
 
 然后编写大模型调用 messages 的函数。
 
+```python
 def 对话模式(messages):
-
-url = “https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-lite-8k?access_token=” + get_access_token()
-
+url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-lite-8k?access_token=" + get_access_token()
 json_obj = {
-
-“messages”: messages,
-
+"messages": messages,
 }
-
 playload = json.dumps(json_obj)
-
 headers = {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 }
-
-response = requests.request(“POST”, url, headers=headers, data=playload)
-
+response = requests.request("POST", url, headers=headers, data=playload)
 json_result = json.loads(response.text)
-
-if “error_code” in json_result:
-
-return json_result[“error_msg”] + “：” + playload
-
+if "error_code" in json_result:
+return json_result["error_msg"] + "：" + playload
 else:
-
 return result
+```
 
 然后交给大模型调用。
 
@@ -124,9 +107,10 @@ messages = 构造文本摘要messages(输入文本)
 
 具体代码如下。
 
+```python
 def 对长文本进行摘要(输入文本):
-
 if len(输入文本) > 文本划分长度:
+```
 
 文本list = 按长度划分文本(输入文本, 文本划分长度)
 
@@ -138,11 +122,11 @@ for 当前文本 in 文本list:
 
 文本摘要结果 += 当前文本摘要结果 + ‘\n’
 
+```text
 return 文本摘要结果
-
 else:
-
 return 文本摘要(输入文本)
+```
 
 这段代码很好理解。我们首先判断输入文本是否长于文本划分长度（对应第 2 行代码）。如果输入文本长于文本划分长度，则按文本划分长度分成一个 list（对应第 3 行代码）。然后遍历这个 list，对 list 里面的每一段文本进行摘要（对应第 5、6 行代码）。最后将这几段摘要整合在一起（对应第 7 行代码）。
 
@@ -176,21 +160,16 @@ return 文本摘要(输入文本)
 
 我们先定义生成 messages 的函数。具体代码很简单。
 
+```python
 def 构造英译中messages(输入字符串):
-
 messages=[
-
-{“role”: “user”, “content”: f”“”
-
+{"role": "user", "content": f"""
 请将以下文本翻译成中文：
-
 {输入字符串}
-
-“““},
-
+"""},
 ]
-
 return messages
+```
 
 然后我们将生成的 messages 传给大模型调用。
 
@@ -218,9 +197,10 @@ messages = 构造英译中messages(系统给出的回答)
 
 现在我们按照与文本摘要同样的原则修改机器翻译代码，以支持长文本翻译。
 
+```python
 def 对长文本进行翻译(输入文本):
-
 if len(输入文本) > 文本划分长度:
+```
 
 文本list = 按长度划分文本(输入文本, 文本划分长度)
 
@@ -232,11 +212,11 @@ for 当前文本 in 文本list:
 
 文本翻译结果 += 当前文本翻译结果 + ‘\n’
 
+```text
 return 文本翻译结果
-
 else:
-
 return 翻译成中文(输入文本)
+```
 
 有些同学可能会说，这样的长文本拆分方法会有问题。例如当拆分的位置不对，将一句话砍成两段之后会得到两句病句，本身就无法表达正确的意思。比如“我昨天在公园里看到一只可爱的小狗”这句话。当使用前面划分文本函数进行划分时，恰好在“天”字这里砍成了两段，变成了“我昨”、“天在公园里看到一只可爱的小狗”。可以预见的是，这两段话都不完整，本身就无法表达正确的意思。
 
@@ -277,5 +257,3 @@ return 翻译成中文(输入文本)
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
