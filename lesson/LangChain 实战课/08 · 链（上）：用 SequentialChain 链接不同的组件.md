@@ -11,7 +11,7 @@
 对于简单的应用程序，直接调用 LLM 就已经足够。但如果要开发更复杂的应用程序，就需要通过 **"Chain"** 来链接 LangChain 的各个组件和功能。
 
 > [!important]
-> 
+>
 > **Chain 的核心价值**：将多个组件相互链接，组合成一个链。这种设计简化了复杂应用程序的实现，使之更加模块化，能够创建出单一、连贯的应用程序，从而使调试、维护和改进变得容易。
 
 [![](https://static001.geekbang.org/resource/image/e2/de/e26993dd3957bfd2947424abb9de7cde.png?wh=1965x1363)](https://static001.geekbang.org/resource/image/e2/de/e26993dd3957bfd2947424abb9de7cde.png?wh=1965x1363)
@@ -101,7 +101,7 @@ print(result)
 ```
 
 > [!important]
-> 
+>
 > **优势**：使用链将提示模板的构建和模型的调用封装在一起，代码结构更简洁。
 
 ---
@@ -197,7 +197,7 @@ generations=[
     [Generation(text='\n\n秋季的花语是"思念"。银色的百合象征着"真爱"，而淡紫色的郁金香则象征着"思念"，因为它们在秋天里绽放的时候，犹如在思念着夏天的温暖。',
                 generation_info={'finish_reason': 'stop', 'logprobs': None})]
 ]
-llm_output={'token_usage': {'completion_tokens': 243, 'total_tokens': 301, 'prompt_tokens': 58}, 
+llm_output={'token_usage': {'completion_tokens': 243, 'total_tokens': 301, 'prompt_tokens': 58},
             'model_name': 'gpt-3.5-turbo-instruct'}
 run=[RunInfo(run_id=UUID('13058cca-881d-4b76-b0cf-0f9c831af6c4')),
      RunInfo(run_id=UUID('7f38e33e-bab5-4d03-b77c-f50cd195affb')),
@@ -205,7 +205,7 @@ run=[RunInfo(run_id=UUID('13058cca-881d-4b76-b0cf-0f9c831af6c4')),
 ```
 
 > [!important]
-> 
+>
 > **LLMResult 包含的信息**：令牌数量、模型名称、完成原因、运行 ID 等详细元数据。
 
 ---
@@ -255,12 +255,12 @@ template = """
 植物学家: 这是关于上述花的介绍:"""
 
 prompt_template = PromptTemplate(
-    input_variables=["name", "color"], 
+    input_variables=["name", "color"],
     template=template
 )
 introduction_chain = LLMChain(
-    llm=llm, 
-    prompt=prompt_template, 
+    llm=llm,
+    prompt=prompt_template,
     output_key="introduction"
 )
 ```
@@ -278,12 +278,12 @@ template = """
 花评人对上述花的评论:"""
 
 prompt_template = PromptTemplate(
-    input_variables=["introduction"], 
+    input_variables=["introduction"],
     template=template
 )
 review_chain = LLMChain(
-    llm=llm, 
-    prompt=prompt_template, 
+    llm=llm,
+    prompt=prompt_template,
     output_key="review"
 )
 ```
@@ -303,12 +303,12 @@ template = """
 """
 
 prompt_template = PromptTemplate(
-    input_variables=["introduction", "review"], 
+    input_variables=["introduction", "review"],
     template=template
 )
 social_post_chain = LLMChain(
-    llm=llm, 
-    prompt=prompt_template, 
+    llm=llm,
+    prompt=prompt_template,
     output_key="social_post_text"
 )
 ```
@@ -334,12 +334,12 @@ print(result)
 > Finished chain.
 
 {
-  'name': '玫瑰', 
+  'name': '玫瑰',
   'color': '黑色',
   'introduction': '\n\n黑色玫瑰，这是一种对传统玫瑰花的独特颠覆，它的出现挑战了我们对玫瑰颜色的固有认知。它的花瓣如煤炭般黑亮，反射出独特的微光，而花蕊则是金黄色的，宛如夜空中的一颗星，强烈的颜色对比营造出一种前所未有的视觉效果。在植物学中，黑色玫瑰的出现无疑提供了一种新的研究方向，对于我们理解花朵色彩形成的机制有着重要的科学价值。',
-  
+
   'review': '\n\n黑色玫瑰，这不仅仅是一种花朵，更是一种完全颠覆传统的艺术表现形式。黑色的花瓣仿佛在诉说一种不可言喻的悲伤与神秘，而黄色的蕊瓣犹如漆黑夜空中的一抹亮色，给人带来无尽的想象。它将悲伤与欢乐，神秘与明亮完美地结合在一起，这是一种全新的视觉享受，也是一种对生活理解的深度表达。',
-  
+
   'social_post_text': '\n欢迎来到我们的自媒体平台，今天，我们要向您展示的是我们的全新产品——黑色玫瑰。这不仅仅是一种花，这是一种对传统观念的挑战，一种视觉艺术的革新，更是一种生活态度的象征。
 
 这种别样的玫瑰花，其黑色花瓣宛如漆黑夜空中闪烁的繁星，富有神秘的深度感，给人一种前所未有的视觉冲击力。这种黑色，它不是冷酷、不是绝望，而是充满着独特的魅力和力量。而位于黑色花瓣之中的金黄色花蕊，则犹如星星中的灵魂，默默闪烁，给人带来无尽的遐想，充满活力与生机。
@@ -349,7 +349,7 @@ print(result)
 ```
 
 > [!important]
-> 
+>
 > **成功**：通过三个 LLMChain 和一个 SequentialChain，生成了一篇完美的营销文案！
 
 ---
@@ -381,7 +381,7 @@ LangChain 链的体系结构
 |**RouterChain**|路由链（下节课介绍）|
 
 > [!important]
-> 
+>
 > **扩展学习**：LangChain 还自带大量其他类型的链，可以查看这些链的实现细节并尝试使用。
 
 ---
