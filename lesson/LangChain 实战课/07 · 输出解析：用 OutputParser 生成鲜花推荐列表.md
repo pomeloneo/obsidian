@@ -42,13 +42,13 @@
 class OutputParser:
     def __init__(self):
         pass
-    
+
     def get_format_instructions(self):
         pass
-    
+
     def parse(self, model_output):
         pass
-    
+
     def parse_with_prompt(self, model_output, prompt):
         pass
 ```
@@ -148,7 +148,7 @@ Here is the output schema:
 ```
 
 > [!important]
-> 
+>
 > **核心价值**：`get_format_instructions()` 方法生成的指令是 Pydantic 解析器的核心，它为模型提供清晰的 JSON Schema 格式指导。
 
 #### 第四步：创建提示模板
@@ -185,14 +185,14 @@ for flower, price in zip(flowers, prices):
     # 生成具体提示
     input = prompt.format(flower=flower, price=price)
     print("提示：", input)
-    
+
     # 调用模型
     output = model(input)
-    
+
     # 解析输出
     parsed_output = output_parser.parse(output)
     parsed_output_dict = parsed_output.dict()
-    
+
     # 添加到 DataFrame
     df.loc[len(df)] = parsed_output_dict
 
@@ -225,7 +225,7 @@ print("输出的数据：", df.to_dict(orient='records'))
 ```
 
 > [!important]
-> 
+>
 > **Pydantic 的优势**：解析后的字典格式在数据分析、处理和存储时非常方便，每个字段对应一列，每个字典就是一行，适合以 DataFrame 的形式表示和处理。
 
 ---
@@ -259,7 +259,7 @@ langchain.schema.output_parser.OutputParserException: Failed to parse Flower fro
 ```
 
 > [!important]
-> 
+>
 > **问题原因**：JSON 格式要求属性名称使用双引号，但输入字符串使用了单引号。
 
 ### 使用 OutputFixingParser 解决
@@ -283,7 +283,7 @@ name='Rose' colors=['red', 'pink', 'white']
 ```
 
 > [!important]
-> 
+>
 > **工作原理**：OutputFixingParser 内部调用原有的 PydanticOutputParser，如果失败，会将格式错误的输出和格式化指令传递给大模型，要求 LLM 进行修复。
 
 ---
@@ -377,7 +377,7 @@ action='search' action_input='colors of Orchid'
 ```
 
 > [!important]
-> 
+>
 > **完美解决**：不仅还原了格式，还根据原始提示还原了 `action_input` 字段的正确内容。
 
 ---
