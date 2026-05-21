@@ -903,42 +903,26 @@ if file_contents:
 
 enhanced_message += “\n\n[附件内容]:\n”
 
+```text
 for file_content in file_contents:
-
-enhanced_message += f”\n文件: {file_content[‘filename’]}\n”
-
-enhanced_message += f”内容: {file_content[‘content’][:500]}…\n”
-
+enhanced_message += f"\n文件: {file_content['filename']}\n"
+enhanced_message += f"内容: {file_content['content'][:500]}...\n"
 if url_contents_list:
-
-enhanced_message += “\n\n[URL内容]:\n”
-
+enhanced_message += "\n\n[URL内容]:\n"
 for url_content in url_contents_list:
-
-enhanced_message += f”\n链接: {url_content[‘url’]}\n”
-
-enhanced_message += f”标题: {url_content[‘title’]}\n”
-
-enhanced_message += f”内容: {url_content[‘content’][:500]}…\n”
-
+enhanced_message += f"\n链接: {url_content['url']}\n"
+enhanced_message += f"标题: {url_content['title']}\n"
+enhanced_message += f"内容: {url_content['content'][:500]}...\n"
 chat_request = ChatRequest(
-
 message=enhanced_message,
-
 session_id=session_id,
-
 user_id=user_id
-
 )
-
 response = chat_engine.chat(chat_request)
-
 response_dict = response.dict()
-
-response_dict[“attachments”] = file_contents
-
-response_dict[“url_contents”] = url_contents_list
-
+response_dict["attachments"] = file_contents
+response_dict["url_contents"] = url_contents_list
+```
 ```python
 return response_dict
 except Exception as e:
