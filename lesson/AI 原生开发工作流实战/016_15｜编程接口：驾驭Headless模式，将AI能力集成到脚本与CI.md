@@ -276,54 +276,32 @@ Headless 模式最激动人心的应用场景，无疑是与 CI/CD 系统的集�
 
 .github/workflows/claude_pr_review.yml
 
+```text
 name: AI Code Review
-
 on:
-
 pull_request:
-
 types: [opened, synchronize]
-
 jobs:
-
 ai-review:
-
 runs-on: ubuntu-latest
-
 permissions:
-
 contents: read
-
 steps:
-
 - name: Checkout code
-
 uses: actions/checkout@v4
-
 with:
-
 fetch-depth: 0
-
 - name: Setup Go
-
 uses: actions/setup-go@v5
-
 with:
-
-go-version: ‘1.25.0’
-
+go-version: '1.25.0'
 - name: Install Claude Code
-
 run: npm install -g @anthropic-ai/claude-code
-
 - name: Configure Claude Code with Zhipu AI
-
 env:
-
 ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
-
 run: |
-
+```
 ```bash
 mkdir -p ~/.claude
 echo '{
