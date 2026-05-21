@@ -236,9 +236,10 @@ else:
 
 根据查询结果回答用户输入(查询结果json格式,用户输入)
 
+```text
 conversation_list = 获取当前对话记录()
-
-return render(request, “home/index.html”,{“object_list”:conversation_list})
+return render(request, "home/index.html",{"object_list":conversation_list})
+```
 
 第 16 行就是我们修改的地方。
 
