@@ -208,9 +208,10 @@ indexing_process 方法中切分文本块库代码：
 
 # 可以更换为CharacterTextSplitter、MarkdownTextSplitter、PythonCodeTextSplitter、LatexTextSplitter、NLTKTextSplitter等
 
+```text
 text_splitter = RecursiveCharacterTextSplitter(
-
 chunk_size=512, chunk_overlap=128)
+```
 
 其中，SpacyTextSplitter 的文本分块逻辑已被注释。如果需要使用，只需取消注释，并将下方使用其他文本分块库的代码注释即可。
 
