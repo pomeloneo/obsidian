@@ -51,5 +51,3 @@ MCP 服务器（MCP Servers）：为 MCP Client 提供上下文、工具和 prom
 综上所述，A2A 所解决的核心问题是 Agent 如何进行标准化封装，从而实现多 Agent 协同工作的能力，其抽象层级高于 MCP，二者构成了互补性的协议体系。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
