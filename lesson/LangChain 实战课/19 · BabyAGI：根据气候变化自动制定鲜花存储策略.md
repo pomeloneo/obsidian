@@ -43,7 +43,7 @@ Auto-GPT 可以用于各种任务,例如:
 - 播客大纲制定等
 
 > [!important]
-> 
+>
 > **局限性:** Auto-GPT 并不完善,作为一个实验性质的项目,它还存在诸多挑战,比如运行成本可能很高,而且它可能会分心或陷入循环。技术上,它的缺陷是没有长期记忆。
 
 但是,作为一个开源项目,它展示出了 AI 的边界和自主行动能力,凸显出了自主代理的潜力,也从实践上验证了人类正朝向人工普通智能(AGI)迈进。
@@ -77,17 +77,17 @@ BabyAGI 工作流程(图片来源网络)
 ### 三个核心代理
 
 > [!important]
-> 
+>
 > **执行代理(execution_agent)**
-> 
+>
 > 系统的核心,利用 OpenAI 的 API 来处理任务。有两个参数:目标和任务,用于向 OpenAI 的 API 发送提示,并以字符串形式返回任务结果。
-> 
+>
 > **任务创建代理(task_creation_agent)**
-> 
+>
 > 通过 OpenAI 的 API 根据当前目标和先前任务的结果创建新任务。有四个参数:目标、上一个任务的结果、任务描述和当前任务列表。
-> 
+>
 > **优先级设置代理(prioritization_agent)**
-> 
+>
 > 负责任务列表的排序和优先级,通过调用 OpenAI 的 API 来重新确定任务列表的优先级。有一个参数:当前任务的 ID。
 
 等一下,我就用这个 BabyAGI 的框架来带着你开发一个能够根据气候变化自动制定鲜花存储策略的 AI 智能代理。
@@ -123,7 +123,7 @@ HuggingGPT 工作流程(图片来源论文)
 HuggingGPT 的优势在于,它能够使用不同的模型来执行特定的任务,如图像分类、对象检测、图像描述等。
 
 > [!important]
-> 
+>
 > **共同点:** 尽管实现过程各有特点,但这些自主类的 AI 代理应用的基本思想和流程还是很类似的。关键是利用 LLM 的推理能力生成任务,确定任务优先级,然后执行任务,实现目标。
 
 ---
@@ -450,8 +450,8 @@ if __name__ == "__main__":
 2: Identify the most suitable materials for flower storage in Beijing
 
 *****TASK RESULT*****
-The best materials for flower storage in Beijing would be materials that are 
-breathable and moisture-resistant. Examples: paper, cardboard, and fabric. 
+The best materials for flower storage in Beijing would be materials that are
+breathable and moisture-resistant. Examples: paper, cardboard, and fabric.
 Keep flowers away from direct sunlight and heat sources.
 ```
 
@@ -471,7 +471,7 @@ strong odors, and pests. Regularly check temperature and humidity levels.
 系统继续监控花朵状态,分析气候影响,并制定了最终的综合存储计划。
 
 > [!important]
-> 
+>
 > **运行分析:** 从结构上看,内容以循环方式进行组织:TASK LIST → NEXT TASK → TASK RESULT。每个任务结果都是基于前一个任务的输出。随着自主代理思考的逐步深入,子任务的重点从获取当前的天气数据,到确定最佳的花朵储存策略,再到对策略的实际执行和调整。6 轮循环之后,在任务的最终结果部分提供了具体的步骤和策略。
 
 ---
@@ -487,7 +487,7 @@ strong odors, and pests. Regularly check temperature and humidity levels.
 三种自主代理对比表
 
 > [!important]
-> 
+>
 > **未来展望:** 这种自主代理将在企业运营的任务分配、项目管理和资源调度等环节中起到至关重要的作用。想象一下,随着人工智能技术的飞速发展,会有众多的自主驱动型的应用程序被开发出来,优化任务管理,AI 将涵盖从项目开始到结束的整个过程,确保每个任务都得到有效的监控和组织。
 
 ---
