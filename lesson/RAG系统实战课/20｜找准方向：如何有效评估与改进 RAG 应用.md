@@ -86,9 +86,10 @@ Ragas 目前实现了十项评估指标，我们挨个来看看。
 
 完成界面之后，我们还需要添加 ORM 模型。我们打开 models.py 文件，添加以下代码。
 
-positive_review = models.BooleanField(default=False, verbose_name=‘好评’)
-
-negative_review = models.BooleanField(default=False, verbose_name=‘差评’)
+```text
+positive_review = models.BooleanField(default=False, verbose_name='好评')
+negative_review = models.BooleanField(default=False, verbose_name='差评')
+```
 
 需要注意的是，我们并没有将好评和差评数据整合成一个字段，而是分成两个字段，这么做是为了方便管理员在后台查看。你不妨根据你自己的实际情况来决定是使用一个字段还是两个字段。
 
