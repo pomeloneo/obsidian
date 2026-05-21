@@ -200,11 +200,11 @@ return render(request, 'positions.html', context)
 
 不过，这个函数具体是怎么工作的呢？我们一行行来看。
 
+```text
 positions = Position.objects.filter(asset = asset)，这行代码向数据库中执行一个查询操作，其中， filter 表示筛选，意思是从数据库中选出所有我们需要的 asset 的信息。不过，这里我只是为你举例做示范；真正做监控的时候，我们一般会更有针对性地从数据库中筛选读取信息，而不是一口气读取出所有的信息。
-
-context = {‘asset’: asset, ‘positions’: positions}，这行代码没什么好说的，封装一个字典。至于这个字典的用处，下面的内容中可以体现。
-
-return render(request, ‘positions.html’, context)，最后这行代码返回一个页面。这里我们采用的模板设计，这也是 Django 非常推荐的开发方式，也就是让模板和数据分离，这样，数据只需要向其中填充即可。
+context = {'asset': asset, 'positions': positions}，这行代码没什么好说的，封装一个字典。至于这个字典的用处，下面的内容中可以体现。
+return render(request, 'positions.html', context)，最后这行代码返回一个页面。这里我们采用的模板设计，这也是 Django 非常推荐的开发方式，也就是让模板和数据分离，这样，数据只需要向其中填充即可。
+```
 
 最后的模板文件是 position.html，你应该注意到了， context 作为变量传给了模板，下面我们就来看一下设计模板的内容。
 
