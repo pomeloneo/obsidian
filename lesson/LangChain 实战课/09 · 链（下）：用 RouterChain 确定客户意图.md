@@ -231,10 +231,8 @@ Return a markdown code snippet with a JSON object formatted to look like:
 "destination": string \ name of the prompt to use or "DEFAULT"
 
 "next_inputs": string \ a potentially modified version of the original input
-
-}
-
 ```jsx
+}
 
 REMEMBER: "destination" MUST be one of the candidate prompt names specified below OR it can be "DEFAULT" if the input is not well suited for any of the candidate prompts.
 REMEMBER: "next_inputs" can just be the original input if you don't think any modifications are needed.
