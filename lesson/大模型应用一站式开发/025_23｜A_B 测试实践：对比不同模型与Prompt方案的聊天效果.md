@@ -254,25 +254,18 @@ manager.register_experiment(config)
 
 系统使用一致性哈希算法确保同一用户始终分配到同一组：
 
-user_id = “user_12345”
-
+```text
+user_id = "user_12345"
 group = manager.assign_user_to_group(
-
 user_id=user_id,
-
-experiment_id=“model_comparison_20250101”
-
+experiment_id="model_comparison_20250101"
 )
-
-print(f”用户 {user_id} 分配到 {group} 组”)
-
+print(f"用户 {user_id} 分配到 {group} 组")
 existing_group = manager.group_assigner.get_user_group(
-
 user_id=user_id,
-
-experiment_id=“model_comparison_20250101”
-
+experiment_id="model_comparison_20250101"
 )
+```
 
 分流原理：
 
@@ -328,19 +321,15 @@ last_message_count=3
 
 支持的事件类型：
 
+```text
 SESSION_START: 会话开始
-
 PROMPT_SENT: 发送 Prompt
-
 RESPONSE_RECEIVED: 收到响应
-
 USER_RATING_SUBMITTED: 用户评分
-
 SESSION_END: 会话结束
-
 CONVERSATION_INTERRUPTED: 对话中断
-
 FEEDBACK_SUBMITTED: 反馈提交
+```
 
 ### 4.1.4 在聊天服务中集成
 
@@ -405,47 +394,37 @@ print(f" 响应时间: {rt['mean']:.2f}s ± {rt['std']:.2f}s (n={rt['count']})")
 
 ### 4.2.2 统计显著性检验
 
+```text
 test_result = analyzer.statistical_test(
-
-experiment_id=“model_comparison_20250101”,
-
-metric=“user_rating”,
-
-group_a=“A”,
-
-group_b=“B”,
-
-test_type=“t_test”
-
+experiment_id="model_comparison_20250101",
+metric="user_rating",
+group_a="A",
+group_b="B",
+test_type="t_test"
 )
-
-print(f”P值: {test_result[‘p_value’]:.4f}“)
-
-print(f”是否显著: {test_result[‘significant’]}“)
-
-print(f”效应量 (Cohen’s d): {test_result.get(‘cohens_d’, 0):.3f}“)
-
-print(f”效应大小: {test_result.get(‘effect_size’, ‘N/A’)}“)
+print(f"P值: {test_result['p_value']:.4f}")
+print(f"是否显著: {test_result['significant']}")
+print(f"效应量 (Cohen's d): {test_result.get('cohens_d', 0):.3f}")
+print(f"效应大小: {test_result.get('effect_size', 'N/A')}")
+```
 
 检验类型：
 
+```text
 t_test: 独立样本 t 检验（适用于正态分布数据）
-
 mannwhitney: Mann-Whitney U 检验（非参数，适用于非正态分布）
-
 chi2: 卡方检验（适用于分类数据）
+```
 
 ### 4.2.3 生成完整报告
 
+```text
 report = analyzer.generate_report(
-
-experiment_id=“model_comparison_20250101”,
-
-output_path=“reports/model_comparison_report.txt”
-
+experiment_id="model_comparison_20250101",
+output_path="reports/model_comparison_report.txt"
 )
-
 print(report)
+```
 
 报告包含：
 
