@@ -94,21 +94,20 @@ python3 testPCAPurePython.py
 
 首先，我们从 SWIG 的网站（http://swig.org/download.html）下载源代码包，并开始构建：
 
+```bash
 $ wget https://newcontinuum.dl.sourceforge.net/project/swig/swig/swig-4.0.0/swig-4.0.0.tar.gz
-
 $ tar -xvf swig-4.0.0.tar.gz
-
 $ cd swig-4.0.0
-
 $ wget https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.gz
-
 $ sh ./Tools/pcre-build.sh
+```
 
 $ ./configure
 
+```bash
 $ make
-
 $ sudo make install
+```
 
 一切就绪后，我们就来编写一个简单的例子吧。这个例子同样来源于 SWIG 网站（http://swig.org/tutorial.html）。我们先来创建一个简单的 c 文件，你可以通过你习惯使用的文本编辑器（比如 vi），创建一个名为example.c的文件，并编写代码。代码内容我放在了代码清单 2 中。
 
@@ -269,64 +268,37 @@ void resize_data_if_needed_();
 
 \#include
 
+```jsx
 pca::pca()num_vars_(0),
-
 num_records_(0),
-
 record_buffer_(1000),
-
-solver_(“dc”),
-
+solver_("dc"),
 do_normalize_(false),
-
 num_retained_(1),
-
 energy_(1)
-
 {}
-
 pca::pca(long num_vars)num_vars_(num_vars),
-
 num_records_(0),
-
 record_buffer_(1000),
-
-solver_(“dc”),
-
+solver_("dc"),
 do_normalize_(false),
-
 num_retained_(num_vars_),
-
 data_(record_buffer_, num_vars_),
-
 energy_(1),
-
 eigval_(num_vars_),
-
 eigvec_(num_vars_, num_vars_),
-
 proj_eigvec_(num_vars_, num_vars_),
-
 princomp_(record_buffer_, num_vars_),
-
 mean_(num_vars_),
-
 sigma_(num_vars_)
-
 {
-
 assert_num_vars_();
-
 initialize_();
-
 }
-
 pca::~pca()
-
 {}
-
 bool pca::operator==(const pca& other) {
-
+```
 ```jsx
 const double eps = 1e-5;
 if (num_vars_ == other.num_vars_ &&
@@ -536,46 +508,28 @@ set_num_retained(num_retained_);
 
 namespace utils {
 
+```jsx
 arma::Mat<double> make_covariance_matrix(const arma::Mat<double>& data);
-
 arma::Mat<double> make_shuffled_matrix(const arma::Mat<double>& data);
-
 arma::Col<double> compute_column_means(const arma::Mat<double>& data);
-
 void remove_column_means(arma::Mat<double>& data, const arma::Col<double>& means);
-
 arma::Col<double> compute_column_rms(const arma::Mat<double>& data);
-
 void normalize_by_column(arma::Mat<double>& data, const arma::Col<double>& rms);
-
 void enforce_positive_sign_by_column(arma::Mat<double>& data);
-
 std::vector<double> extract_column_vector(const arma::Mat<double>& data, long index);
-
 std::vector<double> extract_row_vector(const arma::Mat<double>& data, long index);
-
 void assert_file_good(const bool& is_file_good, const std::string& filename);
-
 template
-
 void write_matrix_object(const std::string& filename, const T& matrix) {
-
 assert_file_good(matrix.quiet_save(filename, arma::arma_ascii), filename);
-
 }
-
 template
-
 void read_matrix_object(const std::string& filename, T& matrix) {
-
 assert_file_good(matrix.quiet_load(filename), filename);
-
 }
-
 template<typename T, typename U, typename V>
-
 bool is_approx_equal(const T& value1, const U& value2, const V& eps) {
-
+```
 ```jsx
 return std::abs(value1-value2)<eps ? true : false;
 }
@@ -772,11 +726,11 @@ namespace std {
 
 一切就绪后，我们执行下面的命令行，生成_pca.so库供 Python 使用：
 
+```bash
 $ swig -c++ -python pca.i
-
 $ g++ -fPIC -c pca.h pca.cpp utils.h utils.cpp pca_wrap.cxx -I/usr/include/python3.7
-
 $ g++ -shared pca.o pca_wrap.o utils.o -o _pca.so -O2 -Wall -std=c++11 -pthread -shared -fPIC -larmadillo
+```
 
 接着，我们使用 Python 脚本，导入我们创建好的 so 动态库；然后，调用相应的类的函数。这部分内容，我写在了代码清单 10 中。
 
