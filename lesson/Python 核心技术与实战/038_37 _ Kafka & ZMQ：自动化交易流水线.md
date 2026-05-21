@@ -84,115 +84,63 @@ Parallel Pipeline 模式。
 
 我们需要详细来看的是第二种，即“PubSub”模式。下面是它的具体实现，代码很清晰，你应该很容易理解：
 
+```python
 import zmq
-
 def run():
-
 context = zmq.Context()
-
 socket = context.socket(zmq.SUB)
-
-socket.connect(‘tcp://127.0.0.1:6666’)
-
-socket.setsockopt_string(zmq.SUBSCRIBE, ’’)
-
-print(‘client 1’)
-
+socket.connect('tcp://127.0.0.1:6666')
+socket.setsockopt_string(zmq.SUBSCRIBE, '')
+print('client 1')
 while True:
-
 msg = socket.recv()
-
-print(“msg: %s” % msg)
-
-if __name__ == ‘__main__’:
-
+print("msg: %s" % msg)
+if __name__ == '__main__':
 run()
-
 client 1
-
-msg: b’server cnt 1’
-
-msg: b’server cnt 2’
-
-msg: b’server cnt 3’
-
-msg: b’server cnt 4’
-
-msg: b’server cnt 5’
-
+msg: b'server cnt 1'
+msg: b'server cnt 2'
+msg: b'server cnt 3'
+msg: b'server cnt 4'
+msg: b'server cnt 5'
 import zmq
-
 def run():
-
 context = zmq.Context()
-
 socket = context.socket(zmq.SUB)
-
-socket.connect(‘tcp://127.0.0.1:6666’)
-
-socket.setsockopt_string(zmq.SUBSCRIBE, ’’)
-
-print(‘client 2’)
-
+socket.connect('tcp://127.0.0.1:6666')
+socket.setsockopt_string(zmq.SUBSCRIBE, '')
+print('client 2')
 while True:
-
 msg = socket.recv()
-
-print(“msg: %s” % msg)
-
-if __name__ == ‘__main__’:
-
+print("msg: %s" % msg)
+if __name__ == '__main__':
 run()
-
 client 2
-
-msg: b’server cnt 1’
-
-msg: b’server cnt 2’
-
-msg: b’server cnt 3’
-
-msg: b’server cnt 4’
-
-msg: b’server cnt 5’
-
+msg: b'server cnt 1'
+msg: b'server cnt 2'
+msg: b'server cnt 3'
+msg: b'server cnt 4'
+msg: b'server cnt 5'
 import time
-
 import zmq
-
 def run():
-
 context = zmq.Context()
-
 socket = context.socket(zmq.PUB)
-
-socket.bind(‘tcp://*:6666’)
-
+socket.bind('tcp://*:6666')
 cnt = 1
-
 while True:
-
 time.sleep(1)
-
-socket.send_string(‘server cnt {}’.format(cnt))
-
-print(‘send {}’.format(cnt))
-
+socket.send_string('server cnt {}'.format(cnt))
+print('send {}'.format(cnt))
 cnt += 1
-
-if __name__ == ‘__main__’:
-
+if __name__ == '__main__':
 run()
-
 send 1
-
 send 2
-
 send 3
-
 send 4
-
 send 5
+```
 
 这里要注意的一点是，如果你想要运行代码，请先运行两个订阅者，然后再打开发布者。
 
@@ -261,5 +209,3 @@ Kafka 的代码实现，和 ZMQ 大同小异，这里我就不专门讲解了。
 欢迎留言写下你的思考和疑惑，也欢迎你把这篇文章分享给更多的人一起学习。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
