@@ -136,9 +136,10 @@ COPY –from=builder /app/issue2mdweb .
 
 - 将编译好的二进制文件复制到当前工作目录
 
-COPY –from=builder /app/web/templates /root/web/templates
-
-COPY –from=builder /app/web/static /root/web/static
+```python
+COPY --from=builder /app/web/templates /root/web/templates
+COPY --from=builder /app/web/static /root/web/static
+```
 
 - 分别复制Web模板文件和静态资源文件
 
@@ -178,10 +179,10 @@ ENTRYPOINT [“./issue2mdweb”]
 
 utils/math.go
 
+```go
 package utils
-
 func Add(a, b int) int {
-
+```
 ```text
 return a + b
 }
