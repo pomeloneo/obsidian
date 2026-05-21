@@ -93,5 +93,3 @@ v.A(param1, param2, param3) \
 那么，对于学习 Python 或者是其他编程语言，你有什么困扰或是心得吗？欢迎在留言区与我交流！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
