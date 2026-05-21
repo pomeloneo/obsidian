@@ -1,5 +1,5 @@
 > [!important]
-> 
+>
 > 原文链接：[极客时间](https://time.geekbang.org/column/article/868684)
 
 ---
@@ -29,7 +29,7 @@
 FLUX API 后台
 
 > [!important]
-> 
+>
 > 图像创建成功需要消耗一定的 **Credits**，使用不同版本模型的价格不同，具体价格可以在 API 文档中查看。
 
 ### 创建项目
@@ -269,7 +269,7 @@ do {
 首先在 [klingai.kuaishou.com](http://klingai.kuaishou.com) 注册可灵 AI，登录后点击左下角"开发者平台"进入控制台。点击左侧菜单"密钥管理"创建密钥。
 
 > [!important]
-> 
+>
 > 可灵 AI 的密钥由一对字符串构成：**AccessKey ID** 和 **AccessKey Secret**。它采用 **JSON Web Token** 加密方式，通过这对密钥生成 Token，再利用 Token 进行鉴权，安全性更高。
 
 ### 搭建鉴权服务
@@ -498,11 +498,11 @@ const token = await (await fetch('/api/jwt-auth')).text();
 ## 要点总结
 
 > [!important]
-> 
+>
 > - 学习了 **FLUX** 和**可灵 AI** 两个图像生成模型的 API 调用方法
-> 
+>
 > - **鉴权差异**：FLUX 采用简单的 API Key 鉴权；可灵 AI 采用 JWT（JSON Web Token）鉴权，安全性更高
-> 
+>
 > - **共同设计**：两者都采用了**读写操作分离的异步设计**，通过接口查询状态，可以更灵活地实现前端交互
 
 ---
