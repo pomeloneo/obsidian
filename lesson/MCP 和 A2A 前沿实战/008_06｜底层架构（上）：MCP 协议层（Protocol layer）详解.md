@@ -70,11 +70,11 @@ async def send_notification(
 
 self,
 
+```text
 notification: NotificationT
-
 ) -> None:
-
-“““发送无需响应的单向通知。”“”
+"""发送无需响应的单向通知。"""
+```
 
 # 通知发送逻辑
 
@@ -82,11 +82,11 @@ async def _received_request(
 
 self,
 
+```text
 responder: RequestResponder[ReceiveRequestT, ResultT]
-
 ) -> None:
-
-“““处理对方发来的请求。”“”
+"""处理对方发来的请求。"""
+```
 
 # 收到请求后的业务处理
 
@@ -94,11 +94,11 @@ async def _received_notification(
 
 self,
 
+```text
 notification: ReceiveNotificationT
-
 ) -> None:
-
-“““处理对方发来的通知。”“”
+"""处理对方发来的通知。"""
+```
 
 # 收到通知后的业务处理
 
@@ -132,9 +132,10 @@ _read_stream / _write_stream：AnyIO 内存流，用于异步收发 SessionMessa
 
 _request_id：内部自增计数器，用来给每个发出的请求分配唯一 ID。
 
+```text
 _response_streams: dict[RequestId, MemoryObjectSendStream]：每发一个请求就开一个「答案流」，收到对应 ID 的响应或错误时就往流里写，send_request 在此流上等待结果。
-
 _in_flight: dict[RequestId, RequestResponder]：跟踪当前正在处理但尚未完成的对端请求，方便在收到取消通知时进行清理或超时管理。
+```
 
 _exit_stack：AnyIO 的异步上下文管理栈，用来统一关闭流和任务。
 
