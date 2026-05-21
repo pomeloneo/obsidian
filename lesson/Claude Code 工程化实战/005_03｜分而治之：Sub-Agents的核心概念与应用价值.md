@@ -107,11 +107,11 @@ PS：OpenClaw 链接：https://github.com/openclaw/openclaw
 
 子代理可以有精确的工具权限控制。
 
+```text
 tools: Read, Grep, Glob
-
 tools: Read, Write, Edit, Bash
-
 tools: Read, WebFetch, WebSearch
+```
 
 为什么这很重要？
 
@@ -263,13 +263,12 @@ Test-runner（验证）
 
 子代理使用  Markdown + YAML frontmatter  格式：
 
+```text
 name: code-reviewer
-
 description: Review code for security issues and best practices. Use after code changes.
-
 tools: Read, Grep, Glob
-
 model: sonnet
+```
 
 你是一个代码审查专家。
 
@@ -305,9 +304,10 @@ description 的设计艺术
 
 description  字段决定了 Claude 何时自动调用你的子代理——这是配置中最重要的设计决策。
 
+```text
 description: A code reviewer
-
 description: Review code changes for quality, security vulnerabilities, and best practices. Use proactively after code is modified or when user asks for code review.
+```
 
 优点：说明了做什么（审查代码质量、安全、规范）和什么时候用（代码修改后，或用户请求时）。“Proactively” 这个关键词会鼓励 Claude 在合适的时机主动委派任务。
 
@@ -354,11 +354,11 @@ permissionMode  控制子代理在执行过程中遇到需要权限的操作时
 
 举个例子，如果你希望子代理能跑  git diff  但绝不能修改文件，可以这样配置：
 
+```text
 name: code-reviewer
-
 tools: Read, Grep, Glob, Bash
-
 permissionMode: plan # 强制只读模式，即使有 Bash 也无法写入
+```
 
 这比单纯依赖 prompt 约束更可靠——permissionMode: plan  是系统级的只读保障。
 
@@ -366,13 +366,12 @@ skills：为子代理预加载知识
 
 skills  字段允许你在子代理启动时，把指定 Skill 的完整内容注入到子代理的上下文中。这意味着子代理不需要在执行过程中发现和加载 Skill——知识已经在它的脑子里了。
 
+```text
 name: impact-analyzer
-
 description: Analyze impact scope of code changes on the full call chain.
-
 tools: Read, Grep, Glob, Bash
-
 skills:
+```
 
 - chain-knowledge # 链路拓扑和 SLA 约束
 
@@ -384,23 +383,17 @@ hooks：子代理专属的生命周期 Hook
 
 子代理可以在自己的 frontmatter 中定义 Hook——这些 Hook 只在该子代理运行期间生效，子代理结束后自动清理。
 
+```text
 name: db-reader
-
 description: Execute read-only database queries.
-
 tools: Bash
-
 hooks:
-
 PreToolUse:
-
-- matcher: “Bash”
-
+- matcher: "Bash"
 hooks:
-
 - type: command
-
-command: “./scripts/validate-readonly-query.sh”
+command: "./scripts/validate-readonly-query.sh"
+```
 
 上面的例子中，db-reader  虽然拥有 Bash 工具，但每次执行 Bash 命令前都会被 Hook 拦截验证——只有 SELECT 查询能通过，INSERT/UPDATE/DELETE 等写操作会被阻止。这比不给 Bash 工具更灵活（允许读操作），又比无约束的 Bash 更安全。
 
