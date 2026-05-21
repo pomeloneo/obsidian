@@ -32,171 +32,99 @@
 
 然后安装依赖 @huggingface/transformers。
 
+```bash
 pnpm i @huggingface/transformers onnxruntime-web
+```
 
 安装完成后，我们安装并配置一下 unoCSS 和图标库组件，用来实现 UI 界面。
 
+```bash
 pnpm -D unocss @unocss/reset @iconify-json/lucide
+```
 
 之后创建 uno.config.ts。
 
-import { defineConfig, presetUno, presetAttributify, presetIcons } from ‘unocss’
-
+```jsx
+import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
 export default defineConfig({
-
 presets: [
-
 presetUno(),
-
 presetAttributify(),
-
 presetIcons({
-
 collections: {
-
-heroicons: () => import(‘@iconify-json/heroicons/icons.json’).then(i => i.default),
-
-lucide: () => import(‘@iconify-json/lucide/icons.json’).then(i => i.default)
-
+heroicons: () => import('@iconify-json/heroicons/icons.json').then(i => i.default),
+lucide: () => import('@iconify-json/lucide/icons.json').then(i => i.default)
 }
-
 })
-
 ],
-
 theme: {
-
 colors: {
-
 primary: {
-
-50: ‘\#eff6ff’,
-
-100: ‘\#dbeafe’,
-
-200: ‘\#bfdbfe’,
-
-300: ‘\#93c5fd’,
-
-400: ‘\#60a5fa’,
-
-500: ‘\#3b82f6’,
-
-600: ‘\#2563eb’,
-
-700: ‘\#1d4ed8’,
-
-800: ‘\#1e40af’,
-
-900: ‘\#1e3a8a’
-
+50: '\#eff6ff',
+100: '\#dbeafe',
+200: '\#bfdbfe',
+300: '\#93c5fd',
+400: '\#60a5fa',
+500: '\#3b82f6',
+600: '\#2563eb',
+700: '\#1d4ed8',
+800: '\#1e40af',
+900: '\#1e3a8a'
 },
-
 positive: {
-
-50: ‘\#fef2f2’,
-
-100: ‘\#fee2e2’,
-
-200: ‘\#fecaca’,
-
-300: ‘\#fca5a5’,
-
-400: ‘\#f87171’,
-
-500: ‘\#ef4444’,
-
-600: ‘\#dc2626’,
-
-700: ‘\#b91c1c’,
-
-800: ‘\#991b1b’,
-
-900: ‘\#7f1d1d’
-
+50: '\#fef2f2',
+100: '\#fee2e2',
+200: '\#fecaca',
+300: '\#fca5a5',
+400: '\#f87171',
+500: '\#ef4444',
+600: '\#dc2626',
+700: '\#b91c1c',
+800: '\#991b1b',
+900: '\#7f1d1d'
 },
-
 negative: {
-
-50: ‘\#f0fdf4’,
-
-100: ‘\#dcfce7’,
-
-200: ‘\#bbf7d0’,
-
-300: ‘\#86efac’,
-
-400: ‘\#4ade80’,
-
-500: ‘\#22c55e’,
-
-600: ‘\#16a34a’,
-
-700: ‘\#15803d’,
-
-800: ‘\#166534’,
-
-900: ‘\#14532d’
-
+50: '\#f0fdf4',
+100: '\#dcfce7',
+200: '\#bbf7d0',
+300: '\#86efac',
+400: '\#4ade80',
+500: '\#22c55e',
+600: '\#16a34a',
+700: '\#15803d',
+800: '\#166534',
+900: '\#14532d'
 },
-
 neutral: {
-
-50: ‘\#f9fafb’,
-
-100: ‘\#f3f4f6’,
-
-200: ‘\#e5e7eb’,
-
-300: ‘\#d1d5db’,
-
-400: ‘\#9ca3af’,
-
-500: ‘\#6b7280’,
-
-600: ‘\#4b5563’,
-
-700: ‘\#374151’,
-
-800: ‘\#1f2937’,
-
-900: ‘\#111827’
-
+50: '\#f9fafb',
+100: '\#f3f4f6',
+200: '\#e5e7eb',
+300: '\#d1d5db',
+400: '\#9ca3af',
+500: '\#6b7280',
+600: '\#4b5563',
+700: '\#374151',
+800: '\#1f2937',
+900: '\#111827'
 }
-
 }
-
 },
-
 shortcuts: {
-
-‘btn-primary’: ‘px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-md transition-colors duration-200 font-medium’,
-
-‘btn-secondary’: ‘px-4 py-2 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-900 dark:text-neutral-100 rounded-md transition-colors duration-200 font-medium’,
-
-‘card’: ‘bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700’,
-
-‘input-field’: ‘w-full px-4 py-2 border border-neutral-300 dark:border-neutral-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 placeholder-neutral-500 dark:placeholder-neutral-400’,
-
-‘text-sentiment-positive’: ‘text-positive-500 bg-positive-50 dark:bg-positive-900/20’,
-
-‘text-sentiment-negative’: ‘text-negative-500 bg-negative-50 dark:bg-negative-900/20’,
-
-‘text-sentiment-neutral’: ‘text-neutral-500 bg-neutral-50 dark:bg-neutral-900/20’
-
+'btn-primary': 'px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-md transition-colors duration-200 font-medium',
+'btn-secondary': 'px-4 py-2 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-900 dark:text-neutral-100 rounded-md transition-colors duration-200 font-medium',
+'card': 'bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700',
+'input-field': 'w-full px-4 py-2 border border-neutral-300 dark:border-neutral-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 placeholder-neutral-500 dark:placeholder-neutral-400',
+'text-sentiment-positive': 'text-positive-500 bg-positive-50 dark:bg-positive-900/20',
+'text-sentiment-negative': 'text-negative-500 bg-negative-50 dark:bg-negative-900/20',
+'text-sentiment-neutral': 'text-neutral-500 bg-neutral-50 dark:bg-neutral-900/20'
 },
-
 safelist: [
-
-‘text-sentiment-positive’,
-
-‘text-sentiment-negative’,
-
-‘text-sentiment-neutral’
-
+'text-sentiment-positive',
+'text-sentiment-negative',
+'text-sentiment-neutral'
 ]
-
 })
+```
 
 上面这一步如果觉得太复杂，可以让 Trae 或者 Cursor 的 AI 来帮你生成。
 
@@ -208,7 +136,9 @@ safelist: [
 
 如果要使用非 ONNX 模型，需要把模型从 PyTorch 格式转换为 ONNX，要安装 optimum：
 
-pip install “optimum[exporters]” onnx onnxruntime accelerate
+```bash
+pip install "optimum[exporters]" onnx onnxruntime accelerate
+```
 
 然后在项目目录下运行 optimum-cli export 命令导出 ONNX 格式的模型：
 
@@ -232,101 +162,65 @@ optimum-cli export onnx \
 
 我们需要安装 server 的依赖：
 
+```bash
 pnpm i express
-
 pnpm i -D @types/express
+```
 
 注意，我们要把前面下载到 ./onnx_model 的文件调整一下，把 model.onnx 文件放在 ./onnx_model/onnx 目录下，现在目录结构如下：
 
 onnx_model
 
+```text
 ├── config.json
-
 ├── onnx
-
 │ └── model.onnx
-
 ├── special_tokens_map.json
-
 ├── tokenizer.json
-
 ├── tokenizer_config.json
-
 └── vocab.txt
+```
 
 然后我们创建 server.ts，内容如下：
 
-import express, { Request, Response } from ‘express’;
-
-import { pipeline, env } from ‘@huggingface/transformers’;
-
+```jsx
+import express, { Request, Response } from 'express';
+import { pipeline, env } from '@huggingface/transformers';
 const app = express();
-
 app.use(express.json());
-
 env.allowLocalModels = true;
-
 let sentimentPipeline: any;
-
 const initModel = async () => {
-
-console.log(‘🔄 正在加载模型…’);
-
+console.log('🔄 正在加载模型...');
 sentimentPipeline = await pipeline(
-
-‘sentiment-analysis’,
-
-‘./onnx_model’,
-
+'sentiment-analysis',
+'./onnx_model',
 {
-
-device: “gpu”,
-
-dtype: “fp32”,
-
+device: "gpu",
+dtype: "fp32",
 revision: undefined,
-
 local_files_only: true
-
 }
-
 );
-
-console.log(‘✅ 模型加载完成！’);
-
+console.log('✅ 模型加载完成！');
 };
-
-app.post(‘/api/sentiment’, async (req: Request, res: Response): Promise<any> => {
-
+app.post('/api/sentiment', async (req: Request, res: Response): Promise<any> => {
 try {
-
 const text = req.body.text;
-
-if (!text) return res.status(400).json({ error: ‘Missing text’ });
-
+if (!text) return res.status(400).json({ error: 'Missing text' });
 const result = await sentimentPipeline(text);
-
 res.json(result);
-
 } catch (err) {
-
 console.error(err);
-
-res.status(500).json({ error: ‘Inference failed’ });
-
+res.status(500).json({ error: 'Inference failed' });
 }
-
 });
-
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, async () => {
-
 console.log(`🚀 服务已启动：http://localhost:${PORT}`);
-
 await initModel();
-
 });
+```
 
 这样我们就能将模型运行于运行 Node.js 服务端了。
 
@@ -388,25 +282,18 @@ rewrite: path => path.replace(/^\/api/, ’’),
 
 @click=“toggleTheme”
 
-class=“p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors”
-
+```jsx
+class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
 >
-
-<IconLucideSun v-if=“isDark” class=“w-5 h-5 text-yellow-500” />
-
-<IconLucideMoon v-else class=“w-5 h-5 text-gray-600” />
-
+<IconLucideSun v-if="isDark" class="w-5 h-5 text-yellow-500" />
+<IconLucideMoon v-else class="w-5 h-5 text-gray-600" />
 </button>
-
 </div>
-
 </header>
-
-<main class=“max-w-4xl mx-auto px-4 py-8”>
-
-<div class=“text-center mb-8”>
-
-<p class=“text-lg text-gray-600 dark:text-gray-300 mb-4”>
+<main class="max-w-4xl mx-auto px-4 py-8">
+<div class="text-center mb-8">
+<p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+```
 
 基于 Transformers API 的实时中文文本情感分析
 
@@ -452,123 +339,67 @@ class=“p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hove
 
 <div
 
-class=“w-2 h-2 rounded-full”
-
-:class=“{
-
-‘bg-green-500’: modelStatus === ‘ready’,
-
-‘bg-yellow-500’: modelStatus === ‘loading’,
-
-‘bg-red-500’: modelStatus === ‘error’,
-
-‘bg-gray-400’: modelStatus === ‘idle’
-
-}”
-
+```jsx
+class="w-2 h-2 rounded-full"
+:class="{
+'bg-green-500': modelStatus === 'ready',
+'bg-yellow-500': modelStatus === 'loading',
+'bg-red-500': modelStatus === 'error',
+'bg-gray-400': modelStatus === 'idle'
+}"
 ></div>
-
-<span class=“text-sm text-gray-600 dark:text-gray-300”>
-
+<span class="text-sm text-gray-600 dark:text-gray-300">
 {{ modelStatusText }}
-
 </span>
-
 </div>
-
 </div>
-
 </div>
-
-<div class=“mb-6”>
-
-<label class=“block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2”>
-
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
 输入要分析的中文文本
-
 </label>
-
 <textarea
-
-v-model=“inputText”
-
-placeholder=“请输入中文文本进行情感分析…”
-
-class=“w-full h-32 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none”
-
-@keydown.ctrl.enter=“analyzeText”
-
+v-model="inputText"
+placeholder="请输入中文文本进行情感分析..."
+class="w-full h-32 p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+@keydown.ctrl.enter="analyzeText"
 ></textarea>
-
-<div class=“flex justify-between items-center mt-2”>
-
-<span class=“text-sm text-gray-500 dark:text-gray-400”>
-
+<div class="flex justify-between items-center mt-2">
+<span class="text-sm text-gray-500 dark:text-gray-400">
 {{ inputText.length }} 字符 | Ctrl+Enter 快速分析
-
 </span>
-
 <button
-
-v-if=“inputText”
-
-@click=“inputText = ’’”
-
-class=“text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200”
-
+v-if="inputText"
+@click="inputText = ''"
+class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
 >
-
 清空
-
 </button>
-
 </div>
-
 </div>
-
-<div class=“mb-6”>
-
+<div class="mb-6">
 <button
-
-@click=“analyzeText”
-
-:disabled=“!inputText.trim() || isAnalyzing”
-
-class=“w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2”
-
+@click="analyzeText"
+:disabled="!inputText.trim() || isAnalyzing"
+class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
 >
-
-<IconLucideLoader2 v-if=“isAnalyzing” class=“w-4 h-4 animate-spin” />
-
-<IconLucideBrain v-else class=“w-4 h-4” />
-
-{{ isAnalyzing ? ‘分析中…’ : ‘开始分析’ }}
-
+<IconLucideLoader2 v-if="isAnalyzing" class="w-4 h-4 animate-spin" />
+<IconLucideBrain v-else class="w-4 h-4" />
+{{ isAnalyzing ? '分析中...' : '开始分析' }}
 </button>
-
 </div>
-
-<div v-if=“result” class=“space-y-4”>
-
-<h3 class=“text-lg font-semibold text-gray-900 dark:text-white”>
-
+<div v-if="result" class="space-y-4">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">
 分析结果
-
 </h3>
-
-<div class=“p-4 rounded-lg border” :class=“resultBorderClass”>
-
-<div class=“flex items-center gap-3 mb-2”>
-
-<div class=“text-2xl”>
-
-{{ result.type === ‘positive’ ? ‘😊’ : result.type === ‘negative’ ? ‘😔’ : ‘😐’ }}
-
+<div class="p-4 rounded-lg border" :class="resultBorderClass">
+<div class="flex items-center gap-3 mb-2">
+<div class="text-2xl">
+{{ result.type === 'positive' ? '😊' : result.type === 'negative' ? '😔' : '😐' }}
 </div>
-
 <div>
-
-<div class=“font-semibold” :class=“resultTextClass”>
+<div class="font-semibold" :class="resultTextClass">
+```
 
 {{ result.type === ‘positive’ ? ‘正面情感’ : result.type === ‘negative’ ? ‘负面情感’ : ‘中性情感’ }}
 
@@ -598,812 +429,410 @@ class=“w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 tex
 
 <div class=“flex items-center gap-2 text-red-800 dark:text-red-200”>
 
-<IconLucideAlertCircle class=“w-5 h-5” />
-
-<span class=“font-medium”>分析失败</span>
-
+```jsx
+<IconLucideAlertCircle class="w-5 h-5" />
+<span class="font-medium">分析失败</span>
 </div>
-
-<p class=“text-sm text-red-600 dark:text-red-300 mt-1”>{{ error }}</p>
-
+<p class="text-sm text-red-600 dark:text-red-300 mt-1">{{ error }}</p>
 </div>
-
 </div>
-
-<div class=“mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6”>
-
-<h3 class=“text-lg font-semibold text-gray-900 dark:text-white mb-4”>
-
+<div class="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
 试试这些示例
-
 </h3>
-
-<div class=“grid grid-cols-1 md:grid-cols-2 gap-4”>
-
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <button
-
-v-for=“example in examples”
-
-:key=“example.text”
-
-@click=“inputText = example.text”
-
-class=“p-3 text-left border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors”
-
+v-for="example in examples"
+:key="example.text"
+@click="inputText = example.text"
+class="p-3 text-left border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
 >
-
-<div class=“text-sm font-medium text-gray-900 dark:text-white mb-1”>
-
+<div class="text-sm font-medium text-gray-900 dark:text-white mb-1">
 {{ example.label }}
-
 </div>
-
-<div class=“text-sm text-gray-600 dark:text-gray-400”>
-
+<div class="text-sm text-gray-600 dark:text-gray-400">
 {{ example.text }}
-
 </div>
-
 </button>
-
 </div>
-
 </div>
-
 </main>
-
 </div>
-
 </template>
-
-<script setup lang=“ts”>
-
-import { ref, computed, onMounted } from ‘vue’
-
-import IconLucideSun from ‘~icons/lucide/sun’
-
-import IconLucideMoon from ‘~icons/lucide/moon’
-
-import IconLucideBrain from ‘~icons/lucide/brain’
-
-import IconLucideLoader2 from ‘~icons/lucide/loader-2’
-
-import IconLucideAlertCircle from ‘~icons/lucide/alert-circle’
-
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import IconLucideSun from '~icons/lucide/sun'
+import IconLucideMoon from '~icons/lucide/moon'
+import IconLucideBrain from '~icons/lucide/brain'
+import IconLucideLoader2 from '~icons/lucide/loader-2'
+import IconLucideAlertCircle from '~icons/lucide/alert-circle'
 interface SentimentResult {
-
-type: ‘positive’ | ‘negative’ | ‘neutral’
-
+type: 'positive' | 'negative' | 'neutral'
 label: string
-
 confidence: number
-
 }
-
 const isDark = ref(false)
-
-const inputText = ref(’’)
-
+const inputText = ref('')
 const isAnalyzing = ref(false)
-
 const result = ref<SentimentResult | null>(null)
-
-const error = ref(’’)
-
-const modelStatus = ref<‘idle’ | ‘loading’ | ‘ready’ | ‘error’>(‘ready’)
-
+const error = ref('')
+const modelStatus = ref<'idle' | 'loading' | 'ready' | 'error'>('ready')
 const examples = [
-
-{ label: ‘正面示例’, text: ‘今天天气真好，心情特别愉快！’ },
-
-{ label: ‘负面示例’, text: ‘这个产品质量太差了，非常失望。’ },
-
-{ label: ‘中性示例’, text: ‘今天是星期三，明天是星期四。’ },
-
-{ label: ‘复杂情感’, text: ‘虽然价格有点贵，但是服务态度很好。’ }
-
+{ label: '正面示例', text: '今天天气真好，心情特别愉快！' },
+{ label: '负面示例', text: '这个产品质量太差了，非常失望。' },
+{ label: '中性示例', text: '今天是星期三，明天是星期四。' },
+{ label: '复杂情感', text: '虽然价格有点贵，但是服务态度很好。' }
 ]
-
 const modelStatusText = computed(() => {
-
 switch (modelStatus.value) {
-
-case ‘idle’: return ‘未连接’
-
-case ‘loading’: return ‘连接中…’
-
-case ‘ready’: return ‘服务就绪’
-
-case ‘error’: return ‘连接失败’
-
-default: return ‘未知状态’
-
+case 'idle': return '未连接'
+case 'loading': return '连接中...'
+case 'ready': return '服务就绪'
+case 'error': return '连接失败'
+default: return '未知状态'
 }
-
 })
-
 const resultBorderClass = computed(() => {
-
-if (!result.value) return ’’
-
+if (!result.value) return ''
 switch (result.value.type) {
-
-case ‘positive’: return ‘border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20’
-
-case ‘negative’: return ‘border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20’
-
-default: return ‘border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700’
-
+case 'positive': return 'border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20'
+case 'negative': return 'border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20'
+default: return 'border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700'
 }
-
 })
-
 const resultTextClass = computed(() => {
-
-if (!result.value) return ’’
-
+if (!result.value) return ''
 switch (result.value.type) {
-
-case ‘positive’: return ‘text-green-800 dark:text-green-200’
-
-case ‘negative’: return ‘text-red-800 dark:text-red-200’
-
-default: return ‘text-gray-800 dark:text-gray-200’
-
+case 'positive': return 'text-green-800 dark:text-green-200'
+case 'negative': return 'text-red-800 dark:text-red-200'
+default: return 'text-gray-800 dark:text-gray-200'
 }
-
 })
-
 const toggleTheme = () => {
-
 isDark.value = !isDark.value
-
-document.documentElement.classList.toggle(‘dark’, isDark.value)
-
-localStorage.setItem(‘theme’, isDark.value ? ‘dark’ : ‘light’)
-
+document.documentElement.classList.toggle('dark', isDark.value)
+localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
-
 const initTheme = () => {
-
-const savedTheme = localStorage.getItem(‘theme’)
-
-const prefersDark = window.matchMedia(‘(prefers-color-scheme: dark)’).matches
-
-isDark.value = savedTheme === ‘dark’ || (!savedTheme && prefersDark)
-
-document.documentElement.classList.toggle(‘dark’, isDark.value)
-
+const savedTheme = localStorage.getItem('theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+isDark.value = savedTheme === 'dark' || (!savedTheme && prefersDark)
+document.documentElement.classList.toggle('dark', isDark.value)
 }
-
 const checkServerStatus = async () => {
-
 try {
-
-modelStatus.value = ‘loading’
-
-error.value = ’’
-
-const response = await fetch(‘/api/sentiment’, {
-
-method: ‘POST’,
-
+modelStatus.value = 'loading'
+error.value = ''
+const response = await fetch('/api/sentiment', {
+method: 'POST',
 headers: {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 },
-
-body: JSON.stringify({ text: ‘测试’ })
-
+body: JSON.stringify({ text: '测试' })
 })
-
 if (response.ok) {
-
-modelStatus.value = ‘ready’
-
+modelStatus.value = 'ready'
 } else {
-
-throw new Error(‘服务器响应异常’)
-
+throw new Error('服务器响应异常')
 }
-
 } catch (err) {
-
-console.error(‘服务器连接失败:’, err)
-
-modelStatus.value = ‘error’
-
-error.value = ‘无法连接到分析服务，请确保服务器正在运行’
-
+console.error('服务器连接失败:', err)
+modelStatus.value = 'error'
+error.value = '无法连接到分析服务，请确保服务器正在运行'
 }
-
 }
-
-const mapLabelToSentiment = (label: string): ‘positive’ | ‘negative’ | ‘neutral’ => {
-
+const mapLabelToSentiment = (label: string): 'positive' | 'negative' | 'neutral' => {
 const lowerLabel = label.toLowerCase()
-
-if (label === ‘正面’ || lowerLabel.includes(‘positive’) || lowerLabel.includes(‘pos’) || lowerLabel === ‘label_1’) {
-
-return ‘positive’
-
-} else if (label === ‘负面’ || lowerLabel.includes(‘negative’) || lowerLabel.includes(‘neg’) || lowerLabel === ‘label_0’) {
-
-return ‘negative’
-
+if (label === '正面' || lowerLabel.includes('positive') || lowerLabel.includes('pos') || lowerLabel === 'label_1') {
+return 'positive'
+} else if (label === '负面' || lowerLabel.includes('negative') || lowerLabel.includes('neg') || lowerLabel === 'label_0') {
+return 'negative'
 }
-
-return ‘neutral’
-
+return 'neutral'
 }
-
 const analyzeText = async () => {
-
 if (!inputText.value.trim()) return
-
 try {
-
 isAnalyzing.value = true
-
-error.value = ’’
-
+error.value = ''
 result.value = null
-
-const response = await fetch(‘/api/sentiment’, {
-
-method: ‘POST’,
-
+const response = await fetch('/api/sentiment', {
+method: 'POST',
 headers: {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 },
-
 body: JSON.stringify({ text: inputText.value.trim() })
-
 })
-
 if (!response.ok) {
-
 throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-
 }
-
 const results = await response.json()
-
 const topResult = Array.isArray(results) ? results[0] : results
-
-console.log(‘API 响应:’, results)
-
-const label = topResult.label || ‘unknown’
-
+console.log('API 响应:', results)
+const label = topResult.label || 'unknown'
 const score = topResult.score || 0
-
 result.value = {
-
 type: mapLabelToSentiment(label),
-
 label: label,
-
 confidence: score
-
 }
-
 } catch (err) {
-
-console.error(‘分析失败:’, err)
-
-error.value = `分析失败: ${err instanceof Error ? err.message : ‘未知错误’}`
-
+console.error('分析失败:', err)
+error.value = `分析失败: ${err instanceof Error ? err.message : '未知错误'}`
 } finally {
-
 isAnalyzing.value = false
-
 }
-
 }
-
 onMounted(() => {
-
 initTheme()
-
 checkServerStatus()
-
 })
-
 </script>
-
 <style>
-
 - {
-
 margin: 0;
-
 padding: 0;
-
 box-sizing: border-box;
-
 }
-
 body {
-
-font-family: -apple-system, BlinkMacSystemFont, ‘Segoe UI’, Roboto, sans-serif;
-
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 line-height: 1.6;
-
 }
-
 ::-webkit-scrollbar {
-
 width: 6px;
-
 }
-
 ::-webkit-scrollbar-track {
-
 background: transparent;
-
 }
-
 ::-webkit-scrollbar-thumb {
-
 background: \#cbd5e1;
-
 border-radius: 3px;
-
 }
-
 .dark ::-webkit-scrollbar-thumb {
-
 background: #475569;
-
 }
-
 .animate-spin {
-
 animation: spin 1s linear infinite;
-
 }
-
 @keyframes spin {
-
 from {
-
 transform: rotate(0deg);
-
 }
-
 to {
-
 transform: rotate(360deg);
-
 }
-
 }
-
 .transition-colors {
-
 transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-
 }
-
 </style>
-
 虽然代码比较多，但 HTML 和 CSS 主要是 UI 界面相关的，这里就展开不细讲了。我们主要来看一下 JS 的部分：
-
-import { ref, computed, onMounted } from ‘vue’
-
-import IconLucideSun from ‘~icons/lucide/sun’
-
-import IconLucideMoon from ‘~icons/lucide/moon’
-
-import IconLucideBrain from ‘~icons/lucide/brain’
-
-import IconLucideLoader2 from ‘~icons/lucide/loader-2’
-
-import IconLucideAlertCircle from ‘~icons/lucide/alert-circle’
-
+import { ref, computed, onMounted } from 'vue'
+import IconLucideSun from '~icons/lucide/sun'
+import IconLucideMoon from '~icons/lucide/moon'
+import IconLucideBrain from '~icons/lucide/brain'
+import IconLucideLoader2 from '~icons/lucide/loader-2'
+import IconLucideAlertCircle from '~icons/lucide/alert-circle'
 interface SentimentResult {
-
-type: ‘positive’ | ‘negative’ | ‘neutral’
-
+type: 'positive' | 'negative' | 'neutral'
 label: string
-
 confidence: number
-
 }
-
 const isDark = ref(false)
-
-const inputText = ref(’’)
-
+const inputText = ref('')
 const isAnalyzing = ref(false)
-
 const result = ref<SentimentResult | null>(null)
-
-const error = ref(’’)
-
-const modelStatus = ref<‘idle’ | ‘loading’ | ‘ready’ | ‘error’>(‘ready’)
-
+const error = ref('')
+const modelStatus = ref<'idle' | 'loading' | 'ready' | 'error'>('ready')
 const examples = [
-
-{ label: ‘正面示例’, text: ‘今天天气真好，心情特别愉快！’ },
-
-{ label: ‘负面示例’, text: ‘这个产品质量太差了，非常失望。’ },
-
-{ label: ‘中性示例’, text: ‘今天是星期三，明天是星期四。’ },
-
-{ label: ‘复杂情感’, text: ‘虽然价格有点贵，但是服务态度很好。’ }
-
+{ label: '正面示例', text: '今天天气真好，心情特别愉快！' },
+{ label: '负面示例', text: '这个产品质量太差了，非常失望。' },
+{ label: '中性示例', text: '今天是星期三，明天是星期四。' },
+{ label: '复杂情感', text: '虽然价格有点贵，但是服务态度很好。' }
 ]
-
 const modelStatusText = computed(() => {
-
 switch (modelStatus.value) {
-
-case ‘idle’: return ‘未连接’
-
-case ‘loading’: return ‘连接中…’
-
-case ‘ready’: return ‘服务就绪’
-
-case ‘error’: return ‘连接失败’
-
-default: return ‘未知状态’
-
+case 'idle': return '未连接'
+case 'loading': return '连接中...'
+case 'ready': return '服务就绪'
+case 'error': return '连接失败'
+default: return '未知状态'
 }
-
 })
-
 const resultBorderClass = computed(() => {
-
-if (!result.value) return ’’
-
+if (!result.value) return ''
 switch (result.value.type) {
-
-case ‘positive’: return ‘border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20’
-
-case ‘negative’: return ‘border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20’
-
-default: return ‘border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700’
-
+case 'positive': return 'border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20'
+case 'negative': return 'border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20'
+default: return 'border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700'
 }
-
 })
-
 const resultTextClass = computed(() => {
-
-if (!result.value) return ’’
-
+if (!result.value) return ''
 switch (result.value.type) {
-
-case ‘positive’: return ‘text-green-800 dark:text-green-200’
-
-case ‘negative’: return ‘text-red-800 dark:text-red-200’
-
-default: return ‘text-gray-800 dark:text-gray-200’
-
+case 'positive': return 'text-green-800 dark:text-green-200'
+case 'negative': return 'text-red-800 dark:text-red-200'
+default: return 'text-gray-800 dark:text-gray-200'
 }
-
 })
-
 const toggleTheme = () => {
-
 isDark.value = !isDark.value
-
-document.documentElement.classList.toggle(‘dark’, isDark.value)
-
-localStorage.setItem(‘theme’, isDark.value ? ‘dark’ : ‘light’)
-
+document.documentElement.classList.toggle('dark', isDark.value)
+localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
-
 const initTheme = () => {
-
-const savedTheme = localStorage.getItem(‘theme’)
-
-const prefersDark = window.matchMedia(‘(prefers-color-scheme: dark)’).matches
-
-isDark.value = savedTheme === ‘dark’ || (!savedTheme && prefersDark)
-
-document.documentElement.classList.toggle(‘dark’, isDark.value)
-
+const savedTheme = localStorage.getItem('theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+isDark.value = savedTheme === 'dark' || (!savedTheme && prefersDark)
+document.documentElement.classList.toggle('dark', isDark.value)
 }
-
 const checkServerStatus = async () => {
-
 try {
-
-modelStatus.value = ‘loading’
-
-error.value = ’’
-
-const response = await fetch(‘/api/sentiment’, {
-
-method: ‘POST’,
-
+modelStatus.value = 'loading'
+error.value = ''
+const response = await fetch('/api/sentiment', {
+method: 'POST',
 headers: {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 },
-
-body: JSON.stringify({ text: ‘测试’ })
-
+body: JSON.stringify({ text: '测试' })
 })
-
 if (response.ok) {
-
-modelStatus.value = ‘ready’
-
+modelStatus.value = 'ready'
 } else {
-
-throw new Error(‘服务器响应异常’)
-
+throw new Error('服务器响应异常')
 }
-
 } catch (err) {
-
-console.error(‘服务器连接失败:’, err)
-
-modelStatus.value = ‘error’
-
-error.value = ‘无法连接到分析服务，请确保服务器正在运行’
-
+console.error('服务器连接失败:', err)
+modelStatus.value = 'error'
+error.value = '无法连接到分析服务，请确保服务器正在运行'
 }
-
 }
-
-const mapLabelToSentiment = (label: string): ‘positive’ | ‘negative’ | ‘neutral’ => {
-
+const mapLabelToSentiment = (label: string): 'positive' | 'negative' | 'neutral' => {
 const lowerLabel = label.toLowerCase()
-
-if (label === ‘正面’ || lowerLabel.includes(‘positive’) || lowerLabel.includes(‘pos’) || lowerLabel === ‘label_1’) {
-
-return ‘positive’
-
-} else if (label === ‘负面’ || lowerLabel.includes(‘negative’) || lowerLabel.includes(‘neg’) || lowerLabel === ‘label_0’) {
-
-return ‘negative’
-
+if (label === '正面' || lowerLabel.includes('positive') || lowerLabel.includes('pos') || lowerLabel === 'label_1') {
+return 'positive'
+} else if (label === '负面' || lowerLabel.includes('negative') || lowerLabel.includes('neg') || lowerLabel === 'label_0') {
+return 'negative'
 }
-
-return ‘neutral’
-
+return 'neutral'
 }
-
 const analyzeText = async () => {
-
 if (!inputText.value.trim()) return
-
 try {
-
 isAnalyzing.value = true
-
-error.value = ’’
-
+error.value = ''
 result.value = null
-
-const response = await fetch(‘/api/sentiment’, {
-
-method: ‘POST’,
-
+const response = await fetch('/api/sentiment', {
+method: 'POST',
 headers: {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 },
-
 body: JSON.stringify({ text: inputText.value.trim() })
-
 })
-
 if (!response.ok) {
-
 throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-
 }
-
 const results = await response.json()
-
 const topResult = Array.isArray(results) ? results[0] : results
-
-console.log(‘API 响应:’, results)
-
-const label = topResult.label || ‘unknown’
-
+console.log('API 响应:', results)
+const label = topResult.label || 'unknown'
 const score = topResult.score || 0
-
 result.value = {
-
 type: mapLabelToSentiment(label),
-
 label: label,
-
 confidence: score
-
 }
-
 } catch (err) {
-
-console.error(‘分析失败:’, err)
-
-error.value = `分析失败: ${err instanceof Error ? err.message : ‘未知错误’}`
-
+console.error('分析失败:', err)
+error.value = `分析失败: ${err instanceof Error ? err.message : '未知错误'}`
 } finally {
-
 isAnalyzing.value = false
-
 }
-
 }
-
 onMounted(() => {
-
 initTheme()
-
 checkServerStatus()
-
 })
-
 在上面的代码里，最核心的部分其实就是通过调用 Node.js 的 API 来分析文本。
-
 const analyzeText = async () => {
-
 if (!inputText.value.trim()) return
-
 try {
-
 isAnalyzing.value = true
-
-error.value = ’’
-
+error.value = ''
 result.value = null
-
-const response = await fetch(‘/api/sentiment’, {
-
-method: ‘POST’,
-
+const response = await fetch('/api/sentiment', {
+method: 'POST',
 headers: {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 },
-
 body: JSON.stringify({ text: inputText.value.trim() })
-
 })
-
 if (!response.ok) {
-
 throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-
 }
-
 const results = await response.json()
-
 const topResult = Array.isArray(results) ? results[0] : results
-
-console.log(‘API 响应:’, results)
-
-const label = topResult.label || ‘unknown’
-
+console.log('API 响应:', results)
+const label = topResult.label || 'unknown'
 const score = topResult.score || 0
-
 result.value = {
-
 type: mapLabelToSentiment(label),
-
 label: label,
-
 confidence: score
-
 }
-
 } catch (err) {
-
-console.error(‘分析失败:’, err)
-
-error.value = `分析失败: ${err instanceof Error ? err.message : ‘未知错误’}`
-
+console.error('分析失败:', err)
+error.value = `分析失败: ${err instanceof Error ? err.message : '未知错误'}`
 } finally {
-
 isAnalyzing.value = false
-
 }
-
 }
-
 在这里，我们调用了 server.ts 的 /api/sentiment，而在 server.ts 中，我们通过 sentimentPipeline 来调用模型。
-
-app.post(‘/api/sentiment’, async (req: Request, res: Response): Promise<any> => {
-
+app.post('/api/sentiment', async (req: Request, res: Response): Promise<any> => {
 try {
-
 const text = req.body.text;
-
-if (!text) return res.status(400).json({ error: ‘Missing text’ });
-
+if (!text) return res.status(400).json({ error: 'Missing text' });
 const result = await sentimentPipeline(text);
-
 res.json(result);
-
 } catch (err) {
-
 console.error(err);
-
-res.status(500).json({ error: ‘Inference failed’ });
-
+res.status(500).json({ error: 'Inference failed' });
 }
-
 });
-
 而模型在启动 server 的时候就完成了初始化：
-
 let sentimentPipeline: any;
-
 const initModel = async () => {
-
-console.log(‘🔄 正在加载模型…’);
-
+console.log('🔄 正在加载模型...');
 sentimentPipeline = await pipeline(
-
-‘sentiment-analysis’,
-
-‘./onnx_model’,
-
+'sentiment-analysis',
+'./onnx_model',
 {
-
-device: “gpu”,
-
-dtype: “fp32”,
-
+device: "gpu",
+dtype: "fp32",
 revision: undefined,
-
 local_files_only: true
-
 }
-
 );
-
-console.log(‘✅ 模型加载完成！’);
-
+console.log('✅ 模型加载完成！');
 };
-
 这样呢，我们就完成了整个应用的主体，我们可以启动 server 和 vite，看一下具体的效果。
-
 运行结果如下：
-
 [![](https://static001.geekbang.org/resource/image/20/68/20a38cc8a116b0d4fd8a0ac08f42ff68.gif?wh=756x720)](https://static001.geekbang.org/resource/image/20/68/20a38cc8a116b0d4fd8a0ac08f42ff68.gif?wh=756x720)
-
 ## 要点总结
-
 在这一节课，我们简单介绍了比较底层的 Transformers，它是生成式 AI 的基本架构。通过 transformers.js，我们可以用 JavaScript 来操作大模型基座，从而完成我们的应用。
-
 标准的做法是，在开源社区寻找适合的模型，将它转换为 transformers.js 可以支持的 ONNX 格式，然后通过 Node Server 或者浏览器端加载调用（这里应优先考虑 NodeJS)。这样我们的业务就可以调用这些底层大模型基座来完成工作了。
-
 Transforms.js 是前端在 AI 时代发展的前沿方向之一，它的核心使命是把 Hugging Face transformers 的能力搬到前端，让我们在浏览器或 Node.js 里直接加载模型、做推理，而不再需要 Python 和后端服务器。
-
 这意味着：
-
 用户输入完全在本地处理不上传到云端，从而更加安全和保护隐私。
-
 不需要给模型推理额外搭服务器，从而降低部署成本。
-
 模型通信不依赖网络，甚至可以做离线 AI，离线网页就能用 AI 模型。
-
 当然 Transforms.js 想要真正达到商用，还有很多困难需要克服，比如 runtime 的稳定性和兼容性、支持更多模型格式，解决在浏览器端模型大小太大、下载慢的问题等等。
-
 但不管怎么样，我们可以期待一下，在火速发展的 AI 时代，总是拥抱变化的前端必然不会缺席，相信未来 Transforms.js 会更加成熟，成为前端在后 AI 时代不可缺少的关键应用技术。
-
 让我们拭目以待吧。
-
 ## 课后练习
-
 这节课里，我们实现了在 Node 下运行 Transformers.js，有些模型其实是可以直接运行在前端页面上的，甚至都不需要 Node.js Server。你可以试一下，找一两个能运行在 Web 端的模型，实现一些具体功能，然后将思考和收获分享到评论区。
-
 本节课的具体代码详见 GitHub 代码仓库。
-
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
 unpreview
+```
