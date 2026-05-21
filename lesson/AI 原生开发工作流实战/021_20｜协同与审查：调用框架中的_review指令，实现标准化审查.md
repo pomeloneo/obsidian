@@ -48,13 +48,12 @@
 
 - –
 
-description: 审查指定的Go代码文件或目录，并根据项目“宪法”和静态检查工具给出反馈。
-
+```text
+description: 审查指定的Go代码文件或目录，并根据项目"宪法"和静态检查工具给出反馈。
 argument-hint: [path_to_review]
-
 model: opus
-
 allowed-tools: Read, Grep, Glob, Bash(go vet:*)
+```
 
 - –
 
@@ -291,9 +290,10 @@ URL”)
 
 ./.claude/commands/commit.md
 
+```text
 description: 分析git diff，生成符合Conventional Commits规范的提交信息并提交。
-
 allowed-tools: Bash(git diff:*), Bash(git commit:*)
+```
 
 1. 执行 `git diff
 
