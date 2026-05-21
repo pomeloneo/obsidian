@@ -333,10 +333,8 @@ content = "无法处理请求"
 ```
 
 # 确定任务状态
-
-is_complete = “error” not in result[“exchange_data”]
-
 ```python
+is_complete = "error" not in result["exchange_data"]
 return {
 'is_task_complete': is_complete,
 'require_user_input': not is_complete,
@@ -492,10 +490,8 @@ response_format=ResponseFormat,
 在结构化响应格式方面，使用 ResponseFormat 确保 Agent 输出的一致性。
 
 工具注册机制方面，也是通过 tools 参数注册外部工具，工具调用是 LangGraph Agent 的核心能力，通过装饰器模式实现：
-
-@tool
-
 ```python
+@tool
 def get_exchange_rate(
 currency_from: str = 'USD',
 currency_to: str = 'EUR',
@@ -535,10 +531,8 @@ params={'from': currency_from, 'to': currency_to},
 ```
 
 响应会转换成 JSON 格式，进行后续数据处理。数据处理策略包括检查响应结构完整性以及统一错误返回格式。
-
-data = response.json()
-
 ```text
+data = response.json()
 if 'rates' not in data:
 return {'error': 'API响应格式无效。'}
 return data
@@ -547,10 +541,8 @@ return data
 ### 流式响应处理（Stream + 状态识别）
 
 LangGraph Agent 实现了真正的流式响应，LangGraph 的 .stream() 方法支持输出过程的每一步。我们利用它实现 A2A 所需的流式交互，这是 A2A 协议的重要特性。
-
-async def stream(self, query, sessionId) -> AsyncIterable[dict[str, Any]]:
-
 ```text
+async def stream(self, query, sessionId) -> AsyncIterable[dict[str, Any]]:
 inputs = {'messages': [('user', query)]}
 config = {'configurable': {'thread_id': sessionId}}
 ```
@@ -670,10 +662,8 @@ self.notification_sender_auth = notification_sender_auth
 ### 由调度器来执行 Agent，实现异步任务调度
 
 任务调度方面，每条数据通过 SSE 或 WebSocket 推送给客户端，根据处理结果动态更新任务状态，实现状态转换、消息生成、工件存储、通知推送多步一体；通过事件实时通知任务状态变化，同时进度可视，适配异步系统架构，自动管理任务生命周期。
-
-async def _run_streaming_agent(self, request: SendTaskStreamingRequest):
-
 ```python
+async def _run_streaming_agent(self, request: SendTaskStreamingRequest):
 task_send_params: TaskSendParams = request.params
 query = self._get_user_query(task_send_params)
 ```
@@ -779,12 +769,9 @@ methods=['GET'],
 在 demo/ui 的实现中，客户端通过以下方式与 Agent 交互，发送消息。
 
 # 客户端服务层
-
-async def SendMessage(message: Message) -> str | None:
-
-client = ConversationClient(server_url)
-
 ```python
+async def SendMessage(message: Message) -> str | None:
+client = ConversationClient(server_url)
 try:
 response = await client.send_message(SendMessageRequest(params=message))
 return response.result
