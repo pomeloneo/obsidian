@@ -379,10 +379,8 @@ return emitter;
 上面的代码封装了一个 LLM 类，它调用 MCPClient。
 
 首先，我们需要对 LLM 处理 tool call 的形式与 MCPClient 返回格式做一个桥接（或者说适配）。
-
-private async listTools() {
-
 ```jsx
+private async listTools() {
 return (await (await this.mcpClient).listTools()).tools.map((tool: any) => (
 {
 type: "function",
