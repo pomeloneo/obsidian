@@ -112,32 +112,21 @@ yield read, write
 
 async def stdio_client(server_params, errlog=sys.stderr):
 
+```python
 process = await anyio.open_process(
-
 [server_params.command, *server_params.args],
-
 env=server_params.env or {},
-
 stderr=errlog
-
 )
-
 read_w, read = anyio.create_memory_object_stream(0)
-
 write, write_r = anyio.create_memory_object_stream(0)
-
 async def stdout_reader():
-
 async with read_w:
-
-buffer = “”
-
+buffer = ""
 async for chunk in TextReceiveStream(process.stdout, encoding=server_params.encoding):
-
-lines = (buffer + chunk).split(“\n”)
-
+lines = (buffer + chunk).split("\n")
 buffer = lines.pop()
-
+```
 ```python
 for line in lines:
 try:
