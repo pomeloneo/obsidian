@@ -504,43 +504,35 @@ project_rules 里面记录了创建项目的重要信息。
 
 📁 src/ # 核心源码
 
+```text
 ├── index.ts # 模块入口
-
 ├── vocabulary/ # 词汇表相关
-
 │ ├── dict.ts # CEFR词汇字典（已存在）
-
 │ └── index.ts # 词汇表管理器
-
 ├── analyzer/ # 分析器模块
-
 │ ├── index.ts # 分析器实现
-
 │ └── types.ts # 分析器类型定义
-
 ├── types/ # 全局类型定义
-
 │ └── index.ts # 类型声明
-
 ├── utils/ # 工具函数
-
 │ └── index.ts # 格式化和可视化工具
-
 └── examples/ # 使用示例
-
 └── basic-usage.ts # 基本使用示例
+```
 
 📁 tests/ # 单元测试
 
+```text
 ├── analyzer.test.ts # 分析器测试
-
 └── utils.test.ts # 工具函数测试
+```
 
 📁 .trae/ # 项目配置和记忆
 
+```text
 ├── project_rules.md # 项目规则
-
 └── memory_bank/ # 项目记忆库
+```
 
 ## 已实现的功能框架
 
@@ -599,5 +591,3 @@ project_rules 里面记录了创建项目的重要信息。
 2. 参考 Node Modules Builder 实现一个类似的 Vue3 App Builder 或者 React App Builder，通过它创建项目，看看效果，将你的体验分享到评论区吧。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
