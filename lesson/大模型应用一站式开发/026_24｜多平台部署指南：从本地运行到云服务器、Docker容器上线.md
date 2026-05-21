@@ -46,33 +46,26 @@
 
 项目已内置支持使用 config.env 文件管理配置：
 
+```bash
 cp config.env.example config.env
-
 nano config.env
+```
 
 关键配置项：
 
+```dotenv
 LLM_API_KEY=your_qwen_api_key_here
-
 LLM_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
-
 DEFAULT_MODEL=qwen-plus
-
 MYSQL_HOST=localhost
-
 MYSQL_PORT=3306
-
 MYSQL_USER=emotional_chat
-
 MYSQL_PASSWORD=your_secure_password
-
 CHROMA_PERSIST_DIRECTORY=./chroma_db
-
 HOST=0.0.0.0
-
 PORT=8000
-
 DEBUG=false
+```
 
 安全提示：
 
@@ -86,9 +79,10 @@ DEBUG=false
 
 项目已提供精确的依赖列表。
 
+```bash
 cat requirements.txt
-
-pip install –no-cache-dir -r requirements.txt
+pip install --no-cache-dir -r requirements.txt
+```
 
 依赖特点：
 
@@ -102,11 +96,15 @@ pip install –no-cache-dir -r requirements.txt
 
 项目已提供统一的启动脚本：
 
+```bash
 python3 run_backend.py
+```
 
 生产环境使用 Gunicorn：
 
+```bash
 pip install gunicorn
+```
 
 gunicorn -w 4 -k uvicorn.workers.UvicornWorker backend.app:app \
 
@@ -124,19 +122,20 @@ gunicorn -w 4 -k uvicorn.workers.UvicornWorker backend.app:app \
 
 在生产环境部署前，必须先初始化数据库。
 
+```bash
 make db-init
-
 make db-upgrade
-
 alembic upgrade head
+```
 
 ## 1.5 RAG 知识库初始化
 
 之后需要初始化专业心理健康知识库。
 
+```bash
 make rag-init
-
 python init_rag_knowledge.py
+```
 
 # 二、方式一：Docker 容器化部署（现代化云原生的标准范式）
 
@@ -168,9 +167,10 @@ python init_rag_knowledge.py
 
 步骤 1：准备环境变量
 
+```bash
 cp config.env.example config.env
-
 nano config.env
+```
 
 步骤 2：启动所有服务
 
@@ -184,19 +184,20 @@ docker-compose logs -f backend
 
 docker-compose exec backend bash
 
+```bash
 make db-upgrade
-
 make rag-init
+```
 
 exit
 
 步骤 4：验证部署
 
+```bash
 curl http://localhost:8000/health
-
 curl http://localhost:8000/system/info
-
 curl -X POST http://localhost:8000/chat \
+```
 
 - H “Content-Type: application/json” \
 
@@ -282,13 +283,12 @@ docker-compose exec -T mysql mysql -u root -p emotional_chat < backup.sql
 
 docker-compose build backend
 
+```bash
 docker tag emotional_chat_backend your-username/xinyu-chatbot:v3.0.0
-
 docker push your-username/xinyu-chatbot:v3.0.0
-
 docker pull your-username/xinyu-chatbot:v3.0.0
-
 docker run -d -p 8000 your-username/xinyu-chatbot:v3.0.0
+```
 
 此后可在任意服务器拉取镜像运行，极大简化部署流程。
 
@@ -326,111 +326,115 @@ docker run -d -p 8000 your-username/xinyu-chatbot:v3.0.0
 
 ssh root@your-server-ip
 
+```bash
 sudo apt update && sudo apt upgrade -y
-
 sudo apt install python3-pip python3-venv nginx git -y
-
 mkdir /var/www/xinyu && cd /var/www/xinyu
+```
 
 ## 3.2 安装基础环境
 
 之后我们安装一下基础环境。
 
+```bash
 sudo apt update && sudo apt upgrade -y
-
 sudo apt install python3.9 python3-pip python3-venv -y
-
 sudo apt install git -y
-
 sudo apt install mysql-server mysql-client -y
-
 sudo apt install nginx -y
-
 sudo apt install docker.io docker-compose -y
+```
 
 ## 3.3 配置 MySQL 数据库
 
 然后我们来配置 MySQL 数据库。
 
+```bash
 sudo systemctl start mysql
-
 sudo systemctl enable mysql
-
 sudo mysql_secure_installation
-
 mysql -u root -p << EOF
+```
 
+```sql
 CREATE DATABASE emotional_chat CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-CREATE USER ‘emotional_chat’@‘localhost’ IDENTIFIED BY ‘your_secure_password’;
-
-GRANT ALL PRIVILEGES ON emotional_chat.* TO ‘emotional_chat’@‘localhost’;
-
+CREATE USER 'emotional_chat'@'localhost' IDENTIFIED BY 'your_secure_password';
+GRANT ALL PRIVILEGES ON emotional_chat.* TO 'emotional_chat'@'localhost';
 FLUSH PRIVILEGES;
-
 EOF
+```
 
 ## 3.4 上传代码并配置
 
 方法一：Git 克隆（推荐）
 
+```bash
 mkdir -p /var/www/xinyu
-
 cd /var/www/xinyu
-
 git clone https://github.com/yourname/emotional_chat.git .
-
 git pull origin main
+```
 
 方法二：本地打包上传
 
+```bash
 cd /home/workSpace/emotional_chat
+```
 
 tar -czf xinyu.tar.gz –exclude=‘.git’ –exclude=‘__pycache__’ –exclude=‘node_modules’ .
 
 scp xinyu.tar.gz root@your-server-ip:/var/www/
 
+```bash
 cd /var/www
+```
 
 tar -xzvf xinyu.tar.gz
 
+```bash
 mv emotional_chat xinyu
-
 cd xinyu
+```
 
 ## 3.5 配置虚拟环境
 
+```bash
 cd /var/www/xinyu
-
 python3 -m venv venv
+```
 
 source venv/bin/activate
 
+```bash
 pip install -r requirements.txt
-
 cp config.env.example config.env
-
 nano config.env
+```
 
 ## 3.6 初始化数据库和知识库
 
 source venv/bin/activate
 
+```bash
 make db-upgrade
-
 make rag-init
+```
 
 ## 3.7 配置 Gunicorn 和 Systemd
 
 创建 Gunicorn 启动脚本：
 
+```bash
 nano /var/www/xinyu/start.sh
+```
 
 内容：
 
-#!/bin/bash
+# !/bin/bash
 
+```bash
 cd /var/www/xinyu
+```
 
 source venv/bin/activate
 
@@ -450,7 +454,9 @@ exec gunicorn -w 4 -k uvicorn.workers.UvicornWorker backend.app:app \
 
 创建 Systemd 服务：
 
+```bash
 sudo nano /etc/systemd/system/xinyu.service
+```
 
 内容：
 
@@ -490,23 +496,22 @@ WantedBy=multi-user.target
 
 chmod +x /var/www/xinyu/start.sh
 
+```bash
 mkdir -p /var/www/xinyu/log
-
 sudo systemctl daemon-reload
-
 sudo systemctl enable xinyu
-
 sudo systemctl start xinyu
-
 sudo systemctl status xinyu
-
 sudo journalctl -u xinyu -f
+```
 
 ## 3.8 配置 Nginx 反向代理
 
 创建 Nginx 配置文件：
 
+```bash
 sudo nano /etc/nginx/sites-available/xinyu
+```
 
 内容如下：
 
@@ -570,11 +575,11 @@ proxy_pass http://127.0.0.1:8000/docs;
 
 启用站点：
 
+```bash
 sudo ln -s /etc/nginx/sites-available/xinyu /etc/nginx/sites-enabled/
-
 sudo nginx -t
-
 sudo systemctl reload nginx
+```
 
 访问 http://your-domain.com/docs 即可看到 API 文档。
 
@@ -586,23 +591,26 @@ sudo systemctl reload nginx
 
 安装 Certbot：
 
+```bash
 sudo apt update
-
 sudo apt install certbot python3-certbot-nginx -y
-
 sudo yum install certbot python3-certbot-nginx -y
+```
 
 申请证书：
 
-sudo certbot –nginx -d your-domain.com
-
-sudo certbot certonly –nginx -d your-domain.com
+```bash
+sudo certbot --nginx -d your-domain.com
+sudo certbot certonly --nginx -d your-domain.com
+```
 
 自动续期：
 
 Certbot 会自动配置 cron 任务，无需手动操作。可测试续期：
 
-sudo certbot renew –dry-run
+```bash
+sudo certbot renew --dry-run
+```
 
 ## 4.2 配置 HTTPS Nginx
 
@@ -614,63 +622,42 @@ listen 80;
 
 server_name your-domain.com;
 
+```text
 return 301 https://request_uri;
-
 }
-
 server {
-
 listen 443 ssl http2;
-
 server_name your-domain.com;
-
 ssl_certificate /etc/letsencrypt/live/your-domain.com/fullchain.pem;
-
 ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
-
 ssl_protocols TLSv1.2 TLSv1.3;
-
 ssl_ciphers HIGH:!aNULL:!MD5;
-
 ssl_prefer_server_ciphers on;
-
 ssl_session_cache shared:SSL:10m;
-
 ssl_session_timeout 10m;
-
-add_header Strict-Transport-Security “max-age=31536000; includeSubDomains” always;
-
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 location /api/ {
-
 proxy_pass http://127.0.0.1:8000/;
-
 proxy_set_header Host $host;
-
 proxy_set_header X-Real-IP $remote_addr;
-
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
 proxy_set_header X-Forwarded-Proto $scheme;
-
 }
-
 }
+```
 
 ## 4.3 防火墙配置
 
 配置 UFW 防火墙：
 
+```bash
 sudo apt install ufw -y
-
 sudo ufw allow 22/tcp
-
 sudo ufw allow 80/tcp
-
 sudo ufw allow 443/tcp
-
 sudo ufw enable
-
 sudo ufw status
+```
 
 ## 五、部署策略对比与选型建议
 
@@ -708,13 +695,12 @@ sudo ufw status
 
 排查：
 
+```bash
 curl http://localhost:8000/health
-
 sudo nginx -t
-
 sudo nginx -T | grep proxy_pass
-
 sudo ufw status
+```
 
 解决方案：
 
@@ -738,9 +724,10 @@ tail -f log/application.log
 
 解决方案：
 
+```bash
 make rag-init
-
 mkdir -p chroma_db
+```
 
 chmod 755 chroma_db
 
@@ -772,7 +759,9 @@ gunicorn -w 8 -k uvicorn.workers.UvicornWorker …
 
 添加健康检查：
 
+```bash
 curl http://localhost:8000/health
+```
 
 ### 问题 4：MySQL 连接失败
 
@@ -780,11 +769,11 @@ curl http://localhost:8000/health
 
 排查：
 
+```bash
 mysql -u emotional_chat -p -h localhost
-
 sudo systemctl status mysql
-
 sudo tail -f /var/log/mysql/error.log
+```
 
 解决方案：
 
@@ -804,9 +793,10 @@ SHOW GRANTS FOR ‘emotional_chat’@‘localhost’;
 
 docker-compose logs backend
 
+```bash
 docker images
-
 docker network ls
+```
 
 解决方案：
 
@@ -822,9 +812,10 @@ docker-compose up -d
 
 排查：
 
+```bash
 curl http://localhost:9090/api/v1/query?query=up
-
-mysql -u root -p -e “SHOW PROCESSLIST;”
+mysql -u root -p -e "SHOW PROCESSLIST;"
+```
 
 解决方案：
 
@@ -844,9 +835,10 @@ mysql -u root -p -e “SHOW PROCESSLIST;”
 
 Prometheus 指标：
 
+```bash
 curl http://localhost:9090/api/v1/label/__name__/values
-
-curl ‘http://localhost:9090/api/v1/query?query=up’
+curl 'http://localhost:9090/api/v1/query?query=up'
+```
 
 Grafana 仪表板：访问 http://localhost:3001 登录 Grafana（默认账号：admin/admin），查看预配置的仪表板。注意：如果 Grafana 使用默认 3000 端口，需要修改 docker-compose.yml 中的端口映射为 3000，以避免与前端服务端口冲突。
 
@@ -884,17 +876,21 @@ mysqldump -u emotional_chat -p emotional_chat | gzip > backup_$(date +%Y%m%d).sq
 
 恢复数据库：
 
+```bash
 mysql -u emotional_chat -p emotional_chat < backup_20250116.sql
+```
 
 数据库清理：
 
+```bash
 mysql -u emotional_chat -p << EOF
+```
 
+```sql
 DELETE FROM emotional_chat.system_logs WHERE created_at < DATE_SUB(NOW(), INTERVAL 90 DAY);
-
 EOF
-
-mysql -u emotional_chat -p -e “OPTIMIZE TABLE emotional_chat.chat_messages;”
+mysql -u emotional_chat -p -e "OPTIMIZE TABLE emotional_chat.chat_messages;"
+```
 
 ## 7.4 性能优化
 
@@ -902,9 +898,10 @@ mysql -u emotional_chat -p -e “OPTIMIZE TABLE emotional_chat.chat_messages;”
 
 SHOW VARIABLES LIKE ‘slow_query%’;
 
+```sql
 CREATE INDEX idx_session_created ON chat_messages(session_id, created_at);
-
 CREATE INDEX idx_user_emotion ON chat_messages(user_id, emotion);
+```
 
 缓存策略：
 
@@ -916,9 +913,10 @@ docker-compose exec redis redis-cli INFO stats
 
 定期更新依赖：
 
-pip list –outdated
-
-pip install –upgrade -r requirements.txt
+```bash
+pip list --outdated
+pip install --upgrade -r requirements.txt
+```
 
 docker-compose pull
 
@@ -926,29 +924,32 @@ docker-compose up -d
 
 安全扫描：
 
+```bash
 docker scan emotional_chat_backend
-
 cd frontend
-
 npm audit
-
 npm audit fix
+```
 
 ## 7.6 应急预案
 
 服务降级：
 
+```dotenv
 RAG_ENABLED=false
-
 AGENT_ENABLED=false
+```
 
+```bash
 sudo systemctl restart xinyu
+```
 
 回滚版本：
 
-git log –oneline
-
+```bash
+git log --oneline
 git checkout
+```
 
 docker-compose down
 
@@ -956,7 +957,9 @@ docker-compose up -d
 
 紧急重启：
 
+```bash
 sudo systemctl restart xinyu
+```
 
 docker-compose restart backend
 
@@ -1015,5 +1018,3 @@ Docker 容器化，迈向现代化工程：
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
