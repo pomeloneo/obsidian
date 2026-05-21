@@ -88,119 +88,65 @@ Coze 不仅提供了平台能力，它的插件还可以实现丰富的应用功
 
 插件 merge_mp4_wav
 
-import { Args } from ‘@/runtime’;
-
-import { Input, Output } from “@/typings/merge_mp4_wav/merge_mp4_wav”;
-
-import fs from ‘node:fs’;
-
-import path from ‘node:path’;
-
-import axios from ‘axios’;
-
-import ffmpeg from ‘fluent-ffmpeg’;
-
-import ffmpegPath from ‘ffmpeg-static’;
-
+```jsx
+import { Args } from '@/runtime';
+import { Input, Output } from "@/typings/merge_mp4_wav/merge_mp4_wav";
+import fs from 'node:fs';
+import path from 'node:path';
+import axios from 'axios';
+import ffmpeg from 'fluent-ffmpeg';
+import ffmpegPath from 'ffmpeg-static';
 ffmpeg.setFfmpegPath(ffmpegPath);
-
 async function downloadToFile(url, filePath) {
-
-const response = await axios({ url, method: ‘GET’, responseType: ‘stream’ });
-
+const response = await axios({ url, method: 'GET', responseType: 'stream' });
 const writer = fs.createWriteStream(filePath);
-
 response.data.pipe(writer);
-
 return new Promise((resolve: any, reject) => {
-
-writer.on(‘finish’, resolve);
-
-writer.on(‘error’, reject);
-
+writer.on('finish', resolve);
+writer.on('error', reject);
 });
-
 }
-
 async function mergeVideoAndAudioToBase64(videoUrl, wavUrl) {
-
-const tempDir = path.join(‘/tmp/temp_’ + Math.random().toString(36).slice(2, 12));
-
+const tempDir = path.join('/tmp/temp_' + Math.random().toString(36).slice(2, 12));
 fs.mkdirSync(tempDir);
-
-const videoPath = path.join(tempDir, ‘video.mp4’);
-
-const wavPath = path.join(tempDir, ‘audio.wav’);
-
-const mp3Path = path.join(tempDir, ‘audio.mp3’);
-
-const outputPath = path.join(tempDir, ‘output.mp4’);
-
+const videoPath = path.join(tempDir, 'video.mp4');
+const wavPath = path.join(tempDir, 'audio.wav');
+const mp3Path = path.join(tempDir, 'audio.mp3');
+const outputPath = path.join(tempDir, 'output.mp4');
 try {
-
 await downloadToFile(videoUrl, videoPath);
-
 await downloadToFile(wavUrl, wavPath);
-
 await new Promise((resolve, reject) => {
-
 ffmpeg(wavPath)
-
-.audioCodec(‘libmp3lame’)
-
-.format(‘mp3’)
-
+.audioCodec('libmp3lame')
+.format('mp3')
 .save(mp3Path)
-
-.on(‘end’, resolve)
-
-.on(‘error’, reject);
-
+.on('end', resolve)
+.on('error', reject);
 });
-
 await new Promise((resolve, reject) => {
-
 ffmpeg()
-
 .input(videoPath)
-
 .input(mp3Path)
-
-.outputOptions([‘-c:v copy’, ‘-c:a aac’, ‘-shortest’])
-
+.outputOptions(['-c:v copy', '-c:a aac', '-shortest'])
 .save(outputPath)
-
-.on(‘end’, resolve)
-
-.on(‘error’, reject);
-
+.on('end', resolve)
+.on('error', reject);
 });
-
 const buffer = fs.readFileSync(outputPath);
-
-return `data:video/mp4;base64,${buffer.toString(‘base64’)}`;
-
+return `data:video/mp4;base64,${buffer.toString('base64')}`;
 } finally {
-
 fs.rmSync(tempDir, { recursive: true, force: true });
-
 }
-
 }
-
 export async function handler({ input, logger }: Args): Promise<Output> {
-
 const {video_url: videoUrl, audio_url: audioUrl} = input;
-
 const res = await mergeVideoAndAudioToBase64(videoUrl, audioUrl);
-
 return {
-
 data: res,
-
 };
-
 };
+```
 
 在这个插件里，我们使用 ffmpeg 来处理音频和视频，将它们进行合成，插件需要依赖三个库。
 
@@ -250,115 +196,63 @@ url 上传到 Coze 后的文件 URL
 
 接着切换回代码编辑器，将代码修改成后面这样。
 
-import { Args } from ‘@/runtime’;
-
-import { Input, Output } from “@/typings/upload/upload”;
-
-import FormData from ‘form-data’;
-
-import axios from ‘axios’;
-
-import mime from ‘mime-types’;
-
+```jsx
+import { Args } from '@/runtime';
+import { Input, Output } from "@/typings/upload/upload";
+import FormData from 'form-data';
+import axios from 'axios';
+import mime from 'mime-types';
 async function uploadBase64AsFormData(pat_token: string, base64DataURI: string): Promise<any> {
-
 const match = base64DataURI.match(/^data:(.*?);base64,(.*)$/);
-
 if (!match) {
-
-throw new Error(‘Invalid base64 data URI’);
-
+throw new Error('Invalid base64 data URI');
 }
-
 const contentType: string = match[1];
-
 const base64Body: string = match[2];
-
-const buffer: Buffer = Buffer.from(base64Body, ‘base64’);
-
-const ext = `.${mime.extension(contentType) || ’’}`;
-
+const buffer: Buffer = Buffer.from(base64Body, 'base64');
+const ext = `.${mime.extension(contentType) || ''}`;
 const form = new FormData();
-
-form.append(‘file’, buffer, {
-
+form.append('file', buffer, {
 filename: `upload${ext}`,
-
 contentType
-
 });
-
-const response = await axios.post(‘https://api.coze.cn/v1/files/upload’, form, {
-
+const response = await axios.post('https://api.coze.cn/v1/files/upload', form, {
 headers: {
-
-‘Content-Type’: ‘multipart/form-data’,
-
-‘Authorization’: `Bearer ${pat_token}`
-
+'Content-Type': 'multipart/form-data',
+'Authorization': `Bearer ${pat_token}`
 },
-
 });
-
 return response.data;
-
 }
-
 export async function handler({ input, logger }: Args): Promise<Output> {
-
 const { PAT_TOKEN, data: base64Data, workflow_id } = input;
-
 const res = await uploadBase64AsFormData(
-
 PAT_TOKEN,
-
 base64Data,
-
 );
-
 const file_id = res.data.id;
-
 const headers = {
-
 Authorization: `Bearer ${PAT_TOKEN}`,
-
-‘Content-Type’: ‘application/json’,
-
+'Content-Type': 'application/json',
 };
-
 const body = {
-
 workflow_id,
-
 parameters: {
-
 file: JSON.stringify({ file_id })
-
 }
-
 };
-
-const workflowApi = ‘https://api.coze.cn/v1/workflow/run’;
-
+const workflowApi = 'https://api.coze.cn/v1/workflow/run';
 const ret = await fetch(workflowApi, {
-
-method: ‘POST’,
-
+method: 'POST',
 headers,
-
 body: JSON.stringify(body)
-
 })
-
 const { url } = JSON.parse((await ret.json()).data);
-
 return {
-
 url,
-
 };
-
 };
+```
 
 在上面的代码中，我们先从 base64 数据头部获取 contentType，然后根据 contentType 得出文件的类型指定扩展名，因为上传 formData 数据的时候要校验类型。
 
@@ -429,5 +323,3 @@ url,
 前面我们用的音视频合成插件，是将 mp4 和 wav 进行合成，之所以没有使用 mp3，只是因为我用 Vidu AI 生成的音效默认是 wav 格式。你可以扩展这个插件，让它也支持 mp3、ogg 等其他音频格式与 mp4 的合成，将你扩展后的插件分享到评论区吧。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
