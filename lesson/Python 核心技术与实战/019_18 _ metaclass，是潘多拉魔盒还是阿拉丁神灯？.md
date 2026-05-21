@@ -86,10 +86,8 @@ name: Cave lizard
 因为篇幅原因，我们这里只看 YAMLObject 的 load() 功能。简单来说，我们需要一个全局的注册器，让 YAML 知道，序列化文本中的 !Monster 需要载入成 Monster 这个 Python 类型。
 
 一个很自然的想法就是，那我们建立一个全局变量叫 registry，把所有需要逆序列化的 YAMLObject，都注册进去。比如下面这样：
-
-registry = {}
-
 ```python
+registry = {}
 def add_constructor(target_class):
 registry[target_class.yaml_tag] = target_class
 ```
