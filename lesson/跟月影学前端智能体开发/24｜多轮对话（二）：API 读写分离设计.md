@@ -61,10 +61,10 @@ lastEventId?: string,
 
 init(ling: Ling): { message: string; code: number; channel: string;} {
 
+```text
 this.id = Math.random().toString(36).substring(2, 10);
-
-ling.on(‘finished’, () => {
-
+ling.on('finished', () => {
+```
 ```jsx
 try {
 ling.tube?.controller?.close();
@@ -393,10 +393,10 @@ chatDisplayRef.value.scrollTop = chatDisplayRef.value.scrollHeight;
 
 <div
 
-v-for=“message in messages”
-
-:key=“message.id”
-
+```text
+v-for="message in messages"
+:key="message.id"
+```
 ```python
 class="message"
 :class="message.sender"
