@@ -1,0 +1,79 @@
+{
+  "claude": {
+    "id": "claude-code-acp",
+    "displayName": "Claude Code",
+    "apiKey": "",
+    "command": "claude-agent-acp",
+    "args": [],
+    "env": []
+  },
+  "codex": {
+    "id": "codex-acp",
+    "displayName": "Codex",
+    "apiKey": "",
+    "command": "/Users/bytedance/Library/pnpm/codex-acp",
+    "args": [],
+    "env": []
+  },
+  "gemini": {
+    "id": "gemini-cli",
+    "displayName": "Gemini CLI",
+    "apiKey": "",
+    "command": "gemini",
+    "args": [
+      "--experimental-acp"
+    ],
+    "env": []
+  },
+  "customAgents": [],
+  "defaultAgentId": "codex-acp",
+  "autoAllowPermissions": true,
+  "autoMentionActiveNote": false,
+  "enableSystemNotifications": true,
+  "debugMode": false,
+  "nodePath": "/usr/local/bin/node",
+  "exportSettings": {
+    "defaultFolder": "Agent Client",
+    "filenameTemplate": "agent_client_{date}_{time}",
+    "autoExportOnNewChat": false,
+    "autoExportOnCloseChat": false,
+    "openFileAfterExport": true,
+    "includeImages": true,
+    "imageLocation": "obsidian",
+    "imageCustomFolder": "Agent Client",
+    "frontmatterTag": "agent-client"
+  },
+  "windowsWslMode": false,
+  "sendMessageShortcut": "enter",
+  "chatViewLocation": "right-tab",
+  "displaySettings": {
+    "autoCollapseDiffs": false,
+    "diffCollapseThreshold": 10,
+    "maxNoteLength": 10000,
+    "maxSelectionLength": 10000,
+    "showEmojis": true,
+    "fontSize": null
+  },
+  "savedSessions": [
+    {
+      "sessionId": "019e497a-52c5-7ef0-9c31-41afe1f8afbc",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "/Users/bytedance/gitlab/TikTok 详细看下这个仓库的代码，我想查看下跟短...",
+      "createdAt": "2026-05-21T07:46:36.459Z",
+      "updatedAt": "2026-05-21T07:46:36.459Z"
+    }
+  ],
+  "lastUsedModels": {},
+  "lastUsedModes": {
+    "codex-acp": "auto"
+  },
+  "enableFloatingChat": false,
+  "floatingButtonImage": "",
+  "floatingWindowSize": {
+    "width": 400,
+    "height": 500
+  },
+  "floatingWindowPosition": null,
+  "floatingButtonPosition": null
+}

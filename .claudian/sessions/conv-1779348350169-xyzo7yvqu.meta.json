@@ -1,0 +1,25 @@
+{
+  "id": "conv-1779348350169-xyzo7yvqu",
+  "providerId": "codex",
+  "title": "Explain what this is for",
+  "titleGenerationStatus": "success",
+  "createdAt": 1779348350170,
+  "updatedAt": 1779349466879,
+  "lastResponseAt": 1779348854672,
+  "sessionId": "019e496d-2b52-7020-8b30-e5b99261ee91",
+  "providerState": {
+    "threadId": "019e496d-2b52-7020-8b30-e5b99261ee91",
+    "sessionFilePath": "/Users/bytedance/.codex/sessions/2026/05/21/rollout-2026-05-21T15-25-51-019e496d-2b52-7020-8b30-e5b99261ee91.jsonl",
+    "transcriptRootPath": "/Users/bytedance/.codex/sessions"
+  },
+  "usage": {
+    "inputTokens": 76664,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 76160,
+    "contextWindow": 258400,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 76664,
+    "percentage": 30,
+    "model": "gpt-5.5"
+  }
+}

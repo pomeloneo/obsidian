@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"group-think","type":"group","x":-80,"y":-320,"width":640,"height":620,"color":"4","label":"2. 组织与推理"},
+		{"id":"group-capture","type":"group","x":-760,"y":-280,"width":560,"height":560,"color":"1","label":"1. 捕捉输入"},
+		{"id":"group-output","type":"group","x":680,"y":-260,"width":580,"height":520,"color":"5","label":"3. 产出"},
+		{"id":"capture-note","type":"text","text":"# Canvas 能力示例\n\nCanvas 适合把零散想法、已有笔记、网页资料和行动项放在同一张图上。\n\n- 节点可以自由拖拽\n- 节点之间可以连线\n- 分组可以表达阶段或主题","x":-720,"y":-220,"width":480,"height":190,"color":"1"},
+		{"id":"hello-file","type":"file","file":"你好.md","x":-700,"y":30,"width":440,"height":220,"color":"2"},
+		{"id":"capability-map","type":"text","text":"## 能力地图\n\n| 能力   | 用法          |\n| ---- | ----------- |\n| 文本节点 | 临时想法、提纲     |\n| 文件节点 | 嵌入 vault 笔记 |\n| 链接节点 | 收集网页资料      |\n| 分组   | 做主题、阶段、模块   |","x":-40,"y":-250,"width":270,"height":230,"color":"4"},
+		{"id":"obsidian-doc-link","type":"link","url":"https://help.obsidian.md/Plugins/Canvas","x":280,"y":-220,"width":220,"height":140,"color":"6"},
+		{"id":"thinking-block","type":"text","text":"## 结构化思考\n\n把 `[[你好]]` 当作输入材料，可以继续扩展：\n\n1. 读原始笔记\n2. 拆出主题\n3. 连接参考资料\n4. 形成行动项或新笔记","x":-20,"y":60,"width":500,"height":200,"color":"3"},
+		{"id":"next-actions","type":"text","text":"## 可以继续试的事\n\n- 双击空白处新建卡片\n- 拖动节点边缘调整大小\n- 从节点边缘拖出箭头\n- 右键节点切换颜色\n- 把 Markdown 文件拖进 Canvas","x":720,"y":-200,"width":480,"height":180,"color":"5"},
+		{"id":"mini-task-board","type":"text","text":"## 示例任务板\n\n- [ ] 把一个真实项目放进 Canvas\n- [ ] 给关键笔记加双向链接\n- [ ] 用颜色区分输入、分析、输出\n- [ ] 从 Canvas 反向生成一篇总结笔记","x":720,"y":60,"width":480,"height":160,"color":"2"}
+	],
+	"edges":[
+		{"id":"edge-capture-to-map","fromNode":"capture-note","fromSide":"right","toNode":"capability-map","toSide":"left","label":"展开能力"},
+		{"id":"edge-file-to-thinking","fromNode":"hello-file","fromSide":"right","toNode":"thinking-block","toSide":"left","label":"引用笔记"},
+		{"id":"edge-doc-to-thinking","fromNode":"obsidian-doc-link","fromSide":"bottom","toNode":"thinking-block","toSide":"top","label":"参考文档"},
+		{"id":"edge-map-to-actions","fromNode":"capability-map","fromSide":"right","toNode":"next-actions","toSide":"left","label":"选择玩法"},
+		{"id":"edge-thinking-to-board","fromNode":"thinking-block","fromSide":"right","toNode":"mini-task-board","toSide":"left","label":"沉淀行动"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
+}
