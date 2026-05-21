@@ -34,33 +34,22 @@
 
 在这里，我们创建一个类 EventChannel：
 
+```python
 class EventChannel {
-
 private frequency: number = 100;
-
 private eventBuffer: string[] = [];
-
 public id: string;
-
 init(ling: Ling): { message: string; code: number; channel: string;}
-
 {
-
-…
-
+...
 }
-
 getStream(
-
 lastEventId?: string,
-
 ): { stream: ReadableStream; controller: ReadableStreamDefaultController | null; } {
-
-…
-
+...
 }
-
 }
+```
 
 这个类主要有两个方法，其中一个 init 方法，它接受 Ling 对象实例作为参数，返回一个 JSON 对象，其中 channel 参数就是我们后续要使用的通道 ID。
 
@@ -76,47 +65,29 @@ this.id = Math.random().toString(36).substring(2, 10);
 
 ling.on(‘finished’, () => {
 
+```jsx
 try {
-
 ling.tube?.controller?.close();
-
 } catch (ex) {}
-
 });
-
 const reader = ling.stream.getReader();
-
 const events = this.eventBuffer;
-
 reader.read().then(async function processText({ done: _done, value }): Promise<any> {
-
 if (_done) {
-
 return;
-
 }
-
 events.push(value);
-
 return reader.read().then(processText);
-
 }).catch((ex) => {
-
 console.error(ex);
-
 });
-
 return {
-
-message: ‘success’,
-
+message: 'success',
 code: 201,
-
 channel: this.id,
-
 }
-
 }
+```
 
 在 init 方法中，我们通过 ling.stream.getReader() 得到 Reader 对象，然后通过 reader.read() 异步读取 Ling 发出的流数据，将它们先暂时 push 到 eventBuffer 中，也就是直接放到了内存中。
 
@@ -132,241 +103,146 @@ lastEventId?: string,
 
 ): { stream: ReadableStream; controller: ReadableStreamDefaultController | null; } {
 
+```jsx
 let controller: ReadableStreamDefaultController | null = null;
-
 const stream = new ReadableStream({
-
 start(_controller: ReadableStreamDefaultController) {
-
 controller = _controller;
-
 },
-
 });
-
 const events = this.eventBuffer;
-
 let i = 0;
-
 let isFinished = false;
-
 if (lastEventId) {
-
 for( let j = 0; j < events.length; j++) {
-
 const event = events[i];
-
-if (event.startsWith(‘data: {“event”:“finished”}’)) {
-
+if (event.startsWith('data: {"event":"finished"}')) {
 isFinished = true;
-
 break;
-
 }
-
 if (event.includes(`id: ${lastEventId}`)) {
-
 i = j + 1;
-
 break;
-
 }
-
 }
-
 }
-
 for(; i < events.length; i++) {
-
 const event = events[i];
-
-if (event.startsWith(‘data: {“event”:“finished”}’)) {
-
+if (event.startsWith('data: {"event":"finished"}')) {
 isFinished = true;
-
 break;
-
 }
-
 if (controller) {
-
 (controller as ReadableStreamDefaultController).enqueue(event);
-
 }
-
 }
-
 (async () => {
-
 while (true) {
-
 if (isFinished) {
-
 break;
-
 }
-
 await sleep(this.frequency);
-
 for (; i < events.length; i++) {
-
 const event = events[i];
-
-if (event.startsWith(‘data: {“event”:“finished”}’)) {
-
+if (event.startsWith('data: {"event":"finished"}')) {
 isFinished = true;
-
 }
-
 if (controller) {
-
 (controller as ReadableStreamDefaultController).enqueue(event);
-
 }
-
 }
-
 }
-
 this.eventBuffer = [];
-
 if (controller) {
-
 (controller as ReadableStreamDefaultController).close();
-
 }
-
 delete EventChannelMap[this.id];
-
 })();
-
 return { stream, controller }
-
 }
+```
 
 首先我们创建个 ReadableStream 对象，同时获取它内部的 Controller 对象。接着我们对缓存的 eventBuffer 数组进行逐条处理。
 
 如果有 lastEventId，那么我们要先略过之前的数据。这个情况通常发生在前端读取数据过程中网络临时中断。
 
+```jsx
 if (lastEventId) {
-
 for( let j = 0; j < events.length; j++) {
-
 const event = events[i];
-
-if (event.startsWith(‘data: {“event”:“finished”}’)) {
-
+if (event.startsWith('data: {"event":"finished"}')) {
 isFinished = true;
-
 break;
-
 }
-
 if (event.includes(`id: ${lastEventId}`)) {
-
 i = j + 1;
-
 break;
-
 }
-
 }
-
 }
+```
 
 注意，我们判断消息是否传输结束的条件是看有没有 data: {“event”:“finished”} 的数据。如果你还记得第二单元讲过的 Ling 框架的内容，那么应该知道这是 Ling 框架内部的约定。后面的处理也是一样，通过这个数据来判断消息是否发送完。
 
 接着我们看一下存量的数据，因为 init 之后，Ling 对象会不断将数据发送到 eventBuffer 中，所以在我们 getStream 函数调用的时候，eventBuffer 里面很可能已经有一部分数据。
 
+```jsx
 for(; i < events.length; i++) {
-
 const event = events[i];
-
-if (event.startsWith(‘data: {“event”:“finished”}’)) {
-
+if (event.startsWith('data: {"event":"finished"}')) {
 isFinished = true;
-
 break;
-
 }
-
 if (controller) {
-
 (controller as ReadableStreamDefaultController).enqueue(event);
-
 }
-
 }
+```
 
 然后我们等待增量数据到来。这里我们采用一个异步轮询，每 100 毫秒轮询一次，这是一种常用的方式，它可能不是最好的，但是最简单，在大部分场景下就够用了。
 
 (async () => {
 
+```jsx
 while (true) {
-
 if (isFinished) {
-
 break;
-
 }
-
 await sleep(this.frequency);
-
 for (; i < events.length; i++) {
-
 const event = events[i];
-
-if (event.startsWith(‘data: {“event”:“finished”}’)) {
-
+if (event.startsWith('data: {"event":"finished"}')) {
 isFinished = true;
-
 }
-
 if (controller) {
-
 (controller as ReadableStreamDefaultController).enqueue(event);
-
 }
-
 }
-
 }
-
 this.eventBuffer = [];
-
 if (controller) {
-
 (controller as ReadableStreamDefaultController).close();
-
 }
-
 delete EventChannelMap[this.id];
-
 })();
+```
 
 注意我们这里的一个用法细节，我们用一个 (async () => {})() 的异步匿名函数将这部分代码套起来，实现异步过程。这是因为 getStream 的过程也是异步处理的，我们不需要在这里 await 中间的处理过程，所以我们并没有将 getStream 声明成一个 async 的函数。
 
 好了，这样我们就完成了 EventChannel 对象的设计，接着我们只要暴露两个模块方法：
 
+```jsx
 const EventChannelMap: Record<string, EventChannel> = {};
-
 export function getEventChannel(id: string) {
-
 return EventChannelMap[id];
-
 }
-
 export function createEventChannel(ling: Ling) {
-
 const channel = new EventChannel();
-
 const ret = channel.init(ling);
-
 EventChannelMap[channel.id] = channel;
-
 return ret;
-
 }
+```
 
 我们用 EventChannelMap 来存储所有的 EventChannel 对象到内存中，随机生成的 ID 作为 channel 的唯一标识。getEventChannel 根据 channel 的 id 获取指定 EventChannel 对象，createEventChannel 则创建新的 EventChannel 对象。
 
@@ -374,71 +250,41 @@ return ret;
 
 我们修改 server.ts，增加两个方法：
 
-import { createEventChannel, getEventChannel } from ‘./lib/service/eventChannel’;
-
-import { pipeline } from ‘node:stream/promises’;
-
-…
-
-app.post(‘/chat’, async (req, res) => {
-
+```jsx
+import { createEventChannel, getEventChannel } from './lib/service/eventChannel';
+import { pipeline } from 'node:stream/promises';
+...
+app.post('/chat', async (req, res) => {
 const { message, sessionId, timeline } = req.body;
-
 const config = {
-
 model_name: modelName,
-
 api_key: apiKey,
-
 endpoint: endpoint,
-
 sse: true,
-
 };
-
 const ling = new Ling(config);
-
 const bot = ling.createBot();
-
 bot.chat(message);
-
 ling.close();
-
 res.send(createEventChannel(ling));
-
 });
-
-app.get(‘/event’, (req, res) => {
-
-const lastEventId = req.headers[‘last-event-id’] as string | undefined;
-
+app.get('/event', (req, res) => {
+const lastEventId = req.headers['last-event-id'] as string | undefined;
 const eventChannel = getEventChannel(req.query.channel as string);
-
-res.setHeader(‘Content-Type’, ‘text/event-stream’);
-
-res.setHeader(‘Cache-Control’, ‘no-cache’);
-
-res.setHeader(‘Connection’, ‘keep-alive’);
-
-res.setHeader(‘Access-Control-Allow-Origin’, ‘*’);
-
+res.setHeader('Content-Type', 'text/event-stream');
+res.setHeader('Cache-Control', 'no-cache');
+res.setHeader('Connection', 'keep-alive');
+res.setHeader('Access-Control-Allow-Origin', '*');
 res.flushHeaders();
-
 const { stream, controller } = eventChannel.getStream(lastEventId);
-
 try {
-
 pipeline(stream as any, res);
-
 } catch (ex) {
-
 console.log(ex);
-
 controller?.close();
-
 }
-
 });
+```
 
 首先是 /chat 方法，它是一个 POST 方法，接受 message、sessionId 和 timeline 三个参数。这里我们目前先只用到了 message，没关系，后面课程我们会继续使用 sessionId 和 timeline。
 
@@ -450,93 +296,52 @@ controller?.close();
 
 接着我们处理前端部分。我们这样修改 App.vue。
 
+```jsx
 const sessionId = Math.random().toString(36).slice(2, 9);
-
 const sendMessage = async (content: string) => {
-
 const newMessage: Message = {
-
 id: messages.value.length + 1,
-
-sender: ‘user’,
-
+sender: 'user',
 content,
-
 timestamp: new Date()
-
 };
-
 messages.value.push(newMessage);
-
-const res = await fetch(‘/api/chat’, {
-
-method: ‘POST’,
-
+const res = await fetch('/api/chat', {
+method: 'POST',
 headers: {
-
-‘Content-Type’: ‘application/json’
-
+'Content-Type': 'application/json'
 },
-
 body: JSON.stringify({
-
 message: newMessage.content,
-
 sessionId,
-
 timeline: currentTime.value
-
 })
-
 });
-
 const { channel } = await res.json();
-
 const eventSource = new EventSource(`/api/event?channel=${channel}`);
-
 let aiResponse: Message = {
-
 id: messages.value.length + 1,
-
-sender: ‘ai’,
-
-content: ’’,
-
+sender: 'ai',
+content: '',
 timestamp: new Date()
-
 };
-
-eventSource.addEventListener(“message”, function (e: any) {
-
+eventSource.addEventListener("message", function (e: any) {
 let { uri, delta } = JSON.parse(e.data);
-
-if (aiResponse.content === ’’) {
-
+if (aiResponse.content === '') {
 aiResponse.content = delta;
-
 messages.value.push(aiResponse);
-
 } else {
-
 aiResponse.content += delta;
-
-messages.value = […messages.value];
-
+messages.value = [...messages.value];
 }
-
 console.log(uri, delta);
-
 });
-
-eventSource.addEventListener(‘finished’, () => {
-
-console.log(‘传输完成’);
-
+eventSource.addEventListener('finished', () => {
+console.log('传输完成');
 eventSource.close();
-
 });
-
 };
+```
 
 当用户在面试输入框中输入文字，点击发送后，我们首先通过 /api/chat 拿到 channel，然后再用 /api/event?channel=${channel} 去请求真正的数据，最终处理数据，通过 mesages.value.push(aiResponse) 更新数据。
 
@@ -546,67 +351,39 @@ ChatDisplay.vue
 
 <script setup lang=“ts”>
 
-import { ref, watch } from ‘vue’;
-
+```jsx
+import { ref, watch } from 'vue';
 interface Message {
-
 id: number;
-
-sender: ‘ai’ | ‘user’;
-
+sender: 'ai' | 'user';
 content: string;
-
 timestamp: Date;
-
 }
-
 const props = defineProps<{
-
 messages: Message[];
-
 }>();
-
 const chatDisplayRef = ref<HTMLElement | null>(null);
-
-const emit = defineEmits([‘content-change’]);
-
+const emit = defineEmits(['content-change']);
 const hasEmittedContentChange = ref(false);
-
 watch(() => props.messages, (newMessages, oldMessages) => {
-
 scrollToBottom();
-
 if (newMessages.length > 1 && !hasEmittedContentChange.value) {
-
-emit(‘content-change’);
-
+emit('content-change');
 hasEmittedContentChange.value = true;
-
 }
-
 }, { deep: true });
-
 const scrollToBottom = () => {
-
 setTimeout(() => {
-
 if (chatDisplayRef.value) {
-
 chatDisplayRef.value.scrollTop = chatDisplayRef.value.scrollHeight;
-
 }
-
 }, 0);
-
 };
-
 </script>
-
 <template>
-
-<div class=“chat-display” ref=“chatDisplayRef”>
-
-<div v-if=“messages.length === 0” class=“empty-state”>
+<div class="chat-display" ref="chatDisplayRef">
+<div v-if="messages.length === 0" class="empty-state">
+```
 
 <p>面试即将开始，请准备好…</p>
 
@@ -620,283 +397,152 @@ v-for=“message in messages”
 
 :key=“message.id”
 
-class=“message”
-
-:class=“message.sender”
-
+```python
+class="message"
+:class="message.sender"
 >
-
-<div class=“message-header”>
-
-<span class=“sender”>{{ message.sender === ‘ai’ ? ‘AI面试官’ : ‘候选人’ }}</span>
-
-<span class=“timestamp”>{{ new Date(message.timestamp).toLocaleTimeString() }}</span>
-
+<div class="message-header">
+<span class="sender">{{ message.sender === 'ai' ? 'AI面试官' : '候选人' }}</span>
+<span class="timestamp">{{ new Date(message.timestamp).toLocaleTimeString() }}</span>
 </div>
-
-<div class=“message-content”>
-
+<div class="message-content">
 {{ message.content }}
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </template>
-
 <style scoped>
-
 .chat-display {
-
 height: 100%;
-
 overflow-y: auto;
-
 padding: 16px;
-
 background-color: \#f9f9f9;
-
 border-radius: 8px;
-
 box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-
 text-align: left;
-
 }
-
 .empty-state {
-
 height: 100%;
-
 display: flex;
-
 justify-content: center;
-
 align-items: center;
-
 color: #888;
-
 font-style: italic;
-
 }
-
 .message-list {
-
 display: flex;
-
 flex-direction: column;
-
 gap: 16px;
-
 margin-bottom: 40px;
-
 }
-
 .message {
-
 max-width: 80%;
-
 padding: 12px;
-
 border-radius: 8px;
-
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
 }
-
 .message.ai {
-
 align-self: flex-start;
-
 background-color: \#e1f5fe;
-
 border-bottom-left-radius: 0;
-
 }
-
 .message.user {
-
 align-self: flex-end;
-
 background-color: \#e8f5e9;
-
 border-bottom-right-radius: 0;
-
 }
-
 .message-header {
-
 display: flex;
-
 justify-content: space-between;
-
 margin-bottom: 6px;
-
 font-size: 12px;
-
 color: #666;
-
 }
-
 .sender {
-
 font-weight: bold;
-
 }
-
 .message-content {
-
 white-space: pre-wrap;
-
 word-break: break-word;
-
 }
-
 </style>
+```
 
 再加上右下方的输入发送消息的组件 MessageInput.vue：
 
 <script setup lang=“ts”>
 
-import { ref } from ‘vue’;
-
-const emit = defineEmits([‘sendMessage’]);
-
-const message = ref(’’);
-
+```jsx
+import { ref } from 'vue';
+const emit = defineEmits(['sendMessage']);
+const message = ref('');
 const handleSendMessage = () => {
-
 if (message.value.trim()) {
-
-emit(‘sendMessage’, message.value);
-
-message.value = ’’;
-
+emit('sendMessage', message.value);
+message.value = '';
 }
-
 };
-
 const handleKeydown = (event: KeyboardEvent) => {
-
-if (event.ctrlKey && event.key === ‘Enter’) {
-
+if (event.ctrlKey && event.key === 'Enter') {
 handleSendMessage();
-
 }
-
 };
-
 </script>
-
 <template>
-
-<div class=“message-input-container”>
-
+<div class="message-input-container">
 <textarea
-
-v-model=“message”
-
-class=“message-input”
-
-placeholder=“请输入您的回答…”
-
-@keydown=“handleKeydown”
-
+v-model="message"
+class="message-input"
+placeholder="请输入您的回答..."
+@keydown="handleKeydown"
 ></textarea>
-
-<button class=“send-button” @click=“handleSendMessage”>发送</button>
-
+<button class="send-button" @click="handleSendMessage">发送</button>
 </div>
-
 </template>
-
 <style scoped>
-
 .message-input-container {
-
 display: flex;
-
 flex-direction: column;
-
 gap: 10px;
-
 padding: 16px;
-
 background-color: \#fff;
-
 border-top: 1px solid \#eee;
-
 border-radius: 0 0 8px 8px;
-
 }
-
 .message-input {
-
 min-height: 80px;
-
 max-height: 120px;
-
 padding: 12px;
-
 border: 1px solid \#ddd;
-
 border-radius: 8px;
-
 resize: vertical;
-
 font-family: inherit;
-
 font-size: 14px;
-
 line-height: 1.5;
-
 outline: none;
-
 transition: border-color 0.2s;
-
 }
-
 .message-input:focus {
-
 border-color: \#646cff;
-
 box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
-
 }
-
 .send-button {
-
 align-self: flex-end;
-
 padding: 8px 16px;
-
 background-color: \#646cff;
-
 color: white;
-
 border: none;
-
 border-radius: 4px;
-
 cursor: pointer;
-
 font-weight: 500;
-
 transition: background-color 0.2s;
-
 }
-
 .send-button:hover {
-
 background-color: \#535bf2;
-
 }
-
 </style>
+```
 
 这两个纯 UI 组件功能比较简单，你可以结合代码看一下，有兴趣的同学也可以自行研究一下它们的实现细节。
 
@@ -921,5 +567,3 @@ background-color: \#535bf2;
 读写分离是一种通用的范式，它也可以用来优化前面我们波波熊学伴的产品，用了读写分离后，我们就能做到用户在生成文章时不必留在页面中等待，而是可以做其他事情，等到生成结束后再收到通知。要实现这个效果，我们应该怎么做，你可以想一想，动手用你的方案来改进波波熊学伴，然后将你的改进结果分享到评论区。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
