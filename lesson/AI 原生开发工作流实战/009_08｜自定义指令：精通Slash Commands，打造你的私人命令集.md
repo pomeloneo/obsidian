@@ -459,9 +459,10 @@ return sb.String(), nil
 
 修改建议:
 
+```go
 func IssueToMarkdown(issue *github.Issue, comments []github.Comment, enableUserLinks bool) (string, error) {
-
 }
+```
 
 [低优先级]: 常量定义可以更灵活
 
