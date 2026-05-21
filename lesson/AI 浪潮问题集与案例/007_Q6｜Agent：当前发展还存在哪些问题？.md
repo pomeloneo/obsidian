@@ -41,5 +41,3 @@ Agent 也容易陷入局部循环（Stuck into Loops）
 另一个问题是，Claude 作为一个断档级别的存在，其优秀之处远不止于编写代码的能力，它在几乎所有能力上都处于领先地位。近期与许多同行交流后发现，大家似乎尚未充分认识到这一点，在如何使我们的模型在指令遵循、长上下文理解、规划及反思等方面达到 Agent 能使用的水平的问题上毫无头绪。究竟是由于其基础能力强大且数据质量较高所致，还是采用了某些特殊的训练方法或标注手段使其具备如此强大的能力，目前外界对此一无所知。要知道，Claude 3.5 Sonnet 已经是在去年六月发布的，这是令人比较担心的。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
