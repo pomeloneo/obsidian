@@ -182,9 +182,10 @@ package utils
 
 func Add(a, b int) int {
 
+```text
 return a + b
-
 }
+```
 
 你可以这样请求 AI：
 
@@ -294,33 +295,22 @@ AI 会读取 math.go，理解 Add 函数的签名和功能，然后为你输出�
 
 issue2md/
 
+```text
 ├── cmd/
-
 │ └── issue2md/
-
 ├── internal/
-
 │ ├── converter/
-
 │ └── github/
-
 ├── web/
-
 │ ├── handlers/
-
 │ ├── templates/
-
 │ └── static/
-
 ├── utils/
-
 ├── main.go
-
 ├── Dockerfile
-
 └── Makefile
-
 🚀 核心功能
+```
 
 1. 双模式运行
 
@@ -376,11 +366,11 @@ issue2md/
 
 github.com/bigwhite/issue2md
 
+```text
 ├── internal/converter
-
 ├── internal/github
-
 └── web/handlers
+```
 
 🛠️ 如何运行
 
@@ -394,23 +384,26 @@ issue2md -enable-reactions https://github.com/user/repo/issues/123 issue.md
 
 2. Web模式
 
+```bash
 make web
+```
 
 go build -o issue2mdweb
 
 ./issue2mdweb
 
+```bash
 docker run -d -p 8080 bigwhite/issue2mdweb
+```
 
 3. 构建选项
 
+```bash
 make all
-
 make cmdline
-
 make buildimage
-
 make clean
+```
 
 ⚙️ 配置选项
 
@@ -649,5 +642,3 @@ AI 知道要创建一个新文件，它会调用 Write 工具，并生成如下�
 欢迎在评论区分享你的“指令链”，看看谁的方案最高效、最优雅！如果你觉得有所收获，也欢迎你分享给需要的朋友，我们下节课再见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
