@@ -96,19 +96,15 @@ negative_review = models.BooleanField(default=False, verbose_name=‘差评’)
 
 然后我们打开 admin.py 文件，添加以下代码。
 
+```python
 from django.contrib import admin
-
 from .models import Product
-
 @admin.register(对话记录)
-
 class 对话记录Admin(admin.ModelAdmin):
-
-list_display = (‘name’, ‘positive_review’, ‘negative_review’)
-
-search_fields = (‘name’,)
-
-list_filter = (‘positive_review’, ‘negative_review’)
+list_display = ('name', 'positive_review', 'negative_review')
+search_fields = ('name',)
+list_filter = ('positive_review', 'negative_review')
+```
 
 ## 数据标注员通过管理员后台下载数据
 
@@ -120,11 +116,15 @@ list_filter = (‘positive_review’, ‘negative_review’)
 
 实现起来也并不复杂。首先，我们回到 Anaconda Powershell Prompt，按 ctrl+c 停止运行。然后输入以下命令安装 Django 管理员数据导入导出库。
 
+```bash
 pip install django-import-export
+```
 
 接下来，我们打开 settings.py 文件，并在 INSTALLED_APPS 列表中添加 import_export。（已经有同学因为遗漏这一步导致出错，所以当代码运行不了的时候，请同学们仔细检查一下是否遗漏了步骤）
 
+```dotenv
 INSTALLED_APPS = [
+```
 
 ‘import_export’,
 
@@ -161,5 +161,3 @@ Ragas 实现了这么多指标，我们是否全部都需要关心呢？
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
