@@ -94,11 +94,15 @@ Claude Code 的 Headless 模式，可以无缝地接收来自 stdin 的输入。
 
 假设你有一个名为 nginx-error.log 的日志文件，你想让 AI 帮你找出其中最主要的问题。
 
-cat nginx-error.log | claude -p “请分析这份Nginx错误日志，总结出最主要的错误类型和可能的原因。”
+```bash
+cat nginx-error.log | claude -p "请分析这份Nginx错误日志，总结出最主要的错误类型和可能的原因。"
+```
 
 在这个命令中：
 
+```bash
 cat nginx-error.log 将文件的全部内容输出到 stdout。
+```
 
 |（管道符）将 cat 命令的 stdout，连接到了 claude 命令的 stdin。
 
@@ -320,9 +324,10 @@ ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
 
 run: |
 
+```bash
 mkdir -p ~/.claude
-
-echo ’{
+echo '{
+```
 
 “env”: {
 
@@ -369,5 +374,3 @@ echo ’{
 欢迎在评论区分享你的设计方案！这会是一个非常棒的、关于 AI 与 DevOps 深度融合的思维练习。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
