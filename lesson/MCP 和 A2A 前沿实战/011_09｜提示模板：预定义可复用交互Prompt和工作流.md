@@ -240,25 +240,18 @@ arguments：自定义的可选参数列表。
 
 {
 
+```text
 name: string;
-
 description?: string;
-
 arguments?: [
-
 {
-
 name: string;
-
 description?: string;
-
 required?: boolean;
-
 }
-
 ]
-
 }
+```
 
 支持提示的服务器必须在初始化期间声明该 prompts 功能：
 
@@ -611,92 +604,56 @@ PROMPTS = {
 
 “code-review”: types.Prompt(
 
-name=“code-review”,
-
-description=“分析代码并提供改进建议”,
-
+```text
+name="code-review",
+description="分析代码并提供改进建议",
 arguments=[
-
 types.PromptArgument(
-
-name=“code”,
-
-description=“需要审查的代码”,
-
+name="code",
+description="需要审查的代码",
 required=True
-
 ),
-
 types.PromptArgument(
-
-name=“language”,
-
-description=“编程语言”,
-
+name="language",
+description="编程语言",
 required=True
-
 ),
-
 types.PromptArgument(
-
-name=“focus”,
-
-description=“审查重点（可选：performance, security, readability）”,
-
+name="focus",
+description="审查重点（可选：performance, security, readability）",
 required=False
-
 )
-
 ]
-
 ),
-
-“explain-code”: types.Prompt(
-
-name=“explain-code”,
-
-description=“解释代码的工作原理”,
-
+"explain-code": types.Prompt(
+name="explain-code",
+description="解释代码的工作原理",
 arguments=[
-
 types.PromptArgument(
-
-name=“code”,
-
-description=“需要解释的代码”,
-
+name="code",
+description="需要解释的代码",
 required=True
-
 ),
-
 types.PromptArgument(
-
-name=“language”,
-
-description=“编程语言”,
-
+name="language",
+description="编程语言",
 required=True
-
 )
-
 ]
-
 )
-
 }
+```
 
 接下来，使用  @mcp.prompts_list()  和  @mcp.prompts_get()  装饰器来注册提示模板。
 
 # 初始化服务器
 
-app = Server(“code-review-server”)
-
+```python
+app = Server("code-review-server")
 @app.list_prompts()
-
 async def list_prompts() -> list[types.Prompt]:
-
-“““返回可用的提示模板列表”“”
-
+"""返回可用的提示模板列表"""
+```
 ```python
 return list(PROMPTS.values())
 @app.get_prompt()
