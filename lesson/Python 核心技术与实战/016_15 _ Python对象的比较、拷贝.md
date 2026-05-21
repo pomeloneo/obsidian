@@ -14,9 +14,10 @@ __
 
 在前面的学习中，我们其实已经接触到了很多 Python 对象比较和复制的例子，比如下面这个，判断 a 和 b 是否相等的 if 语句：
 
+```text
 if a == b:
-
-…
+...
+```
 
 再比如第二个例子，这里 l2 就是 l1 的拷贝。
 
@@ -94,13 +95,12 @@ False
 
 通常来说，在实际工作中，当我们比较变量时，使用’==‘的次数会比’is’多得多，因为我们一般更关心两个变量的值，而不是它们内部的存储地址。但是，当我们比较一个变量与一个单例（singleton）时，通常会使用’is’。一个典型的例子，就是检查一个变量是否为 None：
 
+```text
 if a is None:
-
-…
-
+...
 if a is not None:
-
-…
+...
+```
 
 这里注意，比较操作符’is’的速度效率，通常要优于’==‘。因为’is’操作符不能被重载，这样，Python 就不需要去寻找，程序中是否有其他地方重载了比较操作符，并去调用。执行比较操作符’is’，就仅仅是比较两个变量的 ID 而已。
 
@@ -184,11 +184,11 @@ False
 
 当然，Python 中也提供了相对应的函数 copy.copy()，适用于任何数据类型：
 
+```python
 import copy
-
 l1 = [1, 2, 3]
-
 l2 = copy.copy(l1)
+```
 
 不过，需要注意的是，对于元组，使用 tuple() 或者切片操作符’:’不会创建一份浅拷贝，相反，它会返回一个指向相同元组的引用：
 
@@ -256,69 +256,50 @@ l1: [[1, 2, 3], (30, 40, 50, 60), 100]
 
 Python 中以 copy.deepcopy() 来实现对象的深度拷贝。比如上述例子写成下面的形式，就是深度拷贝：
 
+```python
 import copy
-
 l1 = [[1, 2], (30, 40)]
-
 l2 = copy.deepcopy(l1)
-
 l1.append(100)
-
 l1[0].append(3)
-
 l1
-
 [[1, 2, 3], (30, 40), 100]
-
 l2
-
 [[1, 2], (30, 40)]
+```
 
 我们可以看到，无论 l1 如何变化，l2 都不变。因为此时的 l1 和 l2 完全独立，没有任何联系。
 
 不过，深度拷贝也不是完美的，往往也会带来一系列问题。如果被拷贝对象中存在指向自身的引用，那么程序很容易陷入无限循环：
 
+```python
 import copy
-
 x = [1]
-
 x.append(x)
-
 x
-
-[1, […]]
-
+[1, [...]]
 y = copy.deepcopy(x)
-
 y
-
-[1, […]]
+[1, [...]]
+```
 
 上面这个例子，列表 x 中有指向自身的引用，因此 x 是一个无限嵌套的列表。但是我们发现深度拷贝 x 到 y 后，程序并没有出现 stack overflow 的现象。这是为什么呢？
 
 其实，这是因为深度拷贝函数 deepcopy 中会维护一个字典，记录已经拷贝的对象与其 ID。拷贝过程中，如果字典里已经存储了将要拷贝的对象，则会从字典直接返回，我们来看相对应的源码就能明白：
 
+```python
 def deepcopy(x, memo=None, _nil=[]):
-
-“““Deep copy operation on arbitrary Python objects.
-
-See the module’s __doc__ string for more info.
-
-““”
-
+"""Deep copy operation on arbitrary Python objects.
+See the module's __doc__ string for more info.
+"""
 if memo is None:
-
 memo = {}
-
 d = id(x)
-
 y = memo.get(d, _nil)
-
 if y is not _nil:
-
 return y
-
-…
+...
+```
 
 ## 总结
 
@@ -336,13 +317,12 @@ return y
 
 最后，我为你留下一道思考题。这节课我曾用深度拷贝，拷贝过一个无限嵌套的列表。那么。当我们用等于操作符’==’进行比较时，输出会是什么呢？是 True 或者 False 还是其他？为什么呢？建议你先自己动脑想一想，然后再实际跑一下代码，来检验你的猜想。
 
+```python
 import copy
-
 x = [1]
-
 x.append(x)
-
 y = copy.deepcopy(x)
+```
 
 # 以下命令的输出是？
 
@@ -351,5 +331,3 @@ x == y
 欢迎在留言区写下你的答案和学习感想，也欢迎你把这篇文章分享给你的同事、朋友。我们一起交流，一起进步。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
