@@ -112,67 +112,43 @@
 
 它还提供了使用了策略模式之后的示例代码，以及单例模式。
 
+```python
 from datetime import date, datetime
-
 import time
-
 class 元数据过滤器:
-
 def 过滤(self, 元数据列表):
-
-raise NotImplementedError(“子类必须实现此方法”)
-
+raise NotImplementedError("子类必须实现此方法")
 class 按日期过滤(元数据过滤器):
-
 def 过滤(self, 元数据列表):
-
 今天 = date.today()
-
 今天struct_time格式 = time.struct_time(今天.timetuple())
-
 return [元数据 for 元数据 in 元数据列表 if 元数据.创建日期 > 今天struct_time格式]
-
 class 按关键词过滤(元数据过滤器):
-
 def __init__(self, 关键词):
-
 self.关键词 = 关键词
-
 def 过滤(self, 元数据列表):
-
 return [元数据 for 元数据 in 元数据列表 if self.关键词 in 元数据.标题]
-
 class 过滤器管理器:
-
 def __init__(self):
-
 self.过滤器 = []
-
 def 添加过滤器(self, 过滤器):
-
 self.过滤器.append(过滤器)
-
 def 应用过滤器(self, 元数据列表):
-
 结果 = 元数据列表
-
 for 过滤器 in self.过滤器:
+```
 
 结果 = 过滤器.过滤(结果)
 
+```text
 return 结果
-
-if __name__ == “__main__”:
-
+if __name__ == "__main__":
 元数据列表 = [
-
-{“标题”: “新闻1”, “创建日期”: time.strptime(“2023-10-01”, “%Y-%m-%d”)},
-
-{“标题”: “新闻2”, “创建日期”: time.strptime(“2023-10-02”, “%Y-%m-%d”)},
-
-{“标题”: “新闻3”, “创建日期”: time.strptime(“2023-09-30”, “%Y-%m-%d”)},
-
+{"标题": "新闻1", "创建日期": time.strptime("2023-10-01", "%Y-%m-%d")},
+{"标题": "新闻2", "创建日期": time.strptime("2023-10-02", "%Y-%m-%d")},
+{"标题": "新闻3", "创建日期": time.strptime("2023-09-30", "%Y-%m-%d")},
 ]
+```
 
 管理器 = 过滤器管理器()
 
@@ -190,61 +166,40 @@ print(过滤后的元数据)
 
 另外还给出使用了单例模式之后的示例代码。
 
+```python
 from datetime import date, datetime
-
 import time
-
 class 元数据过滤器(单例):
-
 def __init__(self):
-
 self.过滤器列表 = []
-
 def 添加过滤器(self, 过滤器):
-
 self.过滤器列表.append(过滤器)
-
 def 应用过滤器(self, 元数据列表):
-
 结果 = 元数据列表
-
 for 过滤器 in self.过滤器列表:
+```
 
 结果 = 过滤器.过滤(结果)
 
+```python
 return 结果
-
 class 按日期过滤:
-
 def 过滤(self, 元数据列表):
-
 今天 = date.today()
-
 今天struct_time格式 = time.struct_time(今天.timetuple())
-
 return [元数据 for 元数据 in 元数据列表 if 元数据.创建日期 > 今天struct_time格式]
-
 class 按关键词过滤:
-
 def __init__(self, 关键词):
-
 self.关键词 = 关键词
-
 def 过滤(self, 元数据列表):
-
 return [元数据 for 元数据 in 元数据列表 if self.关键词 in 元数据.标题]
-
-if __name__ == “__main__”:
-
+if __name__ == "__main__":
 元数据列表 = [
-
-{“标题”: “新闻1”, “创建日期”: time.strptime(“2023-10-01”, “%Y-%m-%d”)},
-
-{“标题”: “新闻2”, “创建日期”: time.strptime(“2023-10-02”, “%Y-%m-%d”)},
-
-{“标题”: “新闻3”, “创建日期”: time.strptime(“2023-09-30”, “%Y-%m-%d”)},
-
+{"标题": "新闻1", "创建日期": time.strptime("2023-10-01", "%Y-%m-%d")},
+{"标题": "新闻2", "创建日期": time.strptime("2023-10-02", "%Y-%m-%d")},
+{"标题": "新闻3", "创建日期": time.strptime("2023-09-30", "%Y-%m-%d")},
 ]
+```
 
 过滤器 = 元数据过滤器()
 
@@ -283,5 +238,3 @@ print(过滤后的元数据)
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
