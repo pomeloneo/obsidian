@@ -1,0 +1,27 @@
+# Promise
+
+\#J#
+
+这个Promise是按照PromiseA+规范来完成的 在写这个的过程中遇到了很多的问题, 目前代码通过了我能想到的所有的测试用例
+
+在这里分享一下遇到的问题和坑
+
+- 最开始没有想到可以多次调用then方法, 所以要定义一个数组存储每次调用then的两个回调函数参数
+
+- new Promise传入的函数要立即执行, 所有要绑定this, 因为这个resolve或者reject是由使用者调用的,所以this是不确定的, 要提前绑定this
+
+- 要注意宏任务和微任务的区别, 不能使用宏任务setTimeout去控制时机, 因为不准确, 要使用微任务nextTick, 浏览器环境我实现了一个nextTick(参考Vue)
+
+- 实现A+规范的过程中遇到的问题, 具体过程看源码吧
+
+- 规范看下面链接
+
+真的很难😭, 还是觉得心里没底, 感觉有的地方写的不对
+
+[Promises/A+](https://promisesaplus.com/)
+
+[promise A+ 中文 - Google Search](https://www.google.com/search?q=promise+A%2B+%E4%B8%AD%E6%96%87)
+
+**源码地址**
+
+[源码地址](https://github.com/echoheart/blog-source-code/blob/master/src/promise/index.ts)
