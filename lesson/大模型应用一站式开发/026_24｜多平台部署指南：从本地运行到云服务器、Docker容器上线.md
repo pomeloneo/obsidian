@@ -220,14 +220,10 @@ backend:
 ports:
 
 - “8000”
-
-deploy:
-
-resources:
-
-limits:
-
 ```text
+deploy:
+resources:
+limits:
 cpus: '4'
 memory: 8G
 reservations:
