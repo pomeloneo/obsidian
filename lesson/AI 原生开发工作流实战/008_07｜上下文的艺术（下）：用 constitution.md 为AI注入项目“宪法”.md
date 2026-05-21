@@ -161,5 +161,3 @@ constitution.md for issue2md
 请你尝试将其中最重要的一到两条原则，用我们今天学习的 constitution.md 的风格，写成“法案”的形式。欢迎在评论区分享你的“立法”尝试。这个练习将帮助你思考如何将团队的隐性知识，转化为可被 AI 理解和执行的显性规则。如果你觉得有所收获也欢迎你分享给需要的朋友，我们下节课再见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
