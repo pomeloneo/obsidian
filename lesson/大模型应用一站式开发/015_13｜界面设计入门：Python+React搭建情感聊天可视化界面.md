@@ -279,9 +279,10 @@ Framer Motion: 动画效果库
 
 Lucide React: 图标库
 
+```go
 Axios: HTTP 客户端
-
 配置文件: frontend/package.json
+```
 
 ### 3.4.2 API 服务封装
 
@@ -312,11 +313,11 @@ API 基础 URL 配置:
 
 关键配置 (frontend/package.json):
 
+```text
 proxy: 开发环境代理到后端（避免 CORS）
-
 PORT=3000: 前端服务端口
-
 browserslist: 浏览器兼容性范围
+```
 
 ## 3.5 数据库初始化
 
@@ -843,20 +844,15 @@ raise HTTPException(status_code=500, detail=str(e))
 
 async def chat_with_attachments(
 
-message: str = Form(…),
-
+```text
+message: str = Form(...),
 session_id: str = Form(None),
-
-user_id: str = Form(…),
-
+user_id: str = Form(...),
 url_contents: str = Form(None),
-
 files: List[UploadFile] = File(default=[])
-
 ):
-
-“““带附件的聊天接口”“”
-
+"""带附件的聊天接口"""
+```
 ```python
 try:
 file_contents = []
@@ -1193,9 +1189,12 @@ transition={{ duration: 0.3 }}
 </MessageBubble>
 ```
 效果说明：
+
+```text
 y: 20 → y: 0：从下方 20px 位置滑入到原位
 opacity: 0 → opacity: 1：从透明到不透明
 duration: 0.3：快速但不突兀，保持对话流畅感
+```
 ### 5.1.3 按钮交互反馈
 悬停放大效果：鼠标悬停时轻微放大，提供视觉反馈
 
