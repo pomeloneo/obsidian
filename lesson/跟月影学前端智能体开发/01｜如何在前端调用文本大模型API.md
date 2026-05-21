@@ -1,5 +1,5 @@
 > [!important]
-> 
+>
 > 原文链接：[极客时间](https://time.geekbang.org/column/article/868006)
 
 ---
@@ -45,7 +45,7 @@ DeepSeek API 后台主页
 DeepSeek 模型定价
 
 > [!important]
-> 
+>
 > **什么是 Token？** Token 是模型用来表示自然语言文本的基本单位，通常一个中文词语或一个英文单词、数字或符号计为一个 token。在每次 API 调用成功后，我们可以通过返回结果的 `usage` 得到 token 的消耗量。
 
 **② API Keys**：应用调用 API 的许可凭证。我们可以点击左侧菜单来创建、查看和管理它。
@@ -122,7 +122,7 @@ VITE_DEEPSEEK_API_KEY=sk-xxxxxxxxx
 运行结果
 
 > [!important]
-> 
+>
 > 如果你没有看到如上图的结果，请检查项目目录下是否有 `vite.config.ts` 文件。如果没有，你在 Trae 中用 `Command+U`（macOS）或 `Ctrl+U`（Windows）唤起 Builder 对话框，输入"帮我初始化 vite 配置"，然后再重启服务运行代码。
 
 ### 代码解析
@@ -149,20 +149,18 @@ VITE_DEEPSEEK_API_KEY=sk-xxxxxxxxx
 ```
 
 - `**model**`：指定要调用的模型类型。DeepSeek Platform 支持两个模型：
-    
+
     - `deepseek-chat`：基础模型（目前版本 v3）
-    
+
     - `deepseek-reasoner`：深度思考模型（目前版本 r1），推理能力更强，响应速度较慢，价格更贵
-    
 
 - `**messages**`：发送给大模型的具体消息，每条消息包含：
-    
+
     - `role`：枚举值 `system`（系统提示词）、`user`（用户消息）、`assistant`（AI 应答）
-    
+
     - `content`：具体的消息文本内容
-    
+
     - `user` 和 `assistant` 消息必须成对，最后一条消息必须是 `user` 消息
-    
 
 - `**stream**`：`false` 表示标准 HTTP 方式传输而非流式传输（下节课详细展开）
 
@@ -264,7 +262,7 @@ Coze 智能体的系统提示词支持模板变量，我们在人设与回复逻
 继续点发布按钮完成发布。
 
 > [!important]
-> 
+>
 > **获取 bot_id**：发布完成后，从浏览器地址栏获取。地址栏类似于 `[https://www.coze.cn/space/.../bot/7473317995184865307](https://www.coze.cn/space/.../bot/7473317995184865307)`，其中最后一串数字 `7473317995184865307` 就是 `bot_id`。
 
 ### 创建个人访问令牌
@@ -353,11 +351,11 @@ Coze API 运行结果
 ## 要点总结
 
 > [!important]
-> 
+>
 > - 以 **DeepSeek Platform** 和 **Coze** 为例，介绍了如何在浏览器端调用文本大模型 API
-> 
+>
 > - 除了 DeepSeek 和 Coze 外，包括月之暗面、智谱清言在内的大部分文本大模型 API 都**兼容 OpenAI 的 API 参数格式**
-> 
+>
 > - 基本上都可以用同样的方式调用，只需要变更 **API Key** 和 **Endpoint** 即可
 
 ---
