@@ -781,12 +781,9 @@ await self.transport.__aexit__(None, None, None)
 ```
 
 下面是 main 函数的实现，负责提供要分析的代码，并根据提示词来设计出一套简单的交互流程。
-
-async def main():
-
-print(“>>> 开始初始化代码审查系统”)
-
 ```python
+async def main():
+print(">>> 开始初始化代码审查系统")
 if len(sys.argv) < 2:
 print("用法: python client.py <server.py 路径>")
 return
