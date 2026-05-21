@@ -421,12 +421,9 @@ return this._stream;
 ```
 
 Tube 在自己的构造器中创建了一个 ReadableStream 对象：
-
-constructor(private session_id: string = shortId()) {
-
-super();
-
 ```jsx
+constructor(private session_id: string = shortId()) {
+super();
 const self = this;
 this._stream = new ReadableStream({
 start(controller) {
@@ -439,10 +436,8 @@ self.controller = controller;
 有一点需要我们特别注意的是，我们在创建流的时候，从 ReadableStream 对象中拿到 controller 对象，这个对象是一个流控制器，它可以用于向流中加入数据或关闭流。
 
 Tube 最核心的就是 enqueque 方法。
-
-enqueue(data: unknown, isQuiet: boolean = false) {
-
 ```jsx
+enqueue(data: unknown, isQuiet: boolean = false) {
 const isFiltered = this.filters.some(filter => filter(data));
 const id = `${this.session\_id}:${this.messageIndex++}`;
 if (!this._closed) {
@@ -634,12 +629,9 @@ return this.session_id;
 ```
 
 首先，我们看一下构造器：
-
-constructor(protected config: ChatConfig, protected options: ChatOptions = {}) {
-
-super();
-
 ```text
+constructor(protected config: ChatConfig, protected options: ChatOptions = {}) {
+super();
 if(config.session_id) {
 this.session_id = config.session_id;
 delete config.session_id;
@@ -663,10 +655,8 @@ this.emit('canceled');
 在构造器里，我们创建了一个 Tube 对象，保存在 _tube 私有属性中，然后我们监听这个对象的 message、finished 和 canceled 事件，将它们转发。
 
 接着我们看 createBot：
-
-createBot(root: string | null = null, config: Partial = {}, options: Partial = {}) {
-
 ```jsx
+createBot(root: string | null = null, config: Partial = {}, options: Partial = {}) {
 const bot = new ChatBot(this._tube, {...this.config, ...config}, {...this.options, ...options});
 bot.setJSONRoot(root);
 bot.setCustomParams(this.customParams);
