@@ -145,5 +145,3 @@ RAG 技术远远不止以上这些，而且随着时间的发展，RAG 技术只
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
