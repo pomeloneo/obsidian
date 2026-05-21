@@ -1,5 +1,5 @@
 > [!important]
-> 
+>
 > 原文链接：[极客时间](https://time.geekbang.org/column/article/874027)
 
 ---
@@ -166,7 +166,7 @@ export async function handler({ input, logger }: Args<Input>): Promise<Output> {
 生成的卡通图标
 
 > [!important]
-> 
+>
 > 在这个过程中，我们用**豆包模型生成 Flux 模型需要的提示词**，从而让 Flux 模型更好地生成结果。这个模式就是**"元提示"模式**。
 
 ---
@@ -178,7 +178,7 @@ export async function handler({ input, logger }: Args<Input>): Promise<Output> {
 还有更复杂的场景：针对用户提出的不同问题类型，采用不同的 AI 节点处理，每个节点处理一类特定问题——这种做法叫做**"多专家模型（MoE）"**。
 
 > [!important]
-> 
+>
 > **多专家模型（Mixture of Experts, MoE）** 是一种深度学习架构，通过引入多个专家子模型，根据输入数据选择最合适的专家进行处理。这里我们借鉴了这个叫法，但实际是应用层的技术。
 
 使用动态提示词有多种方法。Coze 智能体支持自定义参数，可以直接传参。而其他平台大部分不提供自定义参数，我们可以用前端熟悉的**模板引擎**技术来实现。
@@ -384,11 +384,11 @@ About Today 运行效果
 ## 要点总结
 
 > [!important]
-> 
+>
 > - **元提示（Meta-Prompt）**：让一个智能体负责撰写提示词，再将提示词给后续智能体执行。适用于不同类型模型协作的场景
-> 
+>
 > - **动态提示词**：通过模板引擎（如 nunjucks）动态编译提示词，将运行时信息（日期、用户数据等）注入提示词中
-> 
+>
 > - 这两种方法在实际 AI 应用中非常常用且有效
 
 ---
