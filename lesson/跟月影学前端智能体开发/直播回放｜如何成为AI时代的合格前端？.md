@@ -111,5 +111,3 @@ AI 管理学：需要对 AI 进行考核、反馈与管理。
 :32～:52 直播答疑互动
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
