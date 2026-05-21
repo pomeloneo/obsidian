@@ -28,27 +28,34 @@
 
 在安装之前，请确保你的系统中已经安装了 Node.js 18.0 或更高版本。Claude Code 是基于 Node.js 生态构建的，npm 是其首选的安装工具。你可以在终端中运行以下命令来检查你的 Node.js 版本：
 
+```bash
 node -v
+```
 
 如果版本低于 18.0，请先前往 Node.js 官网进行升级。
 
 下面是一个典型的基于 nvm 安装 / 升级 node 版本的步骤，供大家参考：
 
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+```
 
 \. “$HOME/.nvm/nvm.sh”
 
 nvm install 22
 
+```bash
 node -v
-
 npm -v
+```
 
 2. 全局安装 Claude Code
 
 接下来，打开你的终端，运行以下命令来全局安装 Claude Code：
 
+```bash
 npm install -g @anthropic-ai/claude-code
+```
 
 [![](https://static001.geekbang.org/resource/image/6c/44/6c3edf2dd06b0c756a6148f3c457f544.png?wh=1172x572)](https://static001.geekbang.org/resource/image/6c/44/6c3edf2dd06b0c756a6148f3c457f544.png?wh=1172x572)
 
@@ -180,7 +187,9 @@ ANTHROPIC_AUTH_TOKEN：尽管变量名看起来是“Anthropic”的，但由于
 
 Linux
 
+```bash
 mkdir -p ~/.claude
+```
 
 code ~/.claude/settings.json
 
@@ -293,5 +302,3 @@ Go语言适合需要高性能、高并发和部署简单的项目，在云计算
 欢迎在评论区分享你的解决方案和配置代码。这个问题将直接检验你是否真正掌握了配置的优先级和项目级定制的核心思想。如果你觉得有所收获，也欢迎你分享给其他朋友，我们下节课再见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
