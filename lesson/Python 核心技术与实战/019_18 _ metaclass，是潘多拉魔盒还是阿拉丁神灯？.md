@@ -60,13 +60,12 @@ name='Cave lizard', hp=[3,6], ac=16, attacks=['BITE','HURT']))
 
 !Monster
 
+```text
 ac: 16
-
 attacks: [BITE, HURT]
-
 hp: [3, 6]
-
 name: Cave lizard
+```
 
 这里 YAMLObject 的特异功能体现在哪里呢？
 
