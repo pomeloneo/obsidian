@@ -1,5 +1,5 @@
 > [!important]
-> 
+>
 > **原文链接**：[极客时间专栏](https://time.geekbang.org/column/article/699436)
 
 [![](https://static001.geekbang.org/resource/image/03/82/03bb1346abb0dae7119f5yy216ab3582.jpg)](https://static001.geekbang.org/resource/image/03/82/03bb1346abb0dae7119f5yy216ab3582.jpg)
@@ -51,17 +51,17 @@
 文档问答系统的数据处理管道
 
 > [!important]
-> 
+>
 > **具体流程分为 5 步**：
-> 
+>
 > 1. **Loading**：文档加载器把 Documents 加载为 LangChain 能够读取的形式
-> 
+>
 > 1. **Splitting**：文本分割器把 Documents 切分为指定大小的"文档块"
-> 
+>
 > 1. **Storage**：将分割好的"文档块"以"嵌入"(Embedding) 形式存储到向量数据库
-> 
+>
 > 1. **Retrieval**：从存储中检索分割后的文档（如通过余弦相似度找到相似嵌入片）
-> 
+>
 > 1. **Output**：把问题和相似嵌入片传递给 LLM，生成答案
 
 ---
@@ -109,17 +109,17 @@ for file in os.listdir(base_dir):
 ```
 
 > [!important]
-> 
+>
 > **为什么需要 OpenAI API Key？**
-> 
+>
 > - 用 OpenAI 的 **Embedding 模型**为文档做嵌入
-> 
+>
 > - 调用 OpenAI 的 **GPT 模型**来生成问答系统中的回答
-> 
+>
 > 当然，LangChain 支持的大模型不仅限于 OpenAI，你完全可以替换为其他开源模型。
 
 > [!important]
-> 
+>
 > **注意**：运行代码时可能需要安装 `PyPDF`、`Docx2txt` 等库，通过 `pip install` 安装即可。
 
 ---
@@ -146,7 +146,7 @@ chunked_documents = text_splitter.split_documents(documents)
 ### 什么是词嵌入？
 
 > [!important]
-> 
+>
 > **词嵌入 (Word Embedding)** 是将文字或词语转换为一系列数字（向量）的技术。这些数字捕获了词的含义和上下文，语义相似的词在数字空间中会比较接近。
 
 **示例**：
@@ -156,7 +156,7 @@ chunked_documents = text_splitter.split_documents(documents)
 ### 什么是向量数据库？
 
 > [!important]
-> 
+>
 > **向量数据库**是专门用于存储和搜索向量形式数据的数据库。它具备高效存储和处理高维向量数据的能力，更好地支持涉及非结构化数据处理的 AI 应用。
 
 [![](https://static001.geekbang.org/resource/image/e3/16/e3c7e244b15f9527a4eb811e550a8f16.png?wh=2989x1805)](https://static001.geekbang.org/resource/image/e3/16/e3c7e244b15f9527a4eb811e550a8f16.png?wh=2989x1805)
@@ -182,7 +182,7 @@ vectorstore = Qdrant.from_documents(
 ```
 
 > [!important]
-> 
+>
 > 需要安装：`pip install qdrant-client`
 
 > 至此，易速鲜花的所有内部文档都以"文档块嵌入片"格式存储在向量数据库中了。
@@ -200,9 +200,9 @@ vectorstore = Qdrant.from_documents(
 语义相似的向量之间距离近或方向相似（图片来源网络）
 
 > [!important]
-> 
+>
 > **本项目选择**：余弦相似度
-> 
+>
 > 因为我们正在处理文本数据，目标是从语义上理解和比较问题与答案。
 
 ### 实现代码
@@ -224,7 +224,7 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 
 # 创建检索器
 retriever_from_llm = MultiQueryRetriever.from_llm(
-    retriever=vectorstore.as_retriever(), 
+    retriever=vectorstore.as_retriever(),
     llm=llm
 )
 
@@ -306,15 +306,15 @@ if __name__ == "__main__":
 整体流程回顾
 
 > [!important]
-> 
+>
 > **核心流程回顾**：
-> 
+>
 > 1. 把本地知识切片后做 Embedding
-> 
+>
 > 1. 存储到向量数据库中
-> 
+>
 > 1. 把用户输入和检索到的本地知识传递给大模型
-> 
+>
 > 1. 最终生成所需答案
 
 **LangChain + LLM** 的配置就是使原本复杂的东西变得特别简单、易于操作。而这个任务在大模型和 LangChain 出现之前，实现起来可不是这么简单的。
