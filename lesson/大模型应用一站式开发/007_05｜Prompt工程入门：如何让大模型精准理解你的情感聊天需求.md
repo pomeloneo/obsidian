@@ -340,13 +340,12 @@ Prompt 优化测试 /
 
 评估系统代码结构
 
+```text
 ├── evaluation_engine.py    # 评估引擎核心
-
 ├── database.py             # 数据模型（ResponseEvaluation 表）
-
 ├── models.py               # API 请求 / 响应模型
-
 └── main.py                 # API 接口
+```
 
 图 5-7 是是基于大模型的自动化评估系统时序图，呈现从请求到结果返回的完整流程。先由客户端发送评估请求，API 接口层传递相关数据后，评估引擎构建包含共情程度、自然度、安全性三个维度的提示词模板，调用 LLM 服务分析评分并生成反馈。接着解析结果、计算维度平均分，将评估数据存入数据库。最终把完整评估结果回传给客户端。
 
@@ -419,5 +418,3 @@ AI 是谁？——定义角色、人格与边界。
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
