@@ -493,12 +493,14 @@ print(prompt.format(flower_type="红玫瑰", occasion="爱情"))
     如果你观察 LangChain 中 `[prompt.py](http://prompt.py)` 的 `PromptTemplate` 实现代码，你会发现除了 `input_variables`、`template` 等参数之外，还有 `template_format`、`validate_template` 等参数。
 
     ```python
-    template_format: str = "f-string"
-    """The format of the prompt template. Options are: 'f-string', 'jinja2'."""
 
-    validate_template: bool = True
-    """Whether or not to try validating the template."""
-    ```
+```text
+template_format: str = "f-string"
+"""The format of the prompt template. Options are: 'f-string', 'jinja2'."""
+validate_template: bool = True
+"""Whether or not to try validating the template."""
+```
+```
 
     请查看 LangChain 文档，并尝试使用这些参数（如 jinja2 格式模板）。
 
