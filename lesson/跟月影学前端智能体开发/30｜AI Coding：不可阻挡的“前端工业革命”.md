@@ -198,39 +198,25 @@ node-xml-stream 这个仓库的核心代码 https://github.com/snappyjs/node-xml
 
 然后，我们再让 AI Builder 进一步根据这个内容生成实际代码，这个代码生成过程里，AI Builder 会自己根据项目的技术栈进行调整，用项目技术栈中的技术方案来生成。例如，当前我们使用的是 React 框架，那么生成的代码可能会是如下：
 
-import { FaDownload } from ‘react-icons/fa’;
-
-import React from ‘react’;
-
+```jsx
+import { FaDownload } from 'react-icons/fa';
+import React from 'react';
 const DownloadButton = () => {
-
 const handleDownload = () => {
-
-console.log(‘开始下载文件…’);
-
+console.log('开始下载文件...');
 };
-
 return (
-
 <button
-
 onClick={handleDownload}
-
-className=“flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200”
-
+className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200"
 >
-
-<FaDownload className=“mr-2” />
-
+<FaDownload className="mr-2" />
 下载
-
 </button>
-
 );
-
 };
-
 export default DownloadButton;
+```
 
 而如果是 Vue3 框架，则可能会是下面这样：
 
@@ -240,29 +226,20 @@ export default DownloadButton;
 
 @click=“handleDownload”
 
-class=“flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200”
-
+```jsx
+class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200"
 >
-
-<FaDownload class=“mr-2” />
-
+<FaDownload class="mr-2" />
 下载
-
 </button>
-
 </template>
-
 <script setup>
-
-import { FaDownload } from ‘react-icons/fa’
-
+import { FaDownload } from 'react-icons/fa'
 const handleDownload = () => {
-
-console.log(‘开始下载文件…’)
-
+console.log('开始下载文件...')
 }
-
 </script>
+```
 
 这样我们就实现了完全与框架和技术栈无关的、面向 AI 的组件库，甚至可以基于这个思想，逐步实现完整的新一代设计系统。
 
@@ -281,5 +258,3 @@ console.log(‘开始下载文件…’)
 安装 Trae 或 Cursor，用一个真实的项目，去实际体验这一节课讲的内容，把你的收获分享到评论区吧。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
