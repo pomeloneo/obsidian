@@ -152,9 +152,10 @@ loop.close()
 
 至于 Asyncio 版本的函数 download_all()，和之前多线程版本有很大的区别：
 
+```text
 tasks = [asyncio.create_task(download_one(site)) for site in sites]
-
 await asyncio.gather(*task)
+```
 
 这里的asyncio.create_task(coro)，表示对输入的协程 coro 创建一个任务，安排它的执行，并返回此任务对象。这个函数也是 Python 3.7+ 新增的，如果是之前的版本，你可以用asyncio.ensure_future(coro)等效替代。可以看到，这里我们对每一个网站的下载，都创建了一个对应的任务。
 
