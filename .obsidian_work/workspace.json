@@ -11,14 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "分享回流/直播间电商意图与分享漏斗埋点分析.md",
-                "mode": "source",
-                "source": false
+                "aFile": ".obsidian_work/workspace.json",
+                "bFile": ".obsidian_work/workspace.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "直播间电商意图与分享漏斗埋点分析"
+              "icon": "diff",
+              "title": "Diff: workspace.json  (Working Tree)"
             }
           }
         ]
@@ -89,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 296.5
+    "width": 431.5
   },
   "right": {
     "id": "ef405a15d1bb2d8d",
@@ -224,10 +224,10 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "3d1031094f9a73c9",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
     "分享回流/直播间电商意图与分享漏斗埋点分析.md",
+    "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
     "分享回流/分享回流漏斗看板.md",
     "分享回流/短视频 feed 电商意图与挂车埋点分析.md",
     "分享回流/_attachments/Pasted image 20260521165113.png",
