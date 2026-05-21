@@ -227,21 +227,16 @@ resources:
 
 limits:
 
-cpus: ‘4’
-
+```text
+cpus: '4'
 memory: 8G
-
 reservations:
-
-cpus: ‘2’
-
+cpus: '2'
 memory: 4G
-
 environment:
-
 - WORKERS=4
-
 - TIMEOUT=120
+```
 
 重新构建和启动：
 
@@ -462,35 +457,23 @@ sudo nano /etc/systemd/system/xinyu.service
 
 [Unit]
 
+```jsx
 Description=XinYu Chatbot Service
-
 After=network.target mysql.service
-
 [Service]
-
 Type=notify
-
 User=root
-
 Group=www-data
-
 WorkingDirectory=/var/www/xinyu
-
 ExecStart=/var/www/xinyu/start.sh
-
 Restart=always
-
 RestartSec=10
-
 EnvironmentFile=/var/www/xinyu/config.env
-
 MemoryMax=8G
-
 CPUQuota=400%
-
 [Install]
-
 WantedBy=multi-user.target
+```
 
 启用并启动服务：
 
