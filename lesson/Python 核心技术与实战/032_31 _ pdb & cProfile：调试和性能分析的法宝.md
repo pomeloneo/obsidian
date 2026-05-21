@@ -64,13 +64,12 @@ a = 1
 
 b = 2
 
+```python
 import pdb
-
 pdb.set_trace()
-
 c = 3
-
 print(a + b + c)
+```
 
 当我们运行这个程序时时，它的输出界面是下面这样的，表示程序已经运行到了“pdb.set_trace()”这行，并且暂停了下来，等待用户输入。
 
@@ -120,23 +119,17 @@ print(a + b + c)
 
 我们来看下面这个例子：
 
+```python
 def func():
-
-print(‘enter func()’)
-
+print('enter func()')
 a = 1
-
 b = 2
-
 import pdb
-
 pdb.set_trace()
-
 func()
-
 c = 3
-
 print(a + b + c)
+```
 
 # pdb
 
@@ -222,43 +215,35 @@ enter func()
 
 举个例子，比如我想计算斐波拉契数列，运用递归思想，我们很容易就能写出下面这样的代码：
 
+```python
 def fib(n):
-
 if n == 0:
-
 return 0
-
 elif n == 1:
-
 return 1
-
 else:
-
 return fib(n-1) + fib(n-2)
-
 def fib_seq(n):
-
 res = []
-
 if n > 0:
-
 res.extend(fib_seq(n-1))
-
 res.append(fib(n))
-
 return res
-
 fib_seq(30)
+```
 
 接下来，我想要测试一下这段代码总的效率以及各个部分的效率。那么，我就只需在开头导入 cProfile 这个模块，并且在最后运行 cProfile.run() 就可以了：
 
+```python
 import cProfile
-
-cProfile.run(‘fib_seq(30)’)
+cProfile.run('fib_seq(30)')
+```
 
 或者更简单一些，直接在运行脚本的命令中，加入选项“-m cProfile”也很方便：
 
+```bash
 python3 -m cProfile xxx.py
+```
 
 运行完毕后，我们可以看到下面这个输出界面：
 
@@ -280,49 +265,30 @@ cumtime percall，则是 cumtime 和 ncalls 相除的平均结果。
 
 有没有什么办法可以提高改进呢？答案是肯定的。通过观察，我们发现，程序中有很多对 fib() 的调用，其实是重复的，那我们就可以用字典来保存计算过的结果，防止重复。改进后的代码如下所示：
 
+```python
 def memoize(f):
-
 memo = {}
-
 def helper(x):
-
 if x not in memo:
-
 memo[x] = f(x)
-
 return memo[x]
-
 return helper
-
 @memoize
-
 def fib(n):
-
 if n == 0:
-
 return 0
-
 elif n == 1:
-
 return 1
-
 else:
-
 return fib(n-1) + fib(n-2)
-
 def fib_seq(n):
-
 res = []
-
 if n > 0:
-
 res.extend(fib_seq(n-1))
-
 res.append(fib(n))
-
 return res
-
 fib_seq(30)
+```
 
 这时，我们再对其进行 profile，你就会得到新的输出结果，很明显，效率得到了极大的提高。
 
@@ -343,5 +309,3 @@ fib_seq(30)
 欢迎在下方留言与我讨论，也欢迎你把这篇文章分享出去。我们一起交流，一起进步。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
