@@ -566,27 +566,19 @@ A majestic Chinese traditional landscape featuring a tall ancient tower on a mou
 
 在开始节点中我们输入 caption，这是一个序列化的 JSON 字符串，所以我们先用一个代码节点进行解析，代码内容如下：
 
+```jsx
 async function main({ params }: Args): Promise<Output> {
-
 const {utterances} = JSON.parse(params.input);
-
 const startTime = Date.now();
-
 const ret = {
-
 utterances: utterances.filter(u => {
-
 return !/\[.*?\]/.test(u.text);
-
 }),
-
 startTime,
-
 };
-
 return ret;
-
 }
+```
 
 在这里，我们将 Caption 对象中的 utterances 属性保留下来，并将非歌词的部分过滤掉（这部分内容以方括号开头，比如“[intro]”）。
 
@@ -594,33 +586,22 @@ return ret;
 
 循环节点的循环体中，我们首先通过代码来处理每一句歌词。
 
+```jsx
 function sleep(ms) {
-
 return new Promise(resolve => setTimeout(resolve, ms));
-
 }
-
 async function main({ params }: Args): Promise<Output> {
-
 const item = params.item;
-
 const startTime = params.startTime;
-
 const text = item.text;
-
 const d = item.start_time - (Date.now() - startTime);
-
 await sleep(d);
-
 const ret = {
-
 text,
-
 };
-
 return ret;
-
 }
+```
 
 这里我们根据歌词的 start_time 信息以及当前时间，来共同确认需要延迟多久来输出该句歌词，然后通过其后的“输出”节点将歌词输出。
 
@@ -695,5 +676,3 @@ return ret;
 Coze 应用的界面能实现的功能确实有限，所以就如前面要点总结所说的，我们可以通过直接调用工作流 API 的方式，自己实现 UI 来解决问题。你可以发布应用，然后参考 Coze 官方文档通过 API 执行工作流，然后自己实现应用的 UI，我期待你实现的版本，你可以试试，然后将具体实现分享到评论区。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
