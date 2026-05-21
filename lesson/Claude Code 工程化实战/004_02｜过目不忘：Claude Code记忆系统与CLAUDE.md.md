@@ -166,17 +166,14 @@ Windows: C:\Program Files\ClaudeCode\CLAUDE.md
 
 src/
 
+```text
 ├── routes/
-
 ├── controllers/
-
 ├── services/
-
 ├── repositories/
-
 ├── schemas/
-
 └── types/
+```
 
 ```typescript
 
@@ -298,17 +295,14 @@ describe(‘createOrder’, () => {
 
 it(‘should create order when stock is available’, async () => {
 
+```jsx
 const mockProduct = createMockProduct({ stock: 10 });
-
 const order = await orderService.createOrder(mockProduct.id, 1);
-
-expect(order.status).toBe(‘created’);
-
+expect(order.status).toBe('created');
 });
-
 });
-
 });
+```
 
 ## 覆盖率要求
 
