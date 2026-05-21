@@ -240,19 +240,27 @@ akira@AkiraMacbook transforms_js_demo % jiti server.ts
 
 首先配置 vite.config.ts 的 server:
 
-```text
 server: {
+
 allowedHosts: true,
+
 port: 4399,
+
 proxy: {
-'/api': {
-target: 'http://localhost:3000',
+
+‘/api’: {
+
+target: ‘http://localhost:3000’,
+
 secure: false,
-rewrite: path => path.replace(/^\/api/, ''),
+
+rewrite: path => path.replace(/^\/api/, ’’),
+
 },
+
 },
+
 },
-```
 
 然后我们修改 App.vue，内容如下。
 

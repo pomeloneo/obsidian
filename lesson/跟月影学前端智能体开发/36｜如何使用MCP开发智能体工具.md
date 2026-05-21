@@ -213,37 +213,63 @@ Server 提供的 tools：
 
 {
 
-```go
 content: [
+
 {
-type: 'text',
-text: '已获取到目录 . 文件列表:\n' +
-'```\n' +
-'total 184\n' +
-'drwxr-xr-x@ 19 akira staff 608 Jun 8 .\n' +
-'drwxr-xr-x 34 akira staff 1088 Jun 7 ..\n' +
-'-rw-r–r–@ 1 akira staff 57 Jun 7 .env.local\n' +
-'-rw-r–r– 1 akira staff 253 Apr 3 .gitignore\n' +
-'drwxr-xr-x 3 akira staff 96 Apr 3 .vscode\n' +
-'-rw-r–r– 1 akira staff 442 Apr 3 README.md\n' +
-'-rw-r–r– 1 akira staff 362 Apr 3 index.html\n' +
-'drwxr-xr-x@ 3 akira staff 96 Jun 8 lib\n' +
-'drwxr-xr-x@ 6 akira staff 192 Jun 7 mcp\n' +
-'drwxr-xr-x@ 22 akira staff 704 Jun 7 node_modules\n' +
-'-rw-r–r–@ 1 akira staff 737 Jun 7 package.json\n' +
-'-rw-r–r–@ 1 akira staff 51942 Jun 7 pnpm-lock.yaml\n' +
-'drwxr-xr-x 3 akira staff 96 Apr 3 public\n' +
-'-rw-r–r–@ 1 akira staff 2029 Jun 8 server.ts\n' +
-'drwxr-xr-x 9 akira staff 288 Jun 8 src\n' +
-'-rw-r–r–@ 1 akira staff 392 May 31 tsconfig.app.json\n' +
-'-rw-r–r–@ 1 akira staff 119 Jun 7 tsconfig.json\n' +
-'-rw-r–r–@ 1 akira staff 665 Jun 7 tsconfig.node.json\n' +
-'-rw-r–r–@ 1 akira staff 374 Jun 7 vite.config.ts\n' +
-'```\n'
+
+type: ‘text’,
+
+text: ‘已获取到目录 . 文件列表:\n’ +
+
+‘```\n’ +
+
+‘total 184\n’ +
+
+‘drwxr-xr-x@ 19 akira staff 608 Jun 8 .\n’ +
+
+‘drwxr-xr-x 34 akira staff 1088 Jun 7 ..\n’ +
+
+‘-rw-r–r–@ 1 akira staff 57 Jun 7 .env.local\n’ +
+
+‘-rw-r–r– 1 akira staff 253 Apr 3 .gitignore\n’ +
+
+‘drwxr-xr-x 3 akira staff 96 Apr 3 .vscode\n’ +
+
+‘-rw-r–r– 1 akira staff 442 Apr 3 README.md\n’ +
+
+‘-rw-r–r– 1 akira staff 362 Apr 3 index.html\n’ +
+
+‘drwxr-xr-x@ 3 akira staff 96 Jun 8 lib\n’ +
+
+‘drwxr-xr-x@ 6 akira staff 192 Jun 7 mcp\n’ +
+
+‘drwxr-xr-x@ 22 akira staff 704 Jun 7 node_modules\n’ +
+
+‘-rw-r–r–@ 1 akira staff 737 Jun 7 package.json\n’ +
+
+‘-rw-r–r–@ 1 akira staff 51942 Jun 7 pnpm-lock.yaml\n’ +
+
+‘drwxr-xr-x 3 akira staff 96 Apr 3 public\n’ +
+
+‘-rw-r–r–@ 1 akira staff 2029 Jun 8 server.ts\n’ +
+
+‘drwxr-xr-x 9 akira staff 288 Jun 8 src\n’ +
+
+‘-rw-r–r–@ 1 akira staff 392 May 31 tsconfig.app.json\n’ +
+
+‘-rw-r–r–@ 1 akira staff 119 Jun 7 tsconfig.json\n’ +
+
+‘-rw-r–r–@ 1 akira staff 665 Jun 7 tsconfig.node.json\n’ +
+
+‘-rw-r–r–@ 1 akira staff 374 Jun 7 vite.config.ts\n’ +
+
+‘```\n’
+
 }
+
 ]
+
 }
-```
 
 通过测试，我们看到在 MCPClient 中，可以用 await client.listTools() 来获取 MCPServer 注册的所有 tools，而通过 client.callTool 就可以调用指定名称的 tool。
 
@@ -543,19 +569,27 @@ res.end();
 
 先配置 vite 代理。
 
-```text
 server: {
+
 allowedHosts: true,
+
 port: 4399,
+
 proxy: {
-'/api': {
-target: 'http://localhost:3300',
+
+‘/api’: {
+
+target: ‘http://localhost:3300’,
+
 secure: false,
-rewrite: path => path.replace(/^\/api/, ''),
+
+rewrite: path => path.replace(/^\/api/, ’’),
+
 },
+
 },
+
 },
-```
 
 然后我们修改 App.vue，内容如下。
 
@@ -591,46 +625,81 @@ rewrite: path => path.replace(/^\/api/, ''),
 
 .container {
 
-```text
 display: flex;
+
 flex-direction: column;
+
 align-items: start;
+
 justify-content: start;
+
 height: 100vh;
+
 font-size: .85rem;
+
 }
+
 .input {
+
 width: 200px;
+
 }
+
 .output {
+
 margin-top: 10px;
+
 min-height: 300px;
+
 width: 100%;
+
 text-align: left;
+
 }
+
 button {
+
 padding: 0 10px;
+
 margin-left: 6px;
+
 }
+
 .stream-btn {
+
 background-color: \#4CAF50;
+
 color: white;
+
 }
+
 .static-indicator {
+
 margin-top: 10px;
+
 font-size: 0.8rem;
+
 color: blue;
+
 font-weight: bold;
+
 }
+
 .think {
+
 margin-top: 10px;
+
 color: gray;
+
 max-height: 300px;
+
 overflow-y:auto;
+
 font-size: x-small;
+
 }
+
 </style>
-```
 
 这个文件内容和上一节课的基本上是一样的，就不再赘述了，我们启动 server 和 vite，看一下效果：
 
