@@ -1177,8 +1177,12 @@ initial={{ opacity: 0 }}
 animate={{ opacity: 1 }}
 transition={{ delay: 0.5 }}
 >
+```
+
 ### 5.1.2 消息出现动画
 消息气泡上浮效果：从下方淡入上浮，模拟真实对话
+
+```jsx
 <MessageBubble
 key={message.id}
 initial={{ opacity: 0, y: 20 }}
@@ -1187,19 +1191,25 @@ transition={{ duration: 0.3 }}
 >
 {}
 </MessageBubble>
+```
 效果说明：
 y: 20 → y: 0：从下方 20px 位置滑入到原位
 opacity: 0 → opacity: 1：从透明到不透明
 duration: 0.3：快速但不突兀，保持对话流畅感
 ### 5.1.3 按钮交互反馈
 悬停放大效果：鼠标悬停时轻微放大，提供视觉反馈
+
+```jsx
 <SendButton
 whileHover={{ scale: 1.05 }}
 whileTap={{ scale: 0.95 }}
 >
 <Send size={20} />
 </SendButton>
+```
 新对话按钮：更柔和的交互反馈
+
+```jsx
 <NewChatButton
 onClick={startNewChat}
 whileHover={{ scale: 1.02 }}
@@ -1208,7 +1218,10 @@ whileTap={{ scale: 0.98 }}
 <Plus size={16} />
 新对话
 </NewChatButton>
+```
 反馈按钮：更明显的交互反馈
+
+```jsx
 <FeedbackButton
 onClick={() => openFeedbackModal(message)}
 whileHover={{ scale: 1.1 }}
@@ -1217,8 +1230,11 @@ whileTap={{ scale: 0.9 }}
 <MessageSquarePlus size={14} />
 反馈
 </FeedbackButton>
+```
 ### 5.1.4 级联动画
 快捷建议按钮级联出现：每个按钮依次出现，形成流畅的视觉流
+
+```jsx
 <AnimatePresence>
 {suggestions.map((suggestion, index) => (
 <SuggestionChip
@@ -1233,6 +1249,7 @@ onClick={() => handleSuggestionClick(suggestion)}
 </SuggestionChip>
 ))}
 </AnimatePresence>
+```
 效果说明：
 第一个按钮：立即出现
 第二个按钮：延迟 0.1 秒
@@ -1255,6 +1272,8 @@ onClick={() => handleSuggestionClick(suggestion)}
 保持一致性，同类元素使用相同的动画模式
 ## 5.2 自动滚动与焦点管理
 ### 5.2.1 自动滚动到最新消息
+
+```jsx
 const messagesEndRef = useRef(null);
 const scrollToBottom = () => {
 messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -1265,7 +1284,10 @@ scrollToBottom();
 <MessagesContainer>
 {/* 消息列表 */}
 </MessagesContainer>
+```
 ### 5.2.2 输入框焦点管理
+
+```jsx
 const inputRef = useRef(null);
 const sendMessage = async () => {
 inputRef.current?.focus();
@@ -1278,8 +1300,11 @@ onChange={handleInputChange}
 onKeyPress={handleKeyPress}
 placeholder="分享你的想法和感受..."
 />
+```
 ## 5.3 情绪可视化
 ### 5.3.1 情绪标签颜色映射
+
+```jsx
 const EmotionTag = styled.span`
 display: inline-block;
 background: ${props => {
@@ -1304,14 +1329,21 @@ font-size: 0.7rem;
 margin-left: 8px;
 font-weight: 500;
 `;
+```
 使用示例：
+
+```jsx
 {message.emotion && message.emotion !== 'neutral' && (
 <EmotionTag emotion={message.emotion}>
 {message.emotion}
 </EmotionTag>
 )}
+```
+
 ### 5.3.2 情绪对应的视觉提示
 在消息气泡中使用情绪颜色作为边框强调。
+
+```jsx
 const MessageContent = styled.div`
 padding: 12px 16px;
 border-radius: 18px;
@@ -1323,8 +1355,11 @@ ${props => !props.isUser && props.emotion && `
 border-left: 4px solid ${emotionColors[props.emotion] || '\#b2bec3'};
 `}
 `;
+```
 ## 5.4 快捷操作
 ### 5.4.1 快捷键支持
+
+```jsx
 const handleKeyPress = (e) => {
 if (e.key === 'Enter' && !e.shiftKey) {
 e.preventDefault();
@@ -1341,13 +1376,19 @@ startNewChat();
 window.addEventListener('keydown', handleKeyDown);
 return () => window.removeEventListener('keydown', handleKeyDown);
 }, []);
+```
 ### 5.4.2 快捷建议点击
+
+```jsx
 const handleSuggestionClick = (suggestion) => {
 setInputValue(suggestion);
 inputRef.current?.focus();
 };
+```
 ## 5.5 本地缓存与状态持久化
 ### 5.5.1 保存用户 ID 到本地
+
+```jsx
 const [currentUserId] = useState(() => {
 const savedUserId = localStorage.getItem('emotional_chat_user_id');
 if (savedUserId) {
@@ -1357,7 +1398,10 @@ const newUserId = `user_${Date.now()}`;
 localStorage.setItem('emotional_chat_user_id', newUserId);
 return newUserId;
 });
+```
 ### 5.5.2 保存当前会话 ID
+
+```jsx
 useEffect(() => {
 if (sessionId) {
 localStorage.setItem('emotional_chat_current_session', sessionId);
@@ -1369,8 +1413,11 @@ if (savedSessionId) {
 loadSessionHistory(savedSessionId);
 }
 }, []);
+```
 ## 5.6 错误处理与用户提示
 ### 5.6.1 网络错误处理
+
+```jsx
 try {
 const response = await ChatAPI.sendMessageWithAttachments(formData);
 } catch (error) {
@@ -1383,6 +1430,7 @@ errorMsg += '网络连接似乎有问题,请检查网络设置。';
 } else {
 errorMsg += '请稍后再试。';
 }
+
 const errorMessage = {
 id: Date.now() + 1,
 role: 'assistant',
@@ -1391,7 +1439,10 @@ timestamp: new Date()
 };
 setMessages(prev => [...prev, errorMessage]);
 }
+```
 ### 5.6.2 文件上传验证
+
+```jsx
 const handleFileUpload = (event) => {
 const files = Array.from(event.target.files);
 for (const file of files) {
@@ -1421,8 +1472,11 @@ setAttachments(prev => [...prev, newAttachment]);
 }
 event.target.value = '';
 };
+```
 ## 5.7 响应式设计
 ### 5.7.1 移动端适配
+
+```jsx
 const breakpoints = {
 mobile: '768px',
 tablet: '1024px'
@@ -1452,7 +1506,10 @@ max-width: 70%;
 max-width: 85%; // 手机上占更大宽度
 }
 `;
+```
 ### 5.7.2 触摸友好的交互
+
+```jsx
 const SendButton = styled(motion.button)`
 width: 50px;
 height: 50px;
@@ -1463,9 +1520,12 @@ width: 56px; // 移动端更大的触摸区域
 height: 56px;
 }
 `;
+```
 ## 5.8 性能优化
 ### 5.8.1 消息列表虚拟化（长列表优化）
 对于包含大量历史消息的会话，可以使用虚拟滚动优化性能。
+
+```jsx
 import { FixedSizeList } from 'react-window';
 const MessageList = () => {
 if (messages.length > 100) {
@@ -1486,7 +1546,10 @@ width="100%"
 }
 return messages.map(msg => <MessageBubble key={msg.id} message={msg} />);
 };
+```
 ### 5.8.2 图片懒加载
+
+```jsx
 const LazyImage = ({ src, alt }) => {
 const [imageSrc, setImageSrc] = useState(placeholderImage);
 const imgRef = useRef();
@@ -1506,7 +1569,10 @@ return () => observer.disconnect();
 }, [src]);
 return <img ref={imgRef} src={imageSrc} alt={alt} />;
 };
+```
 ### 5.8.3 防抖与节流
+
+```jsx
 import { useCallback } from 'react';
 import { debounce } from 'lodash';
 const debouncedDetectURLs = useCallback(
@@ -1521,8 +1587,11 @@ const value = e.target.value;
 setInputValue(value);
 debouncedDetectURLs(value);
 };
+```
 ## 5.9 无障碍访问（Accessibility）
 ### 5.9.1 语义化 HTML 与 ARIA 标签
+
+```jsx
 <SendButton
 onClick={sendMessage}
 disabled={!inputValue.trim() || isLoading}
@@ -1531,7 +1600,10 @@ aria-disabled={!inputValue.trim() || isLoading}
 >
 <Send size={20} />
 </SendButton>
+```
 ### 5.9.2 键盘导航支持
+
+```jsx
 const handleTabNavigation = (e) => {
 if (e.key === 'Tab') {
 const focusableElements = [
@@ -1545,14 +1617,23 @@ e.preventDefault();
 focusableElements[nextIndex]?.focus();
 }
 };
+```
 ## 5.10 生产环境优化
 ### 5.10.1 构建优化
+
+```bash
 npm run build
+```
 ### 5.10.2 环境变量配置
+
+```dotenv
 REACT_APP_API_URL=https://your-production-api.com
 REACT_APP_ENABLE_ANALYTICS=true
+```
 ### 5.10.3 部署配置
 使用 Nginx 部署前端。
+
+```nginx
 server {
 listen 80;
 server_name your-domain.com;
@@ -1572,6 +1653,8 @@ proxy_set_header X-Real-IP $remote_addr;
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 }
+```
+
 # 六、结语：当技术遇见温度，让 AI"可触摸"
 我们刚刚完成了一场从幕后到台前的跨越。
 在过去的十二讲中，我们深入大模型的底层逻辑，掌握了 Prompt 工程的艺术，构建了记忆系统、意图识别模块与响应生成引擎，一步步为"心语"机器人注入智能与温度。它已经具备了理解语言、感知情绪、持续对话、安全交互的能力——但这一切，还深藏在代码与命令行之中，像一颗尚未点亮的星辰。
@@ -1585,5 +1668,3 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 从技术实现角度，前后端分离架构（Python + React）如何支持这些情感化设计的落地？例如，Framer Motion、Styled Components 等前端技术在实现"可触摸的陪伴"体验中扮演了什么角色？
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-unpreview
-```
