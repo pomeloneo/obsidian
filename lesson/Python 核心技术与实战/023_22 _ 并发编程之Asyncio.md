@@ -66,73 +66,42 @@ __
 
 讲完了 Asyncio 的原理，我们结合具体的代码来看一下它的用法。还是以上节课下载网站内容为例，用 Asyncio 的写法我放在了下面代码中（省略了异常处理的一些操作），接下来我们一起来看：
 
+```python
 import asyncio
-
 import aiohttp
-
 import time
-
 async def download_one(url):
-
 async with aiohttp.ClientSession() as session:
-
 async with session.get(url) as resp:
-
-print(‘Read {} from {}’.format(resp.content_length, url))
-
+print('Read {} from {}'.format(resp.content_length, url))
 async def download_all(sites):
-
 tasks = [asyncio.create_task(download_one(site)) for site in sites]
-
 await asyncio.gather(*tasks)
-
 def main():
-
 sites = [
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
-’https:
-
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
+'https:
 ]
-
 start_time = time.perf_counter()
-
 asyncio.run(download_all(sites))
-
 end_time = time.perf_counter()
-
-print(‘Download {} sites in {} seconds’.format(len(sites), end_time - start_time))
-
-if __name__ == ‘__main__’:
-
+print('Download {} sites in {} seconds'.format(len(sites), end_time - start_time))
+if __name__ == '__main__':
 main()
+```
 
 ## 输出
 
@@ -174,13 +143,12 @@ Download 15 sites in 0.062144195078872144 seconds
 
 loop = asyncio.get_event_loop()
 
+```text
 try:
-
 loop.run_until_complete(coro)
-
 finally:
-
 loop.close()
+```
 
 至于 Asyncio 版本的函数 download_all()，和之前多线程版本有很大的区别：
 
@@ -212,19 +180,15 @@ Asyncio 软件库的兼容性问题，在 Python3 的早期一直是个大问题
 
 总的来说，你可以遵循以下伪代码的规范：
 
+```text
 if io_bound:
-
 if io_slow:
-
-print(‘Use Asyncio’)
-
+print('Use Asyncio')
 else:
-
-print(‘Use multi-threading’)
-
+print('Use multi-threading')
 else if cpu_bound:
-
-print(‘Use multi-processing’)
+print('Use multi-processing')
+```
 
 如果是 I/O bound，并且 I/O 操作很慢，需要很多任务 / 线程协同实现，那么使用 Asyncio 更合适。
 
@@ -250,36 +214,23 @@ Asyncio 中的任务，在运行过程中不会被打断，因此不会出现 ra
 
 我把常规版本的写法放在了下面，你能通过查阅资料，写出它的多进程版本，并且比较程序的耗时吗？
 
+```python
 import time
-
 def cpu_bound(number):
-
 print(sum(i * i for i in range(number)))
-
 def calculate_sums(numbers):
-
 for number in numbers:
-
 cpu_bound(number)
-
 def main():
-
 start_time = time.perf_counter()
-
 numbers = [10000000 + x for x in range(20)]
-
 calculate_sums(numbers)
-
 end_time = time.perf_counter()
-
-print(‘Calculation takes {} seconds’.format(end_time - start_time))
-
-if __name__ == ‘__main__’:
-
+print('Calculation takes {} seconds'.format(end_time - start_time))
+if __name__ == '__main__':
 main()
+```
 
 欢迎在留言区写下你的思考和答案，也欢迎你把今天的内容分享给你的同事朋友，我们一起交流、一起进步。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
