@@ -116,87 +116,49 @@ design-principles ’(干净 简洁 纯色 典雅))
 
 下面的代码段展示了如何在调用国产 Deepseek 模型生成文案时，加入小样本提示示例和思维链引导，以更好地满足生成要求。
 
+```python
 from openai import OpenAI
-
 client = OpenAI(
-
-api_key=“”,
-
-base_url=“https://api.deepseek.com”)
-
-few_shots = ““”
-
+api_key="",
+base_url="https://api.deepseek.com")
+few_shots = """
 问题：描述一个《黑神话 悟空》中的场景，玩家正天空中战斗。
-
 答案：让我们一步步描绘这个过程：
-
 1. 一步跨越千里云端,
-
 2. 悟空与金翅大鹏在九霄对峙,
-
 3. 金箍棒与利爪相交,
-
 4. 震碎了一轮圆月。
-
-““”
-
+"""
 scene_types = {
-
-“战斗”: [“对手”, “武器”, “环境”, “技能”, “结果”],
-
-“探索”: [“地点”, “发现”, “障碍”, “解决”, “奖励”],
-
-“剧情”: [“人物”, “冲突”, “对话”, “情感”, “转折”]
-
+"战斗": ["对手", "武器", "环境", "技能", "结果"],
+"探索": ["地点", "发现", "障碍", "解决", "奖励"],
+"剧情": ["人物", "冲突", "对话", "情感", "转折"]
 }
-
-scene_type = “探索”
-
+scene_type = "探索"
 messages = [
-
 {
-
-“role”: “system”,
-
-“content”: f”““你是一位熟悉《黑神话 悟空》的{scene_type}场景设计助手，
-
+"role": "system",
+"content": f"""你是一位熟悉《黑神话 悟空》的{scene_type}场景设计助手，
 善于用细节描述画面。
-
 请根据以下场景要素来构建描述：
-
-- {scene_types[scene_type]}““”
-
+- {scene_types[scene_type]}"""
 },
-
 {
-
-“role”: “user”,
-
-“content”: f”““{few_shots}
-
-请继续描述一个新的水帘洞探索场景： ““”
-
+"role": "user",
+"content": f"""{few_shots}
+请继续描述一个新的水帘洞探索场景： """
 }
-
 ]
-
 response = client.chat.completions.create(
-
-model=“deepseek-chat”,
-
+model="deepseek-chat",
 messages=messages,
-
 max_tokens=1024,
-
 temperature=0.7,
-
 stream=False
-
 )
-
-print(“\n生成的水帘洞探索场景描述：”)
-
+print("\n生成的水帘洞探索场景描述：")
 print(response.choices[0].message.content)
+```
 
 输出效果：
 
@@ -448,57 +410,38 @@ prompts/get：获取指定提示并填入参数，生成完整消息序列 。
 
 客户端发送 prompts/list 请求的示例如下：
 
+```python
 {
-
-“jsonrpc”: “2.0”,
-
-“id”: 1,
-
-“method”: “prompts/get”,
-
-“params”: {
-
-“name”: “explain-code”,
-
-“arguments”: {
-
-“code”: “def foo(): return 42”,
-
-“language”: “python”
-
+"jsonrpc": "2.0",
+"id": 1,
+"method": "prompts/get",
+"params": {
+"name": "explain-code",
+"arguments": {
+"code": "def foo(): return 42",
+"language": "python"
 }
-
 }
-
 }
+```
 
 服务端回复这个请求的响应消息格式如下：
 
+```text
 {
-
-“jsonrpc”: “2.0”,
-
-“id”: 1,
-
-“messages”: [
-
+"jsonrpc": "2.0",
+"id": 1,
+"messages": [
 {
-
-“role”: “user”,
-
-“content”: {
-
-“type”: “text”,
-
-“text”: “Explain how this python code works:\n\ndef foo(): return 42”
-
+"role": "user",
+"content": {
+"type": "text",
+"text": "Explain how this python code works:\n\ndef foo(): return 42"
 }
-
 }
-
 ]
-
 }
+```
 
 ### 获取特定提示
 
@@ -506,61 +449,40 @@ prompts/get：获取指定提示并填入参数，生成完整消息序列 。
 
 客户端发送 prompts/get 请求的示例如下：
 
+```python
 {
-
-“jsonrpc”: “2.0”,
-
-“id”: 2,
-
-“method”: “prompts/get”,
-
-“params”: {
-
-“name”: “code_review”,
-
-“arguments”: {
-
-“code”: “def hello():\n print(‘world’)”
-
+"jsonrpc": "2.0",
+"id": 2,
+"method": "prompts/get",
+"params": {
+"name": "code_review",
+"arguments": {
+"code": "def hello():\n print('world')"
 }
-
 }
-
 }
+```
 
 服务端回复这个请求的响应消息格式如下：
 
+```text
 {
-
-“jsonrpc”: “2.0”,
-
-“id”: 2,
-
-“result”: {
-
-“description”: “Code review prompt”,
-
-“messages”: [
-
+"jsonrpc": "2.0",
+"id": 2,
+"result": {
+"description": "Code review prompt",
+"messages": [
 {
-
-“role”: “user”,
-
-“content”: {
-
-“type”: “text”,
-
-“text”: “Please review this Python code:\ndef hello():\n print(‘world’)”
-
+"role": "user",
+"content": {
+"type": "text",
+"text": "Please review this Python code:\ndef hello():\n print('world')"
 }
-
 }
-
 ]
-
 }
-
 }
+```
 
 ### 提示列表变更通知
 
@@ -664,13 +586,12 @@ prompts/get：获取指定提示并填入参数，生成完整消息序列 。
 
 先导入所需要的库。
 
+```python
 from mcp.server import Server
-
 import mcp.types as types
-
 import asyncio
-
 from mcp.server.stdio import stdio_server
+```
 
 ### 服务器端的代码实现
 
@@ -684,7 +605,9 @@ explain-code  模板专注于代码解释。
 
 两个模板都支持动态参数（代码内容和编程语言）。
 
+```dotenv
 PROMPTS = {
+```
 
 “code-review”: types.Prompt(
 
@@ -774,109 +697,60 @@ async def list_prompts() -> list[types.Prompt]:
 
 “““返回可用的提示模板列表”“”
 
+```python
 return list(PROMPTS.values())
-
 @app.get_prompt()
-
 async def get_prompt(
-
 name: str, arguments: dict[str, str] | None = None
-
 ) -> types.GetPromptResult:
-
-“““根据名称和参数获取提示内容”“”
-
+"""根据名称和参数获取提示内容"""
 if name not in PROMPTS:
-
-raise ValueError(f”提示模板 ‘{name}’ 不存在”)
-
-if name == “code-review”:
-
-code = arguments.get(“code”) if arguments else “”
-
-language = arguments.get(“language”) if arguments else “Unknown”
-
-focus = arguments.get(“focus”, “general”) if arguments else “general”
-
+raise ValueError(f"提示模板 '{name}' 不存在")
+if name == "code-review":
+code = arguments.get("code") if arguments else ""
+language = arguments.get("language") if arguments else "Unknown"
+focus = arguments.get("focus", "general") if arguments else "general"
 return types.GetPromptResult(
-
 messages=[
-
 types.PromptMessage(
-
-role=“system”,
-
+role="system",
 content=types.TextContent(
-
-type=“text”,
-
-text=f”你是一个专业的代码审查助手，专注于{language}代码的{focus}方面。”
-
+type="text",
+text=f"你是一个专业的代码审查助手，专注于{language}代码的{focus}方面。"
 )
-
 ),
-
 types.PromptMessage(
-
-role=“user”,
-
+role="user",
 content=types.TextContent(
-
-type=“text”,
-
-text=f”请审查以下{language}代码，并提供改进建议：\n\n{code}”
-
+type="text",
+text=f"请审查以下{language}代码，并提供改进建议：\n\n{code}"
 )
-
 )
-
 ]
-
 )
-
-elif name == “explain-code”:
-
-code = arguments.get(“code”) if arguments else “”
-
-language = arguments.get(“language”) if arguments else “Unknown”
-
+elif name == "explain-code":
+code = arguments.get("code") if arguments else ""
+language = arguments.get("language") if arguments else "Unknown"
 return types.GetPromptResult(
-
 messages=[
-
 types.PromptMessage(
-
-role=“assistant”,
-
+role="assistant",
 content=types.TextContent(
-
-type=“text”,
-
-text=f”你是一个专业的编程导师，擅长解释{language}代码。”
-
+type="text",
+text=f"你是一个专业的编程导师，擅长解释{language}代码。"
 )
-
 ),
-
 types.PromptMessage(
-
-role=“user”,
-
+role="user",
 content=types.TextContent(
-
-type=“text”,
-
-text=f”请解释以下{language}代码的工作原理：\n\n{code}”
-
+type="text",
+text=f"请解释以下{language}代码的工作原理：\n\n{code}"
 )
-
 )
-
 ]
-
 )
-
-raise ValueError(f”未实现提示模板 ‘{name}’ 的处理逻辑”)
+raise ValueError(f"未实现提示模板 '{name}' 的处理逻辑")
+```
 
 在  get_prompt  函数里会通过读取  arguments  参数，动态拼接和生成返回的提示内容。这样你可以根据传入的参数，灵活调整返回给 Client 端的提示内容。而 jsonRPC 消息的构建细节和格式，就不用你我来操心了。
 
@@ -884,121 +758,70 @@ raise ValueError(f”未实现提示模板 ‘{name}’ 的处理逻辑”)
 
 在客户端（client.py）这个文件中，还是先导入包，设置 LLM 环境变量。
 
+```python
 import sys
-
 import asyncio
-
 from mcp import ClientSession
-
 from mcp.client.stdio import stdio_client, StdioServerParameters
-
 from openai import OpenAI
-
 import os
-
 from dotenv import load_dotenv
-
 import mcp.types as types
-
 load_dotenv()
+```
 
 下面，我们实现了服务器的连接和通信，同时提供交互式的用户界面，支持选择不同的提示模板和参数，最后使用  DeepSeek API 来处理提示并获取响应。
 
+```python
 class CodeReviewClient:
-
 def __init__(self):
-
 self.session = None
-
 self.transport = None
-
 self.client = OpenAI(
-
-api_key=os.getenv(“DEEPSEEK_API_KEY”),
-
-base_url=“https://api.deepseek.com”
-
+api_key=os.getenv("DEEPSEEK_API_KEY"),
+base_url="https://api.deepseek.com"
 )
-
 self.prompts = None
-
 async def connect(self, server_script: str):
-
 params = StdioServerParameters(
-
-command=“/mnt/external_disk/venv/20250426_MCP_Server/bin/python”,
-
+command="/mnt/external_disk/venv/20250426_MCP_Server/bin/python",
 args=[server_script],
-
-cwd=“../server”
-
+cwd="../server"
 )
-
 self.transport = stdio_client(params)
-
 self.stdio, self.write = await self.transport.__aenter__()
-
 self.session = await ClientSession(self.stdio, self.write).__aenter__()
-
 await self.session.initialize()
-
 self.prompts = await self.session.list_prompts()
-
 if not isinstance(self.prompts, dict):
-
 self.prompts = dict(self.prompts)
-
-prompt_list = self.prompts.get(“prompts”, [])
-
-print(“可用提示模板：”)
-
+prompt_list = self.prompts.get("prompts", [])
+print("可用提示模板：")
 for prompt in prompt_list:
-
-if hasattr(prompt, ‘name’) and hasattr(prompt, ‘description’):
-
-print(f”- {prompt.name}: {prompt.description}“)
-
+if hasattr(prompt, 'name') and hasattr(prompt, 'description'):
+print(f"- {prompt.name}: {prompt.description}")
 else:
-
-print(f”- 未知提示模板: {prompt}“)
-
+print(f"- 未知提示模板: {prompt}")
 async def use_prompt(self, prompt_name: str, arguments: dict[str, str]):
-
 prompt_result = await self.session.get_prompt(prompt_name, arguments)
-
 messages = []
-
 for msg in prompt_result.messages:
-
 if isinstance(msg.content, types.TextContent):
-
 messages.append({
-
-“role”: msg.role,
-
-“content”: msg.content.text
-
+"role": msg.role,
+"content": msg.content.text
 })
-
 response = self.client.chat.completions.create(
-
-model=“deepseek-chat”,
-
+model="deepseek-chat",
 messages=messages
-
 )
-
 return response.choices[0].message.content
-
 async def close(self):
-
 if self.session:
-
 await self.session.__aexit__(None, None, None)
-
 if self.transport:
-
 await self.transport.__aexit__(None, None, None)
+```
 
 下面是 main 函数的实现，负责提供要分析的代码，并根据提示词来设计出一套简单的交互流程。
 
@@ -1006,127 +829,69 @@ async def main():
 
 print(“>>> 开始初始化代码审查系统”)
 
+```python
 if len(sys.argv) < 2:
-
-print(“用法: python client.py <server.py 路径>”)
-
+print("用法: python client.py <server.py 路径>")
 return
-
 client = CodeReviewClient()
-
 try:
-
 await client.connect(sys.argv[1])
-
-print(“>>> 系统连接成功”)
-
-sample_code = ““”
-
+print(">>> 系统连接成功")
+sample_code = """
 def calculate_fibonacci(n):
-
 if n <= 0:
-
 return []
-
 elif n == 1:
-
 return [0]
-
 fib = [0, 1]
-
 for i in range(2, n):
-
 fib.append(fib[i-1] + fib[i-2])
-
 return fib
-
-““”
-
+"""
 while True:
-
-print(“\n请选择操作：”)
-
-print(“1. 代码审查”)
-
-print(“2. 代码解释”)
-
-print(“3. 退出”)
-
-choice = input(“>”)
-
-if choice == “3”:
-
+print("\n请选择操作：")
+print("1. 代码审查")
+print("2. 代码解释")
+print("3. 退出")
+choice = input(">")
+if choice == "3":
 break
-
-if choice == “1”:
-
-print(“\n请选择审查重点：”)
-
-print(“1. 性能”)
-
-print(“2. 安全性”)
-
-print(“3. 可读性”)
-
-print(“4. 综合”)
-
-focus_choice = input(“>”)
-
+if choice == "1":
+print("\n请选择审查重点：")
+print("1. 性能")
+print("2. 安全性")
+print("3. 可读性")
+print("4. 综合")
+focus_choice = input(">")
 focus_map = {
-
-“1”: “performance”,
-
-“2”: “security”,
-
-“3”: “readability”,
-
-“4”: “general”
-
+"1": "performance",
+"2": "security",
+"3": "readability",
+"4": "general"
 }
-
-focus = focus_map.get(focus_choice, “general”)
-
-print(“\n正在审查代码…”)
-
-response = await client.use_prompt(“code-review”, {
-
-“code”: sample_code,
-
-“language”: “Python”,
-
-“focus”: focus
-
+focus = focus_map.get(focus_choice, "general")
+print("\n正在审查代码...")
+response = await client.use_prompt("code-review", {
+"code": sample_code,
+"language": "Python",
+"focus": focus
 })
-
-print(“\n审查结果：\n”, response)
-
-elif choice == “2”:
-
-print(“\n正在解释代码…”)
-
-response = await client.use_prompt(“explain-code”, {
-
-“code”: sample_code,
-
-“language”: “Python”
-
+print("\n审查结果：\n", response)
+elif choice == "2":
+print("\n正在解释代码...")
+response = await client.use_prompt("explain-code", {
+"code": sample_code,
+"language": "Python"
 })
-
-print(“\n解释：\n”, response)
-
+print("\n解释：\n", response)
 except Exception as e:
-
-print(f”发生错误: {e}“)
-
+print(f"发生错误: {e}")
 finally:
-
 await client.close()
-
-print(“>>> 系统已关闭”)
-
-if __name__ == “__main__”:
-
+print(">>> 系统已关闭")
+if __name__ == "__main__":
 asyncio.run(main())
+```
 
 ### 运行代码分析示例
 
@@ -1189,5 +954,3 @@ Resource 是“提供背景信息”，用于为 Prompt 或 Tool 提供上下文
 欢迎你在留言区记录你的收获或者疑问。如果这节课对你有启发，也推荐你分享给身边更多朋友。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
