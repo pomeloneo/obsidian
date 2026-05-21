@@ -202,39 +202,25 @@ CLAUDE.local.md 已经废弃，我们就不着墨了。
 
 /my-monorepo
 
+```text
 ├── .git
-
 ├── .claude/
-
 │ └── CLAUDE.md # (A) 项目根上下文
-
 ├── services/
-
 │ ├── user-service/
-
 │ │ ├── .claude/
-
 │ │ │ └── CLAUDE.md # (B) user-service 微服务上下文
-
 │ │ ├── main.go
-
 │ │ └── internal/
-
 │ │ └── db.go
-
 │ └── order-service/
-
 │ ├── .claude/
-
 │ │ └── CLAUDE.md # (C) order-service 微服务上下文
-
 │ └── main.go
-
 └── libs/
-
 └── shared-utils/
-
 └── string.go
+```
 
 各个 CLAUDE.md 文件的内容：
 
@@ -516,21 +502,21 @@ The project follows a clean architecture with clear separation of concerns:
 
 - Fetches reactions when enabled (requires special API preview headers)
 
+```bash
 make cmdline
-
 make web
-
 make all
-
 make clean
+```
 
 ./issue2md [flags] [output-file]
 
 ./issue2mdweb
 
+```bash
 make buildimage
-
 docker run -d -p 8080 bigwhite/issue2mdweb
+```
 
 go mod tidy
 
@@ -667,9 +653,8 @@ Claude Code 会给出一个 CLAUDE.md 文件列表，并让你选择要编辑的
 - **Commit Message规范**: **[严格遵循]** Conventional Commits 规范 (https:
 
 - 格式: `
-    
+
     (): `
-    
 
 - 当被要求生成commit message时，必须遵循此格式。
 
@@ -772,5 +757,3 @@ AI 协作指令
 欢迎在评论区分享你“翻译”出的团队规则。这个练习将帮助你迈出将团队隐性知识显性化、工程化的关键一步。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
