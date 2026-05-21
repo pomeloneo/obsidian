@@ -21,5 +21,3 @@ Q：Text2SQL 技术的发展现状如何？未来面临哪些挑战？
 在真实场景中，一次性完美生成复杂 SQL 的情况并不是很好。所以系统需要具备与用户交互、澄清意图、以及根据用户的反馈修正查询的能力。设计高效、自然的交互机制本身就是一个挑战。可设计为 Agent 模式来实现多轮交互，若首次生成的 SQL 有误，系统可将错误反馈给 LLM 进行迭代修正。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
