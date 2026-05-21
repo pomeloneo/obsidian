@@ -165,10 +165,10 @@ STORE_GLOBAL 0 (n)
 
 所以，千万别想着，有了 GIL 你的程序就可以高枕无忧了，我们仍然需要去注意线程安全。正如我开头所说，GIL 的设计，主要是为了方便 CPython 解释器层面的编写者，而不是 Python 应用层面的程序员。作为 Python 的使用者，我们还是需要 lock 等工具，来确保线程安全。比如我下面的这个例子：
 
+```text
 n = 0
-
 lock = threading.Lock()
-
+```
 ```python
 def foo():
 global n
