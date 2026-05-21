@@ -399,27 +399,19 @@ pipeline(ling.stream, res);
 
 我们配置 vite.config.js 转发 server 接口：
 
+```text
 server: {
-
 allowedHosts: true,
-
 port: 4399,
-
 proxy: {
-
-‘/api’: {
-
-target: ‘http://localhost:3000’,
-
+'/api': {
+target: 'http://localhost:3000',
 secure: false,
-
-rewrite: path => path.replace(/^\/api/, ’’),
-
+rewrite: path => path.replace(/^\/api/, ''),
 },
-
 },
-
 },
+```
 
 然后改写 App.vue。
 
