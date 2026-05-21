@@ -325,46 +325,28 @@ npx jsx examples/ask-your-lib.ts 'RAG Demo 是做什么的？'
 
 {
 
-text: ‘# RAG Demo\n’ +
-
-‘\n’ +
-
-‘一个基于 TypeScript 的 Node.js 项目，实现了完整的 RAG（检索增强生成）功能演示。项目使用 Ollama 进行文本嵌入，Vectra 进行本地向量存储，提供了简单易用的 RAG 接口。\n’ +
-
-‘\n’ +
-
-‘## 🚀 核心特性\n’ +
-
-‘\n’ +
-
-‘### RAG 功能\n’ +
-
-‘- **文本嵌入**: 基于 Ollama 的 `nomic-embed-text` 模型\n’ +
-
-‘- **向量存储**: 使用 Vectra 进行本地文件系统存储\n’ +
-
-‘- **智能分块**: 自动将长文本分割为可处理的块\n’ +
-
-‘- **相似度检索**: 支持语义相似度查询\n’ +
-
-‘- **增删改查**: 完整的向量数据库操作\n’ +
-
-‘\n’ +
-
-‘### 技术栈’,
-
-query: ‘RAG Demo 是做什么的？’,
-
+```text
+text: '# RAG Demo\n' +
+'\n' +
+'一个基于 TypeScript 的 Node.js 项目，实现了完整的 RAG（检索增强生成）功能演示。项目使用 Ollama 进行文本嵌入，Vectra 进行本地向量存储，提供了简单易用的 RAG 接口。\n' +
+'\n' +
+'## 🚀 核心特性\n' +
+'\n' +
+'### RAG 功能\n' +
+'- **文本嵌入**: 基于 Ollama 的 `nomic-embed-text` 模型\n' +
+'- **向量存储**: 使用 Vectra 进行本地文件系统存储\n' +
+'- **智能分块**: 自动将长文本分割为可处理的块\n' +
+'- **相似度检索**: 支持语义相似度查询\n' +
+'- **增删改查**: 完整的向量数据库操作\n' +
+'\n' +
+'### 技术栈',
+query: 'RAG Demo 是做什么的？',
 simularity: 0.7141837723769591,
-
-id: ‘b18bac0d-404c-4e34-a992-374d817560ea’
-
+id: 'b18bac0d-404c-4e34-a992-374d817560ea'
 },
-
 {
-
-text: ‘demo/\n’ +
-
+text: 'demo/\n' +
+```
 ```text
 '├── src/ # 源代码目录\n' +
 '│ ├── index.ts # SimpleRag 主类实现\n' +
@@ -376,115 +358,67 @@ text: ‘demo/\n’ +
 '│ └── rag-usage.ts \#',
 ```
 
-query: ‘RAG Demo 是做什么的？’,
-
+```text
+query: 'RAG Demo 是做什么的？',
 simularity: 0.7123087710639455,
-
-id: ‘61312a0c-a1b1-46bb-959d-cb0329ae424d’
-
+id: '61312a0c-a1b1-46bb-959d-cb0329ae424d'
 },
-
 {
-
-text: ‘# Package.json 完整配置文档\n’ +
-
-‘\n’ +
-
-‘## 项目基本信息\n’ +
-
-‘```json\n’ +
-
-‘{\n’ +
-
-’ “name”: “rag_demo”,\n’ +
-
-’ “version”: “1.0.0”,\n’ +
-
-’ “description”: “A TypeScript Node.js project for RAG demo”,\n’ +
-
-’ “main”: “dist/index.js”,\n’ +
-
-’ “types”: “dist/index.d.ts”,\n’ +
-
-’ “author”: “RAG Demo Project”,\n’ +
-
-’ “license”: “ISC”\n’ +
-
-‘}\n’ +
-
-‘```\n’ +
-
-‘\n’ +
-
-‘## 可执行文件配置\n’ +
-
-‘```json\n’ +
-
-‘{\n’ +
-
-’ “bin”: {\n’ +
-
-’ ’,
-
-query: ‘RAG Demo 是做什么的？’,
-
+text: '# Package.json 完整配置文档\n' +
+'\n' +
+'## 项目基本信息\n' +
+'```json\n' +
+'{\n' +
+' "name": "rag_demo",\n' +
+' "version": "1.0.0",\n' +
+' "description": "A TypeScript Node.js project for RAG demo",\n' +
+' "main": "dist/index.js",\n' +
+' "types": "dist/index.d.ts",\n' +
+' "author": "RAG Demo Project",\n' +
+' "license": "ISC"\n' +
+'}\n' +
+'```\n' +
+'\n' +
+'## 可执行文件配置\n' +
+'```json\n' +
+'{\n' +
+' "bin": {\n' +
+' ',
+query: 'RAG Demo 是做什么的？',
 simularity: 0.6829199356959024,
-
-id: ‘64f17ffd-b799-4491-99f9-552790590861’
-
+id: '64f17ffd-b799-4491-99f9-552790590861'
 },
-
 {
-
-text: ‘相似度检索**: 支持语义相似度查询\n’ +
-
-‘- **增删改查**: 完整的向量数据库操作\n’ +
-
-‘\n’ +
-
-‘### 技术栈\n’ +
-
-‘- **TypeScript**: 完整的类型支持和严格模式\n’ +
-
-‘- **CommonJS**: 兼容性输出格式\n’ +
-
-‘- **Jest**: 完整的单元测试框架\n’ +
-
-‘- **ESLint + Prettier**: 代码质量和格式化\n’ +
-
-‘- **pnpm**: 高效的包管理工具\n’ +
-
-‘- **Ollama**: AI 模型推理引擎\n’ +
-
-‘- **Vectra**: 本地向量数据库\n’ +
-
-‘\n’ +
-
-‘## 📦 项目结构\n’ +
-
-‘\n’ +
-
-‘```\n’ +
-
-‘rag_demo/\n’ +
-
+text: '相似度检索**: 支持语义相似度查询\n' +
+'- **增删改查**: 完整的向量数据库操作\n' +
+'\n' +
+'### 技术栈\n' +
+'- **TypeScript**: 完整的类型支持和严格模式\n' +
+'- **CommonJS**: 兼容性输出格式\n' +
+'- **Jest**: 完整的单元测试框架\n' +
+'- **ESLint + Prettier**: 代码质量和格式化\n' +
+'- **pnpm**: 高效的包管理工具\n' +
+'- **Ollama**: AI 模型推理引擎\n' +
+'- **Vectra**: 本地向量数据库\n' +
+'\n' +
+'## 📦 项目结构\n' +
+'\n' +
+'```\n' +
+'rag_demo/\n' +
+```
 ```text
 '├── src/ # 源代码目录\n' +
 '│ ├──',
 ```
 
-query: ‘RAG Demo 是做什么的？’,
-
+```text
+query: 'RAG Demo 是做什么的？',
 simularity: 0.6614571294074207,
-
-id: ‘4e088b6c-80a2-4ae2-8531-84529c99d5b8’
-
+id: '4e088b6c-80a2-4ae2-8531-84529c99d5b8'
 },
-
 {
-
-text: ‘/ # 使用示例\n’ +
-
+text: '/ # 使用示例\n' +
+```
 ```text
 '│ └── rag-usage.ts # RAG 功能演示\n' +
 '├── tests/ # 测试文件目录\n' +
@@ -497,15 +431,13 @@ text: ‘/ # 使用示例\n’ +
 '├── dist/',
 ```
 
-query: ‘RAG Demo 是做什么的？’,
-
+```text
+query: 'RAG Demo 是做什么的？',
 simularity: 0.6591809430168598,
-
-id: ‘5ba4bcce-4cb8-4e5f-a46e-c6ea2c3df130’
-
+id: '5ba4bcce-4cb8-4e5f-a46e-c6ea2c3df130'
 }
-
 ]
+```
 
 现在我们接入 ollama 的 qwen3:1.7b，修改 examples/ask-your-lib.ts ，先故意不引入 RAG 搜索结果的数据：
 
@@ -673,12 +605,11 @@ server.tool(
 
 {
 
-indexPath: z.string().describe(‘The path to the vector database index. If not specified by the user, defaults to the .vectra subdirectory under the current project directory.’),
-
+```text
+indexPath: z.string().describe('The path to the vector database index. If not specified by the user, defaults to the .vectra subdirectory under the current project directory.'),
 },
-
 async ({ indexPath }) => {
-
+```
 ```jsx
 try {
 const projectRoot = path.resolve(__dirname, '../../');
