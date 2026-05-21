@@ -823,13 +823,10 @@ alert('提交反馈失败,请稍后重试');
 
 基础聊天接口：
 
-@app.post(“/chat”, response_model=ChatResponse)
-
-async def chat(request: ChatRequest):
-
-“““基础聊天接口”“”
-
 ```python
+@app.post("/chat", response_model=ChatResponse)
+async def chat(request: ChatRequest):
+"""基础聊天接口"""
 try:
 response = chat_engine.chat(request)
 return response
@@ -840,11 +837,9 @@ raise HTTPException(status_code=500, detail=str(e))
 
 带附件的聊天接口：
 
-@app.post(“/chat/with-attachments”)
-
+```python
+@app.post("/chat/with-attachments")
 async def chat_with_attachments(
-
-```text
 message: str = Form(...),
 session_id: str = Form(None),
 user_id: str = Form(...),
@@ -852,8 +847,6 @@ url_contents: str = Form(None),
 files: List[UploadFile] = File(default=[])
 ):
 """带附件的聊天接口"""
-```
-```python
 try:
 file_contents = []
 if files:
@@ -895,11 +888,7 @@ except json.JSONDecodeError:
 pass
 enhanced_message = message
 if file_contents:
-```
-
-enhanced_message += “\n\n[附件内容]:\n”
-
-```text
+enhanced_message += "\n\n[附件内容]:\n"
 for file_content in file_contents:
 enhanced_message += f"\n文件: {file_content['filename']}\n"
 enhanced_message += f"内容: {file_content['content'][:500]}...\n"
@@ -918,8 +907,6 @@ response = chat_engine.chat(chat_request)
 response_dict = response.dict()
 response_dict["attachments"] = file_contents
 response_dict["url_contents"] = url_contents_list
-```
-```python
 return response_dict
 except Exception as e:
 logger.error(f"带附件聊天接口错误: {e}")
@@ -930,13 +917,10 @@ raise HTTPException(status_code=500, detail=str(e))
 
 获取会话历史：
 
-@app.get(“/sessions/{session_id}/history”)
-
-async def get_session_history(session_id: str, limit: int = 20):
-
-“““获取会话历史”“”
-
 ```python
+@app.get("/sessions/{session_id}/history")
+async def get_session_history(session_id: str, limit: int = 20):
+"""获取会话历史"""
 try:
 from backend.database import DatabaseManager
 with DatabaseManager() as db:
@@ -963,13 +947,10 @@ raise HTTPException(status_code=500, detail=str(e))
 
 获取用户会话列表：
 
-@app.get(“/users/{user_id}/sessions”)
-
-async def get_user_sessions(user_id: str, limit: int = 50):
-
-“““获取用户的所有会话列表”“”
-
 ```python
+@app.get("/users/{user_id}/sessions")
+async def get_user_sessions(user_id: str, limit: int = 50):
+"""获取用户的所有会话列表"""
 try:
 from backend.database import DatabaseManager, ChatMessage
 with DatabaseManager() as db:
@@ -977,19 +958,11 @@ sessions = db.get_user_sessions(user_id, limit)
 session_list = []
 for session in sessions:
 first_message = db.db.query(ChatMessage)\
-```
-
 .filter(ChatMessage.session_id == session.session_id)\
-
-.filter(ChatMessage.role == ‘user’)\
-
+.filter(ChatMessage.role == 'user')\
 .order_by(ChatMessage.created_at.asc())\
-
 .first()
-
-title = first_message.content[:30] + “…” \
-
-```python
+title = first_message.content[:30] + "..." \
 if first_message and len(first_message.content) > 30 \
 else (first_message.content if first_message else "新对话")
 session_list.append({
@@ -1009,13 +982,10 @@ raise HTTPException(status_code=500, detail=str(e))
 
 删除会话：
 
-@app.delete(“/sessions/{session_id}”)
-
-async def delete_session(session_id: str):
-
-“““删除会话”“”
-
 ```python
+@app.delete("/sessions/{session_id}")
+async def delete_session(session_id: str):
+"""删除会话"""
 try:
 from backend.database import DatabaseManager
 with DatabaseManager() as db:
@@ -1035,13 +1005,10 @@ raise HTTPException(status_code=500, detail=str(e))
 
 提交反馈：
 
-@app.post(“/feedback”, response_model=FeedbackResponse)
-
-async def submit_feedback(request: FeedbackRequest):
-
-“““提交用户反馈”“”
-
 ```python
+@app.post("/feedback", response_model=FeedbackResponse)
+async def submit_feedback(request: FeedbackRequest):
+"""提交用户反馈"""
 try:
 from backend.database import DatabaseManager
 with DatabaseManager() as db:
@@ -1069,13 +1036,10 @@ raise HTTPException(status_code=500, detail=str(e))
 
 获取反馈统计:
 
-@app.get(“/feedback/statistics”, response_model=FeedbackStatistics)
-
-async def get_feedback_statistics():
-
-“““获取反馈统计信息”“”
-
 ```python
+@app.get("/feedback/statistics", response_model=FeedbackStatistics)
+async def get_feedback_statistics():
+"""获取反馈统计信息"""
 try:
 from backend.database import DatabaseManager
 with DatabaseManager() as db:
@@ -1088,13 +1052,10 @@ raise HTTPException(status_code=500, detail=str(e))
 
 ### 4.5.4 URL 解析接口
 
-@app.post(“/parse-url”)
-
-async def parse_url(data: dict):
-
-“““URL解析接口”“”
-
 ```python
+@app.post("/parse-url")
+async def parse_url(data: dict):
+"""URL解析接口"""
 try:
 url = data.get("url")
 if not url:
