@@ -14,269 +14,145 @@
 
 Bot 子模块是 Ling 框架大模型工作流节点的主体，它的完整代码如下：
 
-import EventEmitter from ‘node:events’;
-
-import { Tube } from “../tube”;
-
-import nunjucks from ‘nunjucks’;
-
-import { getChatCompletions } from “../adapter/openai”;
-
-import { getChatCompletions as getCozeChatCompletions } from “../adapter/coze”;
-
-import type { ChatConfig, ChatOptions } from “../types”;
-
-import type { ChatCompletionAssistantMessageParam, ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam, ChatCompletionContentPart } from “openai/resources/index”;
-
+```jsx
+import EventEmitter from 'node:events';
+import { Tube } from "../tube";
+import nunjucks from 'nunjucks';
+import { getChatCompletions } from "../adapter/openai";
+import { getChatCompletions as getCozeChatCompletions } from "../adapter/coze";
+import type { ChatConfig, ChatOptions } from "../types";
+import type { ChatCompletionAssistantMessageParam, ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam, ChatCompletionContentPart } from "openai/resources/index";
 type ChatCompletionMessageParam = ChatCompletionSystemMessageParam | ChatCompletionAssistantMessageParam | ChatCompletionUserMessageParam;
-
 export enum WorkState {
-
-INIT = ‘init’,
-
-WORKING = ‘chatting’,
-
-INFERENCE_DONE = ‘inference-done’,
-
-FINISHED = ‘finished’,
-
-ERROR = ‘error’,
-
+INIT = 'init',
+WORKING = 'chatting',
+INFERENCE_DONE = 'inference-done',
+FINISHED = 'finished',
+ERROR = 'error',
 }
-
 export abstract class Bot extends EventEmitter {
-
 abstract get state(): WorkState;
-
 }
-
 export class ChatBot extends Bot {
-
 private prompts: ChatCompletionSystemMessageParam[] = [];
-
 private history: ChatCompletionMessageParam[] = [];
-
 private customParams: Record<string, string> = {};
-
 private chatState = WorkState.INIT;
-
 private config: ChatConfig;
-
 private options: ChatOptions;
-
 constructor(private tube: Tube, config: ChatConfig, options: ChatOptions = {}) {
-
 super();
-
-this.config = { …config };
-
-this.options = { …options };
-
+this.config = { ...config };
+this.options = { ...options };
 }
-
 isJSONFormat() {
-
-return this.options.response_format?.type === ‘json_object’;
-
+return this.options.response_format?.type === 'json_object';
 }
-
 get root() {
-
 return this.options.response_format?.root;
-
 }
-
 setJSONRoot(root: string | null) {
-
 if(!this.options.response_format) {
-
-this.options.response_format = { type: ‘json_object’, root };
-
+this.options.response_format = { type: 'json_object', root };
 } else {
-
 this.options.response_format.root = root;
-
 }
-
 }
-
 setCustomParams(params: Record<string, string>) {
-
-this.customParams = {…params};
-
+this.customParams = {...params};
 }
-
 addPrompt(promptTpl: string, promptData: Record<string, any> = {}) {
-
-const promptText = nunjucks.renderString(promptTpl, { chatConfig: this.config, chatOptions: this.options, …this.customParams, …promptData, });
-
-this.prompts.push({ role: “system”, content: promptText });
-
+const promptText = nunjucks.renderString(promptTpl, { chatConfig: this.config, chatOptions: this.options, ...this.customParams, ...promptData, });
+this.prompts.push({ role: "system", content: promptText });
 }
-
 setPrompt(promptTpl: string, promptData: Record<string, string> = {}) {
-
 this.prompts = [];
-
 this.addPrompt(promptTpl, promptData);
-
 }
-
 addHistory(messages: ChatCompletionMessageParam []) {
-
-this.history.push(…messages);
-
+this.history.push(...messages);
 }
-
 setHistory(messages: ChatCompletionMessageParam []) {
-
 this.history = messages;
-
 }
-
 addFilter(filter: ((data: unknown) => boolean) | string | RegExp) {
-
 this.tube.addFilter(filter);
-
 }
-
 clearFilters() {
-
 this.tube.clearFilters();
-
 }
-
 userMessage(message: string): ChatCompletionUserMessageParam {
-
-return { role: “user”, content: message };
-
+return { role: "user", content: message };
 }
-
 botMessage(message: string): ChatCompletionAssistantMessageParam {
-
-return { role: “assistant”, content: message };
-
+return { role: "assistant", content: message };
 }
-
 async chat(message: string | ChatCompletionContentPart[]) {
-
 try {
-
 this.chatState = WorkState.WORKING;
-
 const isJSONFormat = this.isJSONFormat();
-
-const prompts = this.prompts.length > 0 ? […this.prompts] : [];
-
+const prompts = this.prompts.length > 0 ? [...this.prompts] : [];
 if(this.prompts.length === 0 && isJSONFormat) {
-
 prompts.push({
-
-role: ‘system’,
-
-content: `[Output]\nOutput with json format, starts with ‘{’\n[Example]\n{“answer”: “My answer”}`,
-
+role: 'system',
+content: `[Output]\nOutput with json format, starts with '{'\n[Example]\n{"answer": "My answer"}`,
 });
-
 }
-
-const messages = […prompts, …this.history, { role: “user”, content: message }];
-
-if(this.config.model_name.startsWith(‘coze:’)) {
-
-return await getCozeChatCompletions(this.tube, messages, this.config, {…this.options, custom_variables: this.customParams},
-
+const messages = [...prompts, ...this.history, { role: "user", content: message }];
+if(this.config.model_name.startsWith('coze:')) {
+return await getCozeChatCompletions(this.tube, messages, this.config, {...this.options, custom_variables: this.customParams},
 (content) => {
-
 this.chatState = WorkState.FINISHED;
-
-this.emit(‘response’, content);
-
+this.emit('response', content);
 }, (content) => {
-
-this.emit(‘string-response’, content);
-
+this.emit('string-response', content);
 }, (content) => {
-
-this.emit(‘object-response’, content);
-
+this.emit('object-response', content);
 }).then((content) => {
-
 this.chatState = WorkState.INFERENCE_DONE;
-
-this.emit(‘inference-done’, content);
-
+this.emit('inference-done', content);
 });
-
 }
-
 return await getChatCompletions(this.tube, messages, this.config, this.options,
-
 (content) => {
-
 this.chatState = WorkState.FINISHED;
-
-this.emit(‘response’, content);
-
+this.emit('response', content);
 }, (content) => {
-
-this.emit(‘string-response’, content);
-
+this.emit('string-response', content);
 }, (content) => {
-
-this.emit(‘object-response’, content);
-
+this.emit('object-response', content);
 }).then((content) => {
-
 this.chatState = WorkState.INFERENCE_DONE;
-
-this.emit(‘inference-done’, content);
-
+this.emit('inference-done', content);
 });
-
 } catch(ex: any) {
-
 console.error(ex);
-
 this.chatState = WorkState.ERROR;
-
-this.emit(‘error’, ex.message);
-
+this.emit('error', ex.message);
 }
-
 }
-
 finish() {
-
-this.emit(‘inference-done’, ‘null’);
-
-this.emit(‘response’, ‘null’);
-
+this.emit('inference-done', 'null');
+this.emit('response', 'null');
 this.chatState = WorkState.FINISHED;
-
 }
-
 get state() {
-
 return this.chatState;
-
 }
-
 }
+```
 
 首先我们通过枚举对象定义 Bot 节点的工作状态，Ling 管理模块依赖这些状态对 Bot 节点进行统一管理。
 
 export enum WorkState {
 
-INIT = ‘init’,
-
-WORKING = ‘chatting’,
-
-INFERENCE_DONE = ‘inference-done’,
-
-FINISHED = ‘finished’,
-
-ERROR = ‘error’,
+```dotenv
+INIT = 'init',
+WORKING = 'chatting',
+INFERENCE_DONE = 'inference-done',
+FINISHED = 'finished',
+ERROR = 'error',
+```
 
 }
 
@@ -326,91 +202,51 @@ clearFilters()：清除所有已添加的过滤器。
 
 async chat(message: string) {
 
+```jsx
 try {
-
 this.chatState = WorkState.WORKING;
-
 const isJSONFormat = this.isJSONFormat();
-
-const prompts = this.prompts.length > 0 ? […this.prompts] : [];
-
+const prompts = this.prompts.length > 0 ? [...this.prompts] : [];
 if(this.prompts.length === 0 && isJSONFormat) {
-
 prompts.push({
-
-role: ‘system’,
-
-content: `[Output]\nOutput with json format, starts with ‘{’\n[Example]\n{“answer”: “My answer”}`,
-
+role: 'system',
+content: `[Output]\nOutput with json format, starts with '{'\n[Example]\n{"answer": "My answer"}`,
 });
-
 }
-
-const messages = […prompts, …this.history, { role: “user”, content: message }];
-
-if(this.config.model_name.startsWith(‘coze:’)) {
-
-return await getCozeChatCompletions(this.tube, messages, this.config, {…this.options, custom_variables: this.customParams},
-
+const messages = [...prompts, ...this.history, { role: "user", content: message }];
+if(this.config.model_name.startsWith('coze:')) {
+return await getCozeChatCompletions(this.tube, messages, this.config, {...this.options, custom_variables: this.customParams},
 (content) => {
-
 this.chatState = WorkState.FINISHED;
-
-this.emit(‘response’, content);
-
+this.emit('response', content);
 }, (content) => {
-
-this.emit(‘string-response’, content);
-
+this.emit('string-response', content);
 }, (content) => {
-
-this.emit(‘object-response’, content);
-
+this.emit('object-response', content);
 }).then((content) => {
-
 this.chatState = WorkState.INFERENCE_DONE;
-
-this.emit(‘inference-done’, content);
-
+this.emit('inference-done', content);
 });
-
 }
-
 return await getChatCompletions(this.tube, messages, this.config, this.options,
-
 (content) => {
-
 this.chatState = WorkState.FINISHED;
-
-this.emit(‘response’, content);
-
+this.emit('response', content);
 }, (content) => {
-
-this.emit(‘string-response’, content);
-
+this.emit('string-response', content);
 }, (content) => {
-
-this.emit(‘object-response’, content);
-
+this.emit('object-response', content);
 }).then((content) => {
-
 this.chatState = WorkState.INFERENCE_DONE;
-
-this.emit(‘inference-done’, content);
-
+this.emit('inference-done', content);
 });
-
 } catch(ex: any) {
-
 console.error(ex);
-
 this.chatState = WorkState.ERROR;
-
-this.emit(‘error’, ex.message);
-
+this.emit('error', ex.message);
 }
-
 }
+```
 
 上面的代码并不复杂，主要就是针对配置的 model_name 判断当前是 Open AI 兼容的大模型还是 coze，从而调用 Adapter 中不同的方法；另外还有转发 parser 发送的事件，方便 Ling 管理工具后续的处理，有兴趣的同学可以自行认真阅读一下，以掌握更多细节。
 
@@ -434,91 +270,51 @@ finish()：强制结束 Bot 的工作，将状态置为 FINISHED。
 
 async chat(message: string | ChatCompletionContentPart[]) {
 
+```jsx
 try {
-
 this.chatState = WorkState.WORKING;
-
 const isJSONFormat = this.isJSONFormat();
-
-const prompts = this.prompts.length > 0 ? […this.prompts] : [];
-
+const prompts = this.prompts.length > 0 ? [...this.prompts] : [];
 if(this.prompts.length === 0 && isJSONFormat) {
-
 prompts.push({
-
-role: ‘system’,
-
-content: `[Output]\nOutput with json format, starts with ‘{’\n[Example]\n{“answer”: “My answer”}`,
-
+role: 'system',
+content: `[Output]\nOutput with json format, starts with '{'\n[Example]\n{"answer": "My answer"}`,
 });
-
 }
-
-const messages = […prompts, …this.history, { role: “user”, content: message }];
-
-if(this.config.model_name.startsWith(‘coze:’)) {
-
-return await getCozeChatCompletions(this.tube, messages, this.config, {…this.options, custom_variables: this.customParams},
-
+const messages = [...prompts, ...this.history, { role: "user", content: message }];
+if(this.config.model_name.startsWith('coze:')) {
+return await getCozeChatCompletions(this.tube, messages, this.config, {...this.options, custom_variables: this.customParams},
 (content) => {
-
 this.chatState = WorkState.FINISHED;
-
-this.emit(‘response’, content);
-
+this.emit('response', content);
 }, (content) => {
-
-this.emit(‘string-response’, content);
-
+this.emit('string-response', content);
 }, (content) => {
-
-this.emit(‘object-response’, content);
-
+this.emit('object-response', content);
 }).then((content) => {
-
 this.chatState = WorkState.INFERENCE_DONE;
-
-this.emit(‘inference-done’, content);
-
+this.emit('inference-done', content);
 });
-
 }
-
 return await getChatCompletions(this.tube, messages, this.config, this.options,
-
 (content) => {
-
 this.chatState = WorkState.FINISHED;
-
-this.emit(‘response’, content);
-
+this.emit('response', content);
 }, (content) => {
-
-this.emit(‘string-response’, content);
-
+this.emit('string-response', content);
 }, (content) => {
-
-this.emit(‘object-response’, content);
-
+this.emit('object-response', content);
 }).then((content) => {
-
 this.chatState = WorkState.INFERENCE_DONE;
-
-this.emit(‘inference-done’, content);
-
+this.emit('inference-done', content);
 });
-
 } catch(ex: any) {
-
 console.error(ex);
-
 this.chatState = WorkState.ERROR;
-
-this.emit(‘error’, ex.message);
-
+this.emit('error', ex.message);
 }
-
 }
+```
 
 这个方法最核心的部分就是根据 model_name，选择调用 Coze 或者 OpenAI 的对应方法，然后通过回调函数，将对应的 reponse、string-response、object-response、inference 事件发送给 Ling 管理器。
 
@@ -532,183 +328,97 @@ Tube 是我们要了解的第三个子模块，它的创建由 Ling 统一负责
 
 以下是 Tube 的完整代码：
 
-import EventEmitter from ‘node:events’;
-
-import { shortId } from “../utils”;
-
+```jsx
+import EventEmitter from 'node:events';
+import { shortId } from "../utils";
 export class Tube extends EventEmitter {
-
 private _stream: ReadableStream;
-
 private controller: ReadableStreamDefaultController | null = null;
-
 private _canceled: boolean = false;
-
 private _closed: boolean = false;
-
 private _sse: boolean = false;
-
 private messageIndex = 0;
-
 private filters: ((data: unknown) => boolean)[] = [];
-
 constructor(private session_id: string = shortId()) {
-
 super();
-
 const self = this;
-
 this._stream = new ReadableStream({
-
 start(controller) {
-
 self.controller = controller;
-
 }
-
 });
-
 }
-
 addFilter(filter: ((data: unknown) => boolean) | string | RegExp) {
-
-if(typeof filter === ‘string’) {
-
+if(typeof filter === 'string') {
 this.filters.push((data: any) => data.uri === filter);
-
 } else if(filter instanceof RegExp) {
-
 this.filters.push((data: any) => filter.test(data.uri));
-
 } else {
-
 this.filters.push(filter);
-
 }
-
 }
-
 clearFilters() {
-
 this.filters = [];
-
 }
-
 setSSE(sse: boolean) {
-
 this._sse = sse;
-
 }
-
 enqueue(data: unknown, isQuiet: boolean = false) {
-
 const isFiltered = this.filters.some(filter => filter(data));
-
 const id = `${this.session\_id}:${this.messageIndex++}`;
-
 if (!this._closed) {
-
 try {
-
-if(typeof data !== ‘string’) {
-
+if(typeof data !== 'string') {
 if(this._sse && (data as any)?.event) {
-
 const event = `event: ${(data as any).event}\n`
-
 if(!isQuiet && !isFiltered) this.controller?.enqueue(event);
-
-this.emit(‘message’, {id, data: event});
-
-if((data as any).event === ‘error’) {
-
-this.emit(‘error’, {id, data});
-
+this.emit('message', {id, data: event});
+if((data as any).event === 'error') {
+this.emit('error', {id, data});
 }
-
 }
-
-data = JSON.stringify(data) + ‘\n’;
-
+data = JSON.stringify(data) + '\n';
 }
-
 if(this._sse) {
-
-data = `data: 无效的公式/,’’)}\nid: ${id}\n\n`;
-
+data = `data: 无效的公式/,'')}\nid: ${id}\n\n`;
 }
-
 if(!isQuiet && !isFiltered) this.controller?.enqueue(data);
-
-this.emit(‘message’, {id, data});
-
+this.emit('message', {id, data});
 } catch(ex: any) {
-
 this._closed = true;
-
-this.emit(‘error’, {id, data: ex.message});
-
-console.error(‘enqueue error:’, ex);
-
+this.emit('error', {id, data: ex.message});
+console.error('enqueue error:', ex);
 }
-
 }
-
 }
-
 close() {
-
 if(this._closed) return;
-
-this.enqueue({event: ‘finished’});
-
-this.emit(‘finished’);
-
+this.enqueue({event: 'finished'});
+this.emit('finished');
 this._closed = true;
-
 if(!this._sse) this.controller?.close();
-
 }
-
 async cancel() {
-
 if(this._canceled) return;
-
 this._canceled = true;
-
 this._closed = true;
-
 try {
-
-this.enqueue({event: ‘canceled’});
-
-this.emit(‘canceled’);
-
+this.enqueue({event: 'canceled'});
+this.emit('canceled');
 await this.stream.cancel();
-
 } catch(ex) {}
-
 }
-
 get canceled() {
-
 return this._canceled;
-
 }
-
 get closed() {
-
 return this._closed;
-
 }
-
 get stream() {
-
 return this._stream;
-
 }
-
 }
+```
 
 Tube 在自己的构造器中创建了一个 ReadableStream 对象：
 
@@ -716,19 +426,15 @@ constructor(private session_id: string = shortId()) {
 
 super();
 
+```jsx
 const self = this;
-
 this._stream = new ReadableStream({
-
 start(controller) {
-
 self.controller = controller;
-
 }
-
 });
-
 }
+```
 
 有一点需要我们特别注意的是，我们在创建流的时候，从 ReadableStream 对象中拿到 controller 对象，这个对象是一个流控制器，它可以用于向流中加入数据或关闭流。
 
@@ -736,59 +442,35 @@ Tube 最核心的就是 enqueque 方法。
 
 enqueue(data: unknown, isQuiet: boolean = false) {
 
+```jsx
 const isFiltered = this.filters.some(filter => filter(data));
-
 const id = `${this.session\_id}:${this.messageIndex++}`;
-
 if (!this._closed) {
-
 try {
-
-if(typeof data !== ‘string’) {
-
+if(typeof data !== 'string') {
 if(this._sse && (data as any)?.event) {
-
 const event = `event: ${(data as any).event}\n`;
-
 if(!isQuiet && !isFiltered) this.controller?.enqueue(event);
-
-this.emit(‘message’, {id, data: event});
-
-if((data as any).event === ‘error’) {
-
-this.emit(‘error’, {id, data});
-
+this.emit('message', {id, data: event});
+if((data as any).event === 'error') {
+this.emit('error', {id, data});
 }
-
 }
-
-data = JSON.stringify(data) + ‘\n’;
-
+data = JSON.stringify(data) + '\n';
 }
-
 if(this._sse) {
-
-data = `data: 无效的公式/,’’)}\nid: ${id}\n\n`;
-
+data = `data: 无效的公式/,'')}\nid: ${id}\n\n`;
 }
-
 if(!isQuiet && !isFiltered) this.controller?.enqueue(data);
-
-this.emit(‘message’, {id, data});
-
+this.emit('message', {id, data});
 } catch(ex: any) {
-
 this._closed = true;
-
-this.emit(‘error’, {id, data: ex.message});
-
-console.error(‘enqueue error:’, ex);
-
+this.emit('error', {id, data: ex.message});
+console.error('enqueue error:', ex);
 }
-
 }
-
 }
+```
 
 这个方法非常重要，主要做了以下几件事：
 
@@ -812,277 +494,144 @@ SSE：如果 _sse === true 并且 data 里有 event 字段，那么会先输出�
 
 Ling 的管理模块完整代码如下：
 
-import EventEmitter from ‘node:events’;
-
-import merge from ‘lodash.merge’;
-
-import { ChatBot, Bot, WorkState } from ‘./bot/index’;
-
-import { Tube } from ‘./tube’;
-
-import type { ChatConfig, ChatOptions } from “./types”;
-
-import { sleep, shortId } from ‘./utils’;
-
-export type { ChatConfig, ChatOptions } from “./types”;
-
-export type { Tube } from “./tube”;
-
-export { Bot, ChatBot, WorkState } from “./bot”;
-
+```jsx
+import EventEmitter from 'node:events';
+import merge from 'lodash.merge';
+import { ChatBot, Bot, WorkState } from './bot/index';
+import { Tube } from './tube';
+import type { ChatConfig, ChatOptions } from "./types";
+import { sleep, shortId } from './utils';
+export type { ChatConfig, ChatOptions } from "./types";
+export type { Tube } from "./tube";
+export { Bot, ChatBot, WorkState } from "./bot";
 export class Ling extends EventEmitter {
-
 protected _tube: Tube;
-
 protected customParams: Record<string, string> = {};
-
 protected bots: Bot[] = [];
-
 protected session_id = shortId();
-
 private _promise: Promise<any> | null = null;
-
 private _tasks: Promise<any>[] = [];
-
 constructor(protected config: ChatConfig, protected options: ChatOptions = {}) {
-
 super();
-
 if(config.session_id) {
-
 this.session_id = config.session_id;
-
 delete config.session_id;
-
 }
-
 this._tube = new Tube(this.session_id);
-
 if(config.sse) {
-
 this._tube.setSSE(true);
-
 }
-
-this._tube.on(‘message’, (message) => {
-
-this.emit(‘message’, message);
-
+this._tube.on('message', (message) => {
+this.emit('message', message);
 });
-
-this._tube.on(‘finished’, () => {
-
-this.emit(‘finished’);
-
+this._tube.on('finished', () => {
+this.emit('finished');
 });
-
-this._tube.on(‘canceled’, () => {
-
-this.emit(‘canceled’);
-
+this._tube.on('canceled', () => {
+this.emit('canceled');
 });
-
 }
-
 handleTask(task: () => Promise<any>) {
-
 return new Promise((resolve, reject) => {
-
 this._tasks.push(task().then(resolve).catch(reject));
-
 });
-
 }
-
 get promise() {
-
 if(!this._promise) {
-
 this._promise = new Promise((resolve, reject) => {
-
 let result: any = {};
-
-this.on(‘inference-done’, (content, bot) => {
-
+this.on('inference-done', (content, bot) => {
 let output = bot.isJSONFormat() ? JSON.parse(content) : content;
-
 if(bot.root != null) {
-
 result[bot.root] = output;
-
 } else {
-
 result = merge(result, output);
-
 }
-
 setTimeout(async () => {
-
 if(this.bots.every(
-
 (_bot: Bot) => _bot.state === WorkState.INFERENCE_DONE
-
 || _bot.state === WorkState.FINISHED
-
 || _bot.state === WorkState.ERROR || bot === _bot
-
 )) {
-
 await Promise.all(this._tasks);
-
 resolve(result);
-
 }
-
 });
-
 });
-
-this.once(‘error’, (error, bot) => {
-
+this.once('error', (error, bot) => {
 reject(error);
-
 });
-
 });
-
 }
-
 return this._promise;
-
 }
-
 createBot(root: string | null = null, config: Partial = {}, options: Partial = {}) {
-
-const bot = new ChatBot(this._tube, {…this.config, …config}, {…this.options, …options});
-
+const bot = new ChatBot(this._tube, {...this.config, ...config}, {...this.options, ...options});
 bot.setJSONRoot(root);
-
 bot.setCustomParams(this.customParams);
-
-bot.addListener(‘error’, (error) => {
-
-this.emit(‘error’, error, bot);
-
+bot.addListener('error', (error) => {
+this.emit('error', error, bot);
 });
-
-bot.addListener(‘inference-done’, (content) => {
-
-this.emit(‘inference-done’, content, bot);
-
+bot.addListener('inference-done', (content) => {
+this.emit('inference-done', content, bot);
 });
-
 this.bots.push(bot);
-
 return bot;
-
 }
-
 addBot(bot: Bot) {
-
 this.bots.push(bot);
-
 }
-
 setCustomParams(params: Record<string, string>) {
-
-this.customParams = {…params};
-
+this.customParams = {...params};
 }
-
 setSSE(sse: boolean) {
-
 this._tube.setSSE(sse);
-
 }
-
 protected isAllBotsFinished() {
-
-return this.bots.every(bot => bot.state === ‘finished’ || bot.state === ‘error’);
-
+return this.bots.every(bot => bot.state === 'finished' || bot.state === 'error');
 }
-
 async close() {
-
 while (!this.isAllBotsFinished()) {
-
 await sleep(100);
-
 }
-
 await sleep(500);
-
 if(!this.isAllBotsFinished()) {
-
 this.close();
-
 return;
-
 }
-
 await Promise.all(this._tasks);
-
 this._tube.close();
-
 this.bots = [];
-
 this._tasks = [];
-
 }
-
 async cancel() {
-
 this._tube.cancel();
-
 this.bots = [];
-
 this._tasks = [];
-
 }
-
 sendEvent(event: any) {
-
 this._tube.enqueue(event);
-
 }
-
 get tube() {
-
 return this._tube;
-
 }
-
 get model() {
-
 return this.config.model_name;
-
 }
-
 get stream() {
-
 return this._tube.stream;
-
 }
-
 get canceled() {
-
 return this._tube.canceled;
-
 }
-
 get closed() {
-
 return this._tube.closed;
-
 }
-
 get id() {
-
 return this.session_id;
-
 }
-
 }
+```
 
 首先，我们看一下构造器：
 
@@ -1090,41 +639,26 @@ constructor(protected config: ChatConfig, protected options: ChatOptions = {}) {
 
 super();
 
+```text
 if(config.session_id) {
-
 this.session_id = config.session_id;
-
 delete config.session_id;
-
 }
-
 this._tube = new Tube(this.session_id);
-
 if(config.sse) {
-
 this._tube.setSSE(true);
-
 }
-
-this._tube.on(‘message’, (message) => {
-
-this.emit(‘message’, message);
-
+this._tube.on('message', (message) => {
+this.emit('message', message);
 });
-
-this._tube.on(‘finished’, () => {
-
-this.emit(‘finished’);
-
+this._tube.on('finished', () => {
+this.emit('finished');
 });
-
-this._tube.on(‘canceled’, () => {
-
-this.emit(‘canceled’);
-
+this._tube.on('canceled', () => {
+this.emit('canceled');
 });
-
 }
+```
 
 在构造器里，我们创建了一个 Tube 对象，保存在 _tube 私有属性中，然后我们监听这个对象的 message、finished 和 canceled 事件，将它们转发。
 
@@ -1132,29 +666,20 @@ this.emit(‘canceled’);
 
 createBot(root: string | null = null, config: Partial = {}, options: Partial = {}) {
 
-const bot = new ChatBot(this._tube, {…this.config, …config}, {…this.options, …options});
-
+```jsx
+const bot = new ChatBot(this._tube, {...this.config, ...config}, {...this.options, ...options});
 bot.setJSONRoot(root);
-
 bot.setCustomParams(this.customParams);
-
-bot.addListener(‘error’, (error) => {
-
-this.emit(‘error’, error, bot);
-
+bot.addListener('error', (error) => {
+this.emit('error', error, bot);
 });
-
-bot.addListener(‘inference-done’, (content) => {
-
-this.emit(‘inference-done’, content, bot);
-
+bot.addListener('inference-done', (content) => {
+this.emit('inference-done', content, bot);
 });
-
 this.bots.push(bot);
-
 return bot;
-
 }
+```
 
 Ling 管理对象通过调用这个方法创建并托管 Bot 对象，它自动将 _tube 属性下的 Tube 对象传入 Bot 构造器，并且监听 bot 的 error 和 inference-done 事件，将它们转发。
 
@@ -1162,31 +687,21 @@ Ling 管理对象通过调用这个方法创建并托管 Bot 对象，它自动�
 
 async close() {
 
+```text
 while (!this.isAllBotsFinished()) {
-
 await sleep(100);
-
 }
-
 await sleep(500);
-
 if(!this.isAllBotsFinished()) {
-
 this.close();
-
 return;
-
 }
-
 await Promise.all(this._tasks);
-
 this._tube.close();
-
 this.bots = [];
-
 this._tasks = [];
-
 }
+```
 
 这是一个需要特别注意的方法，它并不是指立即结束所有的工作，而是会异步轮询所有托管下的 Bot，判断它们的状态是否是 FINISHED 或 ERROR，只有当它们全部结束之后，才会真正将 _tube 关闭。
 
@@ -1198,73 +713,47 @@ Ling 管理模块其他的方法比较简单，我就挑两个细节讲一讲，
 
 handleTask(task: () => Promise<any>) {
 
+```text
 return new Promise((resolve, reject) => {
-
 this._tasks.push(task().then(resolve).catch(reject));
-
 });
-
 }
+```
 
 除了默认托管的 Bot 之外，我们可以给 Ling 管理器添加外部的异步操作，这样会产生两个影响，一是 close 的时候，Ling 会判断 _tasks 是否完成，然后再关闭 Tube 对象。二是，Ling 暴露一个外部属性 promise，它是一个 getter：
 
 get promise() {
 
+```jsx
 if(!this._promise) {
-
 this._promise = new Promise((resolve, reject) => {
-
 let result: any = {};
-
-this.on(‘inference-done’, (content, bot) => {
-
+this.on('inference-done', (content, bot) => {
 let output = bot.isJSONFormat() ? JSON.parse(content) : content;
-
 if(bot.root != null) {
-
 result[bot.root] = output;
-
 } else {
-
 result = merge(result, output);
-
 }
-
 setTimeout(async () => {
-
 if(this.bots.every(
-
 (_bot: Bot) => _bot.state === WorkState.INFERENCE_DONE
-
 || _bot.state === WorkState.FINISHED
-
 || _bot.state === WorkState.ERROR || bot === _bot
-
 )) {
-
 await Promise.all(this._tasks);
-
 resolve(result);
-
 }
-
 });
-
 });
-
-this.once(‘error’, (error, bot) => {
-
+this.once('error', (error, bot) => {
 reject(error);
-
 });
-
 });
-
 }
-
 return this._promise;
-
 }
+```
 
 在业务使用的时候，如果需要等待 Ling 的推理结束，然后执行其他的操作，可以去 await 这个对象，并拿到最终的数据结果，例如：
 
@@ -1285,5 +774,3 @@ const result = await ling.promise;
 Bot 模块设计了一个抽象类，这个类可以用来扩展其他类型的 Bot。大家想一想，如果我要让 Ling 管理一个绘图的 Bot，应该怎么自己扩展呢？你可以尝试写一个 ImageBot extends Bot，然后将它也通过 Ling 管理起来吗？可以把你的实现分享到评论区。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
