@@ -22,27 +22,19 @@
 
 //订单事实表Schema
 
+```text
 orderID: Int
-
 userID: Int
-
 trxDate: Timestamp
-
 productId: Int
-
 price: Float
-
 volume: Int
-
 //用户维度表Schema
-
 userID: Int
-
 name: String
-
 age: Int
-
 gender: String
+```
 
 当 Fact 表和 Dim 表基于 userID 做关联的时候，由于两张表的尺寸大小都远超 spark.sql.autoBroadcastJoinThreshold 参数的默认值 10MB，因此 Spark 不得不选择 Shuffle Joins 的实现方式。但如果我们把这个参数的值调整为 2GB，因为 Dim 表的尺寸比 2GB 小，所以，Spark 在运行时会选择把 Dim 表封装到广播变量里，并采用 Broadcast Join 的方式来完成两张表的数据关联。
 
