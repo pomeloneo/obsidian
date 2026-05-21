@@ -107,5 +107,3 @@ ChatGPT 目前还不具备理解特定场景下的人类语言，简单来说就
 顺便说一下，我的专栏《从 0 开始学架构》今日秒杀特惠 ¥139，立省 ¥60，即将恢复原价，戳此立即拿下 >>>《从 0 开始学架构》
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
