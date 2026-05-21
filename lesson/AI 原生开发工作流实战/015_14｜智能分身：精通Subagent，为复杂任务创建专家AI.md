@@ -96,19 +96,15 @@ User-level Subagents（用户级专家）
 
 现在，让我们来解剖一个 Subagent 定义文件的内部结构。一个.md文件由两部分构成：顶部的 YAML Frontmatter（由 -– 包围）和下方的 Markdown 正文。
 
+```text
 name: your-sub-agent-name
-
 description: A clear, keyword-rich description of what this agent does and when to use it.
-
 tools: Read, Grep, Glob, Bash(gosec:*) # Optional
-
 model: opus # Optional: opus, sonnet, haiku, or inherit
-
 You are an expert Go security code reviewer.
-
-This is the System Prompt, the “soul” of the agent.
-
-It defines the agent’s personality, goals, and operational procedures.
+This is the System Prompt, the "soul" of the agent.
+It defines the agent's personality, goals, and operational procedures.
+```
 
 让我们来逐一解析 Frontmatter 中的每一个关键“基因”：
 
