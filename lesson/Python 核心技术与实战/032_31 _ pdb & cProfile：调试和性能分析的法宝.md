@@ -60,10 +60,10 @@ __
 
 首先，要启动 pdb 调试，我们只需要在程序中，加入“import pdb”和“pdb.set_trace()”这两行代码就行了，比如下面这个简单的例子：
 
+```text
 a = 1
-
 b = 2
-
+```
 ```python
 import pdb
 pdb.set_trace()
