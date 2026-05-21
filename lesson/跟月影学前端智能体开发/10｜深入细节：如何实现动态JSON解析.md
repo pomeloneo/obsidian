@@ -82,10 +82,10 @@ constructor(options: { autoFix?: boolean, parentPath?: string | null, debug?: bo
 
 super();
 
+```text
 this.autoFix = !!options.autoFix;
-
 this.debug = !!options.debug;
-
+```
 ```text
 if (options.parentPath) this.keyPath.push(options.parentPath);
 }
@@ -149,10 +149,10 @@ this.arrayIndexStack.push({ index: 0 });
 
 private popState() {
 
+```text
 this.lastPopStateToken = { state: this.currentState, token: this.currentToken };
-
-this.currentToken = ’’;
-
+this.currentToken = '';
+```
 ```jsx
 const state = this.stateStack.pop();
 this.log('popState', state, this.currentState);
