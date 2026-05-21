@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "8b2a3afca8b4f675",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "bb2b02ec719ca9ee",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lesson/AI 原生开发工作流实战/003_02｜核心引擎：AI原生开发第一性原理——规范驱动开发.md",
+                "file": "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "003_02｜核心引擎：AI原生开发第一性原理——规范驱动开发"
-            }
-          },
-          {
-            "id": "ed0d331bc6143345",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "lesson/大模型应用一站式开发/005_03｜架构与选型：如何从0到1构建AI情感伙伴？.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "005_03｜架构与选型：如何从0到1构建AI情感伙伴？"
+              "title": "001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -77,16 +62,6 @@
             }
           },
           {
-            "id": "3d1031094f9a73c9",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          },
-          {
             "id": "cb39d3fbe3111a26",
             "type": "leaf",
             "state": {
@@ -97,6 +72,16 @@
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
+            }
+          },
+          {
+            "id": "3d1031094f9a73c9",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -120,7 +105,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -140,13 +125,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lesson/大模型应用一站式开发/005_03｜架构与选型：如何从0到1构建AI情感伙伴？.md",
+                "file": "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "005_03｜架构与选型：如何从0到1构建AI情感伙伴？ 的大纲"
+              "title": "001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课 的大纲"
             }
           },
           {
@@ -155,12 +140,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lesson/大模型应用一站式开发/005_03｜架构与选型：如何从0到1构建AI情感伙伴？.md",
+                "file": "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "005_03｜架构与选型：如何从0到1构建AI情感伙伴？ 的出链列表"
+              "title": "001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课 的出链列表"
             }
           },
           {
@@ -259,6 +244,16 @@
   },
   "active": "3d1031094f9a73c9",
   "lastOpenFiles": [
+    "lesson/大模型应用一站式开发/023_21｜微调实战：基于私有数据优化情感聊天模型效果.md",
+    "Notion/个人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 9.md",
+    "Notion/个人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv",
+    "Notion/个人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标",
+    "Notion/个人与共享/zxd/工作搭子/流程类/SLA标准&看板",
+    "Notion/个人与共享/zxd/工作搭子/流程类",
+    "Notion/个人与共享/zxd/工作搭子",
+    "Notion/个人与共享/zxd",
+    "Notion/个人与共享",
+    "Notion",
     "lesson/AI 原生开发工作流实战/003_02｜核心引擎：AI原生开发第一性原理——规范驱动开发.md",
     "lesson/大模型应用一站式开发/005_03｜架构与选型：如何从0到1构建AI情感伙伴？.md",
     "分享回流/分享回流漏斗看板.md",
@@ -284,9 +279,7 @@
     "lesson/agent 学习指南/05. 高德 MCP + 浏览器 MCP：LangChain 复用别人的 MCP Server 有多爽.md",
     "分享回流/_attachments/Recording 20260521214823.m4a",
     "lesson/agent 学习指南/02. 从 Tool 开始：让大模型自动调工具读文件.md",
-    "lesson/agent 学习指南/14. Prompt Template：组件化管理你的提示词.md",
     "分享回流/_attachments/Pasted image 20260521215735.png",
-    "2026-05-21.md",
     "未命名.base",
     "未命名.canvas",
     "Untitled 1.png",
@@ -298,14 +291,6 @@
     "Untitled.png",
     "image22.png",
     "my-notion-face-customized.png",
-    "Obsidian Canvas 能力演示.canvas",
-    "HRG鲲鹏流程一览表.xlsx",
-    "output2pdfsW02-0405.pdf",
-    "output2pdfsContextual-Retrieval-Appendix-2.pdf",
-    "output2pdfs7298332f04ac004a0ca44cc69ecf6f6b-Paper.pdf",
-    "output.zip",
-    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv",
-    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/项目类/客户服务数字化&服务预期/对客上线概况&操作指南汇总/【员工参保库变更】鲲鹏使用指南/无标题 2f1b-ae85",
-    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/项目类/客户服务数字化&服务预期/对客上线概况&操作指南汇总/【员工参保库变更】鲲鹏使用指南/无标题"
+    "Obsidian Canvas 能力演示.canvas"
   ]
 }

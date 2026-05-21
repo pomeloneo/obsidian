@@ -4,5 +4,6 @@
   "enabledCssSnippets": [
     "statusbar-position",
     "file-tree-modern"
-  ]
+  ],
+  "translucency": false
 }
