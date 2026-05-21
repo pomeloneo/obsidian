@@ -1,5 +1,5 @@
 > [!important]
-> 
+>
 > 原文链接：[极客时间](https://time.geekbang.org/column/article/874518)
 
 ---
@@ -347,7 +347,7 @@ app.listen(port, () => {
 ```
 
 > [!important]
-> 
+>
 > JSONParser 是 TypeScript 写的，server.js 是 JS，所以安装了 **jiti** 库，它可以混合运行 TS 和 JS 的服务，用 `jiti server` 启动即可。
 
 配置 `vite.config.js` 转发 server 接口：
@@ -459,7 +459,7 @@ res.end();
 ```
 
 > [!important]
-> 
+>
 > 在 `string-resolve` 事件中，判断 uri 是否包含 `english`，若是则说明当前 delta 是**完整的英文例句**，立即发送给 `generateAudio` 异步处理。由于是异步过程，通过 `Promise.all(audioPromises)` 等待所有音频处理结束后才关闭连接。
 
 ### 修改客户端（添加音频播放）
@@ -516,7 +516,7 @@ eventSource.addEventListener("message", function (e: any) {
 内容生成的同时动态生成音频，点击播放图标即可播放对应语音。
 
 > [!important]
-> 
+>
 > GitHub 完整代码：[json_streaming_sse](https://github.com/akira-cn/frontend-dev-large-model-era/tree/main/json_streaming_sse)
 
 ---
@@ -524,15 +524,15 @@ eventSource.addEventListener("message", function (e: any) {
 ## 要点总结
 
 > [!important]
-> 
+>
 > - **核心问题**：JSON 是封闭数据结构，流式传输时无法中途解析
-> 
+>
 > - **解决方案**：使用动态 JSON Parser（来自 Ling 框架），支持增量解析
-> 
+>
 > - **客户端**：通过 `data` 事件获取 `{uri, delta}` 增量数据，配合 jsonuri 库更新 UI
-> 
+>
 > - **服务端**：通过 SSE 将解析结果推送给前端，同时利用 `string-resolve` 事件**并行处理**语音合成等异步任务
-> 
+>
 > - 结构化 JSON 数据的流式处理是实现快速实时响应的 AI 应用的**重要基础**
 
 ---
