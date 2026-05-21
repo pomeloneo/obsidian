@@ -68,201 +68,106 @@ Storage 创建完成后，我们点击 CDN 菜单，再点击右上角 Add Pull 
 
 在插件的 IDE 中，工具列表里创建工具 upload，编写代码如下：
 
-import { Args } from ‘@/runtime’;
-
-import { Input, Output } from “@/typings/upload/upload”;
-
+```jsx
+import { Args } from '@/runtime';
+import { Input, Output } from "@/typings/upload/upload";
 interface UploadFileResponse {
-
 HttpCode: number;
-
 Message: string;
-
 url?: string;
-
 }
-
 interface BunnyConfig {
-
 PASSWORD: string,
-
 STORAGE_ZONE_NAME: string,
-
 CDN_URL: string,
-
 REGION: string,
-
 }
-
 async function uploadFile(
-
 bunnyConfig: BunnyConfig,
-
 buffer: Buffer,
-
 filename: string
-
 ): Promise<UploadFileResponse> {
-
 const accessKey = bunnyConfig.PASSWORD;
-
 const storageZoneName = bunnyConfig.STORAGE_ZONE_NAME;
-
 const cdnDomain = bunnyConfig.CDN_URL;
-
 const hostUrl = `https://${bunnyConfig.REGION}.storage.bunnycdn.com`;
-
 const dir = `resource/${Math.random().toString(36).slice(2, 12)}`;
-
 const api = `${hostUrl}/${storageZoneName}/${dir}/${filename}`;
-
 const options: RequestInit = {
-
-method: ‘PUT’,
-
+method: 'PUT',
 headers: {
-
-‘Content-Type’: ‘application/json’,
-
-AccessKey: accessKey ?? ’’,
-
+'Content-Type': 'application/json',
+AccessKey: accessKey ?? '',
 },
-
 body: buffer,
-
 };
-
 try {
-
 const res = await fetch(api, options);
-
 const data = (await res.json()) as UploadFileResponse;
-
 if (data.HttpCode === 201) {
-
 data.url = `${cdnDomain}/${dir}/${filename}`;
-
 }
-
 return data;
-
 } catch (ex) {
-
 console.error(ex);
-
-return { HttpCode: 500, Message: ‘上传失败’ };
-
+return { HttpCode: 500, Message: '上传失败' };
 }
-
 }
-
 function detectFileType(arrayBuffer: ArrayBuffer): { type: string; extension: string } {
-
 const bytes = new Uint8Array(arrayBuffer);
-
-if (bytes[0] === 0x89 && bytes[1] === 0x50) return { type: ‘image’, extension: ‘png’ };
-
-if (bytes[0] === 0xFF && bytes[1] === 0xD8) return { type: ‘image’, extension: ‘jpg’ };
-
-if (bytes[0] === 0x47 && bytes[1] === 0x49) return { type: ‘image’, extension: ‘gif’ };
-
+if (bytes[0] === 0x89 && bytes[1] === 0x50) return { type: 'image', extension: 'png' };
+if (bytes[0] === 0xFF && bytes[1] === 0xD8) return { type: 'image', extension: 'jpg' };
+if (bytes[0] === 0x47 && bytes[1] === 0x49) return { type: 'image', extension: 'gif' };
 if (
-
 bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46 &&
-
 bytes[8] === 0x57 && bytes[9] === 0x45 && bytes[10] === 0x42 && bytes[11] === 0x50
-
-) return { type: ‘image’, extension: ‘webp’ };
-
-if (bytes[0] === 0x42 && bytes[1] === 0x4D) return { type: ‘image’, extension: ‘bmp’ };
-
+) return { type: 'image', extension: 'webp' };
+if (bytes[0] === 0x42 && bytes[1] === 0x4D) return { type: 'image', extension: 'bmp' };
 if (
-
 (bytes[0] === 0x49 && bytes[1] === 0x49 && bytes[2] === 0x2A && bytes[3] === 0x00) ||
-
 (bytes[0] === 0x4D && bytes[1] === 0x4D && bytes[2] === 0x00 && bytes[3] === 0x2A)
-
-) return { type: ‘image’, extension: ‘tiff’ };
-
+) return { type: 'image', extension: 'tiff' };
 if (
-
 bytes[0] === 0x00 && bytes[1] === 0x00 && bytes[2] === 0x01 && bytes[3] === 0x00
-
-) return { type: ‘image’, extension: ‘ico’ };
-
+) return { type: 'image', extension: 'ico' };
 if ((bytes[0] === 0x49 && bytes[1] === 0x44 && bytes[2] === 0x33) || (bytes[0] === 0xFF && bytes[1] >= 0xF0))
-
-return { type: ‘audio’, extension: ‘mp3’ };
-
+return { type: 'audio', extension: 'mp3' };
 if (bytes[0] === 0x66 && bytes[1] === 0x4C && bytes[2] === 0x61 && bytes[3] === 0x43)
-
-return { type: ‘audio’, extension: ‘flac’ };
-
+return { type: 'audio', extension: 'flac' };
 if (bytes[0] === 0x4F && bytes[1] === 0x67 && bytes[2] === 0x67 && bytes[3] === 0x53)
-
-return { type: ‘audio’, extension: ‘ogg’ };
-
+return { type: 'audio', extension: 'ogg' };
 if (
-
 bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46 &&
-
 bytes[8] === 0x57 && bytes[9] === 0x41 && bytes[10] === 0x56 && bytes[11] === 0x45
-
-) return { type: ‘audio’, extension: ‘wav’ };
-
+) return { type: 'audio', extension: 'wav' };
 if (
-
 bytes[4] === 0x66 && bytes[5] === 0x74 && bytes[6] === 0x79 && bytes[7] === 0x70
-
-) return { type: ‘video’, extension: ‘mp4’ };
-
+) return { type: 'video', extension: 'mp4' };
 if (
-
 bytes[0] === 0x1A && bytes[1] === 0x45 && bytes[2] === 0xDF && bytes[3] === 0xA3
-
-) return { type: ‘video’, extension: ‘mkv’ };
-
+) return { type: 'video', extension: 'mkv' };
 if (
-
 bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46 &&
-
 bytes[8] === 0x41 && bytes[9] === 0x56 && bytes[10] === 0x49 && bytes[11] === 0x20
-
-) return { type: ‘video’, extension: ‘avi’ };
-
-return { type: ‘unknown’, extension: ‘bin’ };
-
+) return { type: 'video', extension: 'avi' };
+return { type: 'unknown', extension: 'bin' };
 }
-
 async function uploadFromURL(
-
 bunnyConfig: BunnyConfig,
-
 file: string
-
 ): Promise<UploadFileResponse> {
-
 const res = await fetch(file);
-
 const arrayBuffer = await res.arrayBuffer();
-
 const match = file.match(/file_name=(.*)?$/);
-
 let filename = match?.[1];
-
 if (!filename) {
-
 const {type, extension} = detectFileType(arrayBuffer);
-
 filename = `${Math.random().toString(36).slice(2, 10)}.${extension}`;
-
 }
-
 const buffer = Buffer.from(arrayBuffer);
-
 return await uploadFile(bunnyConfig, buffer, filename);
-
 }
+```
 
 - Each file needs to export a function named `handler`. This function is the entrance to the Tool.
 
@@ -278,23 +183,17 @@ return await uploadFile(bunnyConfig, buffer, filename);
 
 export async function handler({ input, logger }: Args): Promise<Output> {
 
+```jsx
 const config:BunnyConfig = {
-
 PASSWORD: input.PASSWORD,
-
 STORAGE_ZONE_NAME: input.STORAGE_ZONE_NAME,
-
 CDN_URL: input.CDN_URL,
-
 REGION: input.REGION
-
 };
-
 const res = await uploadFromURL(config, input.file)
-
 return res;
-
 };
+```
 
 上面的代码并不复杂，主要有几个函数：
 
@@ -314,23 +213,17 @@ uploadFromURL 根据文件 URL 上传到 CDN。我们主要用到的就是这个
 
 export async function handler({ input, logger }: Args): Promise<Output> {
 
+```jsx
 const config:BunnyConfig = {
-
 PASSWORD: input.PASSWORD,
-
 STORAGE_ZONE_NAME: input.STORAGE_ZONE_NAME,
-
 CDN_URL: input.CDN_URL,
-
 REGION: input.REGION
-
 };
-
 const res = await uploadFromURL(config, input.file)
-
 return res;
-
 };
+```
 
 接着我们切换到元数据，将输入参数类型声明正确。
 
@@ -411,5 +304,3 @@ return res;
 如果你没有购买和部署阿里云 OSS，可能前面课程的阿里云插件没法使用，你可以试着用 Bunny.net 的插件替代阿里云 OSS 插件，这样就可以将之前欠缺的例子运行起来啦。如果你通过替换插件将问题解决了，或者你还遇到任何新问题，欢迎分享到评论区。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
