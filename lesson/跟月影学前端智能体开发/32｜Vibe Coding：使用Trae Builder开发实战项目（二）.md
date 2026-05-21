@@ -78,11 +78,11 @@ private nlp: any;
 
 constructor() {
 
+```text
 this.nlp = winkNLP(model);
-
 vocabularyManager.initialize();
-
 }
+```
 
 - 分析文本中的CEFR级别单词分布
 
@@ -142,14 +142,12 @@ unknownWordsList: mergedOptions.includeUnknownWords ? [...unknownWordsList] : []
 
 public getWordsAtLevel(
 
+```text
 text: string,
-
 level: CEFRLevel,
-
 options?: IAnalyzerOptions
-
 ): IWordWithPos[] {
-
+```
 ```jsx
 const analysisResult = this.analyze(text, {
 ...options,
@@ -709,9 +707,10 @@ levelPercentages,
 
 unknownWords,
 
+```text
 unknownWordsList: mergedOptions.includeUnknownWords ? unknownWordsList : [],
-
 }
+```
 
 这些数据对应的含义如下。
 
