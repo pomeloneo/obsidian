@@ -107,17 +107,14 @@ return "\r\n".join(lines)
 
 # 示例：一个简单的API调用
 
+```text
 request = HTTPRequest(
-
-method=“POST”,
-
-url=“/api/users”,
-
-headers={“Content-Type”: “application/json”},
-
-body=‘{“name”: “Alice”, “email”: “alice@example.com”}’
-
+method="POST",
+url="/api/users",
+headers={"Content-Type": "application/json"},
+body='{"name": "Alice", "email": "alice@example.com"}'
 )
+```
 
 HTTP 的成功在于它简单且通用。它不关心传输的具体内容，只定义了如何包装和传递信息。这种设计让 HTTP 成为了 RESTful API、Web 服务、甚至现代微服务架构的基础（你可以思考一下为什么说 HTTP 是现代微服务架构的基础）。
 
@@ -164,38 +161,24 @@ gRPC 服务定义示例：
 
 # user_service.proto
 
-syntax = “proto3”;
-
+```text
+syntax = "proto3";
 service UserService {
-
 rpc GetUser(GetUserRequest) returns (User);
-
 rpc CreateUser(CreateUserRequest) returns (User);
-
 rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
-
 }
-
 message User {
-
 int32 id = 1;
-
 string name = 2;
-
 string email = 3;
-
 int64 created_at = 4;
-
 }
-
 message GetUserRequest {
-
 int32 user_id = 1;
-
 }
-
 gRPC 服务实现示例：
-
+```
 ```python
 import grpc
 from concurrent import futures
