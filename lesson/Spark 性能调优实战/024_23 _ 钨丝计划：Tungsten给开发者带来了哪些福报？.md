@@ -185,5 +185,3 @@ Tungsten 是 Spark SQL 的“右脑”，掌握它的特性和优势对 SparkSQL
 期待在留言区看到你的思考和答案，我们下一讲见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
