@@ -153,5 +153,3 @@
 期待在留言区看到你的思考和答案，如果你的朋友也在为提高 CPU 利用率苦恼，欢迎你把这一讲转发给他，我们下一讲见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
