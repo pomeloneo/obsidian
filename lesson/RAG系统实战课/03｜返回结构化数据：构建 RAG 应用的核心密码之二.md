@@ -100,11 +100,11 @@ messages=[
 
 结合例子，你更容易理解这一点。例如，我们有这样一个 Python 函数。
 
+```python
 def greet_many(*names):
-
 for name in names:
-
-print(f”Hello, {name}!“)
+print(f"Hello, {name}!")
+```
 
 那么我们就需要将对话模式里面 user 角色的 content 值设置为如下内容。
 
@@ -323,5 +323,3 @@ messages=[
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
