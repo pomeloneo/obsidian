@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "sessionId": "17502622-68c8-4e3a-93a5-cb3d195d2f03",
+  "agentId": "codex-acp",
+  "messages": [
+    {
+      "id": "a9612dc1-db3b-41e4-bc15-32b42e007a04",
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "我从 notion 导入了很多笔记，但是很多笔记的文件夹命名都不对，你能帮我修复下吗？"
+        }
+      ],
+      "timestamp": "2026-05-20T12:53:06.085Z"
+    },
+    {
+      "id": "946598d4-125f-4fb7-8320-821ca890131a",
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "我从 notion 导入了很多笔记，但是很多笔记的文件夹命名都不对，你能帮我修复下吗？"
+        }
+      ],
+      "timestamp": "2026-05-20T12:53:40.218Z"
+    }
+  ],
+  "savedAt": "2026-05-20T12:53:40.326Z"
+}

@@ -28,7 +28,7 @@
   "customAgents": [],
   "defaultAgentId": "codex-acp",
   "autoAllowPermissions": false,
-  "autoMentionActiveNote": true,
+  "autoMentionActiveNote": false,
   "enableSystemNotifications": true,
   "debugMode": false,
   "nodePath": "",

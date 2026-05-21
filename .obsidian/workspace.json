@@ -1,0 +1,262 @@
+{
+  "main": {
+    "id": "172a4d087d60874c",
+    "type": "split",
+    "children": [
+      {
+        "id": "4d817c9c4f2d325f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "19f638aa84d34611",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f455ecb9598a4266",
+    "type": "split",
+    "children": [
+      {
+        "id": "232c343523398994",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb39d3fbe3111a26",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "b1817f68a8158a0e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "0e4d52dc6da60ac7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      },
+      {
+        "id": "605ac6b26aa24193",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d1031094f9a73c9",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 487.5
+  },
+  "right": {
+    "id": "ef405a15d1bb2d8d",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc3487e4191d6cb1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f4b5739bd0b4b60",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notion/2feb74ecb80d81bb9e6a004289255cc3/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人 的反向链接列表"
+            }
+          },
+          {
+            "id": "64a6d2c5058c316c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "你好.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "你好 的出链列表"
+            }
+          },
+          {
+            "id": "5564c69e21ab274d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "b66adb40eeddf21e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "5d764a6e0b03d834",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "52fe5c2851400857",
+            "type": "leaf",
+            "state": {
+              "type": "agent-client-chat-view",
+              "state": {},
+              "icon": "bot-message-square",
+              "title": "Agent client"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 576.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "agent-client:Open agent client": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "52fe5c2851400857",
+  "lastOpenFiles": [
+    "Notion/2feb74ecb80d81869a3d00425ec13b5e/051_43 _ 互联网架构模板：“用户层”和“业务层”技术.md",
+    "未命名.base",
+    "未命名.canvas",
+    "Notion/2feb74ecb80d81bb9e6a004289255cc3/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
+    "Untitled 1.png",
+    "Untitled 2.png",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/跟月影学前端智能体开发/01｜如何在前端调用文本大模型API.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/跟月影学前端智能体开发.md",
+    "image12.png",
+    "image14.png",
+    "image17.png",
+    "image19.png",
+    "Untitled.png",
+    "image22.png",
+    "my-notion-face-customized.png",
+    "image1 2.png",
+    "Obsidian Canvas 能力演示.canvas",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 233.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 232.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 231.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 230.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 229.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 228.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 227.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 226.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 225.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 224.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 223.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 222.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 221.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 220.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 219.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 218.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 217.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 216.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 215.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 214.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 213.md",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv/无标题 212.md",
+    "HRG鲲鹏流程一览表.xlsx",
+    "output2pdfsW02-0405.pdf",
+    "output2pdfsContextual-Retrieval-Appendix-2.pdf",
+    "output2pdfs7298332f04ac004a0ca44cc69ecf6f6b-Paper.pdf",
+    "output.zip",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/流程类/SLA标准&看板/服务质量看板数据指标/服务质量看板数据指标-开发文档 csv",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/项目类/客户服务数字化&服务预期/对客上线概况&操作指南汇总/【员工参保库变更】鲲鹏使用指南/无标题 2f1b-ae85",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/项目类/客户服务数字化&服务预期/对客上线概况&操作指南汇总/【员工参保库变更】鲲鹏使用指南/无标题",
+    "Notion/Export-842ccdb3-6b93-4f98-bb58-67746f17c303/私人与共享/zxd/工作搭子/项目类/客户服务数字化&服务预期/对客上线概况&操作指南汇总/【员工参保库变更】鲲鹏使用指南"
+  ]
+}
