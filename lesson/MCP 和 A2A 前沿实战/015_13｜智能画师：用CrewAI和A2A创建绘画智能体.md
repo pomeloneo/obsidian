@@ -681,10 +681,8 @@ verbose=False,
 ```
 
 图像生成工具也和本机版一样，通过 generate_image_tool 函数定义，核心功能是支持文本到图像生成，以及基于参考图像的图像修改。其实现方式是集成 Google Gemini API，并可以自动缓存生成的图像。
-
-@tool(‘ImageGenerationTool’)
-
 ```python
+@tool('ImageGenerationTool')
 def generate_image_tool(
 prompt: str,
 session_id: str,
@@ -895,10 +893,8 @@ return types.Content(role='user', parts=parts)
 ### 实时状态更新
 
 demo/ui/state/host_agent_service.py 中的异步函数负责实时更新应用状态。
-
-async def UpdateAppState(state: AppState, conversation_id: str):
-
 ```text
+async def UpdateAppState(state: AppState, conversation_id: str):
 messages = await ListMessages(conversation_id)
 state.messages = [convert_message_to_state(x) for x in messages]
 tasks = await GetTasks()
