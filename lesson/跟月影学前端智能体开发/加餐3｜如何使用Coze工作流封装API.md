@@ -313,131 +313,71 @@ VITE_PAT_TOKEN=pat_z79F**********T9VX
 
 .container {
 
+```text
 display: flex;
-
 flex-direction: row;
-
 align-items: start;
-
 justify-content: start;
-
 height: 100vh;
-
 font-size: .85rem;
-
 }
-
 .preview {
-
 max-width: 300px;
-
 margin-bottom: 20px;
-
 }
-
 .settings {
-
 display: flex;
-
 flex-direction: row;
-
 align-items: start;
-
 justify-content: start;
-
 margin-top: 1rem;
-
 }
-
 .selection {
-
 width: 100%;
-
 text-align: left;
-
 }
-
 .selection input {
-
 width: 50px;
-
 }
-
 .input {
-
 display: flex;
-
 flex-direction: column;
-
 min-width: 330px;
-
 }
-
 .file-input {
-
 display: flex;
-
 margin-bottom: 16px;
-
 }
-
 .output {
-
 margin-top: 10px;
-
 min-height: 300px;
-
 width: 100%;
-
 text-align: left;
-
 }
-
 button {
-
 padding: 10px;
-
 min-width: 200px;
-
 margin-left: 6px;
-
 border: solid 1px black;
-
 }
-
 .generate {
-
 width: 100%;
-
 margin-top: 16px;
-
 }
-
 .generated {
-
 width: 400px;
-
 height: 400px;
-
 border: solid 1px black;
-
 position: relative;
-
 display: flex;
-
 justify-content: center;
-
 align-items: center;
-
 }
-
 .output img {
-
 width: 100%;
-
 }
-
 </style>
+```
 
 在上面的代码中，我们调用了两个 Coze API，一个是照片上传，另一个是我们刚才搭建的工作流。
 
