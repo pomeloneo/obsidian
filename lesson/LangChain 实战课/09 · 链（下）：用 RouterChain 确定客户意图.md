@@ -23,11 +23,11 @@
 - 如何装饰场地等
 
 > [!important]
-> 
+>
 > **业务需求**
-> 
+>
 > - 接到第一类问题 → 引导到 ChatBot A（园丁专家）
-> 
+>
 > - 接到第二类问题 → 引导到 ChatBot B（插花大师）
 
 [![](https://static001.geekbang.org/resource/image/d8/59/d8491e696c03f49a331c94e31d20e559.jpg?wh=1490x1077)](https://static001.geekbang.org/resource/image/d8/59/d8491e696c03f49a331c94e31d20e559.jpg?wh=1490x1077)
@@ -35,9 +35,9 @@
 RouterChain 工作流程示意图
 
 > [!important]
-> 
+>
 > **解决方案**
-> 
+>
 > 根据这两个场景构建不同的目标链，遇到不同类型的问题，LangChain 会通过 **RouterChain** 自动引导大语言模型选择不同的模板。
 
 ---
@@ -116,13 +116,13 @@ prompt_infos = [
 ```
 
 > [!important]
-> 
+>
 > 每个提示信息包含三个字段：
-> 
+>
 > - **key** - 唯一标识符
-> 
+>
 > - **description** - 用途描述，帮助路由链做决策
-> 
+>
 > - **template** - 实际的提示模板
 
 ---
@@ -155,7 +155,7 @@ for info in prompt_infos:
         input_variables=["input"]
     )
     print("目标提示:\n", prompt)
-    
+
     chain = LLMChain(llm=llm, prompt=prompt, verbose=True)
     chain_map[info["key"]] = chain
 ```
@@ -165,25 +165,25 @@ for info in prompt_infos:
 ```jsx
 目标提示:
 input_variables=['input']
-output_parser=None 
+output_parser=None
 partial_variables={}
-template='你是一个经验丰富的园丁，擅长解答关于养花育花的问题。\n下面是需要你来回答的问题:\n{input}' 
+template='你是一个经验丰富的园丁，擅长解答关于养花育花的问题。\n下面是需要你来回答的问题:\n{input}'
 template_format='f-string'
 validate_template=True
 
 目标提示:
 input_variables=['input']
-output_parser=None 
+output_parser=None
 partial_variables={}
-template='你是一位网红插花大师，擅长解答关于鲜花装饰的问题。\n下面是需要你来回答的问题:\n{input}' 
+template='你是一位网红插花大师，擅长解答关于鲜花装饰的问题。\n下面是需要你来回答的问题:\n{input}'
 template_format='f-string'
 validate_template=True
 ```
 
 > [!important]
-> 
+>
 > **工作原理**
-> 
+>
 > 对于每个场景，我们创建一个 LLMChain。每个链会根据其场景模板生成对应的提示，然后将这个提示送入语言模型获取答案。
 
 ---
@@ -218,8 +218,8 @@ router_chain = LLMRouterChain.from_llm(llm, router_prompt, verbose=True)
 **路由模板输出：**
 
 ```jsx
-Given a raw text input to a language model select the model prompt best suited for the input. 
-You will be given the names of the available prompts and a description of what the prompt is best suited for. 
+Given a raw text input to a language model select the model prompt best suited for the input.
+You will be given the names of the available prompts and a description of what the prompt is best suited for.
 You may also revise the original input if you think that revising it will ultimately lead to a better response from the language model.
 
 << FORMATTING >>
@@ -254,21 +254,21 @@ flower_decoration: 适合回答关于鲜花装饰的问题
 #### 1. 引言部分
 
 > [!important]
-> 
+>
 > **Given a raw text input to a language model select the model prompt best suited for the input.**
-> 
+>
 > 告诉模型需要根据输入选择最适合的模型提示。
 
 > [!important]
-> 
+>
 > **You will be given the names of the available prompts and a description of what the prompt is best suited for.**
-> 
+>
 > 提醒模型将获得各种模型提示的名称和描述。
 
 > [!important]
-> 
+>
 > **You may also revise the original input if you think that revising it will ultimately lead to a better response from the language model.**
-> 
+>
 > 可选步骤，允许模型修改原始输入以获得更好的响应。
 
 #### 2. 格式说明（<< FORMATTING >>）
@@ -298,9 +298,9 @@ flower_decoration: 适合回答关于鲜花装饰的问题
 提供格式化框架，接收 `{input}` 并输出结果。
 
 > [!important]
-> 
+>
 > **核心机制**
-> 
+>
 > 路由模板引导大模型查看用户输入并确定问题类型，然后以 JSON 格式返回路由决策。这是整个路由链的核心所在。
 
 ---
@@ -355,9 +355,9 @@ chain = MultiPromptChain(
 1. **兜底阶段** - 如果 `router_chain` 不能决定正确的链，输入传递给 `default_chain`
 
 > [!important]
-> 
+>
 > **优势**
-> 
+>
 > MultiPromptChain 提供了在多个处理链之间动态路由输入的机制，以得到最相关或最优的输出。这种设计模式非常适合处理多场景、多专家的业务需求。
 
 ---
@@ -377,7 +377,7 @@ print(chain.run("如何为玫瑰浇水？"))
 测试 A 输出结果
 
 > [!important]
-> 
+>
 > **路由结果**: 成功路由到 `flower_care` 目标链（园丁专家）
 
 ---
@@ -393,7 +393,7 @@ print(chain.run("如何为婚礼场地装饰花朵？"))
 测试 B 输出结果
 
 > [!important]
-> 
+>
 > **路由结果**: 成功路由到 `flower_decoration` 目标链（插花大师）
 
 ---
@@ -409,21 +409,21 @@ print(chain.run("如何考入哈佛大学？"))
 测试 C 输出结果
 
 > [!important]
-> 
+>
 > **路由结果**: 路由到 `default_chain`（ConversationChain）
 
 ---
 
 > [!important]
-> 
+>
 > **测试结果分析**
-> 
+>
 > 三个测试分别被路由到三个不同的链：
-> 
+>
 > - 前两个问题被正确识别并路由到预设的"专家类型"目标链
-> 
+>
 > - 第三个问题被模型识别为不属于鲜花运营业务场景，被路由到默认链处理
-> 
+>
 > 这充分验证了 RouterChain 的智能路由能力。
 
 ---
@@ -461,15 +461,15 @@ chain = MultiPromptChain(
 # 思考题
 
 > [!important]
-> 
+>
 > **问题 1**: 日志控制
-> 
+>
 > 通过 `verbose=True` 选项，在输出时显示了链的开始和结束日志，从而得到其相互调用流程。请尝试把该选项设置为 `False`，看看输出结果有何不同。
 
 > [!important]
-> 
+>
 > **问题 2**: 链替换
-> 
+>
 > 在这个例子中，我们使用了 `ConversationChain` 作为 `default_chain`，这个 Chain 是 `LLMChain` 的子类。你能否把这个 Chain 替换为 `LLMChain`？
 
 ---
