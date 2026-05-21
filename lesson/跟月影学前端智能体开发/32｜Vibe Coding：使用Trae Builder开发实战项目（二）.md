@@ -75,10 +75,8 @@ private nlp: any;
 - 创建分析器实例
 
 - /
-
-constructor() {
-
 ```text
+constructor() {
 this.nlp = winkNLP(model);
 vocabularyManager.initialize();
 }
@@ -93,10 +91,8 @@ vocabularyManager.initialize();
 - @returns 分析结果
 
 - /
-
-public analyze(text: string, options?: IAnalyzerOptions): ICEFRAnalysisResult {
-
 ```jsx
+public analyze(text: string, options?: IAnalyzerOptions): ICEFRAnalysisResult {
 const defaultOptions: IAnalyzerOptions = {
 caseSensitive: false,
 includeUnknownWords: true,
@@ -139,10 +135,8 @@ unknownWordsList: mergedOptions.includeUnknownWords ? [...unknownWordsList] : []
 - @returns 指定级别的单词列表（包含词性）
 
 - /
-
-public getWordsAtLevel(
-
 ```text
+public getWordsAtLevel(
 text: string,
 level: CEFRLevel,
 options?: IAnalyzerOptions
@@ -166,10 +160,8 @@ return analysisResult.wordsAtLevel[level];
 - @returns 各级别单词数量的统计
 
 - /
-
-public getLevelDistribution(text: string, options?: IAnalyzerOptions): Record<CEFRLevel, number> {
-
 ```jsx
+public getLevelDistribution(text: string, options?: IAnalyzerOptions): Record<CEFRLevel, number> {
 const result = this.analyze(text, options);
 return result.levelPercentages;
 }
@@ -182,10 +174,8 @@ return result.levelPercentages;
 - @returns 映射后的词性，如果无法映射则返回undefined
 
 - /
-
-private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
-
 ```jsx
+private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
 const posMapping: Record<string, string> = {
 NN: 'noun',
 NNS: 'noun',
@@ -285,10 +275,8 @@ AI 修复的代码如下：
 - @returns 映射后的词性，如果无法映射则返回undefined
 
 - /
-
-private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
-
 ```jsx
+private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
 const posMapping: Record<string, string> = {
 NOUN: 'noun',
 PROPN: 'noun',
@@ -400,10 +388,8 @@ export type PartOfSpeech =
 - @returns 映射后的词性，如果无法映射则返回undefined
 
 - /
-
-private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
-
 ```jsx
+private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
 const posMapping: Record<string, PartOfSpeech> = {
 NOUN: 'noun',
 PROPN: 'noun',
@@ -443,10 +429,8 @@ return posMapping[winkPos];
 - @returns 映射后的词性，如果无法映射则返回undefined
 
 - /
-
-private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
-
 ```jsx
+private mapPartOfSpeech(winkPos: string): PartOfSpeech | undefined {
 const posMapping: Record<string, PartOfSpeech> = {
 NOUN: 'noun',
 PROPN: 'noun',
@@ -520,10 +504,8 @@ import { CEFRLevel, ICEFRAnalysisResult } from ‘../types’;
 - @returns 格式化后的文本
 
 - /
-
-export function formatAnalysisResult(result: ICEFRAnalysisResult): string {
-
 ```jsx
+export function formatAnalysisResult(result: ICEFRAnalysisResult): string {
 const { totalWords, levelCounts, levelPercentages, unknownWords } = result;
 let formattedResult = '## CEFR 词汇分析结果\n\n';
 formattedResult += `总单词数: ${totalWords}\n`;
@@ -556,10 +538,8 @@ return formattedResult;
 - @returns 复杂度得分（1-6，对应A1-C2）
 
 - /
-
-export function calculateComplexityScore(result: ICEFRAnalysisResult): number {
-
 ```jsx
+export function calculateComplexityScore(result: ICEFRAnalysisResult): number {
 const { levelCounts, totalWords } = result;
 if (totalWords === 0) {
 return 0;
@@ -590,10 +570,8 @@ return recognizedWords > 0 ? weightedSum / recognizedWords : 0;
 - @returns 对应的CEFR级别
 
 - /
-
-export function getComplexityLevel(score: number): CEFRLevel {
-
 ```text
+export function getComplexityLevel(score: number): CEFRLevel {
 if (score < 1.5) return 'a1';
 if (score < 2.5) return 'a2';
 if (score < 3.5) return 'b1';
@@ -610,10 +588,8 @@ return 'c2';
 - @returns ASCII图表字符串
 
 - /
-
-export function generateSimpleVisualization(result: ICEFRAnalysisResult): string {
-
 ```jsx
+export function generateSimpleVisualization(result: ICEFRAnalysisResult): string {
 const { levelPercentages } = result;
 const levels: CEFRLevel[] = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 let visualization = '### CEFR级别分布可视化\n\n';
@@ -650,10 +626,8 @@ generateSimpleVisualization：将 CEFR 分析结果用可视化图表的方式�
 - @returns ICEFRAnalysisResult score得分1～6，level对应等级
 
 - /
-
-export function calculateComplexityScore(result: ICEFRAnalysisResult): DifficultyScoreResult {
-
 ```jsx
+export function calculateComplexityScore(result: ICEFRAnalysisResult): DifficultyScoreResult {
 const { totalWords, levelPercentages } = result;
 const weights: Record<CEFRLevel, number> = {
 a1: 1,
