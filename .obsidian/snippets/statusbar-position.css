@@ -1,0 +1,23 @@
+/* Center the Obsidian status bar at the bottom of the window. */
+.status-bar {
+  position: fixed !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: 10px !important;
+  transform: translateX(-50%) !important;
+  z-index: 1000;
+
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+
+  padding: 4px 8px !important;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 18%);
+}

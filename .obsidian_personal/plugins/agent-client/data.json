@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e4b09-dfb5-7b83-a800-f2bafcd6c3db",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "@[[005_03｜架构与选型：如何从0到1构建AI情感伙伴？]] 优化下这个文档的格式，尤其是代码...",
+      "createdAt": "2026-05-21T15:05:38.096Z",
+      "updatedAt": "2026-05-21T15:05:38.096Z"
+    },
+    {
       "sessionId": "019e4a38-6378-7b83-b70d-0966e36d48df",
       "agentId": "codex-acp",
       "cwd": "/Users/neo/Documents/Obsidian Vault",

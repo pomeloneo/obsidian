@@ -1,0 +1,302 @@
+/* Modern polish for the File Tree Alternative plugin. */
+.workspace-leaf-content[data-type="file-tree-view"] {
+  --fta-modern-row-height: 30px;
+  --fta-modern-radius: 10px;
+  --fta-modern-pill-radius: 999px;
+  --fta-modern-accent: var(--accent-color, var(--interactive-accent));
+  --fta-modern-muted-line: color-mix(in srgb, var(--text-muted) 20%, transparent);
+  --fta-modern-soft-bg: color-mix(in srgb, var(--background-secondary) 76%, transparent);
+  --fta-modern-hover-bg: color-mix(in srgb, var(--background-modifier-hover) 68%, transparent);
+  --fta-modern-active-bg: color-mix(in srgb, var(--fta-modern-accent) 13%, var(--background-primary));
+  --fta-modern-badge-bg: color-mix(in srgb, var(--background-secondary-alt) 62%, transparent);
+  --oz-fta-folder-font-size: 14px;
+  --oz-fta-file-font-size: 13px;
+  --oz-fta-folder-icon-color: color-mix(in srgb, var(--fta-modern-accent) 72%, var(--text-muted));
+  --oz-fta-folder-indendation-guide-color: var(--fta-modern-muted-line);
+  --oz-fta-header-background-color: transparent;
+  --oz-fta-header-icon-colors: var(--text-muted);
+  --oz-fta-folder-pane-file-name-color: var(--text-normal);
+  --oz-fta-file-pane-file-name-color: var(--text-muted);
+  --oz-fta-all-panes-active-text-color: var(--text-normal);
+  --oz-fta-file-pane-active-file-background-color: var(--fta-modern-active-bg);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] > .view-content {
+  padding: 12px 10px 10px !important;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--background-secondary) 34%, transparent),
+      transparent 180px
+    );
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .file-tree-plugin-view {
+  color: var(--text-normal);
+  font-family: var(--font-interface);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folders-tree-wrapper {
+  padding: 0 6px 10px !important;
+  scrollbar-gutter: stable;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folders-action-items,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-flex-container {
+  min-height: 38px;
+  margin: 0 0 12px;
+  padding: 5px 8px;
+  background: var(--background-secondary);
+  background: var(--fta-modern-soft-bg);
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 62%, transparent);
+  border-radius: 14px;
+  box-shadow:
+    0 10px 28px rgb(0 0 0 / 7%),
+    inset 0 1px 0 rgb(255 255 255 / 18%);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folders-action-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  color: var(--text-muted);
+  opacity: 0.88;
+  border-radius: var(--fta-modern-pill-radius);
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    transform 140ms ease,
+    opacity 140ms ease;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-action-button:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-action-button svg {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle !important;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .treeview {
+  overflow: visible;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-element {
+  min-height: var(--fta-modern-row-height);
+  margin: 1px 0;
+  padding: 0 4px;
+  line-height: var(--fta-modern-row-height);
+  border: 1px solid transparent;
+  border-radius: var(--fta-modern-radius);
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-element:hover,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-element.drag-entered {
+  background: var(--fta-modern-hover-bg);
+  border-color: color-mix(in srgb, var(--background-modifier-border) 55%, transparent);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-line,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-block {
+  min-width: 0;
+  align-items: center;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-line {
+  min-height: var(--fta-modern-row-height);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-block {
+  flex: 1 1 auto;
+  padding: 0 6px 0 0;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-icon-div {
+  display: inline-flex;
+  width: 28px;
+  min-width: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-toggle {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  padding: 2px;
+  color: var(--oz-fta-folder-icon-color);
+  opacity: 0.78 !important;
+  border-radius: 6px;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    opacity 120ms ease;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-element:hover .oz-folder-toggle {
+  color: var(--fta-modern-accent);
+  opacity: 1 !important;
+  background: color-mix(in srgb, var(--fta-modern-accent) 10%, transparent);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] svg.oz-folder-toggle path {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-normal);
+  font-weight: 450;
+  line-height: var(--fta-modern-row-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-name.is-root-folder {
+  font-size: 17px;
+  font-weight: 560;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-name.is-folder-active,
+.workspace-leaf-content[data-type="file-tree-view"] .is-folder-active {
+  color: var(--text-normal) !important;
+  font-weight: 650;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-element:has(.is-folder-active) {
+  background: var(--fta-modern-active-bg);
+  border-color: color-mix(in srgb, var(--fta-modern-accent) 18%, transparent);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-contents {
+  margin-left: 18px !important;
+  padding-left: 11px;
+  border-left: 1px solid var(--fta-modern-muted-line);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-folder-count {
+  flex: 0 0 auto;
+  height: auto;
+  margin-left: 8px;
+  align-items: center;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file-tag {
+  min-width: 24px;
+  height: 19px;
+  margin: 0;
+  padding: 0 7px;
+  color: var(--text-muted);
+  background: var(--fta-modern-badge-bg);
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 40%, transparent);
+  border-radius: var(--fta-modern-pill-radius);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 18px;
+  text-align: center;
+  text-transform: none;
+  vertical-align: middle !important;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file-title {
+  border: 0;
+  border-radius: var(--fta-modern-radius);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file {
+  margin: 1px 0;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file-title {
+  min-height: 29px;
+  padding: 0 8px;
+  line-height: 29px;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file:hover,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file:hover .oz-nav-file-title {
+  background: var(--fta-modern-hover-bg);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file.is-active,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file.is-active .oz-nav-file-title,
+.workspace-leaf-content[data-type="file-tree-view"] .oz-nav-file.is-active .oz-nav-file-title-content {
+  background: var(--fta-modern-active-bg);
+  color: var(--text-normal);
+  font-weight: 650;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-file-tree-header {
+  min-height: 34px;
+  margin: 0 0 8px;
+  padding: 7px 12px;
+  color: var(--text-normal);
+  background: var(--fta-modern-soft-bg);
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 55%, transparent);
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 650;
+  text-align: left;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] .oz-input-container input {
+  height: 32px;
+  padding: 0 10px;
+  background: color-mix(in srgb, var(--background-primary) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 62%, transparent);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] #file-tree-divider {
+  height: 12px;
+  margin: 2px 8px 8px;
+  border: 0;
+  opacity: 1;
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] #file-tree-divider::before {
+  display: block;
+  width: 42px;
+  height: 4px;
+  margin: 4px auto;
+  content: "";
+  background: color-mix(in srgb, var(--text-muted) 24%, transparent);
+  border-radius: var(--fta-modern-pill-radius);
+}
+
+.workspace-leaf-content[data-type="file-tree-view"] #file-tree-divider:hover::before,
+.workspace-leaf-content[data-type="file-tree-view"] #file-tree-divider.active-divider::before {
+  background: color-mix(in srgb, var(--fta-modern-accent) 54%, transparent);
+}

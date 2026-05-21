@@ -1,4 +1,8 @@
 {
-  "cssTheme": "Things",
-  "accentColor": "#41b955"
+  "cssTheme": "Cupertino",
+  "accentColor": "#41b955",
+  "enabledCssSnippets": [
+    "statusbar-position",
+    "file-tree-modern"
+  ]
 }

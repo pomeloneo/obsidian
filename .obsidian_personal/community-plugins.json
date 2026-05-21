@@ -7,5 +7,16 @@
   "obsidian-hover-editor",
   "obsidian-icon-folder",
   "homepage",
-  "agent-client"
+  "agent-client",
+  "obsidian-image-toolkit",
+  "dataview",
+  "templater-obsidian",
+  "obsidian-style-settings",
+  "omnisearch",
+  "obsidian-linter",
+  "copy-url-in-preview",
+  "diagram-zoom-drag",
+  "file-tree-alternative",
+  "recent-files-obsidian",
+  "statusbar-organizer"
 ]
