@@ -177,5 +177,3 @@ Spark 为开发者提供了多样化的 Join Hints，允许你把专家经验凌
 期待在留言区看到你的思考和答案，我们下一讲见！
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
