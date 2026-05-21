@@ -4,21 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "101ff7eae6e53d9f",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "840f2f848fa456e9",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian_work/workspace.json",
-                "bFile": ".obsidian_work/workspace.json",
-                "aRef": ""
+                "file": "分享回流/直播间电商意图与分享漏斗埋点分析.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "diff",
-              "title": "Diff: workspace.json  (Working Tree)"
+              "icon": "lucide-file",
+              "title": "直播间电商意图与分享漏斗埋点分析"
             }
           }
         ]
@@ -48,23 +58,6 @@
             }
           },
           {
-            "id": "b1817f68a8158a0e",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "搜索"
-            }
-          },
-          {
             "id": "0e4d52dc6da60ac7",
             "type": "leaf",
             "state": {
@@ -83,9 +76,25 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "4dc6736244d45a0f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -224,8 +233,9 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "cb39d3fbe3111a26",
   "lastOpenFiles": [
+    "2026-05-21.md",
     "分享回流/直播间电商意图与分享漏斗埋点分析.md",
     "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
     "分享回流/分享回流漏斗看板.md",
@@ -270,7 +280,6 @@
     "lesson/RAG系统实战课.md",
     "personal/zxd.md",
     "个人与共享/People.md",
-    "lesson/跟月影学前端智能体开发.md",
     "personal/zxd/导入图片/image3.png",
     "personal/zxd/导入图片/image.png",
     "personal/zxd/导入图片",
