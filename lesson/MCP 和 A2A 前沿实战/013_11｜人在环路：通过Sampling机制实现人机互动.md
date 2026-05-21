@@ -161,12 +161,9 @@ stopSequences：停止生成的序列数组
 ### 在服务器端实现采样
 
 在 MCP 服务器中实现采样功能通常在处理提示请求时完成。以下是一个简化的实现：
-
-@app.get_prompt()
-
-async def get_prompt(
-
 ```text
+@app.get_prompt()
+async def get_prompt(
 name: str, arguments: dict[str, str] | None = None
 ) -> types.GetPromptResult:
 """根据名称和参数获取提示内容"""
