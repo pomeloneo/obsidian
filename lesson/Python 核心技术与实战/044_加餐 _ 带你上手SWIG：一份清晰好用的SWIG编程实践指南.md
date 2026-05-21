@@ -599,10 +599,8 @@ file.seekg(0);
 \#include
 
 namespace utils {
-
-arma::Mat<double> make_covariance_matrix(const arma::Mat<double>& data) {
-
 ```jsx
+arma::Mat<double> make_covariance_matrix(const arma::Mat<double>& data) {
 return std::move( (data.t()*data) * (1./(data.n_rows-1)) );
 }
 arma::Mat<double> make_shuffled_matrix(const arma::Mat<double>& data) {
