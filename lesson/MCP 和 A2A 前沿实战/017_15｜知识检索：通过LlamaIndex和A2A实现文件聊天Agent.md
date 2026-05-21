@@ -59,10 +59,8 @@ vector_stores={'default': SimpleVectorStore(stores_text=False, is_embedding_quer
 向量存储：一种内存中的存储系统，以字典形式保存嵌入，将节点 ID 映射到相应的嵌入。这种结构有助于高效的检索和相似性搜索。
 
 在这个向量索引中，llama_index 会自动将读入的文档内容切分成一个个的节点。LlamaIndex 中的节点是向量存储的基本单元，节点之间的关联以及节点与嵌入之间的关系都被详细记录在索引中。
-
-nodes = index.index_struct.nodes_dict
-
 ```text
+nodes = index.index_struct.nodes_dict
 for node in nodes:
 print(node)
 ```
@@ -323,10 +321,8 @@ document = documents[0]
 # 将文档分割成行并添加行号
 
 # 这将用于引用
-
-document_text = ’’
-
 ```text
+document_text = ''
 for idx, line in enumerate(document.text.split('\n')):
 document_text += f"{line}\n"
 await ctx.set('document_text', document_text)
@@ -384,10 +380,8 @@ document_text += f"{line}\n"
 内存管理，避免一次性加载过大的文档。
 
 在上下文窗口管理方面，通过动态注入根据文档内容注入系统提示，通过上下文控制输入到 LLM 的上下文大小，同时支持有文档和无文档的对话模式。
-
-document_text = await ctx.get(‘document_text’, default=’’)
-
 ```python
+document_text = await ctx.get('document_text', default='')
 if document_text:
 ctx.write_event_to_stream(
 LogEvent(msg='正在插入系统提示...')
@@ -429,10 +423,8 @@ self.ctx_states: dict[str, dict[str, Any]] = {}
 上下文重建：从字典重建完整的上下文对象。
 
 无缝切换：新会话和恢复会话的无缝处理。
-
-async def _run_streaming_agent(self, request: SendTaskStreamingRequest):
-
 ```python
+async def _run_streaming_agent(self, request: SendTaskStreamingRequest):
 task_send_params: TaskSendParams = request.params
 task_id = task_send_params.id
 session_id = task_send_params.sessionId
