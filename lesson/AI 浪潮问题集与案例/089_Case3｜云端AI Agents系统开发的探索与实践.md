@@ -87,5 +87,3 @@
 最后总结一下，我主要讨论了 LLM 赋能的 Agent 的起源，以及它应用的现状。但目前 AI Agent 系统开发中存在几个主要的痛点，多智能体协作可能是一种新的设计范式，但仅靠它还不足以解决所有问题。我们通过实例分析发现，即使在采用多智能体协作的情况下，有效的护栏机制仍然至关重要。最后，我认为很快会有一批新的云端 Agent 基础组件出现，为未来 Agent 的普及奠定基础。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
