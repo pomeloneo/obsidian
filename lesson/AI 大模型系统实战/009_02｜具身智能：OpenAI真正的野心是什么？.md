@@ -151,5 +151,3 @@ Gorilla 算法核心步骤
 恭喜你完成我们第 2 次打卡学习，期待你在留言区和我交流互动。也欢迎你把这节课分享给身边朋友，和 TA 一起学习进步。
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
