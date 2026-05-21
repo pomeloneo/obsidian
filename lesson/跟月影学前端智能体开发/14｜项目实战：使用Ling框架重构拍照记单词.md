@@ -174,25 +174,18 @@ export default `
 
 …
 
+```text
 server: {
-
 proxy: {
-
-‘/api’: {
-
-target: ‘http://localhost:3000’,
-
+'/api': {
+target: 'http://localhost:3000',
 changeOrigin: true,
-
-rewrite: path => path.replace(/^\/api/, ’’),
-
+rewrite: path => path.replace(/^\/api/, ''),
 }
-
 },
-
 }
-
 }
+```
 
 这样我们就可以通过 pnpm dev 启动 server，在 App.vue 中通过访问 /api/vision 来对话。
 
@@ -226,77 +219,44 @@ rewrite: path => path.replace(/^\/api/, ’’),
 
 \#selecteImage {
 
+```text
 display: none;
-
 }
-
 .card {
-
 border-radius: 8px;
-
 padding: 20px;
-
 margin-top: 40px;
-
 height: 280px;
-
 box-shadow: rgb(63,38,21) 0 3px 0px 0;
-
 background-color: rgb(105,78,62);
-
 box-sizing: border-box;
-
 }
-
 .upload {
-
 width: 160px;
-
 height: 160px;
-
 display: flex;
-
 flex-direction: column;
-
 align-items: center;
-
 justify-content: center;
-
 }
-
 .upload img {
-
 width: 100%;
-
 height: 100%;
-
 object-fit: contain;
-
 }
-
 .word {
-
 margin-top: 20px;
-
 font-size: 16px;
-
 color: rgb(255,255,255);
-
 }
-
 .playAudio {
-
 margin-top: 16px;
-
 }
-
 .playAudio img {
-
 cursor: pointer;
-
 }
-
 </style>
+```
 
 这样我们就完成了应用主体功能，我们先尝试用一下看效果：
 
