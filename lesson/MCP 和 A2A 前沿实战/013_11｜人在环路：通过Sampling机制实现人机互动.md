@@ -116,11 +116,11 @@ json
 
 优先级参数（0-1 范围）：
 
+```text
 costPriority: 成本重要性
-
 speedPriority: 速度重要性
-
 intelligencePriority: 能力重要性
+```
 
 系统提示（systemPrompt）
 
@@ -166,12 +166,11 @@ stopSequences：停止生成的序列数组
 
 async def get_prompt(
 
+```text
 name: str, arguments: dict[str, str] | None = None
-
 ) -> types.GetPromptResult:
-
-“““根据名称和参数获取提示内容”“”
-
+"""根据名称和参数获取提示内容"""
+```
 ```text
 if name == "file-system-assistant":
 question = arguments.get("question") if arguments else ""
@@ -179,11 +178,11 @@ question = arguments.get("question") if arguments else ""
 
 # 构建采样请求
 
+```text
 sampling_request = {
-
-“method”: “sampling/createMessage”,
-
-“params”: {
+"method": "sampling/createMessage",
+"params": {
+```
 
 # 各种参数设置
 
@@ -215,10 +214,10 @@ text=json.dumps(sampling_request, ensure_ascii=False)
 
 客户端收到采样请求后，需要处理请求并调用语言模型。以下是处理流程的关键部分：
 
+```text
 sampling_request_json = prompt_result.messages[0].content.text
-
 sampling_request = json.loads(sampling_request_json)
-
+```
 ```python
 if sampling_request.get("method") == "sampling/createMessage":
 params = sampling_request.get("params", {})
