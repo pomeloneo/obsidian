@@ -71,12 +71,9 @@ stderr（标准错误）：文件描述符 2，默认将错误信息写到终端
 在服务端（也就是工具进程）里，stdio_server() 作为一个异步上下文管理器，重包装了系统的 sys.stdin 和 sys.stdout，确保它们都以 UTF-8 文本流的形式可读可写。
 
 进入上下文后，两个协程分别启动：一个不断从 stdin 读取整行文本、把每行当作 JSON 去反序列化成 JSONRPCMessage，再封装为 SessionMessage 发入 read_stream；另一个从 write_stream 中取出需要下发给客户端的 SessionMessage，序列化成 JSON 并逐行写到 stdout。只要把这对 read_stream，write_stream 传给 Server.run(…)，服务端的 MCP 会话就能自动接收客户端的请求、发送响应和通知。
-
-@asynccontextmanager
-
-async def stdio_server(stdin=None, stdout=None):
-
 ```python
+@asynccontextmanager
+async def stdio_server(stdin=None, stdout=None):
 if not stdin:
 stdin = anyio.wrap_file(TextIOWrapper(sys.stdin.buffer, encoding="utf-8"))
 if not stdout:
@@ -107,12 +104,9 @@ yield read, write
 ### 客户端的 stdio 实现
 
 在客户端，stdio_client() 则把被管理的工具进程作为子进程打开。它首先根据平台（Windows 或类 Unix）拼装好可执行命令和环境变量，然后用 AnyIO 的 open_process（或特定的 Win32 接口）启动该进程，将其 stderr 重定向以便排错。启动后同样创建了一对内存流：read_stream 从子进程的 stdout 里读行、反序列化；write_stream 往子进程的 stdin 写行、序列化。stdio 客户端在退出上下文时会优雅地终止子进程，避免留下孤儿进程。
-
-@asynccontextmanager
-
-async def stdio_client(server_params, errlog=sys.stderr):
-
 ```python
+@asynccontextmanager
+async def stdio_client(server_params, errlog=sys.stderr):
 process = await anyio.open_process(
 [server_params.command, *server_params.args],
 env=server_params.env or {},
