@@ -25,5 +25,3 @@ Agent 启动时，通过 MCP Client 获取 tool 列表；
 [![](https://static001.geekbang.org/resource/image/4b/28/4b1b6a6afc1dbabe52d587c042a34f28.png?wh=1506x3450)](https://static001.geekbang.org/resource/image/4b/28/4b1b6a6afc1dbabe52d587c042a34f28.png?wh=1506x3450)
 
 [![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
-
-unpreview
