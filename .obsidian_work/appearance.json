@@ -5,6 +5,7 @@
   "nativeMenus": true,
   "enabledCssSnippets": [
     "status-bar-up",
-    "image-toolkit-toolbar"
+    "image-toolkit-toolbar",
+    "always-show-actions"
   ]
 }

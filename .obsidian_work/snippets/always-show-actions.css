@@ -1,0 +1,108 @@
+/* Keep sidedock action controls visible in the Cupertino theme. */
+body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child {
+  min-height: 44px !important;
+}
+
+body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
+  gap: 4px !important;
+  padding: 4px 6px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 38px !important;
+  overflow: visible !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container::after {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+body:not(.is-mobile):not(.nav-action-center)
+  .mod-sidedock
+  .workspace-leaf-content
+  .nav-header:first-child
+  .nav-buttons-container
+  > :is(.nav-action-button, .clickable-icon, [data-icon]) {
+  flex: 0 0 30px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  padding: 5px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--icon-color) !important;
+  background-color: transparent !important;
+}
+
+body:not(.is-mobile):not(.nav-action-center)
+  .mod-sidedock
+  .workspace-leaf-content
+  .nav-header:first-child
+  .nav-buttons-container
+  > :is(.nav-action-button, .clickable-icon, [data-icon]):hover,
+body:not(.is-mobile):not(.nav-action-center)
+  .mod-sidedock
+  .workspace-leaf-content
+  .nav-header:first-child
+  .nav-buttons-container
+  > :is(.nav-action-button, .clickable-icon, [data-icon]).is-active {
+  color: var(--icon-color-hover) !important;
+  background-color: var(--background-modifier-hover) !important;
+}
+
+body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container svg {
+  width: var(--icon-size, var(--icon-m, 16px)) !important;
+  height: var(--icon-size, var(--icon-m, 16px)) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  scale: 1 !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-view"] .tree-item-self .git-tools,
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree-item-self .git-tools {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-view"] .tree-item-self .git-tools .buttons,
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree-item-self .git-tools .buttons {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-view"] .tree-item-self .git-tools .buttons > .clickable-icon,
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree-item-self .git-tools .buttons > .clickable-icon {
+  width: 28px !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  padding: 5px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--icon-color) !important;
+  filter: none !important;
+  scale: 1 !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-view"] .tree-item-self .git-tools .buttons > .clickable-icon:hover,
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree-item-self .git-tools .buttons > .clickable-icon:hover {
+  color: var(--icon-color-hover) !important;
+  background-color: var(--background-modifier-hover) !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-view"] .tree-item-self .git-tools .buttons svg,
+body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree-item-self .git-tools .buttons svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  scale: 1 !important;
+}
