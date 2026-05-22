@@ -207,5 +207,3 @@ Kafka 的代码实现，和 ZMQ 大同小异，这里我就不专门讲解了。
 如果有多个发布者，ZMQ 应该怎么做呢？
 
 欢迎留言写下你的思考和疑惑，也欢迎你把这篇文章分享给更多的人一起学习。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

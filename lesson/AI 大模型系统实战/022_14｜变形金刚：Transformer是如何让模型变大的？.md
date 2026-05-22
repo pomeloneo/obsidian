@@ -155,5 +155,3 @@ return context_vector
 请你想一想，我们的模型里是否可以去掉位置编码？
 
 恭喜完成我们第 14 次打卡学习，期待你在留言区和我交流互动。如果你觉得有收获，也欢迎你分享给你身边的朋友，邀 TA 一起讨论。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

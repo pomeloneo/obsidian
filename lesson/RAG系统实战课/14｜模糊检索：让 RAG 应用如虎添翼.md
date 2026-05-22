@@ -99,5 +99,3 @@
 请同学们发挥自己的想象力，想象一下自己工作中有哪些 RAG 应用场景会是业务价值比较大，技术难度比较低的？业务价值具体是什么，会有多大？会用到哪些技术点，会有多难？
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

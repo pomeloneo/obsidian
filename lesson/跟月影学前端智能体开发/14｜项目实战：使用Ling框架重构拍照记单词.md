@@ -402,5 +402,3 @@ audio.value = data.example_sentence_audio;
 ## 课后练习
 
 在第 6 节课，我就提出让大家尝试给 Talk About 的内容也配上音频，现在有了 Ling，应该更容易做到了。你可以试试看，修改一下代码，增加新的音频功能，把你实现过程中的思考和得到的收获以及最后的结果分享到评论区吧。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

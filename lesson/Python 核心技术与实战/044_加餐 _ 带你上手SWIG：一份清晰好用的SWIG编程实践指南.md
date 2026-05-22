@@ -913,5 +913,3 @@ namespace std {
 第三则是《高级 C/C++ 编译技术》这本书。这本书的内容更为进阶，你可以把它作为学习 C++ 的提高和了解。
 
 好了，今天的内容就到此结束了。关于 SWIG，你有哪些收获，或者还有哪些问题，都欢迎你留言和我分享讨论。也欢迎你把这篇文章分享给你的同事、朋友，我们一起学习和进步。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

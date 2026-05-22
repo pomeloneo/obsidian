@@ -19,5 +19,3 @@ Q：通用 Agent 会随着模型能力的增强而失去价值吗？
 甚至通用 Agent 还可能会产生规模效应，通过工程技术让模型具备持续反思和学习的能力，而这正是现有模型结构所无法实现的。
 
 然而，随着模型能力的不断提升，那些以工作流（Workflow）为核心的专业 Agent 确实有可能被淘汰。因为现在许多专为人工编排设计的功能，在将来很可能可以由模型自动完成。这种更高层次的自动化编排能力，将会使某些专业 Agent 失去存在的意义。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

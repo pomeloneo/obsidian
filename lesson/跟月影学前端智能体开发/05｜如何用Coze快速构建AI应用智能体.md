@@ -319,5 +319,3 @@
 ### 练习三：添加插图节点
 
 如果要给每个故事配一张插图，可以给工作流添加一个绘制插图的节点。尝试修改工作流，添加插图节点，给每个故事配置一个插图。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

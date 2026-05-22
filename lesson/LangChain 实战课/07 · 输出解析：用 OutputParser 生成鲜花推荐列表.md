@@ -427,6 +427,5 @@ action='search' action_input='colors of Orchid'
 
 - **文档**：[LangChain Output Parsers](https://python.langchain.com/docs/modules/model_io/output_parsers/) - 各种输出解析器详解
 
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
 
 课程总结

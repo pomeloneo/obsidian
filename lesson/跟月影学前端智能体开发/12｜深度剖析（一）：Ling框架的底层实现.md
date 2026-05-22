@@ -542,5 +542,3 @@ await sleep(50);
 ## 课后练习
 
 Ling 的底层为什么只实现了 OpenAI 和 Coze 两种封装呢？你是否用过或者看到过其他不一样的 API 规格呢？如果有的话，你可以将它分享出来，并尝试对其进行封装和兼容，并将你的收获分享到评论区。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -264,5 +264,3 @@ return ret;
 ## 课后练习
 
 “纸上得来终觉浅，绝知此事要躬行” —— 学一百遍不如亲自动手练一遍，你在 Coze 平台上可以自己创建一个 AI 应用，搭建一个自己想做的工具，并将这个工具以及搭建过程的所得分享到评论区。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

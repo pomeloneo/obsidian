@@ -755,5 +755,3 @@ AI 协作指令
 （翻译后的指令）“[安全红线] 当处理与用户ID相关的逻辑时，对外暴露的ID必须是经过加密或混淆的UUID，绝不能使用数据库的自增ID作为API的响应或URL参数。”
 
 欢迎在评论区分享你“翻译”出的团队规则。这个练习将帮助你迈出将团队隐性知识显性化、工程化的关键一步。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

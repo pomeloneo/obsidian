@@ -510,5 +510,3 @@ const token = await (await fetch('/api/jwt-auth')).text();
 ## 课后练习
 
 FLUX 模型支持不同的**采样器（sampler）**，通过配置可以改变生成算法，获得不同的生成效果。你可以研究 FLUX 官方文档，尝试修改 `sampler` 参数，看看会得到怎样的效果。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

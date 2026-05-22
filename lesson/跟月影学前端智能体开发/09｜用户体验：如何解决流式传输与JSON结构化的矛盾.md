@@ -546,5 +546,3 @@ eventSource.addEventListener("message", function (e: any) {
 ### 练习二：data 与 string-resolve 的区别
 
 仔细阅读 JSONParser 代码，理解 `data` 和 `string-resolve` 事件的区别。为什么语音合成要在 `string-resolve` 事件里处理？
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

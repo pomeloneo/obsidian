@@ -143,5 +143,3 @@ RAG 技术远远不止以上这些，而且随着时间的发展，RAG 技术只
 如果要对实战案例 1 应用 GraphRAG，应该如何整理出实体和关系，请讲出你的思路。
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

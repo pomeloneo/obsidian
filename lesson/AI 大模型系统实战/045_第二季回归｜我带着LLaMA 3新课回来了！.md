@@ -27,5 +27,3 @@
 点击下方图片，立即免费试读新课程。
 
 [![](https://static001.geekbang.org/resource/image/98/04/982f77a4657bdf8c334d28ae3864f404.jpg?wh=1342x638)](https://static001.geekbang.org/resource/image/98/04/982f77a4657bdf8c334d28ae3864f404.jpg?wh=1342x638)
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

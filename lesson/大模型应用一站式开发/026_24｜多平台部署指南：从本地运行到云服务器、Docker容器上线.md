@@ -995,5 +995,3 @@ Docker 容器化，迈向现代化工程：
 要求：回答需体现运维思维与工程化视角，结合这一讲提到的技术栈（如 Nginx、Gunicorn、Docker、Prometheus、Redis 等），提出可落地的解决方案，而非泛泛而谈。
 
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

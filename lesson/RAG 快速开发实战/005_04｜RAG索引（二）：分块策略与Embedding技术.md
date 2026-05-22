@@ -307,5 +307,3 @@ embeddings.append(embedding)
 在选择嵌入模型时，你如何在模型大小与延迟、精度与效率之间做出权衡？分享你在实际项目中平衡这些因素的经验，或探讨在不同业务场景下的最佳平衡点。
 
 欢迎你把你的经验和思考分享到留言区，和我一起讨论，也欢迎你把这节课的内容分享给需要的朋友，我们下节课再见！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

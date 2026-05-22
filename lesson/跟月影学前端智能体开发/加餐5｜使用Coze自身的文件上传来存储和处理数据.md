@@ -321,5 +321,3 @@ url,
 ## 课后练习
 
 前面我们用的音视频合成插件，是将 mp4 和 wav 进行合成，之所以没有使用 mp3，只是因为我用 Vidu AI 生成的音效默认是 wav 格式。你可以扩展这个插件，让它也支持 mp3、ogg 等其他音频格式与 mp4 的合成，将你扩展后的插件分享到评论区吧。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

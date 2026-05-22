@@ -209,5 +209,3 @@ n += 1
 第二问，你觉得 GIL 是一个好的设计吗？事实上，在 Python 3 之后，确实有很多关于 GIL 改进甚至是取消的讨论，你的看法是什么呢？你在平常工作中有被 GIL 困扰过的场景吗？
 
 欢迎在留言区写下你的想法，也欢迎你把今天的内容分享给你的同事朋友，我们一起交流、一起进步。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

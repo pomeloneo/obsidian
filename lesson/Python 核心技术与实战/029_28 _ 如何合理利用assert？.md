@@ -211,5 +211,3 @@ except Exception as e:
 最后，给你留一个思考题。在平时的工作学习中，你用过 assert 吗？如果用过的话，是在什么情况下使用的？有遇到过什么问题吗？
 
 欢迎在留言区写下你的经历，还有今天学习的心得和疑惑，与我一起分享。也欢迎你把这篇文章分享给你的同事、朋友，我们一起交流，一起进步。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

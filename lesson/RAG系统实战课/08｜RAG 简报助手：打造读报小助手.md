@@ -147,5 +147,3 @@ Web 服务接口，如 RESTful API。
 前面说到，在这个实战案例中，用户提问实际就是：今天的 CNET 有哪些新闻？请把这些新闻摘要并翻译成中文发给我。那么如果 CNET 每天的新闻有很多，有上千条的新闻，那么用户提问改成什么会比较合适呢？我们的实战案例又需要添加什么步骤呢？
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

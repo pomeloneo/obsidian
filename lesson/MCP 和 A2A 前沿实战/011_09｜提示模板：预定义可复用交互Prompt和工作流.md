@@ -906,5 +906,3 @@ Resource 是“提供背景信息”，用于为 Prompt 或 Tool 提供上下文
 你能否以此为启发，通过提示模板的构建，设计出你领域下基于基于“提示的智能体”，并把你的提示模板系统通过 MCP 提示模板发给外界？
 
 欢迎你在留言区记录你的收获或者疑问。如果这节课对你有启发，也推荐你分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

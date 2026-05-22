@@ -49,5 +49,3 @@ MCP 服务器（MCP Servers）：为 MCP Client 提供上下文、工具和 prom
 以图中为例，左侧的远程 Agent 可以是一个体育助手，集成了“懂球帝”相关功能；右侧的远程 Agent 则可以是一个地图助手，具备高德地图的查询能力。若没有 A2A 协议，这两个远程 Agent 将各自独立、无法协同；而有了 A2A 协议之后，当用户向主机 Agent 提问“今晚的 XX 比赛的比赛地点附近是否有烧烤店？”时，主机 Agent 会先调用左侧体育助手 Agent 查询出 XX 比赛的比赛地点在哪？之后调用右侧的高德地图 Agent 查询比赛地点附近有哪些烧烤店，从而实现这样一个看似简单实则包含多个领域的用户提问，这便是各 Agent 遵循统一协议、实现标准化所带来的协作优势。
 
 综上所述，A2A 所解决的核心问题是 Agent 如何进行标准化封装，从而实现多 Agent 协同工作的能力，其抽象层级高于 MCP，二者构成了互补性的协议体系。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

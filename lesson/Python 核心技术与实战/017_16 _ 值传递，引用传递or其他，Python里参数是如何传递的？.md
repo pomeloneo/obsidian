@@ -280,5 +280,3 @@ print(d)
 ```
 
 欢迎留言和我分享，也欢迎你把这篇文章分享给你的同事、朋友，一起在交流中进步。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

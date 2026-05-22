@@ -799,5 +799,3 @@ wordsAtLevel,
 创建新的业务项目，重复使用这套 Vibe Coding 的开发范式，这有助于你更好地掌握 AI 辅助开发的精髓。将你的实践成果分享到评论区吧。
 
 本项目的完整代码详见 GitHub 仓库。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

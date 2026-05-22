@@ -510,6 +510,5 @@ strong odors, and pests. Regularly check temperature and humidity levels.
 
 - **论文**: [HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face](https://www.notion.so论文链接) / [官网](https://www.notion.so官网链接)
 
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
 
 课程封面

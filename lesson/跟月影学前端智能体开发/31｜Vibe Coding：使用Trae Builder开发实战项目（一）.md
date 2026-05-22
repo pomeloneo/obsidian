@@ -586,5 +586,3 @@ project_rules 里面记录了创建项目的重要信息。
 1. 自己想一个应用场景，使用 Node Module Builder 创建一个新的项目，并完成项目的初始化。
 
 2. 参考 Node Modules Builder 实现一个类似的 Vue3 App Builder 或者 React App Builder，通过它创建项目，看看效果，将你的体验分享到评论区吧。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

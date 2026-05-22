@@ -157,5 +157,3 @@
 安全大模型：通过变革性思维大胆尝试
 
 [![](https://static001.geekbang.org/resource/image/28/53/2846d9679f0904ba5ccbd0c7eb937d53.png?wh=1267x722)](https://static001.geekbang.org/resource/image/28/53/2846d9679f0904ba5ccbd0c7eb937d53.png?wh=1267x722)
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

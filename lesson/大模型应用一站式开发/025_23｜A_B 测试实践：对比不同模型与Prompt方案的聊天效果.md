@@ -664,5 +664,3 @@ Prompt 一致性、行为可控性在情感陪伴场景中的权重
 A/B 测试如何帮助团队摆脱“技术优越感”的陷阱，回归用户价值本位。
 
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -435,5 +435,3 @@ llm = HuggingFaceHub(model_id="bigscience/bloom-1b7")
 - **OpenAI API 官方文档**，深入学习 OpenAI API 的地方。
 
 - **HuggingFace 官方网站**，玩开源大模型的好地方。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

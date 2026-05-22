@@ -121,5 +121,3 @@
 预祝同学们第一个 RAG 应用项目成功！我知道有很多同学都在努力学习，课程告一段落，但我们的 RAG 征程仍在继续。最后，这里我还准备了一份毕业问卷，希望你能花几分钟填写一下，我会根据你的反馈继续优化课程。
 
 [![](https://static001.geekbang.org/resource/image/d8/1a/d8832a8df94276cd2ac95d98465e9a1a.jpg?wh=1142x801)](https://static001.geekbang.org/resource/image/d8/1a/d8832a8df94276cd2ac95d98465e9a1a.jpg?wh=1142x801)
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

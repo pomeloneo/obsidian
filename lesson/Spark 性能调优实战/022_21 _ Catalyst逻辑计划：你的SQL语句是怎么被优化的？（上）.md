@@ -231,5 +231,3 @@ Cache Manager 其实很简单，它的主要职责是维护与缓存有关的信
 你能说说 Spark 为什么用偏函数，而不是普通函数来定义 Catalyst 的优化规则吗？
 
 期待在留言区看到你的思考和答案，我们下一讲见！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -241,5 +241,3 @@ Stages 页面，更多地是一种预览，要想查看每一个 Stage 的详情
 今天的思考题，我们在课程中已经提过了。一个是在 Executors 页面，为什么 RDD Blocks 与 Complete Tasks 的数量不一致。第二个是，在 Jobs 页面，为什么最后会多出来一个 save Action？
 
 欢迎你在留言区跟我交流探讨，也欢迎推荐你把这一讲分享给有需要的朋友、同事。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -513,5 +513,3 @@ main()
 ## 思考题
 
 最后，给你留一个思考题。之前我们介绍了如何抓取 tick 数据，你可以根据抓取的 tick 数据，生成 5 分钟、每小时和每天的 OHLCV 数据吗？欢迎在留言区写下你的答案和问题，也欢迎你把这篇文章分享出去。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

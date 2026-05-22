@@ -762,5 +762,3 @@ const result = await ling.promise;
 ## 课后练习
 
 Bot 模块设计了一个抽象类，这个类可以用来扩展其他类型的 Bot。大家想一想，如果我要让 Ling 管理一个绘图的 Bot，应该怎么自己扩展呢？你可以尝试写一个 ImageBot extends Bot，然后将它也通过 Ling 管理起来吗？可以把你的实现分享到评论区。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

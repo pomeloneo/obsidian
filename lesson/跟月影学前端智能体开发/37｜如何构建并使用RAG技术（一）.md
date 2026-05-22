@@ -360,5 +360,3 @@ main();
 这一节课我们的例子使用的是一个非常简单的向量数据库 vectra，它的特点是基于本地文件系统，无任何依赖，所以安装非常简单，适合教学场景，但不适合高并发的生产环境。你可以考虑使用其他向量数据库替代，比如 FAISS（Facebook AI Similarity Search），这是由 Meta（Facebook）开源的一个高性能向量相似度搜索库，你可以试着部署它，然后通过 NodeJS 访问，将 SimpleRag 的数据库操作替换成 FAISS。将你的实践心得分享到评论区吧。
 
 本节课完整代码详见 GitHub 仓库。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

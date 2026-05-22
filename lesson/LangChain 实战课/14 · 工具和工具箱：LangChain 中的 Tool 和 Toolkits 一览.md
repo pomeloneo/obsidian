@@ -508,6 +508,5 @@ GitHub App 配置示例2
 
 - [Github REST API](https://www.notion.so文档链接)
 
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
 
 课程封面

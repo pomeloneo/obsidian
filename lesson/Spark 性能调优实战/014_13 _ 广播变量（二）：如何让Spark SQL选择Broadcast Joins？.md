@@ -166,5 +166,3 @@ table1.join(broadcast(table2), Seq("key"), "right")
 DataFrame 可以用 sparkContext.broadcast 函数来广播吗？它和 org.apache.spark.sql.functions.broadcast 函数之间的区别是什么？
 
 期待在留言区看到你的思考和答案，我们下一讲见！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -57,5 +57,3 @@ AutoGen（强协作流程）
 CrewAI（轻量 Agent 协作）
 
 LangGraph（灵活、强状态管理、适合自定义）
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

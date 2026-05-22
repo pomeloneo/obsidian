@@ -420,5 +420,3 @@ return ret;
 ## 课后练习
 
 这节课我们用到了工作流中的插件和代码节点，它们有什么区别，为什么我们有些功能设计成插件，而另一些直接用代码呢？思考一下，自己动手体验一下，将心得分享到评论区吧。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -830,5 +830,3 @@ print('Failed to update state:', e)
 LangGraph Agent 的 V2 版本和 A2A Sample 中的 Agent.py 从工作流程控制方面有哪些差异？在你的工作场景中，你比较倾向于选择哪种实现方式，为什么？
 
 期待你在留言区分享你的思考或者疑问，如果这节课对你有启发，别忘了分享给身边更多朋友！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

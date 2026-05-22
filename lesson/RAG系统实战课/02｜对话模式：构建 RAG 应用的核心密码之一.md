@@ -205,5 +205,3 @@ AI 根据我们给出的这些内容进行回答。
 如果用户与 AI 进行了一万次对话（一万次应该超出了目前所有大模型的记忆上限），那么我们的应用如何处理呢？
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

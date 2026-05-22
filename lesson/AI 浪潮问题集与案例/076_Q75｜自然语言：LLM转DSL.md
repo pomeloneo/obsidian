@@ -25,5 +25,3 @@ Prompt 设计：
 Text2SQL Prompt ： 通常按 “Schema → 描述 → 示例 → 对用户提问”形式组织，上下文包含表结构、字段含义及自然语言 → SQL 示例。
 
 Text2DSL Prompt：除了示例外，还需要在 Prompt 中嵌入 DSL 的文法片段或 JSON Schema 模板，并通过 Grammar Prompting 明确约束模型输出格式，防止生成非法 DSL。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

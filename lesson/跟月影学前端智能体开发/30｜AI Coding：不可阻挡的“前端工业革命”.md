@@ -254,5 +254,3 @@ console.log('开始下载文件...')
 ## 课后练习
 
 安装 Trae 或 Cursor，用一个真实的项目，去实际体验这一节课讲的内容，把你的收获分享到评论区吧。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

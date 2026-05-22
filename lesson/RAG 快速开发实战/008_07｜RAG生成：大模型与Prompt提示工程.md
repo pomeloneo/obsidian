@@ -207,5 +207,3 @@ ChatGLM 系列模型
 ## 思考题
 
 在提示工程中，过于具体的指令可能会限制模型的创造性，过于宽泛的提示则可能导致生成偏差。如何在提示设计中找到合适的权衡点，既能够引导模型生成高质量结果，又不过度限制模型的灵活性？请分享你在实际场景使用大模型提示工程中的经验。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

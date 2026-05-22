@@ -350,5 +350,3 @@ echo '{
 例如，我们能否解析 AI 审查报告的结构（比如 AI 是否标记了“高优先级”问题），并根据此来决定这个 CI 流水线是通过（Pass）还是失败（Fail）？如果可以，你会在github-script步骤中如何实现这个逻辑？
 
 欢迎在评论区分享你的设计方案！这会是一个非常棒的、关于 AI 与 DevOps 深度融合的思维练习。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

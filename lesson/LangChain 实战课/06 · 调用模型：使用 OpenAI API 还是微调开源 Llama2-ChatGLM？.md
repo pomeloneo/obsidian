@@ -441,6 +441,5 @@ print(result)
 
 - **Llama CPP**：支持 GGML，目标是在 MacBook（或类似的非 GPU 的普通家用硬件环境）上使用 4 位整数量化运行 Llama 模型
 
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
 
 课程引导图

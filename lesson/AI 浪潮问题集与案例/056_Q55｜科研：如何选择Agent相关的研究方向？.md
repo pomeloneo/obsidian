@@ -25,5 +25,3 @@ Q：如果要做科研，可以如何选择 Agent 相关的研究方向？
 强化学习驱动的 Agent：基于强化学习（RL）的自主决策 Agent 可以在模拟环境中通过探索和试错来学习复杂行为，是机器人、自动驾驶、游戏等领域的热门方向。
 
 如果是读博士的话，其实并不推荐去研究 Agent，而是应该研究一些更底层的东西。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -151,5 +151,3 @@
 最后，我准备了一份结课问卷，花几分钟就能填完。很期待能听到你的反馈，说说你对这门课程的想法和建议。
 
 [![](https://static001.geekbang.org/resource/image/4c/31/4c5fdf60f6a682e70806e279727ec331.jpg?wh=1142x801)](https://static001.geekbang.org/resource/image/4c/31/4c5fdf60f6a682e70806e279727ec331.jpg?wh=1142x801)
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

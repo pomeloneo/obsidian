@@ -220,5 +220,3 @@ class = MyMeta(classname, superclasses, attributedict)
 ## 思考题
 
 学完了上节课的 Python 装饰器和这节课的 metaclass，你知道了，它们都能干预正常的 Python 类型机制。那么，你觉得装饰器和 metaclass 有什么区别呢？欢迎留言和我讨论。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

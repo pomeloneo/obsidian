@@ -667,5 +667,3 @@ text: `Error initializing SimpleRag: ${error}`
 这也正好解决一个非常普遍的问题，即 AI Coding 时，有的依赖库 API 版本已经更新，但 AI 还是用老版本 API 导致代码出 bug 的问题。你可以尝试实现让 AI Coding 智能体通过查找依赖包内的 .vectra 了解最新 API 的功能吗？将你的尝试方法和心得体会分享到评论区吧！
 
 这节课的完整代码详见 GitHub 仓库。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

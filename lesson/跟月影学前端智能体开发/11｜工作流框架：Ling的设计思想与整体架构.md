@@ -550,5 +550,3 @@ Ling 的完整代码在 GitHub 仓库：https://github.com/WeHomeBot/ling
 Ling 的 createBot 默认只支持创建文本大模型对象，假设我们需要处理图片，给上面的例子增加配图功能，为每一篇文章生成一张封面图，我们应该怎么做呢？你可以课后动手修改项目代码试试看，遇到任何问题请分享到评论区，我会帮你解答。
 
 完整的项目代码在 https://github.com/akira-cn/frontend-dev-large-model-era/tree/main/ling_sse
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

@@ -310,5 +310,3 @@ path(“api/get-conversation-list”, views_api.获取对话记录api, name=“a
 为了教学方便，代码中的数据库字段都是使用中文，但是实际工作中基本是英文，所以传给大模型的都会是英文而不是中文，如何处理这个问题？
 
 欢迎你在留言区和我交流互动，如果这节课对你有启发，也推荐分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

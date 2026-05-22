@@ -239,5 +239,3 @@ Reduce阶段的计算过程
 Map 阶段和 Reduce 阶段有不少环节都涉及数据缓存、数据存储，结合上一讲介绍的 Spark 配置项，你能把相关的配置项对号入座吗？
 
 期待在留言区看到你的思考和讨论，我们下一讲见！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

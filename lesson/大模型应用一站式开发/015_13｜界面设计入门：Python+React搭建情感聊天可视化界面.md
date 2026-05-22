@@ -1627,4 +1627,3 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 从产品设计角度，除了避免"黑底白字终端"带来的疏离感，"心语"的可视化界面在色彩、动效、布局等方面具体采取了哪些设计策略来增强用户的情感共鸣与心理安全感？请列举至少三项并分析其心理学依据。
 从技术实现角度，前后端分离架构（Python + React）如何支持这些情感化设计的落地？例如，Framer Motion、Styled Components 等前端技术在实现"可触摸的陪伴"体验中扮演了什么角色？
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

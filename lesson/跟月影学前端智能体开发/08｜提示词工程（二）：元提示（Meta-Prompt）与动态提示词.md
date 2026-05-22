@@ -402,5 +402,3 @@ About Today 运行效果
 ### 练习二：替换模板引擎
 
 在第二个例子里使用了 nunjucks 模板引擎。除了 nunjucks 外，你还使用过哪些模板引擎？尝试替换为其他模板引擎，试试效果。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

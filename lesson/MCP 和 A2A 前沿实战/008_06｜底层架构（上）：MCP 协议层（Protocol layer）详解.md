@@ -295,5 +295,3 @@ Session 类是 MCP SDK 在底层对“JSON-RPC 消息收发”的统一封装—
 希望通过这两道题，你可以思考如何在 MCP 的协议层之上做增量扩展，又能保持与框架核心逻辑的解耦。
 
 欢迎你在留言区记录自己的收获或者疑问。如果这节课对你有启发，别忘了分享给身边更多朋友。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

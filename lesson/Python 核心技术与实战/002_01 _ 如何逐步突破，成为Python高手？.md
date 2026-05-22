@@ -91,5 +91,3 @@ v.A(param1, param2, param3) \
 今天，我跟你分享了 Python 的学习方法和注意事项，其实这些观点不只适用于 Python，也能帮助你学习任何一门其他计算机编程语言，希望你能牢记在心。在接下来的课程里，我会带你逐步突破，最终成为一名 Python 高手。
 
 那么，对于学习 Python 或者是其他编程语言，你有什么困扰或是心得吗？欢迎在留言区与我交流！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

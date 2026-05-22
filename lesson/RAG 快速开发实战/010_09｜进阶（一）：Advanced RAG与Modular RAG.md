@@ -173,5 +173,3 @@ Modular RAG 进一步增强了 RAG 系统的灵活性和适应性，允许通过
 ## 思考题
 
 编排机制可以根据查询的复杂性动态调整流程，你能想到哪些复杂的应用场景可以从这种编排机制中获益？对于某些看似简单的任务，编排机制是否也会带来意想不到的提升？欢迎你在留言区分享，和我一起讨论，也欢迎你把这节课的内容分享给对 RAG 感兴趣的朋友，我们下节课再见！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

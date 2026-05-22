@@ -227,5 +227,3 @@
 你公司的工程体系中，有哪一个环节最适合被“零预定义工作流”替代？是测试生成、文档、流程自动化，还是业务分析？为什么？
 
 欢迎你在留言区和我交流互动。如果这节课对你有启发，也欢迎分享给身边更多朋友，让我们一起探讨 Agent 未来发展的更多可能性。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

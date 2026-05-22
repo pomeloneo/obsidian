@@ -262,5 +262,3 @@ JSON 序列化是很方便的工具，要结合实战多多练习；
 不要担心难度问题，尽情写下你的思考，最终代码我也会为你准备好。
 
 欢迎在留言区写下你的答案，也欢迎你把这篇文章转给你的同事、朋友，一起在思考中学习。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

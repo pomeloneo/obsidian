@@ -416,5 +416,3 @@ AI 是谁？——定义角色、人格与边界。
 如何通过优化 Prompt（如调整结构、增加动态机制或引入新策略），在不违背“非专业建议”边界的前提下，帮助用户从情绪宣泄逐步走向自我觉察或积极行动？
 
 希望通过今天的学习，让你对情感机器人的开发全程有个大致认识。如果有任何疑问，期待你在留言区和我交流。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

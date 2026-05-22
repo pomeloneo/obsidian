@@ -151,5 +151,3 @@
 由于执行内存总量 M 是动态变化的，并发任务数 N~ 也是动态变化的，因此每个线程申请内存的上下限也是动态调整的，你知道这个调整周期以什么为准？
 
 期待在留言区看到你的思考和答案，如果你的朋友也在为提高 CPU 利用率苦恼，欢迎你把这一讲转发给他，我们下一讲见！
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

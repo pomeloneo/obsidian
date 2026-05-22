@@ -302,5 +302,3 @@ return res;
 ## 课后练习
 
 如果你没有购买和部署阿里云 OSS，可能前面课程的阿里云插件没法使用，你可以试着用 Bunny.net 的插件替代阿里云 OSS 插件，这样就可以将之前欠缺的例子运行起来啦。如果你通过替换插件将问题解决了，或者你还遇到任何新问题，欢迎分享到评论区。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)

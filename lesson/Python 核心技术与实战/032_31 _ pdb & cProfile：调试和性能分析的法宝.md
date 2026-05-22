@@ -307,5 +307,3 @@ fib_seq(30)
 最后，留一个开放性的交流问题。你在平时的工作中，常用的调试和性能分析工具是什么呢？有发现什么独到的使用技巧吗？你曾用到过 pdb、cProfile 或是其他相似的工具吗？
 
 欢迎在下方留言与我讨论，也欢迎你把这篇文章分享出去。我们一起交流，一起进步。
-
-[![](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)](https://static001.geekbang.org/resource/image/83/64/833ebd1187590c6d8ff52e9256a69a64.png)
