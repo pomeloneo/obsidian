@@ -33,7 +33,7 @@
   "debugMode": false,
   "nodePath": "/usr/local/bin/node",
   "exportSettings": {
-    "defaultFolder": "Agent Client",
+    "defaultFolder": "agent_client",
     "filenameTemplate": "agent_client_{date}_{time}",
     "autoExportOnNewChat": false,
     "autoExportOnCloseChat": false,
@@ -55,6 +55,14 @@
     "fontSize": null
   },
   "savedSessions": [
+    {
+      "sessionId": "019e4dac-ffc5-73a3-bc09-3f151cfe26df",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "推荐一些好看的 obsidian 主题给我",
+      "createdAt": "2026-05-22T03:19:07.171Z",
+      "updatedAt": "2026-05-22T03:19:07.171Z"
+    },
     {
       "sessionId": "019e497a-52c5-7ef0-9c31-41afe1f8afbc",
       "agentId": "codex-acp",

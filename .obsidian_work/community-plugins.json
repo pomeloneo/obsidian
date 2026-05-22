@@ -6,5 +6,16 @@
   "obsidian-icon-folder",
   "homepage",
   "advanced-canvas",
-  "obsidian-hover-editor"
+  "obsidian-hover-editor",
+  "obsidian-style-settings",
+  "templater-obsidian",
+  "recent-files-obsidian",
+  "quickadd",
+  "obsidian-outliner",
+  "omnisearch",
+  "obsidian-linter",
+  "obsidian-image-toolkit",
+  "diagram-zoom-drag",
+  "dataview",
+  "file-tree-alternative"
 ]

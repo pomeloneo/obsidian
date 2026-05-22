@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "101ff7eae6e53d9f",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "840f2f848fa456e9",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "分享回流/直播间电商意图与分享漏斗埋点分析.md",
+                "file": "lesson/AI 浪潮问题集与案例/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "直播间电商意图与分享漏斗埋点分析"
+              "title": "001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人"
             }
           }
         ]
@@ -93,8 +93,29 @@
               "icon": "lucide-search",
               "title": "搜索"
             }
+          },
+          {
+            "id": "a16a9541bcc681e3",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent files"
+            }
+          },
+          {
+            "id": "010fe24be98736c5",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -218,7 +239,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "realclaudian:Open Claudian": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -231,20 +251,27 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-importer:Open Importer": true,
       "homepage:Open homepage": false,
-      "audio-recorder:开始/结束录音": false
+      "audio-recorder:开始/结束录音": false,
+      "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
-  "active": "cb39d3fbe3111a26",
+  "active": "3d1031094f9a73c9",
   "lastOpenFiles": [
+    "分享回流/分享回流漏斗看板.md",
+    "Agent Client/agent_client_20260522_111759.md",
+    "Agent Client",
+    "分享回流/直播间电商意图与分享漏斗埋点分析.md",
+    "lesson/大模型应用一站式开发/019_17｜敏感内容过滤：保障情感聊天应用的合规性与安全性.md",
+    "lesson/大模型应用一站式开发/004_02｜场景选择：为什么选择情感聊天切入？.md",
     "Notion/个人与共享/zxd/工作搭子",
     "Notion/个人与共享/zxd",
     "Notion/个人与共享",
     "Notion",
     "分享回流/_attachments/Pasted image 20260521215735.png",
     "2026-05-21.md",
-    "分享回流/直播间电商意图与分享漏斗埋点分析.md",
     "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
-    "分享回流/分享回流漏斗看板.md",
     "分享回流/短视频 feed 电商意图与挂车埋点分析.md",
     "分享回流/_attachments/Pasted image 20260521165113.png",
     "分享回流/_attachments/Pasted image 20260521165103.png",
@@ -263,9 +290,7 @@
     "分享回流/未命名.canvas",
     "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
     "Obsidian Canvas 能力演示.canvas",
-    "分享回流",
     "personal/2026/【汇总】Javascript 中文周刊/JavaScript_中文周刊_91_-_Electron_v25_发布.md",
-    "未命名 1.base",
     "personal/2026/【汇总】React 中文周刊/React_中文周刊_58_-_让_React_Native_运行在任意平台上.md",
     "personal/2026/牛逼新手疯狂租车记录/本田飞度.md",
     "personal/2026/牛逼新手疯狂租车记录/比亚迪 唐.md",
@@ -281,8 +306,6 @@
     "personal/Claude 研究.md",
     "personal/Claude Code 实战.md",
     "lesson/LangChain 实战课.md",
-    "lesson/RAG系统实战课.md",
-    "personal/zxd.md",
     "personal/zxd/导入图片/image3.png",
     "未命名.canvas"
   ]

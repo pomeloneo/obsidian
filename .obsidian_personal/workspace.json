@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0b0afd4779cc4007",
+        "id": "744a7dec11abc56d",
         "type": "tabs",
         "children": [
           {
-            "id": "fd81fbd468606e0a",
+            "id": "d6236a56bda624ac",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -238,6 +238,11 @@
   },
   "active": "3d1031094f9a73c9",
   "lastOpenFiles": [
+    "Agent Client/agent_client_20260522_111759.md",
+    "Agent Client",
+    "lesson/agent 学习指南.md",
+    "lesson/跟月影学前端智能体开发/02｜如何使用流式传输减少等待时间.md",
+    "lesson/跟月影学前端智能体开发/01｜如何在前端调用文本大模型API.md",
     "lesson/AI 原生开发工作流实战/001_开篇词｜AI工作流革命：重新定义软件工程师的每一天.md",
     "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
     "lesson/大模型应用一站式开发/023_21｜微调实战：基于私有数据优化情感聊天模型效果.md",
@@ -268,13 +273,8 @@
     "lesson/从 0 开始学架构/001_旅程再启｜架构师该如何适应新的技术浪潮？.md",
     "lesson/agent 学习指南/01. AI Agent 开发要学什么.md",
     "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
-    "lesson/从 0 开始学架构/023_15 _ 高性能数据库集群：分库分表.md",
-    "lesson/从 0 开始学架构/003_微服务架构技巧篇：分布式事务.md",
-    "personal/交流探讨.md",
-    "lesson/从 0 开始学架构/002_微服务架构技巧篇：接口类设计技巧.md",
     "分享回流/_attachments/Recording 20260521214823.m4a",
     "分享回流/_attachments/Pasted image 20260521215735.png",
-    "未命名.base",
     "未命名.canvas",
     "Untitled 1.png",
     "Untitled 2.png",
