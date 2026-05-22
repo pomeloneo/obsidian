@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lesson/AI 浪潮问题集与案例/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
+                "file": "lesson/Claude Code 工程化实战/001_开篇词｜共生而非替代：极客和 AI 的共舞.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人"
+              "title": "001_开篇词｜共生而非替代：极客和 AI 的共舞"
             }
           }
         ]
@@ -135,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "分享回流/分享回流漏斗看板.md",
+                "file": "lesson/AI 浪潮问题集与案例/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +145,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "分享回流漏斗看板 的反向链接列表"
+              "title": "001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人 的反向链接列表"
             }
           },
           {
@@ -253,12 +253,12 @@
       "homepage:Open homepage": false,
       "audio-recorder:开始/结束录音": false,
       "templater-obsidian:Templater": false,
-      "omnisearch:Omnisearch": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false
+      "omnisearch:Omnisearch": false
     }
   },
   "active": "3d1031094f9a73c9",
   "lastOpenFiles": [
+    "lesson/AI 浪潮问题集与案例/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
     "分享回流/分享回流漏斗看板.md",
     "Agent Client/agent_client_20260522_111759.md",
     "Agent Client",
@@ -305,7 +305,6 @@
     "personal/Claude 博客合集.md",
     "personal/Claude 研究.md",
     "personal/Claude Code 实战.md",
-    "lesson/LangChain 实战课.md",
     "personal/zxd/导入图片/image3.png",
     "未命名.canvas"
   ]

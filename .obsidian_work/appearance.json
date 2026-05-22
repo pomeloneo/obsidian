@@ -2,5 +2,8 @@
   "accentColor": "#56e172",
   "cssTheme": "Cupertino",
   "translucency": false,
-  "nativeMenus": true
+  "nativeMenus": true,
+  "enabledCssSnippets": [
+    "status-bar-up"
+  ]
 }
