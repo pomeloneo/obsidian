@@ -3,7 +3,10 @@
   "accentColor": "#41b955",
   "enabledCssSnippets": [
     "statusbar-position",
-    "file-tree-modern"
+    "file-tree-modern",
+    "always-show-actions",
+    "image-toolkit-toolbar",
+    "status-bar-up"
   ],
   "translucency": false
 }
