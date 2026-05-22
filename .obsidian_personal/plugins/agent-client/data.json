@@ -56,22 +56,6 @@
   },
   "savedSessions": [
     {
-      "sessionId": "019e500f-07ee-74e1-8480-5d4866e958cd",
-      "agentId": "codex-acp",
-      "cwd": "/Users/neo/Documents/Obsidian Vault",
-      "title": "你能做什么？",
-      "createdAt": "2026-05-22T14:20:46.479Z",
-      "updatedAt": "2026-05-22T14:20:46.479Z"
-    },
-    {
-      "sessionId": "019e500d-9368-7733-9fbe-0c2c2d8ffa88",
-      "agentId": "codex-acp",
-      "cwd": "/Users/neo/Documents/Obsidian Vault",
-      "title": "你能做什么？",
-      "createdAt": "2026-05-22T14:19:30.428Z",
-      "updatedAt": "2026-05-22T14:19:30.428Z"
-    },
-    {
       "sessionId": "019e4b09-dfb5-7b83-a800-f2bafcd6c3db",
       "agentId": "codex-acp",
       "cwd": "/Users/neo/Documents/Obsidian Vault",
