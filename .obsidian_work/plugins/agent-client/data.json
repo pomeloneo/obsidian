@@ -56,6 +56,22 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e4ed8-35a4-7630-9d38-b4b4b25055e7",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "@[[daily_record_template]] 这个是我日记的模板，继续帮我完善下这个模板，可...",
+      "createdAt": "2026-05-22T08:43:02.051Z",
+      "updatedAt": "2026-05-22T08:43:02.051Z"
+    },
+    {
+      "sessionId": "019e4e9a-a6ac-7773-882e-ed53527019ec",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "@[[短视频分享站内私信与站外渠道埋点链路分析]] 我看share_video_to_chat 还有...",
+      "createdAt": "2026-05-22T07:48:04.635Z",
+      "updatedAt": "2026-05-22T07:48:04.635Z"
+    },
+    {
       "sessionId": "019e4dd2-e48c-7df2-8108-b4f9e9126921",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",
