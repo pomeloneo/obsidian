@@ -4,6 +4,7 @@
   "translucency": false,
   "nativeMenus": true,
   "enabledCssSnippets": [
-    "status-bar-up"
+    "status-bar-up",
+    "image-toolkit-toolbar"
   ]
 }

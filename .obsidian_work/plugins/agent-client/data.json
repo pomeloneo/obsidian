@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e4dd2-e48c-7df2-8108-b4f9e9126921",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "这些配置什么意思？",
+      "createdAt": "2026-05-22T03:57:48.647Z",
+      "updatedAt": "2026-05-22T03:57:48.647Z"
+    },
+    {
       "sessionId": "019e4dac-ffc5-73a3-bc09-3f151cfe26df",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",
@@ -74,7 +82,7 @@
   ],
   "lastUsedModels": {},
   "lastUsedModes": {
-    "codex-acp": "auto"
+    "codex-acp": "full-access"
   },
   "enableFloatingChat": false,
   "floatingButtonImage": "",
