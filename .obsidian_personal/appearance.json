@@ -5,8 +5,8 @@
     "statusbar-position",
     "file-tree-modern",
     "always-show-actions",
-    "status-bar-up",
-    "image-toolkit-toolbar"
+    "image-toolkit-toolbar",
+    "status-bar-up"
   ],
   "translucency": false
 }

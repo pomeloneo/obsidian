@@ -15,10 +15,6 @@ body .oit-normal .oit-img-footer .oit-img-title {
   display: none !important;
 }
 
-body .oit-normal .oit-img-footer .gallery-navbar {
-  display: none !important;
-}
-
 body .oit-normal .oit-img-footer .oit-img-toolbar {
   width: auto !important;
   max-width: calc(100vw - 32px) !important;
