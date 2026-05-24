@@ -1,5 +1,0 @@
-/* Hide the lower details area in the Obsidian Git source control pane. */
-.workspace-leaf-content[data-type="git-view"] .git-view > .git-commit-msg,
-.workspace-leaf-content[data-type="git-view"] .git-view > .nav-files-container {
-  display: none !important;
-}

@@ -6,8 +6,7 @@
     "file-tree-modern",
     "always-show-actions",
     "image-toolkit-toolbar",
-    "status-bar-up",
-    "hide-git-source-control-details"
+    "status-bar-up"
   ],
   "translucency": false
 }

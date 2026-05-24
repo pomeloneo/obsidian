@@ -56,22 +56,6 @@
   },
   "savedSessions": [
     {
-      "sessionId": "019e59ec-d8eb-78e1-96c7-f7f3f680c213",
-      "agentId": "codex-acp",
-      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
-      "title": "我已经通过 pnpm 执行了更新，为啥还每次都提示呢",
-      "createdAt": "2026-05-24T12:21:27.879Z",
-      "updatedAt": "2026-05-24T12:21:27.879Z"
-    },
-    {
-      "sessionId": "019e59e1-9819-7382-9726-d81dfbaff5ac",
-      "agentId": "codex-acp",
-      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
-      "title": "红框内的这部分都用 css 隐藏掉",
-      "createdAt": "2026-05-24T12:08:16.496Z",
-      "updatedAt": "2026-05-24T12:08:16.496Z"
-    },
-    {
       "sessionId": "019e5906-f668-79f0-9ab2-7e210b8bf005",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",
