@@ -1,6 +1,7 @@
 {
   "cssTheme": "Things",
   "enabledCssSnippets": [
-    "statusbar-position"
+    "statusbar-position",
+    "hide-git-source-control-details"
   ]
 }

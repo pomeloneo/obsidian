@@ -27,13 +27,13 @@
   },
   "customAgents": [],
   "defaultAgentId": "codex-acp",
-  "autoAllowPermissions": false,
-  "autoMentionActiveNote": false,
+  "autoAllowPermissions": true,
+  "autoMentionActiveNote": true,
   "enableSystemNotifications": true,
   "debugMode": false,
   "nodePath": "",
   "exportSettings": {
-    "defaultFolder": "Agent Client",
+    "defaultFolder": "agent_client",
     "filenameTemplate": "agent_client_{date}_{time}",
     "autoExportOnNewChat": false,
     "autoExportOnCloseChat": false,
@@ -47,7 +47,7 @@
   "sendMessageShortcut": "enter",
   "chatViewLocation": "right-tab",
   "displaySettings": {
-    "autoCollapseDiffs": false,
+    "autoCollapseDiffs": true,
     "diffCollapseThreshold": 10,
     "maxNoteLength": 10000,
     "maxSelectionLength": 10000,
@@ -55,6 +55,38 @@
     "fontSize": null
   },
   "savedSessions": [
+    {
+      "sessionId": "019e555a-7e0f-7da3-9dac-5b8acb6877ae",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "详细讲解下这个文档",
+      "createdAt": "2026-05-23T15:02:59.503Z",
+      "updatedAt": "2026-05-23T15:02:59.504Z"
+    },
+    {
+      "sessionId": "019e501d-c928-7aa2-9cab-856f8681374a",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "我之前改了图片查看器的底部按钮样式，怎么没生效啊",
+      "createdAt": "2026-05-22T15:12:23.096Z",
+      "updatedAt": "2026-05-22T15:12:23.096Z"
+    },
+    {
+      "sessionId": "019e500f-07ee-74e1-8480-5d4866e958cd",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "你能做什么？",
+      "createdAt": "2026-05-22T14:20:46.479Z",
+      "updatedAt": "2026-05-22T14:20:46.479Z"
+    },
+    {
+      "sessionId": "019e500d-9368-7733-9fbe-0c2c2d8ffa88",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "你能做什么？",
+      "createdAt": "2026-05-22T14:19:30.428Z",
+      "updatedAt": "2026-05-22T14:19:30.428Z"
+    },
     {
       "sessionId": "019e4b09-dfb5-7b83-a800-f2bafcd6c3db",
       "agentId": "codex-acp",
@@ -77,9 +109,12 @@
   "enableFloatingChat": false,
   "floatingButtonImage": "",
   "floatingWindowSize": {
-    "width": 400,
-    "height": 500
+    "width": 519,
+    "height": 910
   },
-  "floatingWindowPosition": null,
+  "floatingWindowPosition": {
+    "x": 1908,
+    "y": 68
+  },
   "floatingButtonPosition": null
 }

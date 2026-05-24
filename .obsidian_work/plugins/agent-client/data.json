@@ -28,7 +28,7 @@
   "customAgents": [],
   "defaultAgentId": "codex-acp",
   "autoAllowPermissions": true,
-  "autoMentionActiveNote": true,
+  "autoMentionActiveNote": false,
   "enableSystemNotifications": true,
   "debugMode": false,
   "nodePath": "/usr/local/bin/node",
@@ -55,14 +55,6 @@
     "fontSize": null
   },
   "savedSessions": [
-    {
-      "sessionId": "019e5906-f668-79f0-9ab2-7e210b8bf005",
-      "agentId": "codex-acp",
-      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
-      "title": "仿照这个文档，以及这个仓库~/gitlab/share-it-all 下的所有项目，详细分析下 pd...",
-      "createdAt": "2026-05-24T08:22:28.018Z",
-      "updatedAt": "2026-05-24T08:22:28.018Z"
-    },
     {
       "sessionId": "019e4ed8-35a4-7630-9d38-b4b4b25055e7",
       "agentId": "codex-acp",
@@ -108,15 +100,15 @@
   "lastUsedModes": {
     "codex-acp": "full-access"
   },
-  "enableFloatingChat": false,
+  "enableFloatingChat": true,
   "floatingButtonImage": "",
   "floatingWindowSize": {
     "width": 449,
     "height": 831
   },
   "floatingWindowPosition": {
-    "x": 1596,
-    "y": 62
+    "x": 1591,
+    "y": 63
   },
   "floatingButtonPosition": null
 }
