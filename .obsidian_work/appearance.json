@@ -6,6 +6,7 @@
   "enabledCssSnippets": [
     "status-bar-up",
     "image-toolkit-toolbar",
-    "always-show-actions"
+    "always-show-actions",
+    "hide-git-source-control-details"
   ]
 }

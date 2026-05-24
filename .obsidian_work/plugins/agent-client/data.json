@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e59e1-9819-7382-9726-d81dfbaff5ac",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "红框内的这部分都用 css 隐藏掉",
+      "createdAt": "2026-05-24T12:08:16.496Z",
+      "updatedAt": "2026-05-24T12:08:16.496Z"
+    },
+    {
       "sessionId": "019e5906-f668-79f0-9ab2-7e210b8bf005",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",

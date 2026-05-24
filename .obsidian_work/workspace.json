@@ -38,7 +38,8 @@
               "title": "Readme"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -211,11 +212,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "分享回流/电商分享回流渠道统计分析报告.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "电商分享回流渠道统计分析报告的笔记属性"
+              "title": "笔记属性"
             }
           },
           {
@@ -234,13 +233,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "分享回流/电商分享回流渠道统计分析报告.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "电商分享回流渠道统计分析报告 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -256,7 +254,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -282,10 +280,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "5d764a6e0b03d834",
+  "active": "9a1c070c25f64099",
   "lastOpenFiles": [
-    "分享回流/店铺详情页分享漏斗埋点分析.md",
     "分享回流/电商分享回流渠道统计分析报告.md",
+    "分享回流/店铺详情页分享漏斗埋点分析.md",
     "分享回流/PDP 商品详情页分享漏斗埋点分析.md",
     "分享回流/直播间电商意图与分享漏斗埋点分析.md",
     "分享回流/短视频 feed 电商意图与挂车埋点分析.md",
