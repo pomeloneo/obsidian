@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e59f9-3d41-7af0-9a71-c4d983badecd",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "https://github.com/datawhalechina/easy-vibe/tree/m...",
+      "createdAt": "2026-05-24T13:20:01.803Z",
+      "updatedAt": "2026-05-24T13:20:01.803Z"
+    },
+    {
       "sessionId": "019e555a-7e0f-7da3-9dac-5b8acb6877ae",
       "agentId": "codex-acp",
       "cwd": "/Users/neo/Documents/Obsidian Vault",

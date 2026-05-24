@@ -113,7 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 431.5
+    "width": 407.5
   },
   "right": {
     "id": "ef405a15d1bb2d8d",
@@ -186,30 +186,37 @@
             }
           },
           {
+            "id": "77b20878d116fea8",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {},
+              "icon": "lucide-info",
+              "title": "笔记属性"
+            }
+          },
+          {
+            "id": "15994d3092f11802",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
             "id": "5d764a6e0b03d834",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "分享回流/直播间电商意图与分享漏斗埋点分析.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "直播间电商意图与分享漏斗埋点分析 的大纲"
-            }
-          },
-          {
-            "id": "77b20878d116fea8",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "分享回流/直播间电商意图与分享漏斗埋点分析.md"
-              },
-              "icon": "lucide-info",
-              "title": "直播间电商意图与分享漏斗埋点分析的笔记属性"
+              "title": "大纲"
             }
           },
           {
@@ -223,23 +230,13 @@
               "icon": "bot-message-square",
               "title": "Agent client"
             }
-          },
-          {
-            "id": "15994d3092f11802",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 443.5
+    "width": 494.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -257,12 +254,19 @@
       "obsidian-importer:Open Importer": true,
       "homepage:Open homepage": false,
       "audio-recorder:开始/结束录音": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "terminal:Open terminal": false
     }
   },
   "active": "9a1c070c25f64099",
   "lastOpenFiles": [
+    "分享回流/电商分享回流渠道统计分析报告.md",
+    "分享回流/店铺详情页分享漏斗埋点分析.md",
+    "分享回流/PDP 商品详情页分享漏斗埋点分析.md",
     "分享回流/直播间电商意图与分享漏斗埋点分析.md",
+    "分享回流/短视频 feed 电商意图与挂车埋点分析.md",
+    "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
+    "lesson/从 0 开始学架构/003_微服务架构技巧篇：分布式事务.md",
     "daily_record/2026-05-22.md",
     "_templates/daily_record_template.md",
     "未命名.md",
@@ -271,7 +275,6 @@
     "2026-05-22.md",
     "未命名 1.md",
     "_templates",
-    "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
     "lesson/从 0 开始学架构/002_微服务架构技巧篇：接口类设计技巧.md",
     "lesson/从 0 开始学架构/001_旅程再启｜架构师该如何适应新的技术浪潮？.md",
     "lesson/大模型 LLM 与 RAG 快速应用/005_04｜脑图专家：AI是如何生成思维导图的？.md",
@@ -288,7 +291,6 @@
     "Notion",
     "分享回流/_attachments/Pasted image 20260521215735.png",
     "2026-05-21.md",
-    "分享回流/短视频 feed 电商意图与挂车埋点分析.md",
     "分享回流/_attachments/Pasted image 20260521165113.png",
     "分享回流/_attachments/Pasted image 20260521165103.png",
     "分享回流/_attachments",
@@ -305,10 +307,6 @@
     "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
     "Obsidian Canvas 能力演示.canvas",
     "personal/2026/【汇总】Javascript 中文周刊/JavaScript_中文周刊_91_-_Electron_v25_发布.md",
-    "personal/2026/【汇总】React 中文周刊/React_中文周刊_58_-_让_React_Native_运行在任意平台上.md",
-    "personal/2026/牛逼新手疯狂租车记录/本田飞度.md",
-    "personal/2026/牛逼新手疯狂租车记录/比亚迪 唐.md",
-    "personal/2026/牛逼新手疯狂租车记录/问界M9六座版.md",
     "personal/zxd/导入图片/image3.png",
     "未命名.canvas"
   ]

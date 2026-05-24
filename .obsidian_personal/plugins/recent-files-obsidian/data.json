@@ -1,6 +1,54 @@
 {
   "recentFiles": [
     {
+      "basename": "api-design",
+      "path": "lesson/Easy Vibe 附录/4-server-and-backend/api-design.md"
+    },
+    {
+      "basename": "git-version-control",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/git-version-control.md"
+    },
+    {
+      "basename": "environment-path",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/environment-path.md"
+    },
+    {
+      "basename": "debugging-art",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/debugging-art.md"
+    },
+    {
+      "basename": "command-line-shell",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/command-line-shell.md"
+    },
+    {
+      "basename": "algorithm-thinking",
+      "path": "lesson/Easy Vibe 附录/1-computer-fundamentals/algorithm-thinking.md"
+    },
+    {
+      "basename": "index-2026-01-09-11-36-23",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/editors-and-ai/images/index-2026-01-09-11-36-23.png"
+    },
+    {
+      "basename": "index-2026-01-09-11-35-55",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/editors-and-ai/images/index-2026-01-09-11-35-55.png"
+    },
+    {
+      "basename": "index-2026-01-09-11-28-43",
+      "path": "lesson/Easy Vibe 附录/2-development-tools/editors-and-ai/images/index-2026-01-09-11-28-43.png"
+    },
+    {
+      "basename": "React_Status_中文周刊_17_-_这些年，引入_React_方式的演变",
+      "path": "personal/2026/【汇总】React 中文周刊/React_Status_中文周刊_17_-_这些年，引入_React_方式的演变.md"
+    },
+    {
+      "basename": "005_聊聊异地多活成熟的架构模式",
+      "path": "lesson/从 0 开始学架构/005_聊聊异地多活成熟的架构模式.md"
+    },
+    {
+      "basename": "004_微服务架构技巧篇：全局幂等",
+      "path": "lesson/从 0 开始学架构/004_微服务架构技巧篇：全局幂等.md"
+    },
+    {
       "basename": "003_微服务架构技巧篇：分布式事务",
       "path": "lesson/从 0 开始学架构/003_微服务架构技巧篇：分布式事务.md"
     },
@@ -95,10 +143,6 @@
     {
       "basename": "008_开篇词 _ 照着做，你也能成为架构师！",
       "path": "lesson/从 0 开始学架构/008_开篇词 _ 照着做，你也能成为架构师！.md"
-    },
-    {
-      "basename": "004_微服务架构技巧篇：全局幂等",
-      "path": "lesson/从 0 开始学架构/004_微服务架构技巧篇：全局幂等.md"
     },
     {
       "basename": "001_旅程再启｜架构师该如何适应新的技术浪潮？",
