@@ -1,0 +1,61 @@
+# Awesome Codex Skills 中文索引
+
+- Source: https://github.com/ComposioHQ/awesome-codex-skills
+- Commit: `9c9da64cf1bbea611d43dd14a10788d55369b353`
+- Imported English: 2026-05-25
+- Translated: 2026-05-25
+- Scope: 仅包含仓库根目录下的 curated skills；`composio-skills/` 已排除。
+- Structure: 每个 skill 保留原始目录形态；`SKILL.md` 为中文译文，scripts/reference/examples/assets/LICENSE 等附件按原文拷贝。
+- Translation policy: 保留 `name`、代码块、命令、URL、文件路径、tool slug、API/SDK/MCP/CLI、产品名和示例中更适合保留英文的技术名词；翻译标题、说明、步骤、注意事项和表格中的自然语言。
+- Total: 48 translated skill folders.
+
+## Skills
+
+- [agent-deep-links](top-level/agent-deep-links/SKILL.md)（2 个附件文件）
+- [brand-guidelines](top-level/brand-guidelines/SKILL.md)（1 个附件文件）
+- [canvas-design](top-level/canvas-design/SKILL.md)（82 个附件文件）
+- [changelog-generator](top-level/changelog-generator/SKILL.md)
+- [codebase-migrate](top-level/codebase-migrate/SKILL.md)
+- [competitive-ads-extractor](top-level/competitive-ads-extractor/SKILL.md)
+- [connect](top-level/connect/SKILL.md)
+- [connect-apps](top-level/connect-apps/SKILL.md)
+- [content-research-writer](top-level/content-research-writer/SKILL.md)
+- [create-plan](top-level/create-plan/SKILL.md)（1 个附件文件）
+- [datadog-logs](top-level/datadog-logs/SKILL.md)
+- [deploy-pipeline](top-level/deploy-pipeline/SKILL.md)
+- [developer-growth-analysis](top-level/developer-growth-analysis/SKILL.md)
+- [domain-name-brainstormer](top-level/domain-name-brainstormer/SKILL.md)
+- [email-draft-polish](top-level/email-draft-polish/SKILL.md)
+- [file-organizer](top-level/file-organizer/SKILL.md)
+- [gh-address-comments](top-level/gh-address-comments/SKILL.md)（2 个附件文件）
+- [gh-fix-ci](top-level/gh-fix-ci/SKILL.md)（2 个附件文件）
+- [helium-mcp](top-level/helium-mcp/SKILL.md)
+- [image-enhancer](top-level/image-enhancer/SKILL.md)
+- [internal-comms](top-level/internal-comms/SKILL.md)（5 个附件文件）
+- [invoice-organizer](top-level/invoice-organizer/SKILL.md)
+- [issue-triage](top-level/issue-triage/SKILL.md)
+- [langsmith-fetch](top-level/langsmith-fetch/SKILL.md)
+- [lead-research-assistant](top-level/lead-research-assistant/SKILL.md)
+- [linear](top-level/linear/SKILL.md)（1 个附件文件）
+- [mcp-builder](top-level/mcp-builder/SKILL.md)（9 个附件文件）
+- [meeting-insights-analyzer](top-level/meeting-insights-analyzer/SKILL.md)
+- [meeting-notes-and-actions](top-level/meeting-notes-and-actions/SKILL.md)
+- [notion-knowledge-capture](top-level/notion-knowledge-capture/SKILL.md)（14 个附件文件）
+- [notion-meeting-intelligence](top-level/notion-meeting-intelligence/SKILL.md)（15 个附件文件）
+- [notion-research-documentation](top-level/notion-research-documentation/SKILL.md)（19 个附件文件）
+- [notion-spec-to-implementation](top-level/notion-spec-to-implementation/SKILL.md)（15 个附件文件）
+- [paperjsx](top-level/paperjsx/SKILL.md)（2 个附件文件）
+- [pr-review-ci-fix](top-level/pr-review-ci-fix/SKILL.md)
+- [raffle-winner-picker](top-level/raffle-winner-picker/SKILL.md)
+- [sentry-triage](top-level/sentry-triage/SKILL.md)
+- [skill-creator](top-level/skill-creator/SKILL.md)（4 个附件文件）
+- [skill-installer](top-level/skill-installer/SKILL.md)（4 个附件文件）
+- [skill-share](top-level/skill-share/SKILL.md)
+- [slack-gif-creator](top-level/slack-gif-creator/SKILL.md)（22 个附件文件）
+- [spreadsheet-formula-helper](top-level/spreadsheet-formula-helper/SKILL.md)
+- [support-ticket-triage](top-level/support-ticket-triage/SKILL.md)
+- [tailored-resume-generator](top-level/tailored-resume-generator/SKILL.md)
+- [template-skill](top-level/template-skill/SKILL.md)
+- [theme-factory](top-level/theme-factory/SKILL.md)（12 个附件文件）
+- [video-downloader](top-level/video-downloader/SKILL.md)（1 个附件文件）
+- [webapp-testing](top-level/webapp-testing/SKILL.md)（5 个附件文件）

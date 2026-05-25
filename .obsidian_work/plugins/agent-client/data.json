@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e5e43-acbd-7352-851a-9573623ad20b",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "https://github.com/ComposioHQ/awesome-codex-skills...",
+      "createdAt": "2026-05-25T08:37:04.612Z",
+      "updatedAt": "2026-05-25T08:37:04.612Z"
+    },
+    {
       "sessionId": "019e59ec-d8eb-78e1-96c7-f7f3f680c213",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",

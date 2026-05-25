@@ -4,25 +4,116 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "4a5c8e30b7b0b228",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "9ba63c3d494317ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "分享回流/电商分享回流渠道统计分析报告.md",
+                "file": "awesome-codex-skills/index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "电商分享回流渠道统计分析报告"
+              "title": "index"
+            }
+          },
+          {
+            "id": "36f5a080d4aaf2ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/en/_index.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "_index"
+            }
+          },
+          {
+            "id": "0feb8dd1dd3dd393",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/en/_index.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "_index"
+            }
+          },
+          {
+            "id": "63d133c91aed347e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/en/scientific-skills/adaptyv/SKILL.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "dec576b8e303c044",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/en/top-level/file-organizer/SKILL.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "32f0512e22d2dafc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/top-level/file-organizer/SKILL.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "a0f9a68fb86019da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/top-level/file-organizer/SKILL.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -34,7 +125,7 @@
       {
         "id": "232c343523398994",
         "type": "tabs",
-        "dimension": 84.30141287284145,
+        "dimension": 84.30141287284144,
         "children": [
           {
             "id": "0e4d52dc6da60ac7",
@@ -70,7 +161,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -102,7 +193,7 @@
       {
         "id": "c65ab14081428d68",
         "type": "tabs",
-        "dimension": 15.698587127158554,
+        "dimension": 15.698587127158556,
         "children": [
           {
             "id": "3d1031094f9a73c9",
@@ -216,13 +307,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "分享回流/电商分享回流渠道统计分析报告.md",
+                "file": "awesome-codex-skills/zh/top-level/file-organizer/SKILL.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "电商分享回流渠道统计分析报告 的大纲"
+              "title": "SKILL 的大纲"
             }
           },
           {
@@ -238,7 +329,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -261,59 +352,62 @@
       "homepage:Open homepage": false,
       "audio-recorder:开始/结束录音": false,
       "omnisearch:Omnisearch": false,
-      "terminal:Open terminal": false
+      "terminal:Open terminal": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "a0f9a68fb86019da",
   "lastOpenFiles": [
-    "分享回流/电商分享回流渠道统计分析报告.md",
-    "分享回流/分享回流漏斗看板.md",
-    "分享回流/店铺详情页分享漏斗埋点分析.md",
-    "分享回流/PDP 商品详情页分享漏斗埋点分析.md",
-    "分享回流/直播间电商意图与分享漏斗埋点分析.md",
-    "分享回流/短视频 feed 电商意图与挂车埋点分析.md",
-    "分享回流/短视频分享站内私信与站外渠道埋点链路分析.md",
-    "lesson/从 0 开始学架构/003_微服务架构技巧篇：分布式事务.md",
-    "daily_record/2026-05-22.md",
-    "_templates/daily_record_template.md",
-    "未命名.md",
-    "daily_record/2026-05-23.md",
-    "daily_record",
-    "2026-05-22.md",
-    "未命名 1.md",
-    "_templates",
-    "lesson/从 0 开始学架构/002_微服务架构技巧篇：接口类设计技巧.md",
-    "lesson/从 0 开始学架构/001_旅程再启｜架构师该如何适应新的技术浪潮？.md",
-    "lesson/大模型 LLM 与 RAG 快速应用/005_04｜脑图专家：AI是如何生成思维导图的？.md",
-    "lesson/Claude Code 工程化实战/001_开篇词｜共生而非替代：极客和 AI 的共舞.md",
-    "lesson/AI 浪潮问题集与案例/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
-    "Agent Client/agent_client_20260522_111759.md",
-    "Agent Client",
-    "lesson/大模型应用一站式开发/019_17｜敏感内容过滤：保障情感聊天应用的合规性与安全性.md",
-    "lesson/大模型应用一站式开发/004_02｜场景选择：为什么选择情感聊天切入？.md",
-    "Notion/个人与共享/zxd/工作搭子",
-    "Notion/个人与共享/zxd",
-    "Notion/个人与共享",
-    "Notion",
+    "awesome-codex-skills/en/top-level/file-organizer/SKILL.md",
+    "awesome-codex-skills/en/scientific-skills/adaptyv/SKILL.md",
+    "awesome-codex-skills/en/top-level/notion-knowledge-capture/SKILL.md",
+    "awesome-codex-skills/en/_index.md",
+    "awesome-codex-skills/index.md",
+    "awesome-codex-skills/zh/index_zh.md",
+    "awesome-codex-skills/zh/scientific-skills/autoskill/SKILL.md",
+    "awesome-codex-skills/zh/scientific-skills/anndata/SKILL.md",
+    "awesome-codex-skills/zh/top-level/skill-creator/SKILL.md",
+    "awesome-codex-skills/zh/top-level/gh-fix-ci/SKILL.md",
+    "awesome-codex-skills/zh/top-level/changelog-generator/SKILL.md",
+    "awesome-codex-skills/zh/scientific-skills/bids/SKILL.md",
+    "awesome-codex-skills/zh/scientific-skills/aeon/SKILL.md",
+    "awesome-codex-skills/zh/scientific-skills/aeon/references/anomaly_detection.md",
+    "awesome-codex-skills/zh/scientific-skills/adaptyv/references/api-endpoints.md",
+    "awesome-codex-skills/zh/scientific-skills/adaptyv/SKILL.md",
+    "awesome-codex-skills/en/top-level/canvas-design/SKILL.md",
+    "awesome-codex-skills/zh/top-level/canvas-design/SKILL.md",
+    "awesome-codex-skills/zh/top-level/agent-deep-links/SKILL.md",
+    "awesome-codex-skills/en/scientific-skills/adaptyv/references/api-endpoints.md",
+    "awesome-codex-skills/en/scientific-skills/xlsx/SKILL.md",
+    "awesome-codex-skills/en/scientific-skills/pathml/SKILL.md",
+    "awesome-codex-skills/zh/top-level/theme-factory/themes/tech-innovation.md",
+    "awesome-codex-skills/zh/scientific-skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+    "awesome-codex-skills/zh/scientific-skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+    "awesome-codex-skills/zh/scientific-skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+    "awesome-codex-skills/zh/scientific-skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+    "awesome-codex-skills/zh/scientific-skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+    "awesome-codex-skills/zh/scientific-skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+    "awesome-codex-skills/zh/scientific-skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+    "awesome-codex-skills/zh/scientific-skills/pptx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+    "awesome-codex-skills/zh/scientific-skills/docx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+    "awesome-codex-skills/zh/scientific-skills/docx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+    "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_visualization.png",
+    "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_animation.gif",
+    "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/covariates-forecasting/output/covariates_data.png",
+    "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/anomaly-detection/output/anomaly_detection.png",
+    "awesome-codex-skills/zh/scientific-skills/iso-13485-certification/assets/templates/procedures/document-control-procedure-template.md",
+    "awesome-codex-skills/zh/scientific-skills/iso-13485-certification/assets/templates/procedures/CAPA-procedure-template.md",
+    "awesome-codex-skills/zh/scientific-skills/venue-templates/assets/examples/neurips_introduction_example.md",
+    "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/covariates-forecasting/output/covariates_data.png",
+    "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_visualization.png",
+    "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_animation.gif",
+    "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/anomaly-detection/output/anomaly_detection.png",
     "分享回流/_attachments/Pasted image 20260521215735.png",
-    "2026-05-21.md",
     "分享回流/_attachments/Pasted image 20260521165113.png",
-    "分享回流/_attachments/Pasted image 20260521165103.png",
-    "分享回流/_attachments",
-    "分享回流/attachments/Pasted image 20260521165046.png",
-    "分享回流/attachments",
-    "Pasted image 20260521165007.png",
-    "分享回流/{{title}}.assets/Pasted image 20260521164812.png",
-    "分享回流/{{title}}.assets",
-    "分享回流/附件/Pasted image 20260521164728.png",
-    "Pasted image 20260521163522.png",
-    "附件/Pasted image 20260521164701.png",
-    "分享回流/Drawing 2026-05-21 15.32.54.excalidraw.md",
     "分享回流/未命名.canvas",
-    "lesson/大模型应用一站式开发/001_开篇词｜从对话到陪伴：大模型应用开发的全景实战课.md",
     "Obsidian Canvas 能力演示.canvas",
-    "personal/2026/【汇总】Javascript 中文周刊/JavaScript_中文周刊_91_-_Electron_v25_发布.md",
-    "personal/zxd/导入图片/image3.png",
     "未命名.canvas"
   ]
 }
