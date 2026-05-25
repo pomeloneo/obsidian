@@ -7,8 +7,7 @@
     "status-bar-up",
     "image-toolkit-toolbar",
     "always-show-actions",
-    "hide-git-source-control-details",
-    "commander-name-modal-fix"
+    "hide-git-source-control-details"
   ],
-  "showViewHeader": true
+  "showViewHeader": false
 }

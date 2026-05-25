@@ -1,6 +1,6 @@
 {
   "confirmDeletion": false,
-  "showAddCommand": false,
+  "showAddCommand": true,
   "debug": false,
   "editorMenu": [],
   "fileMenu": [],
@@ -8,39 +8,14 @@
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
-  "pageHeader": [
-    {
-      "id": "workspace:split-vertical",
-      "icon": "lucide-separator-vertical",
-      "name": "左右分屏",
-      "mode": "any"
-    },
-    {
-      "id": "workspace:toggle-pin",
-      "icon": "lucide-pin",
-      "name": "解锁/锁定",
-      "mode": "any"
-    },
-    {
-      "id": "app:open-settings",
-      "icon": "lucide-settings",
-      "name": "打开设置",
-      "mode": "any"
-    },
-    {
-      "id": "app:delete-file",
-      "icon": "lucide-trash-2",
-      "name": "删除当前文件",
-      "mode": "any"
-    }
-  ],
+  "pageHeader": [],
   "macros": [],
   "explorer": [],
   "hide": {
     "statusbar": [],
     "leftRibbon": []
   },
-  "spacing": "6",
+  "spacing": 8,
   "advancedToolbar": {
     "rowHeight": 48,
     "rowCount": 1,

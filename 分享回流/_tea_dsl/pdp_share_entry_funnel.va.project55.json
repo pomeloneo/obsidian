@@ -1,0 +1,176 @@
+{
+  "use_app_cloud_id": true,
+  "periods": [
+    {
+      "granularity": "day",
+      "type": "past_range",
+      "spans": [
+        {
+          "type": "past",
+          "past": {
+            "amount": 6,
+            "unit": "day"
+          }
+        },
+        {
+          "type": "past",
+          "past": {
+            "amount": 0,
+            "unit": "day"
+          }
+        }
+      ],
+      "timezone": "UTC",
+      "week_start": 1
+    }
+  ],
+  "version": 3,
+  "option": {
+    "region_filter": [
+      "ROW"
+    ]
+  },
+  "content": {
+    "query_type": "funnel",
+    "profile_filters": [
+      {
+        "show_name": "全体用户",
+        "show_label": "1",
+        "expression": {
+          "logic": "and",
+          "expressions": [
+            {
+              "logic": "or",
+              "conditions": []
+            }
+          ]
+        }
+      }
+    ],
+    "page": {
+      "limit": 50,
+      "offset": 0
+    },
+    "option": {
+      "use_sample_data": false,
+      "refresh_cache": false,
+      "fusion": false,
+      "analysis_subject": {},
+      "is_parallel": true,
+      "statistics_mode": 0,
+      "add_window_period": true,
+      "window_period": 10,
+      "window_period_type": "minute",
+      "window_type": 0,
+      "distribution_interval": 1,
+      "distribution_step": 0,
+      "distribution_unit": "minute"
+    },
+    "queries": [
+      [
+        {
+          "show_label": "1",
+          "show_name": "PDP 进入",
+          "event_name": "tiktokec_enter_product_detail",
+          "event_type": "virtual",
+          "groups_v2": [],
+          "filters": [
+            {
+              "expression": {
+                "logic": "and",
+                "expressions": [
+                  {
+                    "logic": "or",
+                    "conditions": [
+                      {
+                        "property_type": "event_param",
+                        "property_name": "page_name",
+                        "property_compose_type": "origin",
+                        "property_operation": "=",
+                        "property_values": [
+                          "product_detail"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "show_label": "2",
+          "show_name": "分享入口曝光",
+          "event_name": "tiktokec_button_show",
+          "event_type": "origin",
+          "groups_v2": [],
+          "filters": [
+            {
+              "expression": {
+                "logic": "and",
+                "expressions": [
+                  {
+                    "logic": "or",
+                    "conditions": [
+                      {
+                        "property_type": "event_param",
+                        "property_name": "button_name",
+                        "property_compose_type": "origin",
+                        "property_operation": "=",
+                        "property_values": [
+                          "product_share"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "show_label": "3",
+          "show_name": "分享入口点击",
+          "event_name": "tiktokec_button_click",
+          "event_type": "origin",
+          "groups_v2": [],
+          "filters": [
+            {
+              "expression": {
+                "logic": "and",
+                "expressions": [
+                  {
+                    "logic": "or",
+                    "conditions": [
+                      {
+                        "property_type": "event_param",
+                        "property_name": "button_name",
+                        "property_compose_type": "origin",
+                        "property_operation": "=",
+                        "property_values": [
+                          "product_share"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "resources": [
+    {
+      "project_ids": [
+        55
+      ],
+      "subject_ids": [
+        1
+      ],
+      "app_ids": []
+    }
+  ],
+  "app_ids": []
+}

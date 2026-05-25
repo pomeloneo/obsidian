@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e5eec-7aa3-7b80-99a7-97e32d31943b",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "我安装了新的 skill ，你能基于这个文档帮我创建一个 pdp 从分享到回流的链路的 tea 漏斗...",
+      "createdAt": "2026-05-25T11:41:19.227Z",
+      "updatedAt": "2026-05-25T11:41:19.228Z"
+    },
+    {
       "sessionId": "019e5e43-acbd-7352-851a-9573623ad20b",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",

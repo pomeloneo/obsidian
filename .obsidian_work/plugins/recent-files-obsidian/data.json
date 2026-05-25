@@ -1,76 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "SKILL",
-      "path": "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md"
-    },
-    {
-      "basename": "SKILL",
-      "path": "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md"
-    },
-    {
-      "basename": "SKILL",
-      "path": "awesome-codex-skills/zh/mattpocock-skills/engineering/grill-with-docs/SKILL.md"
-    },
-    {
-      "basename": "SKILL",
-      "path": "awesome-codex-skills/zh/mattpocock-skills/engineering/tdd/SKILL.md"
-    },
-    {
-      "basename": "CONTEXT-FORMAT",
-      "path": "awesome-codex-skills/zh/mattpocock-skills/engineering/grill-with-docs/CONTEXT-FORMAT.md"
-    },
-    {
-      "basename": "README",
-      "path": "awesome-codex-skills/zh/mattpocock-skills/productivity/README.md"
-    },
-    {
       "basename": "_index",
-      "path": "awesome-codex-skills/en/_index.md"
+      "path": "awesome-codex-skills-raw-en/_index.md"
     },
     {
-      "basename": "index",
-      "path": "awesome-codex-skills/index.md"
-    },
-    {
-      "basename": "index_zh",
-      "path": "awesome-codex-skills/zh/index_zh.md"
-    },
-    {
-      "basename": "anomaly_detection",
-      "path": "awesome-codex-skills/zh/scientific-skills/aeon/references/anomaly_detection.md"
-    },
-    {
-      "basename": "api-endpoints",
-      "path": "awesome-codex-skills/zh/scientific-skills/adaptyv/references/api-endpoints.md"
-    },
-    {
-      "basename": "api-endpoints",
-      "path": "awesome-codex-skills/en/scientific-skills/adaptyv/references/api-endpoints.md"
-    },
-    {
-      "basename": "tech-innovation",
-      "path": "awesome-codex-skills/zh/top-level/theme-factory/themes/tech-innovation.md"
-    },
-    {
-      "basename": "modern-minimalist",
-      "path": "awesome-codex-skills/zh/top-level/theme-factory/themes/modern-minimalist.md"
-    },
-    {
-      "basename": "midnight-galaxy",
-      "path": "awesome-codex-skills/zh/top-level/theme-factory/themes/midnight-galaxy.md"
-    },
-    {
-      "basename": "golden-hour",
-      "path": "awesome-codex-skills/zh/top-level/theme-factory/themes/golden-hour.md"
-    },
-    {
-      "basename": "desert-rose",
-      "path": "awesome-codex-skills/zh/top-level/theme-factory/themes/desert-rose.md"
-    },
-    {
-      "basename": "arctic-frost",
-      "path": "awesome-codex-skills/zh/top-level/theme-factory/themes/arctic-frost.md"
+      "basename": "agent-deep-links",
+      "path": "awesome-codex-skills-raw-en/top-level/agent-deep-links.md"
     },
     {
       "basename": "电商分享回流渠道统计分析报告",
