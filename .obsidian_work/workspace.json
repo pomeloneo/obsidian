@@ -11,10 +11,15 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "分享回流/电商分享回流渠道统计分析报告.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "电商分享回流渠道统计分析报告"
             }
           }
         ]
@@ -211,12 +216,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "分享回流/电商分享回流渠道统计分析报告.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "电商分享回流渠道统计分析报告 的大纲"
             }
           },
           {
@@ -260,6 +266,7 @@
   },
   "active": "9a1c070c25f64099",
   "lastOpenFiles": [
+    "分享回流/分享回流漏斗看板.md",
     "分享回流/电商分享回流渠道统计分析报告.md",
     "分享回流/店铺详情页分享漏斗埋点分析.md",
     "分享回流/PDP 商品详情页分享漏斗埋点分析.md",
@@ -278,7 +285,6 @@
     "lesson/从 0 开始学架构/002_微服务架构技巧篇：接口类设计技巧.md",
     "lesson/从 0 开始学架构/001_旅程再启｜架构师该如何适应新的技术浪潮？.md",
     "lesson/大模型 LLM 与 RAG 快速应用/005_04｜脑图专家：AI是如何生成思维导图的？.md",
-    "分享回流/分享回流漏斗看板.md",
     "lesson/Claude Code 工程化实战/001_开篇词｜共生而非替代：极客和 AI 的共舞.md",
     "lesson/AI 浪潮问题集与案例/001_开篇词｜在AI浪潮中，做个会“偷懒”的聪明人.md",
     "Agent Client/agent_client_20260522_111759.md",
