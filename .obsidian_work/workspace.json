@@ -134,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "c65ab14081428d68",
@@ -253,7 +253,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",
+                "file": "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -279,7 +279,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 398.5
+    "width": 398.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -304,10 +305,10 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "9a1c070c25f64099",
+  "active": "6a4c6d82e39cc71a",
   "lastOpenFiles": [
-    "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/_attachments/Pasted image 20260525183040.png",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/_attachments",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/grill-with-docs/SKILL.md",
