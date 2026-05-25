@@ -4,16 +4,19 @@
 
 - ComposioHQ/awesome-codex-skills 顶层 curated skills: `9c9da64cf1bbea611d43dd14a10788d55369b353`
 - K-Dense-AI/scientific-agent-skills/scientific-skills: `66d1ad45ccbfe18f8665cd72d1ecb1043cd678f9`
+- mattpocock/skills/skills: `b8be62ffacb0118fa3eaa29a0923c87c8c11985c`
 
 ## 范围
 
 - `top-level/`: ComposioHQ/awesome-codex-skills 的顶层 curated skills；`composio-skills/` 已排除。
 - `scientific-skills/`: K-Dense-AI/scientific-agent-skills/tree/main/scientific-skills 下的 skills。
-- 每个 skill 保留原始目录形态；`SKILL.md` 为中文译文，scripts/references/examples/assets/tests/LICENSE 等附件按原文拷贝。
-- 翻译策略：保留 `name`、代码块、命令、URL、文件路径、tool slug、API/SDK/MCP/CLI、包名、函数名、参数名、产品名、数据库名和更适合保留英文的科研专有名词；翻译标题、说明、步骤、注意事项和表格中的自然语言。
+- `mattpocock-skills/`: mattpocock/skills/tree/main/skills 下的 skills，并保留原始分类子目录。
+- 每个 skill 保留原始目录形态；`SKILL.md` 为中文译文，scripts/references/examples/assets/tests/README/LICENSE 等附件按原文拷贝。
+- 翻译策略：保留 `name`、代码块、命令、URL、文件路径、tool slug、API/SDK/MCP/CLI、包名、函数名、参数名、产品名和更适合保留英文的技术/科研专有名词；翻译标题、说明、步骤、注意事项和表格中的自然语言。
 
-- Top-level skills: 48
-- Scientific skills: 139
+- top-level: 48 skills
+- scientific-skills: 139 skills
+- mattpocock-skills: 28 skills
 
 ## Top-Level Skills
 
@@ -23,8 +26,8 @@
 - [changelog-generator](top-level/changelog-generator/SKILL.md)
 - [codebase-migrate](top-level/codebase-migrate/SKILL.md)
 - [competitive-ads-extractor](top-level/competitive-ads-extractor/SKILL.md)
-- [connect](top-level/connect/SKILL.md)
 - [connect-apps](top-level/connect-apps/SKILL.md)
+- [connect](top-level/connect/SKILL.md)
 - [content-research-writer](top-level/content-research-writer/SKILL.md)
 - [create-plan](top-level/create-plan/SKILL.md)（1 个附件文件）
 - [datadog-logs](top-level/datadog-logs/SKILL.md)
@@ -149,10 +152,10 @@
 - [peer-review](scientific-skills/peer-review/SKILL.md)（4 个附件文件）
 - [pennylane](scientific-skills/pennylane/SKILL.md)（7 个附件文件）
 - [phylogenetics](scientific-skills/phylogenetics/SKILL.md)（2 个附件文件）
-- [polars](scientific-skills/polars/SKILL.md)（6 个附件文件）
 - [polars-bio](scientific-skills/polars-bio/SKILL.md)（6 个附件文件）
-- [pptx](scientific-skills/pptx/SKILL.md)（58 个附件文件）
+- [polars](scientific-skills/polars/SKILL.md)（6 个附件文件）
 - [pptx-posters](scientific-skills/pptx-posters/SKILL.md)（7 个附件文件）
+- [pptx](scientific-skills/pptx/SKILL.md)（58 个附件文件）
 - [primekg](scientific-skills/primekg/SKILL.md)（1 个附件文件）
 - [protocolsio-integration](scientific-skills/protocolsio-integration/SKILL.md)（6 个附件文件）
 - [pufferlib](scientific-skills/pufferlib/SKILL.md)（7 个附件文件）
@@ -207,3 +210,34 @@
 - [what-if-oracle](scientific-skills/what-if-oracle/SKILL.md)（1 个附件文件）
 - [xlsx](scientific-skills/xlsx/SKILL.md)（53 个附件文件）
 - [zarr-python](scientific-skills/zarr-python/SKILL.md)（1 个附件文件）
+
+## Matt Pocock Skills
+
+- [deprecated/design-an-interface](mattpocock-skills/deprecated/design-an-interface/SKILL.md)
+- [deprecated/qa](mattpocock-skills/deprecated/qa/SKILL.md)
+- [deprecated/request-refactor-plan](mattpocock-skills/deprecated/request-refactor-plan/SKILL.md)
+- [deprecated/ubiquitous-language](mattpocock-skills/deprecated/ubiquitous-language/SKILL.md)
+- [engineering/diagnose](mattpocock-skills/engineering/diagnose/SKILL.md)（1 个附件文件）
+- [engineering/grill-with-docs](mattpocock-skills/engineering/grill-with-docs/SKILL.md)（2 个附件文件）
+- [engineering/improve-codebase-architecture](mattpocock-skills/engineering/improve-codebase-architecture/SKILL.md)（4 个附件文件）
+- [engineering/prototype](mattpocock-skills/engineering/prototype/SKILL.md)（2 个附件文件）
+- [engineering/setup-matt-pocock-skills](mattpocock-skills/engineering/setup-matt-pocock-skills/SKILL.md)（5 个附件文件）
+- [engineering/tdd](mattpocock-skills/engineering/tdd/SKILL.md)（5 个附件文件）
+- [engineering/to-issues](mattpocock-skills/engineering/to-issues/SKILL.md)
+- [engineering/to-prd](mattpocock-skills/engineering/to-prd/SKILL.md)
+- [engineering/triage](mattpocock-skills/engineering/triage/SKILL.md)（2 个附件文件）
+- [engineering/zoom-out](mattpocock-skills/engineering/zoom-out/SKILL.md)
+- [in-progress/review](mattpocock-skills/in-progress/review/SKILL.md)
+- [in-progress/writing-beats](mattpocock-skills/in-progress/writing-beats/SKILL.md)
+- [in-progress/writing-fragments](mattpocock-skills/in-progress/writing-fragments/SKILL.md)
+- [in-progress/writing-shape](mattpocock-skills/in-progress/writing-shape/SKILL.md)
+- [misc/git-guardrails-claude-code](mattpocock-skills/misc/git-guardrails-claude-code/SKILL.md)（1 个附件文件）
+- [misc/migrate-to-shoehorn](mattpocock-skills/misc/migrate-to-shoehorn/SKILL.md)
+- [misc/scaffold-exercises](mattpocock-skills/misc/scaffold-exercises/SKILL.md)
+- [misc/setup-pre-commit](mattpocock-skills/misc/setup-pre-commit/SKILL.md)
+- [personal/edit-article](mattpocock-skills/personal/edit-article/SKILL.md)
+- [personal/obsidian-vault](mattpocock-skills/personal/obsidian-vault/SKILL.md)
+- [productivity/caveman](mattpocock-skills/productivity/caveman/SKILL.md)
+- [productivity/grill-me](mattpocock-skills/productivity/grill-me/SKILL.md)
+- [productivity/handoff](mattpocock-skills/productivity/handoff/SKILL.md)
+- [productivity/write-a-skill](mattpocock-skills/productivity/write-a-skill/SKILL.md)
