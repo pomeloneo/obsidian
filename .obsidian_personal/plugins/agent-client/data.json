@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e5f5f-f67e-7371-ab6a-25737ffd64b6",
+      "agentId": "codex-acp",
+      "cwd": "/Users/neo/Documents/Obsidian Vault",
+      "title": "隐藏红框里面的内容",
+      "createdAt": "2026-05-25T13:53:04.508Z",
+      "updatedAt": "2026-05-25T13:53:04.508Z"
+    },
+    {
       "sessionId": "019e59f9-3d41-7af0-9a71-c4d983badecd",
       "agentId": "codex-acp",
       "cwd": "/Users/neo/Documents/Obsidian Vault",

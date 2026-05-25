@@ -7,7 +7,8 @@
     "always-show-actions",
     "image-toolkit-toolbar",
     "status-bar-up",
-    "hide-git-source-control-details"
+    "hide-git-source-control-details",
+    "commander-name-modal-fix"
   ],
   "translucency": false
 }

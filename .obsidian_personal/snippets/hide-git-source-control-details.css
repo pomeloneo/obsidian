@@ -3,3 +3,11 @@
 .workspace-leaf-content[data-type="git-view"] .git-view > .nav-files-container {
   display: none !important;
 }
+
+/* Hide selected toolbar actions in the Obsidian Git source control pane. */
+.workspace-leaf-content[data-type="git-view"] .nav-buttons-container #commit-btn,
+.workspace-leaf-content[data-type="git-view"] .nav-buttons-container #stage-all,
+.workspace-leaf-content[data-type="git-view"] .nav-buttons-container #unstage-all,
+.workspace-leaf-content[data-type="git-view"] .nav-buttons-container #layoutChange {
+  display: none !important;
+}
