@@ -12,7 +12,7 @@ metadata:
 
 scvi-tools 是一个用于 single-cell genomics 中 probabilistic models 的综合 Python framework。它构建在 PyTorch 和 PyTorch Lightning 之上，提供使用 variational inference 的 deep generative models，用于分析多种 single-cell data modalities。
 
-## 何时使用此 Skill
+## 何时使用此技能
 
 在以下情况使用此 skill：
 - 分析 single-cell RNA-seq data（dimensionality reduction、batch correction、integration）
@@ -111,7 +111,7 @@ sc.tl.leiden(adata)
 
 ## 常见分析任务
 
-### Differential expression
+### Differential expression 分析
 使用 learned generative models 进行 probabilistic DE analysis：
 
 ```python
@@ -126,7 +126,7 @@ de_results = model.differential_expression(
 
 详细 methodology 和 interpretation 见 `references/differential-expression.md`。
 
-### Model persistence
+### Model 持久化
 保存并加载 trained models：
 
 ```python

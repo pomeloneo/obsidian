@@ -1,15 +1,21 @@
-# Awesome Codex Skills 中文索引
+# Codex Skills 中文索引
 
-- Source: https://github.com/ComposioHQ/awesome-codex-skills
-- Commit: `9c9da64cf1bbea611d43dd14a10788d55369b353`
-- Imported English: 2026-05-25
-- Translated: 2026-05-25
-- Scope: 仅包含仓库根目录下的 curated skills；`composio-skills/` 已排除。
-- Structure: 每个 skill 保留原始目录形态；`SKILL.md` 为中文译文，scripts/reference/examples/assets/LICENSE 等附件按原文拷贝。
-- Translation policy: 保留 `name`、代码块、命令、URL、文件路径、tool slug、API/SDK/MCP/CLI、产品名和示例中更适合保留英文的技术名词；翻译标题、说明、步骤、注意事项和表格中的自然语言。
-- Total: 48 translated skill folders.
+## 来源
 
-## Skills
+- ComposioHQ/awesome-codex-skills 顶层 curated skills: `9c9da64cf1bbea611d43dd14a10788d55369b353`
+- K-Dense-AI/scientific-agent-skills/scientific-skills: `66d1ad45ccbfe18f8665cd72d1ecb1043cd678f9`
+
+## 范围
+
+- `top-level/`: ComposioHQ/awesome-codex-skills 的顶层 curated skills；`composio-skills/` 已排除。
+- `scientific-skills/`: K-Dense-AI/scientific-agent-skills/tree/main/scientific-skills 下的 skills。
+- 每个 skill 保留原始目录形态；`SKILL.md` 为中文译文，scripts/references/examples/assets/tests/LICENSE 等附件按原文拷贝。
+- 翻译策略：保留 `name`、代码块、命令、URL、文件路径、tool slug、API/SDK/MCP/CLI、包名、函数名、参数名、产品名、数据库名和更适合保留英文的科研专有名词；翻译标题、说明、步骤、注意事项和表格中的自然语言。
+
+- Top-level skills: 48
+- Scientific skills: 139
+
+## Top-Level Skills
 
 - [agent-deep-links](top-level/agent-deep-links/SKILL.md)（2 个附件文件）
 - [brand-guidelines](top-level/brand-guidelines/SKILL.md)（1 个附件文件）
@@ -59,3 +65,145 @@
 - [theme-factory](top-level/theme-factory/SKILL.md)（12 个附件文件）
 - [video-downloader](top-level/video-downloader/SKILL.md)（1 个附件文件）
 - [webapp-testing](top-level/webapp-testing/SKILL.md)（5 个附件文件）
+
+## Scientific Skills
+
+- [adaptyv](scientific-skills/adaptyv/SKILL.md)（1 个附件文件）
+- [aeon](scientific-skills/aeon/SKILL.md)（11 个附件文件）
+- [anndata](scientific-skills/anndata/SKILL.md)（5 个附件文件）
+- [arboreto](scientific-skills/arboreto/SKILL.md)（4 个附件文件）
+- [astropy](scientific-skills/astropy/SKILL.md)（7 个附件文件）
+- [autoskill](scientific-skills/autoskill/SKILL.md)（27 个附件文件）
+- [benchling-integration](scientific-skills/benchling-integration/SKILL.md)（3 个附件文件）
+- [bgpt-paper-search](scientific-skills/bgpt-paper-search/SKILL.md)
+- [bids](scientific-skills/bids/SKILL.md)（6 个附件文件）
+- [biopython](scientific-skills/biopython/SKILL.md)（7 个附件文件）
+- [bioservices](scientific-skills/bioservices/SKILL.md)（7 个附件文件）
+- [cellxgene-census](scientific-skills/cellxgene-census/SKILL.md)（2 个附件文件）
+- [cirq](scientific-skills/cirq/SKILL.md)（6 个附件文件）
+- [citation-management](scientific-skills/citation-management/SKILL.md)（15 个附件文件）
+- [clinical-decision-support](scientific-skills/clinical-decision-support/SKILL.md)（21 个附件文件）
+- [clinical-reports](scientific-skills/clinical-reports/SKILL.md)（31 个附件文件）
+- [cobrapy](scientific-skills/cobrapy/SKILL.md)（2 个附件文件）
+- [consciousness-council](scientific-skills/consciousness-council/SKILL.md)（1 个附件文件）
+- [dask](scientific-skills/dask/SKILL.md)（6 个附件文件）
+- [database-lookup](scientific-skills/database-lookup/SKILL.md)（78 个附件文件）
+- [datamol](scientific-skills/datamol/SKILL.md)（6 个附件文件）
+- [deepchem](scientific-skills/deepchem/SKILL.md)（5 个附件文件）
+- [deeptools](scientific-skills/deeptools/SKILL.md)（7 个附件文件）
+- [depmap](scientific-skills/depmap/SKILL.md)（1 个附件文件）
+- [dhdna-profiler](scientific-skills/dhdna-profiler/SKILL.md)（1 个附件文件）
+- [diffdock](scientific-skills/diffdock/SKILL.md)（8 个附件文件）
+- [dnanexus-integration](scientific-skills/dnanexus-integration/SKILL.md)（5 个附件文件）
+- [docx](scientific-skills/docx/SKILL.md)（60 个附件文件）
+- [esm](scientific-skills/esm/SKILL.md)（4 个附件文件）
+- [etetoolkit](scientific-skills/etetoolkit/SKILL.md)（5 个附件文件）
+- [exa-search](scientific-skills/exa-search/SKILL.md)（5 个附件文件）
+- [exploratory-data-analysis](scientific-skills/exploratory-data-analysis/SKILL.md)（8 个附件文件）
+- [flowio](scientific-skills/flowio/SKILL.md)（1 个附件文件）
+- [fluidsim](scientific-skills/fluidsim/SKILL.md)（6 个附件文件）
+- [generate-image](scientific-skills/generate-image/SKILL.md)（1 个附件文件）
+- [geniml](scientific-skills/geniml/SKILL.md)（5 个附件文件）
+- [geomaster](scientific-skills/geomaster/SKILL.md)（15 个附件文件）
+- [geopandas](scientific-skills/geopandas/SKILL.md)（6 个附件文件）
+- [get-available-resources](scientific-skills/get-available-resources/SKILL.md)（1 个附件文件）
+- [gget](scientific-skills/gget/SKILL.md)（6 个附件文件）
+- [ginkgo-cloud-lab](scientific-skills/ginkgo-cloud-lab/SKILL.md)（3 个附件文件）
+- [glycoengineering](scientific-skills/glycoengineering/SKILL.md)（1 个附件文件）
+- [gtars](scientific-skills/gtars/SKILL.md)（6 个附件文件）
+- [histolab](scientific-skills/histolab/SKILL.md)（5 个附件文件）
+- [hugging-science](scientific-skills/hugging-science/SKILL.md)（6 个附件文件）
+- [hypogenic](scientific-skills/hypogenic/SKILL.md)（1 个附件文件）
+- [hypothesis-generation](scientific-skills/hypothesis-generation/SKILL.md)（8 个附件文件）
+- [imaging-data-commons](scientific-skills/imaging-data-commons/SKILL.md)（10 个附件文件）
+- [infographics](scientific-skills/infographics/SKILL.md)（5 个附件文件）
+- [iso-13485-certification](scientific-skills/iso-13485-certification/SKILL.md)（8 个附件文件）
+- [labarchive-integration](scientific-skills/labarchive-integration/SKILL.md)（6 个附件文件）
+- [lamindb](scientific-skills/lamindb/SKILL.md)（6 个附件文件）
+- [latchbio-integration](scientific-skills/latchbio-integration/SKILL.md)（4 个附件文件）
+- [latex-posters](scientific-skills/latex-posters/SKILL.md)（12 个附件文件）
+- [literature-review](scientific-skills/literature-review/SKILL.md)（8 个附件文件）
+- [markdown-mermaid-writing](scientific-skills/markdown-mermaid-writing/SKILL.md)（36 个附件文件）
+- [market-research-reports](scientific-skills/market-research-reports/SKILL.md)（7 个附件文件）
+- [markitdown](scientific-skills/markitdown/SKILL.md)（8 个附件文件）
+- [matchms](scientific-skills/matchms/SKILL.md)（4 个附件文件）
+- [matlab](scientific-skills/matlab/SKILL.md)（8 个附件文件）
+- [matplotlib](scientific-skills/matplotlib/SKILL.md)（6 个附件文件）
+- [medchem](scientific-skills/medchem/SKILL.md)（3 个附件文件）
+- [modal](scientific-skills/modal/SKILL.md)（12 个附件文件）
+- [molecular-dynamics](scientific-skills/molecular-dynamics/SKILL.md)（1 个附件文件）
+- [molfeat](scientific-skills/molfeat/SKILL.md)（3 个附件文件）
+- [networkx](scientific-skills/networkx/SKILL.md)（5 个附件文件）
+- [neurokit2](scientific-skills/neurokit2/SKILL.md)（12 个附件文件）
+- [neuropixels-analysis](scientific-skills/neuropixels-analysis/SKILL.md)（17 个附件文件）
+- [omero-integration](scientific-skills/omero-integration/SKILL.md)（8 个附件文件）
+- [open-notebook](scientific-skills/open-notebook/SKILL.md)（8 个附件文件）
+- [opentrons-integration](scientific-skills/opentrons-integration/SKILL.md)（4 个附件文件）
+- [optimize-for-gpu](scientific-skills/optimize-for-gpu/SKILL.md)（12 个附件文件）
+- [pacsomatic](scientific-skills/pacsomatic/SKILL.md)（7 个附件文件）
+- [paper-lookup](scientific-skills/paper-lookup/SKILL.md)（10 个附件文件）
+- [paperzilla](scientific-skills/paperzilla/SKILL.md)
+- [parallel-web](scientific-skills/parallel-web/SKILL.md)（4 个附件文件）
+- [pathml](scientific-skills/pathml/SKILL.md)（6 个附件文件）
+- [pdf](scientific-skills/pdf/SKILL.md)（11 个附件文件）
+- [peer-review](scientific-skills/peer-review/SKILL.md)（4 个附件文件）
+- [pennylane](scientific-skills/pennylane/SKILL.md)（7 个附件文件）
+- [phylogenetics](scientific-skills/phylogenetics/SKILL.md)（2 个附件文件）
+- [polars](scientific-skills/polars/SKILL.md)（6 个附件文件）
+- [polars-bio](scientific-skills/polars-bio/SKILL.md)（6 个附件文件）
+- [pptx](scientific-skills/pptx/SKILL.md)（58 个附件文件）
+- [pptx-posters](scientific-skills/pptx-posters/SKILL.md)（7 个附件文件）
+- [primekg](scientific-skills/primekg/SKILL.md)（1 个附件文件）
+- [protocolsio-integration](scientific-skills/protocolsio-integration/SKILL.md)（6 个附件文件）
+- [pufferlib](scientific-skills/pufferlib/SKILL.md)（7 个附件文件）
+- [pydeseq2](scientific-skills/pydeseq2/SKILL.md)（3 个附件文件）
+- [pydicom](scientific-skills/pydicom/SKILL.md)（5 个附件文件）
+- [pyhealth](scientific-skills/pyhealth/SKILL.md)（7 个附件文件）
+- [pylabrobot](scientific-skills/pylabrobot/SKILL.md)（6 个附件文件）
+- [pymatgen](scientific-skills/pymatgen/SKILL.md)（8 个附件文件）
+- [pymc](scientific-skills/pymc/SKILL.md)（7 个附件文件）
+- [pymoo](scientific-skills/pymoo/SKILL.md)（10 个附件文件）
+- [pyopenms](scientific-skills/pyopenms/SKILL.md)（6 个附件文件）
+- [pysam](scientific-skills/pysam/SKILL.md)（4 个附件文件）
+- [pytdc](scientific-skills/pytdc/SKILL.md)（6 个附件文件）
+- [pytorch-lightning](scientific-skills/pytorch-lightning/SKILL.md)（10 个附件文件）
+- [pyzotero](scientific-skills/pyzotero/SKILL.md)（13 个附件文件）
+- [qiskit](scientific-skills/qiskit/SKILL.md)（8 个附件文件）
+- [qutip](scientific-skills/qutip/SKILL.md)（5 个附件文件）
+- [rdkit](scientific-skills/rdkit/SKILL.md)（6 个附件文件）
+- [research-grants](scientific-skills/research-grants/SKILL.md)（13 个附件文件）
+- [research-lookup](scientific-skills/research-lookup/SKILL.md)（7 个附件文件）
+- [rowan](scientific-skills/rowan/SKILL.md)
+- [scanpy](scientific-skills/scanpy/SKILL.md)（5 个附件文件）
+- [scholar-evaluation](scientific-skills/scholar-evaluation/SKILL.md)（4 个附件文件）
+- [scientific-brainstorming](scientific-skills/scientific-brainstorming/SKILL.md)（1 个附件文件）
+- [scientific-critical-thinking](scientific-skills/scientific-critical-thinking/SKILL.md)（8 个附件文件）
+- [scientific-schematics](scientific-skills/scientific-schematics/SKILL.md)（6 个附件文件）
+- [scientific-slides](scientific-skills/scientific-slides/SKILL.md)（18 个附件文件）
+- [scientific-visualization](scientific-skills/scientific-visualization/SKILL.md)（10 个附件文件）
+- [scientific-writing](scientific-skills/scientific-writing/SKILL.md)（12 个附件文件）
+- [scikit-bio](scientific-skills/scikit-bio/SKILL.md)（1 个附件文件）
+- [scikit-learn](scientific-skills/scikit-learn/SKILL.md)（8 个附件文件）
+- [scikit-survival](scientific-skills/scikit-survival/SKILL.md)（6 个附件文件）
+- [scvelo](scientific-skills/scvelo/SKILL.md)（2 个附件文件）
+- [scvi-tools](scientific-skills/scvi-tools/SKILL.md)（8 个附件文件）
+- [seaborn](scientific-skills/seaborn/SKILL.md)（3 个附件文件）
+- [shap](scientific-skills/shap/SKILL.md)（4 个附件文件）
+- [simpy](scientific-skills/simpy/SKILL.md)（7 个附件文件）
+- [stable-baselines3](scientific-skills/stable-baselines3/SKILL.md)（7 个附件文件）
+- [statistical-analysis](scientific-skills/statistical-analysis/SKILL.md)（6 个附件文件）
+- [statsmodels](scientific-skills/statsmodels/SKILL.md)（5 个附件文件）
+- [sympy](scientific-skills/sympy/SKILL.md)（5 个附件文件）
+- [tiledbvcf](scientific-skills/tiledbvcf/SKILL.md)
+- [timesfm-forecasting](scientific-skills/timesfm-forecasting/SKILL.md)（26 个附件文件）
+- [torch-geometric](scientific-skills/torch-geometric/SKILL.md)（6 个附件文件）
+- [torchdrug](scientific-skills/torchdrug/SKILL.md)（8 个附件文件）
+- [transformers](scientific-skills/transformers/SKILL.md)（5 个附件文件）
+- [treatment-plans](scientific-skills/treatment-plans/SKILL.md)（22 个附件文件）
+- [umap-learn](scientific-skills/umap-learn/SKILL.md)（1 个附件文件）
+- [usfiscaldata](scientific-skills/usfiscaldata/SKILL.md)（8 个附件文件）
+- [vaex](scientific-skills/vaex/SKILL.md)（6 个附件文件）
+- [venue-templates](scientific-skills/venue-templates/SKILL.md)（32 个附件文件）
+- [what-if-oracle](scientific-skills/what-if-oracle/SKILL.md)（1 个附件文件）
+- [xlsx](scientific-skills/xlsx/SKILL.md)（53 个附件文件）
+- [zarr-python](scientific-skills/zarr-python/SKILL.md)（1 个附件文件）

@@ -54,10 +54,10 @@ def run(protocol: protocol_api.ProtocolContext):
 ```
 
 **关键元素：**
-- 从 `opentrons` 导入 `protocol_api`
+- 导入 `protocol_api`，来源为 `opentrons`
 - 定义包含 protocolName、author、description、apiLevel 的 `metadata` dict
 - 可选的 `requirements` dict，用于机器人类型和 API 版本
-- 实现接收 `ProtocolContext` 作为参数的 `run()` 函数
+- 实现 `run()` 函数，并接收 `ProtocolContext` 作为参数
 - 所有协议逻辑都放在 `run()` 函数内
 
 ### 2. 加载硬件

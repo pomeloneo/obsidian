@@ -141,16 +141,16 @@ sns.pairplot(data=df, hue='species', corner=True)
 
 **用途：** 比较 discrete categories 间的 distributions 或 statistics
 
-**Categorical scatterplots：**
+**类别散点图：**
 - `stripplot()` - 带 jitter 的 points，显示所有 observations
 - `swarmplot()` - non-overlapping points（beeswarm algorithm）
 
-**Distribution comparisons：**
+**分布比较：**
 - `boxplot()` - quartiles 和 outliers
 - `violinplot()` - KDE + quartile information
 - `boxenplot()` - 适合 larger datasets 的增强 boxplot
 
-**Statistical estimates：**
+**统计估计：**
 - `barplot()` - mean/aggregate 和 confidence intervals
 - `pointplot()` - point estimates 和 connecting lines
 - `countplot()` - 每个 category 的 observations count
@@ -239,7 +239,7 @@ sns.clustermap(data, cmap='viridis',
                standard_scale=1, figsize=(10, 10))
 ```
 
-## Multi-Plot Grids
+## 多图网格
 
 Seaborn 提供 grid objects，用于创建 complex multi-panel figures：
 
@@ -275,18 +275,18 @@ g.plot_joint(sns.scatterplot)
 g.plot_marginals(sns.histplot)
 ```
 
-## Figure-Level vs Axes-Level Functions
+## Figure-level 与 axes-level functions
 
 理解这一区分对高效使用 seaborn 很关键：
 
-### Axes-Level Functions
+### Axes-level functions
 - 绘制到单个 matplotlib `Axes` object
 - 容易整合进 complex matplotlib figures
 - 接受 `ax=` 参数进行 precise placement
 - 返回 `Axes` object
-- Examples：`scatterplot`、`histplot`、`boxplot`、`regplot`、`heatmap`
+- 示例：`scatterplot`、`histplot`、`boxplot`、`regplot`、`heatmap`
 
-**When to use：**
+**何时使用：**
 - 构建 custom multi-plot layouts
 - 组合不同 plot types
 - 需要 matplotlib-level control
@@ -300,18 +300,18 @@ sns.boxplot(data=df, x='cat', y='y', ax=axes[1, 0])
 sns.kdeplot(data=df, x='x', y='y', ax=axes[1, 1])
 ```
 
-### Figure-Level Functions
+### Figure-level functions
 - 管理整个 figure，包括所有 subplots
 - 通过 `col` 和 `row` parameters 内置 faceting
 - 返回 `FacetGrid`、`JointGrid` 或 `PairGrid` objects
 - 使用 `height` 和 `aspect` 控制 sizing（per subplot）
 - 不能放入 existing figure
-- Examples：`relplot`、`displot`、`catplot`、`lmplot`、`jointplot`、`pairplot`
+- 示例：`relplot`、`displot`、`catplot`、`lmplot`、`jointplot`、`pairplot`
 
-**When to use：**
+**何时使用：**
 - Faceted visualizations（small multiples）
-- Quick exploratory analysis
-- Consistent multi-panel layouts
+- 快速 exploratory analysis
+- 一致的 multi-panel layouts
 - 不需要与其他 plot types 组合
 
 ```python
@@ -320,9 +320,9 @@ sns.relplot(data=df, x='x', y='y', col='category', row='group',
             hue='type', height=3, aspect=1.2)
 ```
 
-## Data Structure Requirements
+## 数据结构要求
 
-### Long-Form Data（首选）
+### Long-form data（首选）
 
 每个 variable 是一列，每个 observation 是一行。这种 "tidy" format 提供最大灵活性：
 
@@ -335,13 +335,13 @@ sns.relplot(data=df, x='x', y='y', col='category', row='group',
 3        2  treatment         13.1
 ```
 
-**Advantages：**
+**优点：**
 - 适用于所有 seaborn functions
 - 容易将 variables 重新映射到 visual properties
 - 支持任意 complexity
 - 对 DataFrame operations 自然
 
-### Wide-Form Data
+### Wide-form data
 
 Variables 分布在多列。适合简单 rectangular data：
 
@@ -352,22 +352,22 @@ Variables 分布在多列。适合简单 rectangular data：
 1      9.8       13.1
 ```
 
-**Use cases：**
-- Simple time series
+**使用场景：**
+- 简单 time series
 - Correlation matrices
 - Heatmaps
 - Array data 的 quick plots
 
-**Converting wide to long：**
+**从 wide 转换为 long：**
 ```python
 df_long = df.melt(var_name='condition', value_name='measurement')
 ```
 
-## Color Palettes
+## 调色板
 
 Seaborn 为不同 data types 提供精心设计的 color palettes：
 
-### Qualitative Palettes（Categorical Data）
+### Qualitative palettes（categorical data）
 
 通过 hue variation 区分类别：
 - `"deep"` - 默认，颜色鲜明
@@ -382,7 +382,7 @@ sns.set_palette("colorblind")
 sns.color_palette("Set2")
 ```
 
-### Sequential Palettes（Ordered Data）
+### Sequential palettes（ordered data）
 
 显示从 low 到 high values 的 progression：
 - `"rocket"`, `"mako"` - 宽 luminance range（适合 heatmaps）
@@ -394,7 +394,7 @@ sns.heatmap(data, cmap='rocket')
 sns.kdeplot(data=df, x='x', y='y', cmap='mako', fill=True)
 ```
 
-### Diverging Palettes（Centered Data）
+### Diverging palettes（centered data）
 
 强调相对 midpoint 的 deviations：
 - `"vlag"` - Blue to red
@@ -406,7 +406,7 @@ sns.kdeplot(data=df, x='x', y='y', cmap='mako', fill=True)
 sns.heatmap(correlation_matrix, cmap='vlag', center=0)
 ```
 
-### Custom Palettes
+### Custom palettes
 
 ```python
 # Create custom palette
@@ -419,9 +419,9 @@ palette = sns.light_palette("seagreen", as_cmap=True)
 palette = sns.diverging_palette(250, 10, as_cmap=True)
 ```
 
-## Theming and Aesthetics
+## 主题和美学
 
-### Set Theme
+### 设置主题
 
 `set_theme()` 控制整体外观：
 
@@ -433,7 +433,7 @@ sns.set_theme(style='whitegrid', palette='pastel', font='sans-serif')
 sns.set_theme()
 ```
 
-### Styles
+### 样式
 
 控制 background 和 grid 外观：
 - `"darkgrid"` - 灰色 background 和白色 grid（默认）
@@ -453,13 +453,13 @@ with sns.axes_style("white"):
     sns.scatterplot(data=df, x='x', y='y')
 ```
 
-### Contexts
+### 上下文
 
 为不同 use cases 缩放元素：
 - `"paper"` - 最小（默认）
 - `"notebook"` - 稍大
-- `"talk"` - Presentation slides
-- `"poster"` - Large format
+- `"talk"` - presentation slides
+- `"poster"` - large format
 
 ```python
 sns.set_context("talk", font_scale=1.2)
@@ -469,9 +469,9 @@ with sns.plotting_context("poster"):
     sns.barplot(data=df, x='category', y='value')
 ```
 
-## Best Practices
+## 最佳实践
 
-### 1. Data Preparation
+### 1. 数据准备
 
 始终使用结构良好且 column names 有意义的 DataFrames：
 
@@ -484,7 +484,7 @@ sns.scatterplot(data=df, x='bill', y='tip', hue='day')
 sns.scatterplot(x=x_array, y=y_array)  # Loses axis labels
 ```
 
-### 2. Choose the Right Plot Type
+### 2. 选择合适的 plot type
 
 **Continuous x, continuous y：** `scatterplot`, `lineplot`, `kdeplot`, `regplot`
 **Continuous x, categorical y：** `violinplot`, `boxplot`, `stripplot`, `swarmplot`
@@ -492,7 +492,7 @@ sns.scatterplot(x=x_array, y=y_array)  # Loses axis labels
 **Correlations/matrices：** `heatmap`, `clustermap`
 **Pairwise relationships：** `pairplot`, `jointplot`
 
-### 3. Use Figure-Level Functions for Faceting
+### 3. 使用 figure-level functions 进行 faceting
 
 ```python
 # Instead of manual subplot creation
@@ -501,7 +501,7 @@ sns.relplot(data=df, x='x', y='y', col='category', col_wrap=3)
 # Not: Creating subplots manually for simple faceting
 ```
 
-### 4. Leverage Semantic Mappings
+### 4. 利用 semantic mappings
 
 使用 `hue`、`size` 和 `style` 编码额外 dimensions：
 
@@ -512,7 +512,7 @@ sns.scatterplot(data=df, x='x', y='y',
                 style='type')         # Marker style by type
 ```
 
-### 5. Control Statistical Estimation
+### 5. 控制 statistical estimation
 
 许多 functions 会自动计算 statistics。理解并定制这些行为：
 
@@ -527,7 +527,7 @@ sns.barplot(data=df, x='category', y='value',
             errorbar=('ci', 95))  # Bootstrapped CI
 ```
 
-### 6. Combine with Matplotlib
+### 6. 与 Matplotlib 结合
 
 Seaborn 可与 matplotlib 无缝集成以进行 fine-tuning：
 
@@ -539,7 +539,7 @@ ax.axhline(y=0, color='r', linestyle='--')
 plt.tight_layout()
 ```
 
-### 7. Save High-Quality Figures
+### 7. 保存高质量 figures
 
 ```python
 fig = sns.relplot(data=df, x='x', y='y', col='group')
@@ -547,9 +547,9 @@ fig.savefig('figure.png', dpi=300, bbox_inches='tight')
 fig.savefig('figure.pdf')  # Vector format for publications
 ```
 
-## Common Patterns
+## 常见模式
 
-### Exploratory Data Analysis
+### 探索性数据分析
 
 ```python
 # Quick overview of all relationships
@@ -564,7 +564,7 @@ corr = df.corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm', center=0)
 ```
 
-### Publication-Quality Figures
+### Publication-quality figures（发表级图形）
 
 ```python
 sns.set_theme(style='ticks', context='paper', font_scale=1.1)
@@ -578,7 +578,7 @@ sns.despine(trim=True)
 g.savefig('figure.pdf', dpi=300, bbox_inches='tight')
 ```
 
-### Complex Multi-Panel Figures
+### Complex multi-panel figures（复杂多面板图形）
 
 ```python
 # Using matplotlib subplots with seaborn
@@ -593,7 +593,7 @@ sns.heatmap(df.pivot_table(values='y', index='x1', columns='x2'),
 plt.tight_layout()
 ```
 
-### Time Series with Confidence Bands
+### 带 confidence bands 的 time series
 
 ```python
 # Lineplot automatically aggregates and shows CI
@@ -607,25 +607,25 @@ g = sns.relplot(data=timeseries, x='date', y='measurement',
 g.set_axis_labels('Date', 'Measurement (units)')
 ```
 
-## Troubleshooting
+## 故障排查
 
-### Issue: Legend Outside Plot Area
+### 问题：legend 位于 plot area 外部
 
-Figure-level functions 默认将 legends 放在外部。移到内部：
+Figure-level functions 默认将 legends 放在外部。可将其移到内部：
 
 ```python
 g = sns.relplot(data=df, x='x', y='y', hue='category')
 g._legend.set_bbox_to_anchor((0.9, 0.5))  # Adjust position
 ```
 
-### Issue: Overlapping Labels
+### 问题：labels 重叠
 
 ```python
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 ```
 
-### Issue: Figure Too Small
+### 问题：figure 太小
 
 对于 figure-level functions：
 ```python
@@ -638,7 +638,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 sns.scatterplot(data=df, x='x', y='y', ax=ax)
 ```
 
-### Issue: Colors Not Distinct Enough
+### 问题：colors 区分度不足
 
 ```python
 # Use a different palette
@@ -649,7 +649,7 @@ palette = sns.color_palette("husl", n_colors=len(df['category'].unique()))
 sns.scatterplot(data=df, x='x', y='y', hue='category', palette=palette)
 ```
 
-### Issue: KDE Too Smooth or Jagged
+### 问题：KDE 过于平滑或锯齿明显
 
 ```python
 # Adjust bandwidth

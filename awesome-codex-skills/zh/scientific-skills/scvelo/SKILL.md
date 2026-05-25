@@ -19,7 +19,7 @@ scVelo 是 single-cell RNA-seq 数据中进行 RNA velocity 分析的领先 Pyth
 - GitHub: https://github.com/theislab/scvelo
 - 论文: Bergen et al. (2020) Nature Biotechnology. PMID: 32747759
 
-## 何时使用此 Skill
+## 何时使用此技能
 
 在以下情况使用 scVelo：
 
@@ -121,7 +121,7 @@ scv.tl.velocity(adata, mode='dynamical')
 scv.tl.velocity_graph(adata)
 ```
 
-### 5. Latent Time
+### 5. Latent time（潜在时间）
 
 Dynamical model 可计算共享 latent time（pseudotime）：
 
@@ -149,7 +149,7 @@ scv.pl.heatmap(
 )
 ```
 
-### 6. Driver Gene Analysis
+### 6. Driver gene 分析
 
 ```python
 # Identify genes with highest velocity fit
@@ -171,7 +171,7 @@ scv.pl.velocity(adata, ['Cpe', 'Gnao1', 'Ins2'],
                ncols=3, figsize=(16, 4))
 ```
 
-### 7. Velocity Arrows and Pseudotime
+### 7. Velocity arrows 和 pseudotime
 
 ```python
 # Arrow plot on UMAP
@@ -197,7 +197,7 @@ scv.tl.velocity_pseudotime(adata)
 scv.pl.scatter(adata, color='velocity_pseudotime', cmap='gnuplot')
 ```
 
-### 8. PAGA Trajectory Graph
+### 8. PAGA trajectory graph
 
 ```python
 # PAGA graph with velocity-informed transitions
@@ -313,9 +313,9 @@ def run_rna_velocity(adata, n_top_genes=2000, mode='dynamical', n_jobs=4):
 ## 其他资源
 
 - **scVelo 文档**: https://scvelo.readthedocs.io/
-- **Tutorial notebooks**: https://scvelo.readthedocs.io/tutorials/
+- **教程 notebooks**: https://scvelo.readthedocs.io/tutorials/
 - **GitHub**: https://github.com/theislab/scvelo
 - **论文**: Bergen V et al. (2020) Nature Biotechnology. PMID: 32747759
 - **velocyto** (preprocessing): http://velocyto.org/
-- **CellRank** (fate prediction, extends scVelo): https://cellrank.readthedocs.io/
-- **dynamo** (metabolic labeling alternative): https://dynamo-release.readthedocs.io/
+- **CellRank** (fate prediction，扩展 scVelo): https://cellrank.readthedocs.io/
+- **dynamo** (metabolic labeling 替代方案): https://dynamo-release.readthedocs.io/
