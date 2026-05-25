@@ -64,6 +64,16 @@ body:not(.is-mobile):not(.nav-action-center) .mod-sidedock .workspace-leaf-conte
   scale: 1 !important;
 }
 
+/* Obsidian Git source-control toolbar: keep commit-and-sync, push, pull, refresh only. */
+body:not(.is-mobile)
+  .workspace-leaf-content[data-type="git-view"]
+  .git-view
+  .nav-buttons-container
+  > :is(#commit-btn, #stage-all, #unstage-all, #layoutChange) {
+  display: none !important;
+  content-visibility: hidden !important;
+}
+
 body:not(.is-mobile) .workspace-leaf-content[data-type="git-view"] .tree-item-self .git-tools,
 body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree-item-self .git-tools {
   opacity: 1 !important;

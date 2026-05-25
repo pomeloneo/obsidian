@@ -7534,7 +7534,478 @@
         }
       ],
       "timestamp": "2026-05-25T10:31:17.701Z"
+    },
+    {
+      "id": "3d6fda67-1efa-49f5-bc47-6fcd64b85b59",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_TlssSiUXkUGEQQQisVV9ccOb",
+          "title": "Edit /Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css",
+          "status": "completed",
+          "kind": "edit",
+          "content": [
+            {
+              "type": "diff",
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css",
+              "newText": ".prompt-input-container:has(.cmdr-name-input-wrapper) {\n  display: flex !important;\n  align-items: center !important;\n  gap: 12px !important;\n}\n",
+              "oldText": ".prompt-input-container:has(.cmdr-name-input-wrapper) {\n  align-items: center !important;\n}\n"
+            },
+            {
+              "type": "diff",
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css",
+              "newText": ".prompt-input-container .cmdr-name-input-wrapper {\n  display: flex !important;\n  align-items: center !important;\n  gap: 12px !important;\n  width: 100% !important;\n  max-width: 100% !important;\n",
+              "oldText": ".prompt-input-container .cmdr-name-input-wrapper {\n  display: inline-flex !important;\n  align-items: center !important;\n  gap: 8px !important;\n  width: auto !important;\n  max-width: 100% !important;\n"
+            },
+            {
+              "type": "diff",
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css",
+              "newText": ".prompt-input-container .cmdr-name-input-wrapper .prompt-input {\n  flex: 1 1 auto !important;\n  width: 100% !important;\n  min-width: 0 !important;\n  max-width: none !important;\n  height: auto !important;\n  margin: 0 !important;\n  padding-inline-end: 8px !important;\n  line-height: normal !important;\n  align-self: center !important;\n}\n",
+              "oldText": ".prompt-input-container .cmdr-name-input-wrapper .prompt-input {\n  flex: 0 1 auto !important;\n  width: auto !important;\n  min-width: 18em !important;\n  max-width: calc(100vw - 280px) !important;\n  padding-inline-end: 8px !important;\n  field-sizing: content !important;\n}\n"
+            },
+            {
+              "type": "diff",
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css",
+              "newText": "  white-space: nowrap !important;\n  align-self: center !important;\n}\n",
+              "oldText": "  white-space: nowrap !important;\n}\n\n@supports not (field-sizing: content) {\n  .prompt-input-container .cmdr-name-input-wrapper .prompt-input {\n    width: min(32em, calc(100vw - 280px)) !important;\n  }\n}\n"
+            }
+          ],
+          "locations": [
+            {
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css"
+            }
+          ],
+          "rawInput": {
+            "call_id": "call_TlssSiUXkUGEQQQisVV9ccOb",
+            "turn_id": "019e5eb0-2d0b-7941-9355-edf54bf83620",
+            "auto_approved": true,
+            "changes": {
+              "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css": {
+                "type": "update",
+                "unified_diff": "@@ -3,3 +3,5 @@\n .prompt-input-container:has(.cmdr-name-input-wrapper) {\n+  display: flex !important;\n   align-items: center !important;\n+  gap: 12px !important;\n }\n@@ -11,6 +13,6 @@\n .prompt-input-container .cmdr-name-input-wrapper {\n-  display: inline-flex !important;\n+  display: flex !important;\n   align-items: center !important;\n-  gap: 8px !important;\n-  width: auto !important;\n+  gap: 12px !important;\n+  width: 100% !important;\n   max-width: 100% !important;\n@@ -20,8 +22,11 @@\n .prompt-input-container .cmdr-name-input-wrapper .prompt-input {\n-  flex: 0 1 auto !important;\n-  width: auto !important;\n-  min-width: 18em !important;\n-  max-width: calc(100vw - 280px) !important;\n+  flex: 1 1 auto !important;\n+  width: 100% !important;\n+  min-width: 0 !important;\n+  max-width: none !important;\n+  height: auto !important;\n+  margin: 0 !important;\n   padding-inline-end: 8px !important;\n-  field-sizing: content !important;\n+  line-height: normal !important;\n+  align-self: center !important;\n }\n@@ -34,8 +39,3 @@\n   white-space: nowrap !important;\n-}\n-\n-@supports not (field-sizing: content) {\n-  .prompt-input-container .cmdr-name-input-wrapper .prompt-input {\n-    width: min(32em, calc(100vw - 280px)) !important;\n-  }\n+  align-self: center !important;\n }\n",
+                "move_path": null
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:31:48.304Z"
+    },
+    {
+      "id": "454354d9-89b1-41d8-b9ac-eacd66e78c4d",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_FEYWY2eyO3rUWiW3xZ6tb2ZO",
+          "title": "Read commander-name-modal-fix.css",
+          "status": "completed",
+          "kind": "read",
+          "content": [],
+          "locations": [
+            {
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css"
+            }
+          ],
+          "rawInput": {
+            "call_id": "call_FEYWY2eyO3rUWiW3xZ6tb2ZO",
+            "process_id": "95791",
+            "turn_id": "019e5eb0-2d0b-7941-9355-edf54bf83620",
+            "started_at_ms": 1779705094289,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "sed -n '1,220p' .obsidian_work/snippets/commander-name-modal-fix.css"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "read",
+                "cmd": "sed -n '1,220p' .obsidian_work/snippets/commander-name-modal-fix.css",
+                "name": "commander-name-modal-fix.css",
+                "path": ".obsidian_work/snippets/commander-name-modal-fix.css"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:31:48.304Z"
+    },
+    {
+      "id": "6999362e-0dae-4968-93af-5b691160f801",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_EA8rrbWh8oC5KLFuvDG0UjTz",
+          "title": "git diff -- .obsidian_work/snippets/commander-name-modal-fix.css .obsidian_work/appearance.json | sed -n '1,220p'",
+          "status": "completed",
+          "kind": "execute",
+          "content": [],
+          "rawInput": {
+            "call_id": "call_EA8rrbWh8oC5KLFuvDG0UjTz",
+            "process_id": "71598",
+            "turn_id": "019e5eb0-2d0b-7941-9355-edf54bf83620",
+            "started_at_ms": 1779705094357,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "git diff -- .obsidian_work/snippets/commander-name-modal-fix.css .obsidian_work/appearance.json | sed -n '1,220p'"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "unknown",
+                "cmd": "git diff -- .obsidian_work/snippets/commander-name-modal-fix.css .obsidian_work/appearance.json | sed -n '1,220p'"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        },
+        {
+          "type": "text",
+          "text": "已改回右侧布局，并修了上下居中。\n\n根因有两个：\n\n- Commander 插件源码会把这个弹窗的 `.prompt-input-container` 强行设成 `display: block`，破坏了主题原本的垂直居中。\n- 我上一版把输入 wrapper 改成自然宽度，导致 `保存` 跟着文字跑到了中间。\n\n现在 [commander-name-modal-fix.css](</Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/commander-name-modal-fix.css:1>) 里改成：\n\n- `.prompt-input-container` 强制回到 `display: flex`\n- 输入框占满剩余空间\n- `保存` 固定在右侧\n- 清空按钮继续隐藏，避免覆盖保存按钮\n\n刷新 snippet 或重启 Obsidian 后看效果。"
+        }
+      ],
+      "timestamp": "2026-05-25T10:31:48.304Z"
+    },
+    {
+      "id": "ac4ca161-c810-449f-9270-b2ef2d6ec26b",
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "只保留红框的，其他都隐藏"
+        },
+        {
+          "type": "image",
+          "data": "iVBORw0KGgoAAAANSUhEUgAABCYAAAHICAYAAACS3etqAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAEJqADAAQAAAABAAAByAAAAADT4l1GAABAAElEQVR4Ae3de5AlVZ0n8NPQNHZD2zy6kUZoGkWhVUBegrqLgOvKzCpOxI6G4YQxGqPjGMb8sRsT+8fEGM7sRkwYG7N/68yOIWrEjOI/6qgr64LACMq0grzkpTwbpHk1TXfT0C+2fpfI6qzbVbdunTy36ubNT0ZU33sz85zM/Jzbdau+dfKcZevXr38lWQgQIECAAAECBAgQaK3Apk2b0tatW9PevXtnvYZly5YNXL9r165Dts9V5pAdrSBAgEBDgcMallecAAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtIJjIplOQAAECBAgQIECAAAECBAgQaCogmGgqqDwBAgQIECBAgAABAgQIECCQLSCYyKZTkAABAgQIECBAgAABAgQIEGgqIJhoKqg8AQIECBAgQIAAAQIECBAgkC0gmMimU5AAAQIECBAgQIAAAQIECBBoKiCYaCqoPAECBAgQIECAAAECBAgQIJAtsDy7pIJDCWzcuHGo/exEgAABAgQIECBAgAABAgS6KKDHRBdb3TUTIECAAAECBAgQIECAAIExEdBjYsQN8fDDD4/4CKonQIAAAQIECBDousCmTZu6TuD6CRBosYAeEy1uPKdOgAABAgQIECBAgAABAgTaLiCYaHsLOn8CBAgQIECAAAECBAgQINBiAcFEixvPqRMgQIAAAQIECBAgQIAAgbYLCCba3oLOnwABAgQIECBAgAABAgQItFhAMNHixnPqBAgQIECAAAECBAgQIECg7QKCiba3oPMnQIAAAQIECBAgQIAAAQItFhBMtLjxnDoBAgQIECBAgAABAgQIEGi7gGCi7S3o/AkQIECAAAECBAgQIECAQIsFBBMtbjynToAAAQIECBAgQIAAAQIE2i4gmGh7Czp/AgQIECBAgAABAgQIECDQYgHBRIsbz6kTIECAAAECBAgQIECAAIG2Cwgm2t6Czp8AAQIECBAgQIAAAQIECLRYQDDR4sZz6gQIECBAgAABAgQIECBAoO0Cgom2t6DzJ0CAAAECBAgQIECAAAECLRYQTLS48Zw6AQIECBAgQIAAAQIECBBou8Dytl9AF85/2bJl6cgjj0wrVqxI8dwyt8Arr7ySdu/enfbu3Tv3TrYQIECAAAECBAgQIECAwNgICCbGpinmPpHVq1cLJObmmbElgptVq1alCCh27NjRe5yxgxcECBAgQIAAAQIECBAgMFYCbuUYq+Y49GSOOOIIocShLPOuqXqZzLujHQgQIECAAAECBAgQIEBgSQUEE0vKP//BV65cOf9O9phVIG59sRAgQIAAAQIECBAgQIDAeAsIJsa7fZwdAQIECBAgQIAAAQIECBCYaAHBxJg37549e8b8DMf39GIQTAsBAgQIECBAgAABAgQIjLeAYGK82ye9/PLLBnDMaKMY/NLMHBlwihAgQIAAAQIECBAgQGCRBczKscjgCz1c/IL9wgsvpBgEM8abMF3oYMHwil4mEehYCBAgQIAAAQIECBAgQGD8BQQT499GvTOMv/7rAdCSxnKaBAgQIECAAAECBAgQIDC0gFs5hqayIwECBAgQIECAAAECBAgQIFBaQDBRWlR9BAgQIECAAAECBAgQIECAwNACgomhqexIgAABAgQIECBAgAABAgQIlBYQTJQWVR8BAgQIECBAgAABAgQIECAwtIBgYmgqOxIgQIAAAQIECBAgQIAAAQKlBQQTpUXVR4AAAQIECBAgQIAAAQIECAwtIJgYmsqOBAgQIECAAAECBAgQIECAQGkBwURpUfURIECAAAECBAgQIECAAAECQwsIJoamsiMBAgQIECBAgAABAgQIECBQWkAwUVpUfQQIECBAgAABAgQIECBAgMDQAoKJoansSIAAAQIECBAgQIAAAQIECJQWEEyUFlUfAQIECBAgQIAAAQIECBAgMLSAYGJoKjsSIECAAAECBAgQIECAAAECpQUEE6VF1UeAAAECBAgQIECAAAECBAgMLSCYGJrKjgQIECBAgAABAgQIECBAgEBpgeWlK1RfewRWL1+e3r/u+HT52uPTaUetSutWHJGOmlpnmV9g17596ak9e9LDu3an//fMs+map55Ju/bvn7+gPQgQIECAwCILdOHz3ufyIr+pHI4AAQKFBZatX7/+lcJ1qm7MBdauWJE+ferJ6SMnnZhec/jhY3627Ti93VOhxLce/136349sSc/t3duOk3aWBAgQIDDRAl3+vO/i5/KmTZvS1q1b0945fg5ZtmzZrO/3av2uXbsO2V5tO2SDFQQIECgsIJgoDDru1V269rj0v956ZlolkBhJU+2Y6knxX+66J9303PMjqV+lBAgQIEBgGAGf968qdelzWTAxzP8M+xAgMK4CxpgY15YZwXl9csPr05fOfqtQYgS2VZXRXfYf335W+vjJJ1WrPBIgQIAAgUUV8Hl/kNvn8kELzwgQIDDOAoKJcW6dguf2wdetS//t9DcUrFFVgwT+8s1vTP/phHWDdrGNAAECBAgUF/B5Pzupz+XZXawlQIDAuAgIJsalJUZ4Hm+aGtjyf07dvmFZXIG/e9uZ6bRVKxf3oI5GgAABAp0V8Hk/uOl9Lg/2sZUAAQJLKWAKhqXUX6Rj//lppy7SkRymX+DP33Bq+q933du/2msCBIYUmITZBJZitoA2uy2F15Bvx7Hfzef9/E3kc3l+I3sQIEBgKQQMfrkU6ot4zOOnpgD913dflIyqvIjotUO98sor6eJ//Xl6YWpQTAsBAsMLTPJsAqOcLWAS3UbpNfw7cvz39Hk/XBtN8ueywS+Hew/YiwCB8RTQY2I826XYWf3+1DgH84US1z3zbPrK1DSXD0xNE7Vj3/5ix57kilYvPzy96aijetOuXrr2+DkvNex/f2p8j29OTSVqIUBgOIFJn01g5dSsSJ/YcHL6z1NTNpecxWdS3UblNdy7sT17df3z3udye96rzpQAAQKzCRhjYjaVCVp3xdQvxYOWnzz9bPrcHb9Ot25/QSgxCKpvWwQ4YfbZKbsbnnmub+vMl793wtqZK7wiQGBOgS7NJlBytoAuuJX0mvMN2OINXf+897nc4jevUydAgMCUgGBiwt8GZ0wNfDlo+YdHtwzabNsQAl9+5LGBe5159NEDt9tIgMCrAl2dTaDpbAFdc2vqNan/33zeH2xZn8sHLTwjQIBAWwQEE21pqczzPGr54Lt17t+5K7NmxSqBh3a9WD2d9XHl4f6bzQpjJYGaQNdnE8idLaCrbrletbfcxD31eX+wSX0uH7TwjAABAm0R8BtTW1pqROf54n5jSjSl3T7PwJZHHOa/WVNj5SdfwGwCKcVsAQtduuyW47VQ30nav0uf9z6XJ+md61oIEOiKgN+YutLSrpMAAQJjKhCzCfyHdXMPIjump138tK5Ytza9dp5ebvWDdt1toV51O88JECBAgACB8RIY3M9/vM7V2RAgQIDABApM+mwCo5otYFLdRuU1gf91XBIBAgQIEJgYAT0mJqYpXQgBAgTaKTDpswmMaraASXUblVc7/3c4awIECBAg0A0BwUQ32tlVEiBAYGwFujSbQMnZArrgVtJrbP8DODECBAgQIEDAdKHeAwQIECCwtAJdmk2g5GwBXXAr6bW073JHJ0CAAAECBAYJ6DExSMc2AgQIEFhygUmaTWAxZwuYBLfF9FryN7oTIECAAAECHRYQTHS48V06AQIECBAgQIAAAQIECBBYagHBxFK3gOMTIECAAAECBAgQIECAAIEOCwgmOtz4Lp0AAQIECBAgQIAAAQIECCy1gGBiqVvA8QkQIECAAAECBAgQIECAQIcFBBMdbnyXToAAAQIECBAgQIAAAQIEllpAMLHULeD4BAgQIECAAAECBAgQIECgwwKCiQ43vksnQIAAAQIECBAgQIAAAQJLLSCYWOoWcHwCBAgQIECAAAECBAgQINBhAcFEhxvfpRMgQIAAAQIECBAgQIAAgaUWEEwsdQs4PgECBAgQIECAAAECBAgQ6LCAYKLDje/SCRAgQIAAAQIECBAgQIDAUgsIJpa6BRyfAAECBAgQIECAAAECBAh0WEAw0eHGd+kECBAgQIAAAQIECBAgQGCpBQQTS90Cjk+AAAECBAgQIECAAAECBDosIJjocOO7dAIECBAgQIAAAQIECBAgsNQCgomlbgHHJ0CAAAECBAgQIECAAAECHRYQTHS48V06AQIECBAgQIAAAQIECBBYagHBxFK3gOMTIECAAAECBAgQIECAAIEOCwgmOtz4Lp0AAQIECBAgQIAAAQIECCy1gGBiqVvA8QkQIECAAAECBAgQIECAQIcFBBMdbnyXToAAAQIECBAgQIAAAQIEllpAMLHULeD4BAgQIECAAAECBAgQIECgwwKCiQ43vksnQIAAAQIECBAgQIAAAQJLLSCYWOoWcHwCBAgQIECAAAECBAgQINBhgeUdvnaXPqECJ598cjrppJPSsccem1atWtW7yhdffDFt27YtPfHEE2nLli0TeuUuaxgB74+ZSjxmenhFgECewGGHHZaWLVuW9u/fn1eBUgQIECDQaQHBRKebf3Iu/sQTT0wXXHBBOvvss9ORRx458MJefvnldMcdd6Rf/OIX6cknnxy4r42TIeD9MbMdecz0mOvVWR87Lz37wDPpic2PzrVLp9afdtppvet96KGHOnXdLnZ2geXLl6d9+/alU045Ja1ZsyatXr06PffccykCivhs3b17d3rppZdmL2wtAQIECBDoExBM9IF42S6BCCHe9773pQsvvHDoE48ysX98bd68Of34xz9OEVZYJk/A+2Nmm/KY6THo1Xv++++lN33orb1dHvjeXemGz/9o0O4Tvy1CiU984hO967zqqquScGLim3zOCzzqqKPS3r1708UXX5xe97rXpdNPPz295jWv6X2ORo+JFStWpEcffTQdOHAg3X777WnXrl3pvvvum7M+GwgQIECAQAgIJrwPWisQPyh/6EMf6t2yUV3EM888k37961/3fmh+6qmn0s6dO3ubjj766HTCCSekKPOWt7wlrV27trc+won4oeq73/2uH7QrxAl59P6Y2ZA8ZnoMenXen71rOpSI/d505dvSjsdfSLd++eZBxSZ6W3VbXFxk/flEX7SLO0QggojzzjsvnXrqqSl6XkUQUS2vvPJKiq9YNmzY0HuM3hRbt25NGzduTDfddFOvh4VeFD0a/xAgQIBAn4Bgog/Ey3YIbNq0KX30ox+dPtkIJK6//vp05513Tq+rP4mAIr4efPDBdO2116azzjorXXrppb2AIsaiiL8EfvOb30z33HNPvZjnLRXw/pjZcDxmegx6FaHEeZ991yG7VOu6HE4cgjJhK97znvf0ftGOz5L6sn79+nTRRRfN+CW8vn0hz2Oso/76F1J+qfaNACIC/Q9/+MO9YCp6TezZsycdfvjhvdsid+zY0etFET0pomfWOeec0zvVCC9izKf4ev3rX9+79ggqoheFhQABAgQI1AUEE3UNz1shEH/5rYcSv/zlL9P3vve9BZ17BBjxdeWVV6bzzz+/Vzbq1EX5IGM4t7G7tvfHwTaMZzxmegx6NVcoUZURTlQSk/cYPekuv/zy3oVF0H3XXXdNX2SEEueee+7066ZPojdf9OxryxIhRAQMV1xxRVq3bl3vlo0IFm644Yb07LPP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+Npjj6fP3H5XihlOur7smDL41K/uTN/Y8kTXKVw/AQIExlpAMDHWzePkCBAgQIAAAQILF7hxapDHD9zyyxSDPXZ1iWu/csrgpufMwtHV94DrJkCgPQKmC21PWzlTAgQIECBAgMDQAk++vCd9eqrnxDuOWZPeceyadPZrV6dTVq5M61YckY5aPlk/AkbvkKemxo+IcTZu374jbX5+e4ppcy0ECBAg0A6ByfpUaoe5syRAgAABAgQILJpA/ILul/RF43YgAgQIEMgQcCtHBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIaAYCIDTRECBAgQIECAAAECBAgQIECgjIBgooyjWggQIECAAAECBAgQIECAAIEMAcFEBpoiBAgQIECAAAECBAgQIECAQBkBwUQZz4fBUQAABz1JREFUR7UQIECAAAECBAgQIECAAAECGQKCiQw0RQgQIECAAAECBAgQIECAAIEyAoKJMo5qIUCAAAECBAgQIECAAAECBDIEBBMZaIoQIECAAAECBAgQIECAAAECZQQEE2Uc1UKAAAECBAgQIECAAAECBAhkCAgmMtAUIUCAAAECBAgQIECAAAECBMoICCbKOKqFAAECBAgQIECAAAECBAgQyBAQTGSgKUKAAAECBAgQIECAAAECBAiUERBMlHFUCwECBAgQIECAAAECBAgQIJAhIJjIQFOEAAECBAgQIECAAAECBAgQKCMgmCjjqBYCBAgQIECAAAECBAgQIEAgQ0AwkYGmCAECBAgQIECAAAECBAgQIFBGQDBRxlEtBAgQIECAAAECBAgQIECAQIbA8owyihAgQIAAAQIECBBohcBpp52WTj311N65PvLII+mhhx5qxXk7SQIECHRJQDDRpdZ2rQQIECBAgACBDgl88pOfTBs3bpxxxQ8//HD66le/OmOdFwQIECCwtAJu5Vhaf0cnQIAAAQIECBAYgcCll156SCgRh4mgIgILCwECBAiMj4BgYnzawpkQIECAAAECBAgUErjssst6NUUPiauuuip94QtfSPE8lggn4hYPCwECBAiMh4BgYjzawVkQIECAAAECBAgUEojeEtUSY0pU40pcf/311WqPBAgQIDBGAsaYGKPGcCoECBAgQIAAAQLDC8w2sGWsq3pLRE31MKIKKGL9Jz7xifSTn/ykt73qPRGDZNb3j/0sBAgQIDB6gWXr169/ZfSHcQQCBAgQIECAAAEC5QSiV0Q9gJit5ip4qG/LLVevYxyfb9q0KW3dujXt3bt31tNbtmzZwPW7du06ZPtcZQ7Z0QoCBAg0FDh89erVf92wDsUJECBAgAABAgQILJpAk3ChGmei6iUx20lX26p9Z9tn3NatW7cuRbhw4MCBWU9trpChWj9boFFtm7VCKwkQIFBQwK0cBTFVRYAAAQIECBAgMHqBek+JGNgylrgNo1oeeeSR6XElqnX1x7hdI/aJMhFCVLdvxOuq7nis1tfLek6AAAEC5QUEE+VN1UiAAAECBAgQIDAigao3Q1Qft2pU40ZUj/2HPe6449IJJ5zQW/3UU0+l5557rvc89o+vevhQ1VGFE3Gsal1/vV4TIECAQDkBwUQ5SzURIECAAAECBAgsokC9t0P/YSOQeP/735/OPPPMGZvuvffedM0110wHFDM2ekGAAAECSyJgutAlYXdQAgQIECBAgACBHIF6D4aNGzf2bsXorydCiT/5kz85JJSI/SKoiG2xT//SP3ZF/Vj9+3pNgAABAuUEBBPlLNVEgAABAgQIECCwCALVuBJxqJj2s357R6yLnhJHH310PO3divGd73wnxVcVNMS22Ke+RB3VLRyxPm4TsRAgQIDA4ggIJhbH2VEIECBAgAABAgQKCUTAUA8OoqdDtURPiOr2jdgvQozbbrut9xXPq3Ai9qn3mqgPnjnbNKNV/R4JECBAoLyAYKK8qRoJECBAgAABAgRGLBCDVs42nWc10GUc/vbbbz/kLOrr6vtWvSWizvqAmIdUYAUBAgQIFBcQTBQnVSEBAgQIECBAgMBiCsRYE02X2UKOpnUqT4AAAQLDCQgmhnOyFwECBAgQIECAwBgJxO0bVSBRv60jpgStlnPOOad6Ov1YX1fft9oh6qzfGlKt90iAAAECoxM4fPXq1X89uurVTIAAAQIECBAgQKCsQAQH1a0XUfMNN9yQnn/++d5Bdu/endavX5/Wrl2bjj322F54sWzZst66K664YnqgzJg2dPPmzdMntn379vT2t7+99zoGwnzkkUem65zeaYyfrFu3Lu3atSsdOHBg1rMMg9mWav3evXsP2VxtO2SDFQQIECgsoMdEYVDVESBAgAABAgQIjFagHkpEb4lqQMvqqNdcc03auXNn72WEDH/wB3/Q+6pm74htsU99qQbKrNbFbB8WAgQIEFgcAcHE4jg7CgECBAgQIECAQAGBKlyIquaaPeO5555LX/nKV1L0iuhfYl1si336lwgn6mNN1I/Vv6/XBAgQIFBOYHm5qtREgAABAgQIECBAYDwEInj453/+596UoNXsGzGmxGyBRP2MI5zYWGAwzXqdnhMgQIDAYAHBxGAfWwkQIECAAAECBMZIoH7bRnVLR4wHEUuMPRHb43W1XwQRs4UR0Rvi1FNPnb6yqo6qzthQ1TG9kycECBAgMBIBwcRIWFVKgAABAgQIECAwKoG4haMKEKrH6lhVb4e5bvOI/foHz6zK1h+jvIUAAQIEFkfArByL4+woBAgQIECAAAEChQSqcSAGjQFRbav2rQ49bChx/fXXV0Va8WhWjlY0k5MkQGAOAT0m5oCxmgABAgQIECBAYHwFIjiIrwgaqtsw4taLevAQvSlin/pS72Fx1VVX9W7XqN/WUb8NpF7OcwIECBAYncD/B4D5HceQR1DdAAAAAElFTkSuQmCC",
+          "mimeType": "image/png"
+        }
+      ],
+      "timestamp": "2026-05-25T10:32:58.313Z"
+    },
+    {
+      "id": "8ab4a1ef-dfe9-48fa-8223-ccbfa3665492",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "我会直接改 Git 面板那一排 toolbar 的 CSS，不动 Commander。先确认这些按钮在 Obsidian Git 插件里对应的 aria-label / 图标顺序，尽量用稳定选择器隐藏，而不是只凭截图乱写 nth-child。"
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:10.312Z"
+    },
+    {
+      "id": "8b384d6f-2ac3-424d-b1fb-cd5f8daf9684",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_zZNIMAuW0xZoEqOiJVIaFZlK",
+          "title": "Search git-view|nav-action|view-action|refresh|sync|pull|push|stage|unstage|commit|source control|Source Control|upload|download|list|check|plus|minus in main.js",
+          "status": "completed",
+          "kind": "search",
+          "content": [],
+          "rawInput": {
+            "call_id": "call_zZNIMAuW0xZoEqOiJVIaFZlK",
+            "process_id": "30277",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705197170,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "rg -n \"git-view|nav-action|view-action|refresh|sync|pull|push|stage|unstage|commit|source control|Source Control|upload|download|list|check|plus|minus\" .obsidian_work/plugins/obsidian-git/main.js .obsidian_work/plugins/obsidian-git/styles.css .obsidian_work/plugins/obsidian-git/data.json"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "search",
+                "cmd": "rg -n 'git-view|nav-action|view-action|refresh|sync|pull|push|stage|unstage|commit|source control|Source Control|upload|download|list|check|plus|minus' .obsidian_work/plugins/obsidian-git/main.js .obsidian_work/plugins/obsidian-git/styles.css .obsidian_work/plugins/obsidian-git/data.json",
+                "query": "git-view|nav-action|view-action|refresh|sync|pull|push|stage|unstage|commit|source control|Source Control|upload|download|list|check|plus|minus",
+                "path": "main.js"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:17.189Z"
+    },
+    {
+      "id": "3187e0f6-3d70-4c05-bf40-1a9eeba3d474",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_Zc9egEsSkVtjUqM5ivjlfpsb",
+          "title": "Read always-show-actions.css",
+          "status": "completed",
+          "kind": "read",
+          "content": [],
+          "locations": [
+            {
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css"
+            }
+          ],
+          "rawInput": {
+            "call_id": "call_Zc9egEsSkVtjUqM5ivjlfpsb",
+            "process_id": "66667",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705197254,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "sed -n '1,260p' .obsidian_work/snippets/always-show-actions.css"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "read",
+                "cmd": "sed -n '1,260p' .obsidian_work/snippets/always-show-actions.css",
+                "name": "always-show-actions.css",
+                "path": ".obsidian_work/snippets/always-show-actions.css"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:17.259Z"
+    },
+    {
+      "id": "02d14fc5-f9aa-4e48-b94f-f73e46900c09",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_xXfn9yh8IBCYZlgWYFlH95nz",
+          "title": "cat .obsidian_work/plugins/obsidian-git/manifest.json 2>/dev/null; printf '\\n--- data ---\\n'; cat .obsidian_work/plugins/obsidian-git/data.json 2>/dev/null | sed -n '1,220p'",
+          "status": "completed",
+          "kind": "execute",
+          "content": [],
+          "rawInput": {
+            "call_id": "call_xXfn9yh8IBCYZlgWYFlH95nz",
+            "process_id": "76894",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705197262,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "cat .obsidian_work/plugins/obsidian-git/manifest.json 2>/dev/null; printf '\\n--- data ---\\n'; cat .obsidian_work/plugins/obsidian-git/data.json 2>/dev/null | sed -n '1,220p'"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "unknown",
+                "cmd": "cat .obsidian_work/plugins/obsidian-git/manifest.json 2>/dev/null; printf '\\n--- data ---\\n'; cat .obsidian_work/plugins/obsidian-git/data.json 2>/dev/null | sed -n '1,220p'"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        },
+        {
+          "type": "text",
+          "text": "这排是 Obsidian Git 面板的 `nav-buttons-container`。截图里保留的是第 1、5、6、8 个按钮；我要在现有 `always-show-actions.css` 里加一个只针对 `git-view` 的规则，把第 2、3、4、7 个隐藏。"
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:17.279Z"
+    },
+    {
+      "id": "a778b815-94a6-40ef-8dcc-06f1f503a62a",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_Q8L7p7Rs7ssfQXoSInJlwgyv",
+          "title": "Read styles.css",
+          "status": "completed",
+          "kind": "read",
+          "content": [],
+          "locations": [
+            {
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/plugins/obsidian-git/styles.css"
+            }
+          ],
+          "rawInput": {
+            "call_id": "call_Q8L7p7Rs7ssfQXoSInJlwgyv",
+            "process_id": "16316",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705210073,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "sed -n '60,95p' .obsidian_work/plugins/obsidian-git/styles.css"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "read",
+                "cmd": "sed -n '60,95p' .obsidian_work/plugins/obsidian-git/styles.css",
+                "name": "styles.css",
+                "path": ".obsidian_work/plugins/obsidian-git/styles.css"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:30.081Z"
+    },
+    {
+      "id": "78a87727-94eb-474f-a423-15253692ab14",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_2thHShaCeITRhedizur3sD0m",
+          "title": "python3 - <<'PY'\nfrom pathlib import Path\ntext = Path('.obsidian_work/plugins/obsidian-git/main.js').read_text(encoding='utf-8', errors='ignore')\nfor pat in ['commit-and-sync', 'stage-all', 'unstage-all', 'push', 'pull', 'refresh', 'Source Control', 'Git: Refresh', 'Git: Push', 'Git: Pull', 'Git: Commit', 'Git: Stage', 'Git: Unstage']:\n    print('\\n###', pat)\n    i = text.find(pat)\n    if i == -1:\n        print('not found')\n    else:\n        print(text[max(0, i-1200):min(len(text), i+1600)])\nPY",
+          "status": "completed",
+          "kind": "execute",
+          "content": [],
+          "rawInput": {
+            "call_id": "call_2thHShaCeITRhedizur3sD0m",
+            "process_id": "90622",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705210162,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "python3 - <<'PY'\nfrom pathlib import Path\ntext = Path('.obsidian_work/plugins/obsidian-git/main.js').read_text(encoding='utf-8', errors='ignore')\nfor pat in ['commit-and-sync', 'stage-all', 'unstage-all', 'push', 'pull', 'refresh', 'Source Control', 'Git: Refresh', 'Git: Push', 'Git: Pull', 'Git: Commit', 'Git: Stage', 'Git: Unstage']:\n    print('\\n###', pat)\n    i = text.find(pat)\n    if i == -1:\n        print('not found')\n    else:\n        print(text[max(0, i-1200):min(len(text), i+1600)])\nPY"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "unknown",
+                "cmd": "python3 - <<'PY'\nfrom pathlib import Path\ntext = Path('.obsidian_work/plugins/obsidian-git/main.js').read_text(encoding='utf-8', errors='ignore')\nfor pat in ['commit-and-sync', 'stage-all', 'unstage-all', 'push', 'pull', 'refresh', 'Source Control', 'Git: Refresh', 'Git: Push', 'Git: Pull', 'Git: Commit', 'Git: Stage', 'Git: Unstage']:\n    print('\\n###', pat)\n    i = text.find(pat)\n    if i == -1:\n        print('not found')\n    else:\n        print(text[max(0, i-1200):min(len(text), i+1600)])\nPY"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:30.165Z"
+    },
+    {
+      "id": "2f253d84-3342-4e46-b78e-b4926caa9bf3",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_AT4t1AKRvvBjTR3OVM3DqfxS",
+          "title": "Edit /Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css",
+          "status": "completed",
+          "kind": "edit",
+          "content": [
+            {
+              "type": "diff",
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css",
+              "newText": "\n/* Obsidian Git source-control toolbar: keep commit-and-sync, push, pull, refresh only. */\nbody:not(.is-mobile)\n  .workspace-leaf-content[data-type=\"git-view\"]\n  .git-view\n  .nav-buttons-container\n  > :is(#commit-btn, #stage-all, #unstage-all, #layoutChange) {\n  display: none !important;\n  content-visibility: hidden !important;\n}\n\nbody:not(.is-mobile) .workspace-leaf-content[data-type=\"git-view\"] .tree-item-self .git-tools,\n",
+              "oldText": "\nbody:not(.is-mobile) .workspace-leaf-content[data-type=\"git-view\"] .tree-item-self .git-tools,\n"
+            }
+          ],
+          "locations": [
+            {
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css"
+            }
+          ],
+          "rawInput": {
+            "call_id": "call_AT4t1AKRvvBjTR3OVM3DqfxS",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "auto_approved": true,
+            "changes": {
+              "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css": {
+                "type": "update",
+                "unified_diff": "@@ -66,2 +66,12 @@\n \n+/* Obsidian Git source-control toolbar: keep commit-and-sync, push, pull, refresh only. */\n+body:not(.is-mobile)\n+  .workspace-leaf-content[data-type=\"git-view\"]\n+  .git-view\n+  .nav-buttons-container\n+  > :is(#commit-btn, #stage-all, #unstage-all, #layoutChange) {\n+  display: none !important;\n+  content-visibility: hidden !important;\n+}\n+\n body:not(.is-mobile) .workspace-leaf-content[data-type=\"git-view\"] .tree-item-self .git-tools,\n",
+                "move_path": null
+              }
+            }
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:42.132Z"
+    },
+    {
+      "id": "4f27920b-d829-4b1b-81bb-af81495347ab",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_B2PZFWNqOEzCG7CQilZNWLOW",
+          "title": "Read always-show-actions.css",
+          "status": "completed",
+          "kind": "read",
+          "content": [],
+          "locations": [
+            {
+              "path": "/Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css"
+            }
+          ],
+          "rawInput": {
+            "call_id": "call_B2PZFWNqOEzCG7CQilZNWLOW",
+            "process_id": "85218",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705228110,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "sed -n '1,105p' .obsidian_work/snippets/always-show-actions.css"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "read",
+                "cmd": "sed -n '1,105p' .obsidian_work/snippets/always-show-actions.css",
+                "name": "always-show-actions.css",
+                "path": ".obsidian_work/snippets/always-show-actions.css"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:48.115Z"
+    },
+    {
+      "id": "a6bc1099-6b72-4130-9841-d668dc64a991",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "tool_call",
+          "toolCallId": "call_xWOrj8N9Mp3Fpb5SaC7vQlzU",
+          "title": "git diff -- .obsidian_work/snippets/always-show-actions.css | sed -n '1,180p'",
+          "status": "completed",
+          "kind": "execute",
+          "content": [],
+          "rawInput": {
+            "call_id": "call_xWOrj8N9Mp3Fpb5SaC7vQlzU",
+            "process_id": "72996",
+            "turn_id": "019e5eb1-e8db-71d1-89bd-092b6a529c54",
+            "started_at_ms": 1779705228187,
+            "command": [
+              "/bin/zsh",
+              "-lc",
+              "git diff -- .obsidian_work/snippets/always-show-actions.css | sed -n '1,180p'"
+            ],
+            "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+            "parsed_cmd": [
+              {
+                "type": "unknown",
+                "cmd": "git diff -- .obsidian_work/snippets/always-show-actions.css | sed -n '1,180p'"
+              }
+            ],
+            "source": "unified_exec_startup"
+          }
+        },
+        {
+          "type": "text",
+          "text": "已处理，在 [always-show-actions.css](</Users/bytedance/Documents/Obsidian Vault/.obsidian_work/snippets/always-show-actions.css:64>) 里加了只针对 Obsidian Git 面板的规则。\n\n现在隐藏：\n\n- `Commit`\n- `Stage all`\n- `Unstage all`\n- `Change Layout`\n\n只保留你红框里的：\n\n- `Commit-and-sync`\n- `Push`\n- `Pull`\n- `Refresh`\n\n刷新 CSS snippet 或重启 Obsidian 后生效。"
+        }
+      ],
+      "timestamp": "2026-05-25T10:33:48.189Z"
     }
   ],
-  "savedAt": "2026-05-25T10:31:40.783Z"
+  "savedAt": "2026-05-25T10:33:55.368Z"
 }

@@ -155,7 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 344.5
   },
   "right": {
     "id": "ef405a15d1bb2d8d",
@@ -304,7 +304,7 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "3804dd827ca58758",
+  "active": "9a1c070c25f64099",
   "lastOpenFiles": [
     "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",

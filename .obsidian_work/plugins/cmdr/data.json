@@ -40,7 +40,7 @@
     "statusbar": [],
     "leftRibbon": []
   },
-  "spacing": "8",
+  "spacing": "6",
   "advancedToolbar": {
     "rowHeight": 48,
     "rowCount": 1,
