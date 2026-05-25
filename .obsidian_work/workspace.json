@@ -23,37 +23,7 @@
             }
           },
           {
-            "id": "3804dd827ca58758",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "SKILL"
-            }
-          },
-          {
             "id": "535c8d167f5ca07c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "SKILL"
-            }
-          },
-          {
-            "id": "8489b9e68dce5808",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -68,7 +38,28 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
+      },
+      {
+        "id": "cc972c0051f8d953",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3804dd827ca58758",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -164,7 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 407.5
+    "width": 378.5
   },
   "right": {
     "id": "ef405a15d1bb2d8d",
@@ -262,7 +253,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
+                "file": "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -288,7 +279,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 494.5
+    "width": 398.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -313,14 +304,17 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "8489b9e68dce5808",
+  "active": "3804dd827ca58758",
   "lastOpenFiles": [
+    "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/_attachments/Pasted image 20260525183040.png",
+    "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/_attachments",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/grill-with-docs/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/tdd/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/engineering/grill-with-docs/grill-with-docs.md",
     "awesome-codex-skills/zh/mattpocock-skills/productivity/write-a-skill/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/productivity/handoff/SKILL.md",
-    "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/productivity/caveman/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/personal/obsidian-vault/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/personal/edit-article/SKILL.md",
@@ -339,7 +333,6 @@
     "awesome-codex-skills/zh/mattpocock-skills/engineering/setup-matt-pocock-skills/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/prototype/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/improve-codebase-architecture/SKILL.md",
-    "awesome-codex-skills/zh/mattpocock-skills/deprecated/ubiquitous-language/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/scripts/hitl-loop.template.sh",
     "awesome-codex-skills/zh/mattpocock-skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/scripts",
@@ -349,7 +342,6 @@
     "awesome-codex-skills/zh/mattpocock-skills/productivity/grill-me",
     "awesome-codex-skills/zh/mattpocock-skills/productivity/caveman",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/zoom-out",
-    "awesome-codex-skills/zh/mattpocock-skills/engineering/triage",
     "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_visualization.png",
     "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_animation.gif",
     "awesome-codex-skills/zh/scientific-skills/timesfm-forecasting/examples/covariates-forecasting/output/covariates_data.png",
@@ -359,7 +351,6 @@
     "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_animation.gif",
     "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/anomaly-detection/output/anomaly_detection.png",
     "分享回流/_attachments/Pasted image 20260521215735.png",
-    "分享回流/_attachments/Pasted image 20260521165113.png",
     "分享回流/未命名.canvas",
     "Obsidian Canvas 能力演示.canvas",
     "未命名.canvas"
