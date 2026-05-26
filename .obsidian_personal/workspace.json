@@ -34,9 +34,65 @@
               "icon": "lucide-file",
               "title": "SKILL"
             }
+          },
+          {
+            "id": "e5a5ff9ab41cc25b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/mattpocock-skills/productivity/handoff/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "5d94b0607a0b8753",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/mattpocock-skills/productivity/caveman/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "415bf5ef81a67a9f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/mattpocock-skills/personal/edit-article/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
+          },
+          {
+            "id": "11133f398328804b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "awesome-codex-skills/zh/mattpocock-skills/personal/obsidian-vault/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -263,8 +319,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2256163030fbc84c",
+  "active": "11133f398328804b",
   "lastOpenFiles": [
+    "awesome-codex-skills/zh/mattpocock-skills/personal/edit-article/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/personal/obsidian-vault/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/productivity/caveman/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/productivity/handoff/SKILL.md",
+    "awesome-codex-skills/zh/mattpocock-skills/productivity/write-a-skill/SKILL.md",
     "app.css",
     "app.js",
     "lesson/Easy Vibe 附录/4-server-and-backend/api-design.md",
@@ -295,13 +356,8 @@
     "awesome-codex-skills/zh/scientific-skills/what-if-oracle/SKILL.md",
     "awesome-codex-skills/zh/scientific-skills/pytorch-lightning/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/in-progress/writing-shape/SKILL.md",
-    "awesome-codex-skills/zh/scientific-skills/stable-baselines3/SKILL.md",
-    "awesome-codex-skills/zh/mattpocock-skills/engineering/triage/SKILL.md",
-    "awesome-codex-skills/zh/mattpocock-skills/personal/obsidian-vault/SKILL.md",
-    "awesome-codex-skills/zh/scientific-skills/scvelo/SKILL.md",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/scripts/hitl-loop.template.sh",
     "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose/scripts",
-    "awesome-codex-skills/zh/mattpocock-skills/engineering/diagnose",
     "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/anomaly-detection/output/anomaly_detection.png",
     "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/covariates-forecasting/output/covariates_data.png",
     "awesome-codex-skills/en/scientific-skills/timesfm-forecasting/examples/global-temperature/output/forecast_visualization.png",
