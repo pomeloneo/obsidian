@@ -277,7 +277,7 @@ metadata:
 
 ### 正在加载API键
 
-**步骤 1 — 检查当前环境。** 该密钥可能已导出为 shell 变量。例如，在Claude代码中，您可以使用Bash检查：`echo $FRED_API_KEY`。如果该变量已设置且非空，则使用它。
+**步骤 1 — 检查当前环境。** 该密钥可能已导出为 shell 变量。例如，在 Codex 中，可以通过 shell command 检查：`echo $FRED_API_KEY`。如果该变量已设置且非空，则使用它。
 
 **步骤2 — 检查`.env` 文件。** 如果未设置环境变量，则从当前工作目录读取`.env`。格式：
 ```
@@ -293,7 +293,6 @@ BEA_API_KEY=your_key_here
 
 | 平台 | HTTP 获取工具 | 后备 |
 |---|---|---|
-| Claude 代码 | `WebFetch` | `curl` 通过 Bash |
 | Gemini CLI | `web_fetch` | `curl` 通过 shell |
 | 风帆冲浪 | `read_url_content` | `curl` 通过终端 |
 | 光标 | 没有专用的获取工具 | `curl` 通过 `run_terminal_cmd` |

@@ -161,7 +161,7 @@ labels = npa.curate(metrics, method='allen')  # 'allen', 'ibl', 'strict'
 
 ### 6. AI-Assisted Curation (For Uncertain Units)
 
-When using this skill with Claude Code, Claude can directly analyze waveform plots and provide expert curation decisions. For programmatic API access:
+When using this skill with Codex, Codex can directly analyze waveform plots and provide expert curation decisions. For programmatic API access:
 
 ```python
 from anthropic import Anthropic
@@ -178,7 +178,7 @@ for unit_id in uncertain:
     print(f"  Reasoning: {result['reasoning'][:100]}...")
 ```
 
-**Claude Code Integration**: When running within Claude Code, ask Claude to examine waveform/correlogram plots directly - no API setup required.
+**Codex Integration**: When running within Codex, ask Codex to examine waveform/correlogram plots directly - no API setup required.
 
 ### 7. Generate Analysis Report
 
@@ -345,4 +345,3 @@ project/
 - **Allen Institute ecephys**: https://github.com/AllenInstitute/ecephys_spike_sorting
 - **Bombcell (Automated QC)**: https://github.com/Julie-Fabre/bombcell
 - **SpikeAgent (AI Curation)**: https://github.com/SpikeAgent/SpikeAgent
-

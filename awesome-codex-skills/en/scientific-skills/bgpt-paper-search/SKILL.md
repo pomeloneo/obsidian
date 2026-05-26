@@ -30,19 +30,14 @@ Use this skill when:
 
 BGPT is a remote MCP server — no local installation required.
 
-### Claude Desktop / Claude Code
+### Codex
 
-Add to your MCP configuration:
+Add to `~/.codex/config.toml`:
 
-```json
-{
-  "mcpServers": {
-    "bgpt": {
-      "command": "npx",
-      "args": ["mcp-remote", "https://bgpt.pro/mcp/sse"]
-    }
-  }
-}
+```toml
+[mcp_servers.bgpt]
+command = "npx"
+args = ["mcp-remote", "https://bgpt.pro/mcp/sse"]
 ```
 
 ### npm (alternative)
@@ -71,4 +66,3 @@ The server returns structured results including:
 
 - **Free tier**: 50 searches per network, no API key required
 - **Paid**: $0.01 per result with an API key from [bgpt.pro/mcp](https://bgpt.pro/mcp)
-

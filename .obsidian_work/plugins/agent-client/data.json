@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e6271-5427-7d92-8e51-8944331c5d8e",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "看下 awesome-codex-skills 目录，这个目录里面有一些 skill 内容提示让用 ...",
+      "createdAt": "2026-05-26T10:32:26.720Z",
+      "updatedAt": "2026-05-26T10:32:26.729Z"
+    },
+    {
       "sessionId": "019e6271-088e-7342-b7b7-359ff7cece38",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",

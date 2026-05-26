@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INPUT=$(cat)
-COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command')
+COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // .tool_input.cmd // .arguments.command // .arguments.cmd // .command // .cmd // empty')
 
 DANGEROUS_PATTERNS=(
   "git push"

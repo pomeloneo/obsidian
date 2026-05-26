@@ -1,11 +1,11 @@
 ---
-name: git-guardrails-claude-code
-description: Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code.
+name: git-guardrails-codex
+description: Set up Codex hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Codex.
 ---
 
 # Setup Git Guardrails
 
-Sets up a PreToolUse hook that intercepts and blocks dangerous git commands before Claude executes them.
+Sets up a PreToolUse hook that intercepts and blocks dangerous git commands before Codex executes them.
 
 ## What Gets Blocked
 
@@ -15,13 +15,13 @@ Sets up a PreToolUse hook that intercepts and blocks dangerous git commands befo
 - `git branch -D`
 - `git checkout .` / `git restore .`
 
-When blocked, Claude sees a message telling it that it does not have authority to access these commands.
+When blocked, Codex sees a message telling it that it does not have authority to access these commands.
 
 ## Steps
 
 ### 1. Ask scope
 
-Ask the user: install for **this project only** (`.claude/settings.json`) or **all projects** (`~/.claude/settings.json`)?
+Ask the user: install for **this project only** (`.codex/hooks.json`) or **all projects** (`~/.codex/hooks.json`)?
 
 ### 2. Copy the hook script
 
@@ -29,36 +29,16 @@ The bundled script is at: [scripts/block-dangerous-git.sh](scripts/block-dangero
 
 Copy it to the target location based on scope:
 
-- **Project**: `.claude/hooks/block-dangerous-git.sh`
-- **Global**: `~/.claude/hooks/block-dangerous-git.sh`
+- **Project**: `.codex/hooks/block-dangerous-git.sh`
+- **Global**: `~/.codex/hooks/block-dangerous-git.sh`
 
 Make it executable with `chmod +x`.
 
 ### 3. Add hook to settings
 
-Add to the appropriate settings file:
+Add to the appropriate hooks file:
 
-**Project** (`.claude/settings.json`):
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-dangerous-git.sh"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-**Global** (`~/.claude/settings.json`):
+**Project** (`.codex/hooks.json`):
 
 ```json
 {
@@ -69,7 +49,7 @@ Add to the appropriate settings file:
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/block-dangerous-git.sh"
+            "command": ".codex/hooks/block-dangerous-git.sh"
           }
         ]
       }
@@ -78,7 +58,27 @@ Add to the appropriate settings file:
 }
 ```
 
-If the settings file already exists, merge the hook into existing `hooks.PreToolUse` array — don't overwrite other settings.
+**Global** (`~/.codex/hooks.json`):
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.codex/hooks/block-dangerous-git.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+If the hooks file already exists, merge the hook into the existing `hooks.PreToolUse` array — don't overwrite other hooks.
 
 ### 4. Ask about customization
 

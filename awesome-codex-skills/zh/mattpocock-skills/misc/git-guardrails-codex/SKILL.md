@@ -1,11 +1,11 @@
 ---
-name: git-guardrails-claude-code
-description: 设置 Claude Code hooks，在危险 git commands（push、reset --hard、clean、branch -D 等）执行前阻止它们。适用于用户想防止破坏性 git 操作、添加 git safety hooks，或在 Claude Code 中阻止 git push/reset 时。
+name: git-guardrails-codex
+description: 设置 Codex hooks，在危险 git commands（push、reset --hard、clean、branch -D 等）执行前阻止它们。适用于用户想防止破坏性 git 操作、添加 git safety hooks，或在 Codex 中阻止 git push/reset 时。
 ---
 
 # 设置 Git Guardrails
 
-设置一个 PreToolUse hook，在 Claude 执行危险 git commands 之前拦截并阻止它们。
+设置一个 PreToolUse hook，在 Codex 执行危险 git commands 之前拦截并阻止它们。
 
 ## 会阻止什么
 
@@ -15,13 +15,13 @@ description: 设置 Claude Code hooks，在危险 git commands（push、reset --
 - `git branch -D`
 - `git checkout .` / `git restore .`
 
-被阻止时，Claude 会看到一条消息，说明它没有权限访问这些 commands。
+被阻止时，Codex 会看到一条消息，说明它没有权限访问这些 commands。
 
 ## 步骤
 
 ### 1. 询问范围
 
-询问用户：是为 **this project only**（`.claude/settings.json`）安装，还是为 **all projects**（`~/.claude/settings.json`）安装？
+询问用户：是为 **this project only**（`.codex/hooks.json`）安装，还是为 **all projects**（`~/.codex/hooks.json`）安装？
 
 ### 2. 复制 hook script
 
@@ -29,36 +29,16 @@ description: 设置 Claude Code hooks，在危险 git commands（push、reset --
 
 根据范围将它复制到目标位置：
 
-- **Project**: `.claude/hooks/block-dangerous-git.sh`
-- **Global**: `~/.claude/hooks/block-dangerous-git.sh`
+- **Project**: `.codex/hooks/block-dangerous-git.sh`
+- **Global**: `~/.codex/hooks/block-dangerous-git.sh`
 
 用 `chmod +x` 使它可执行。
 
 ### 3. 将 hook 添加到 settings
 
-添加到相应的 settings 文件：
+添加到相应的 hooks 文件：
 
-**Project** (`.claude/settings.json`):
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-dangerous-git.sh"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-**Global** (`~/.claude/settings.json`):
+**Project** (`.codex/hooks.json`):
 
 ```json
 {
@@ -69,7 +49,7 @@ description: 设置 Claude Code hooks，在危险 git commands（push、reset --
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/block-dangerous-git.sh"
+            "command": ".codex/hooks/block-dangerous-git.sh"
           }
         ]
       }
@@ -78,7 +58,27 @@ description: 设置 Claude Code hooks，在危险 git commands（push、reset --
 }
 ```
 
-如果 settings 文件已经存在，将 hook 合并到现有 `hooks.PreToolUse` array 中 — 不要覆盖其他 settings。
+**Global** (`~/.codex/hooks.json`):
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.codex/hooks/block-dangerous-git.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+如果 hooks 文件已经存在，将 hook 合并到现有 `hooks.PreToolUse` array 中 — 不要覆盖其他 hooks。
 
 ### 4. 询问是否定制
 

@@ -112,7 +112,6 @@ Use your environment's HTTP fetch tool to call REST endpoints:
 
 | Platform | HTTP Fetch Tool | Fallback |
 |---|---|---|
-| Claude Code | `WebFetch` | `curl` via Bash |
 | Gemini CLI | `web_fetch` | `curl` via shell |
 | Windsurf | `read_url_content` | `curl` via terminal |
 | Cursor | No dedicated fetch tool | `curl` via `run_terminal_cmd` |

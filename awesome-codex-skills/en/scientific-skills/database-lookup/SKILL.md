@@ -277,7 +277,7 @@ When a database requires paid access or registration the user hasn't set up:
 
 ### Loading API keys
 
-**Step 1 — Check the current environment.** The key may already be exported as a shell variable. For example, in Claude Code you can check with Bash: `echo $FRED_API_KEY`. If the variable is set and non-empty, use it.
+**Step 1 — Check the current environment.** The key may already be exported as a shell variable. For example, in Codex you can check with a shell command: `echo $FRED_API_KEY`. If the variable is set and non-empty, use it.
 
 **Step 2 — Check `.env` file.** If the environment variable isn't set, read `.env` from the current working directory. Format:
 ```
@@ -293,7 +293,6 @@ Use your environment's HTTP fetch tool to call REST endpoints. The tool name var
 
 | Platform | HTTP Fetch Tool | Fallback |
 |---|---|---|
-| Claude Code | `WebFetch` | `curl` via Bash |
 | Gemini CLI | `web_fetch` | `curl` via shell |
 | Windsurf | `read_url_content` | `curl` via terminal |
 | Cursor | No dedicated fetch tool | `curl` via `run_terminal_cmd` |

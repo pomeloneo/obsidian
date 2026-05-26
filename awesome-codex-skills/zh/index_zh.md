@@ -231,7 +231,7 @@
 - [in-progress/writing-beats](mattpocock-skills/in-progress/writing-beats/SKILL.md)
 - [in-progress/writing-fragments](mattpocock-skills/in-progress/writing-fragments/SKILL.md)
 - [in-progress/writing-shape](mattpocock-skills/in-progress/writing-shape/SKILL.md)
-- [misc/git-guardrails-claude-code](mattpocock-skills/misc/git-guardrails-claude-code/SKILL.md)（1 个附件文件）
+- [misc/git-guardrails-codex](mattpocock-skills/misc/git-guardrails-codex/SKILL.md)（1 个附件文件）
 - [misc/migrate-to-shoehorn](mattpocock-skills/misc/migrate-to-shoehorn/SKILL.md)
 - [misc/scaffold-exercises](mattpocock-skills/misc/scaffold-exercises/SKILL.md)
 - [misc/setup-pre-commit](mattpocock-skills/misc/setup-pre-commit/SKILL.md)

@@ -161,7 +161,7 @@ labels = npa.curate(metrics, method='allen')  # 'allen', 'ibl', 'strict'
 
 ### 6. AI 辅助管理（针对不确定单位）
 
-当将此技能与Claude Code结合使用时，Claude可以直接分析波形图并提供专家管理决策。对于编程式API访问：
+当将此技能与 Codex 结合使用时，Codex 可以直接分析波形图并提供专家管理决策。对于编程式API访问：
 
 ```python
 from anthropic import Anthropic
@@ -178,7 +178,7 @@ for unit_id in uncertain:
     print(f"  Reasoning: {result['reasoning'][:100]}...")
 ```
 
-**Claude Code集成**：在Claude Code中运行时，要求Claude直接检查波形/相关图 - 无需API设置。
+**Codex 集成**：在 Codex 中运行时，要求 Codex 直接检查波形/相关图 - 无需API设置。
 
 ### 7. 生成分析报告
 
@@ -345,4 +345,3 @@ project/
 - **艾伦研究所的ecephys**：https://github.com/AllenInstitute/ecephys_spike_sorting
 - **Bombcell（自动质量控制）**：https://github.com/Julie-Fabre/bombcell
 - **SpikeAgent（人工智能管理）**：https://github.com/SpikeAgent/SpikeAgent
-

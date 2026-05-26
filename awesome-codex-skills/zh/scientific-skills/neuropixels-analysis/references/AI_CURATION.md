@@ -14,24 +14,24 @@ Traditional:  Metrics → Threshold → Labels
 AI-Enhanced:  Metrics → AI Visual Analysis → Confidence Score → Labels
 ```
 
-## Claude Code Integration
+## Codex Integration
 
-When using this skill within Claude Code, Claude can directly analyze waveform plots without requiring API setup. Simply:
+When using this skill within Codex, Codex can directly analyze waveform plots without requiring API setup. Simply:
 
 1. Generate a unit report or plot
-2. Ask Claude to analyze the visualization
-3. Claude will provide expert-level curation decisions
+2. Ask Codex to analyze the visualization
+3. Codex will provide expert-level curation decisions
 
-Example workflow in Claude Code:
+Example workflow in Codex:
 ```python
 # Generate plots for a unit
 npa.plot_unit_summary(analyzer, unit_id=0, output='unit_0_summary.png')
 
-# Then ask Claude: "Please analyze this unit's waveforms and autocorrelogram
+# Then ask Codex: "Please analyze this unit's waveforms and autocorrelogram
 # to determine if it's a well-isolated single unit, multi-unit activity, or noise"
 ```
 
-Claude can assess:
+Codex can assess:
 - Waveform consistency and shape
 - Refractory period violations from autocorrelograms
 - Amplitude stability over time

@@ -43,7 +43,7 @@ cd ~/writing/my-article-title
 touch article-draft.md
 ```
 
-从此目录打开 Claude Code 并开始写作。
+从此目录打开 Codex 并开始写作。
 
 ### 基本工作流
 
@@ -481,7 +481,7 @@ Ready for the next section!
 
 ## Pro Tips
 
-1. **在 VS Code 中工作**：比 web Claude 更适合 long-form writing
+1. **在 VS Code 中工作**：比 web chat 更适合 long-form writing
 2. **一次写一个 section**：incrementally 获取 feedback
 3. **单独保存 research**：保留一个 research.md 文件
 4. **为 drafts 做版本管理**：article-v1.md、article-v2.md 等
