@@ -56,6 +56,30 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e6271-088e-7342-b7b7-359ff7cece38",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "回流到店铺都有哪些点+点的属性可以去判断？",
+      "createdAt": "2026-05-26T07:41:04.646Z",
+      "updatedAt": "2026-05-26T07:41:04.646Z"
+    },
+    {
+      "sessionId": "019e6271-43e2-77c0-a9ca-6e2e11654d43",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "我需要通过 byedcli 使用 tea 搭建一个看板，这个看板的内容是从进入电商详情页=》分享按钮...",
+      "createdAt": "2026-05-26T06:46:10.752Z",
+      "updatedAt": "2026-05-26T06:46:10.757Z"
+    },
+    {
+      "sessionId": "019e624b-5d27-7e80-8eea-8bd1a5aa7a0c",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "这个报错什么意思？",
+      "createdAt": "2026-05-26T03:36:01.886Z",
+      "updatedAt": "2026-05-26T03:36:01.886Z"
+    },
+    {
       "sessionId": "019e5eec-7aa3-7b80-99a7-97e32d31943b",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",

@@ -163,11 +163,11 @@ whatsapp_business
 
 TEA 图表配置：
 
-| 图表 | 配置 |
-| --- | --- |
-| 主漏斗图 | Step 1 -> Step 3，主体用发送者 `user_id` |
-| 辅助漏斗图 | Step 1 -> Step 2 -> Step 3，用于诊断渠道点击到业务分享发起 |
-| 回流指标卡 | Step 4 单独展示，用 `chain_key` join 站外分享侧 |
+| 图表    | 配置                                                            |
+| ----- | ------------------------------------------------------------- |
+| 主漏斗图  | Step 1 -> Step 3，主体用发送者 `user_id`                             |
+| 辅助漏斗图 | Step 1 -> Step 2 -> Step 3，用于诊断渠道点击到业务分享发起                    |
+| 回流指标卡 | Step 4 单独展示，用 `chain_key` join 站外分享侧                          |
 | 渠道分布图 | `tiktokec_share_product(chat_type='outside')` 按 `platform` 分组 |
 
 站外回流过滤表达式：
