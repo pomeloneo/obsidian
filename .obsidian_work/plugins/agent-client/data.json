@@ -56,6 +56,14 @@
   },
   "savedSessions": [
     {
+      "sessionId": "019e683f-1e26-7f33-87ac-95ea7a483d89",
+      "agentId": "codex-acp",
+      "cwd": "/Users/bytedance/Documents/Obsidian Vault",
+      "title": "改下 css 让这个 path 始终展示，而不是 hover 上去才展示",
+      "createdAt": "2026-05-27T07:10:48.758Z",
+      "updatedAt": "2026-05-27T07:10:48.758Z"
+    },
+    {
       "sessionId": "019e6271-5427-7d92-8e51-8944331c5d8e",
       "agentId": "codex-acp",
       "cwd": "/Users/bytedance/Documents/Obsidian Vault",

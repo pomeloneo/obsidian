@@ -5,6 +5,14 @@
       "path": "awesome-codex-skills/CODEX_LOCAL_SKILL_AUDIT.md"
     },
     {
+      "basename": "index_zh",
+      "path": "awesome-codex-skills/zh/index_zh.md"
+    },
+    {
+      "basename": "全电商内容分享回流统一数据集方案",
+      "path": "分享回流/全电商内容分享回流统一数据集方案.md"
+    },
+    {
       "basename": "PDP 分享回流合并链路 TEA 看板校验",
       "path": "分享回流/PDP 分享回流合并链路 TEA 看板校验.md"
     },
@@ -59,10 +67,6 @@
     {
       "basename": "index",
       "path": "awesome-codex-skills/index.md"
-    },
-    {
-      "basename": "index_zh",
-      "path": "awesome-codex-skills/zh/index_zh.md"
     },
     {
       "basename": "anomaly_detection",

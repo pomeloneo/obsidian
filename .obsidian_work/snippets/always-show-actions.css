@@ -116,3 +116,8 @@ body:not(.is-mobile) .workspace-leaf-content[data-type="git-history-view"] .tree
   filter: none !important;
   scale: 1 !important;
 }
+
+/* Keep the Cupertino view-header path visible without hovering. */
+.view-header:not(.view-header-always-show):not(:hover) .view-header-title-container > div:not(:focus-within) {
+  opacity: 1 !important;
+}
